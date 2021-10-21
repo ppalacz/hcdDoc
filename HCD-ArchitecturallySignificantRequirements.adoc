@@ -2,7 +2,7 @@
 
 image::images/HCD_head_web.png[align="center"]
 
-:revnumber: 02/28/2021
+:revnumber: 10/21/2021
 :Author Initials: pxp
 :email: <piotr.palacz@hcd.ca.gov>
 :icons:
@@ -50,12 +50,32 @@ endif::[]
 
 == Overview
 
- 
+This document discusses _Architecturally Significant Requirements_ (further abbreviated as _ASRs_) as identified in the RFI documentation being worked on at HCD at the time of writing:
 
+* RFI # 21-ITB-001 that provides "mid-level" requirements for a case management system pertaining to house element compliance and to violations of state housing planning law (see << Requirements for RFI #21-ITB-001 >>)
+
+* RFI # 21-ITB-002 that provides "mid-level" requirements for a potential replacement for the current CASAS system (in its two parts, internal and external-facing, see << Requirements for RFI #21-ITB-002 >>)
+
+The document also provides applicable background for identifying ASRs and more broadly, analyzing requirements (see section <<Terminology and Approach>>)
+
+== Motivation and Goals
+
+Requirements are not created equal - some of them have bigger impact on the target solution than others. Some of the impactful requirements affect the way the target system is to be organized - that is, they affect its architecture or at least constraints on that architecture. 
+
+
+ 
 === Main Sections
 
-. The section <<ITCAB Worfklow Background>> provides a minimal background  
- 
+. The section << Terminology and Approach >> provides a minimal background for analyzing Requirements and for identifying ASRs.
+
+. The section  << ASRs in HCD RFIs >> discusses Architecturally Significant Requirements that are common to the RFIs being worked in HCD. It also points out differences and variations in identified requirements as presented in respective RFIs.
+
+. The section << Next Steps >> suggests further steps that might be taken with respect to ASRs and handling of Requirements in HCD's RFIs in general.
+
+. The section << Requirements for RFI #21-ITB-001 >> provides further discussion of the requirements in RFI #21-ITB-001  
+
+. The section << Requirements for RFI #21-ITB-002 >> does the same for RFI #21-ITB-002.   
+
 === Change History
 
 .Change History
@@ -63,39 +83,124 @@ endif::[]
 |=========================================================
 |Date | Contact |Description 
 
-|3/11/2021 |   piotr.palacz@hcd.ca.gov | Updated to reflect modifications in the Pilot; added change history
+|10/21/2021 |   piotr.palacz@hcd.ca.gov |  RFI ## 21-ITB-001 and 21-ITB-002 included in the scope
 
-|2/28/2021 |   piotr.palacz@hcd.ca.gov | Updated for 1st PROD Pilot
-
-|2/5/2021 |   piotr.palacz@hcd.ca.gov | Document started by separating out user-facing information from technical documentation for TEST
+|10/20/2021 |   piotr.palacz@hcd.ca.gov | Document started  
 
 |=========================================================
 
 
 == Terminology and Approach
 
-=== Architecturally Significant Requirements
+=== What are Architecturally Significant Requirements?
 
 
 === Analyzing HCD Requirements
 
+==== Clarifying Requirements
 
-image::./images/ITCAB-GroupTree.png[ITCAB Group Tree, align="center" , {size30}]
+==== Disambiguating Requirements
 
-NOTE: The membership of the respective groups can be managed using ServiceNow-supplied tools. Defining the groups (in terms of their members) is responsibility of the "Fiscal CAB Process Owners"; currently this group has a single member, who also happens to be the manager of the root group for all CAB-created groups: the CTO.
+==== Deduplicating Requirements
 
-NOTE: In Production, the ability to create new Requests will be limited to the members of the "Fiscal CAB Requestor" group. The picture below shows the members of that group at the time of writing. Again, the members of that group are defined by the owner of the group.
+==== Classifying and Grouping Requirements
 
-image::./images/ITCAB-RequestorsGroup.png[ITCAB Requestors Group, align="center" , {size15}]
+
+
+==  ASRs in HCD RFIs
+
+
+
+=== Business Process Automation and Workflow Capabilities
+
+==== Expressing Business Process as Workflow
+
+* Workflow Steps and Flow
+
+** Defining the Workflow
+
+** Typical Steps in a Case Management System
+
+** Persisting Progress
+
+* State Change Notifications
+
+
+* Business Rules
+
+* Access Control 
+
+=== Security-Related Capabilities
+
+* Role-based Permissions
+
+** Role-based data access
+
+** Role-based User Interfaces
+
+* Integration with external identity and credential providers
+
+
+=== Reporting-Related Capabilities
+
+* Standard Reporting
+
+** Pre-defined Reports
+
+** Custom Reports
+
+** Ad-Hoc Reporting
+
+* Reporting Outputs and Formats
+
+* Reporting-related Integration
+
+
+=== Application Interaction and Integration-Related Capabilities
+
+* Supporting Payments
+
+
+* Supporting Communication Channels
+
+** Email
+
+** Chat
+
+** Phone
+
+* Supporting Electronic Document Processing
+
+** Uploading and downloading documents
+
+** Electronic Signatures
+
+** Event Notifications
+
+
+=== Customization-Related Capabilities
+
+* Modifying Workflows
+
+* Modifying Roles
+
+* Modifying UI
+
+** UI Personalization
+
+
+== Next Steps
+
+
+
 
 [appendix]
-== Original PDF ITCAB Form
+== Requirements for RFI #21-ITB-001 
 
-The following pictures show the original PDF forms used in a semi-manual ITCAB process in Fi$Cal.
+[appendix]
+== Requirements for RFI #21-ITB-002
 
-* Page 1 of 2:
-
-image::./images/ItFormPage01.PNG[PDF ITCAB Form, Page 1 of 2, align="center" , {size60}]
+ 
 
  
 
