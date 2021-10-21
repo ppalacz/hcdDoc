@@ -1,0 +1,102 @@
+= HCD Architecturally Significant Requirements
+
+image::images/HCD_head_web.png[align="center"]
+
+:revnumber: 02/28/2021
+:Author Initials: pxp
+:email: <piotr.palacz@hcd.ca.gov>
+:icons:
+:numbered:
+:toc:
+
+
+ifdef::backend-html5[]
+:twoinches: width='144'
+:full-width: width='100%'
+:half-width: width='50%'
+:half-size: width='50%'
+:thumbnail: width='60'
+:size10: width='10%'
+:size15: width='15%'
+:size25: width='25%'
+:size40: width='40%'
+:size50: width='50%'
+:size60: width='60%'
+:size75: width='75%'
+endif::[]
+ifdef::backend-pdf[]
+:twoinches: pdfwidth='2in'
+:full-width: pdfwidth='100vw'
+:half-width: pdfwidth='50vw'
+:half-size: pdfwidth='50%'
+:thumbnail: pdfwidth='20mm'
+:size10: pdfwidth='10%'
+:size15: pdfwidth='15%'
+:size25: pdfwidth='25%'
+:size40: pdfwidth='40%'
+:size50: pdfwidth='50%'
+:size60: pdfwidth='60%'
+:size75: pdfwidth='75%'
+endif::[]
+ifdef::backend-docbook5[]
+:twoinches: width='50mm'
+:full-width: scaledwidth='100%'
+:half-width: scaledwidth='50%'
+:half-size: width='50%'
+:thumbnail: width='20mm'
+:size40: width='40%'
+:size50: width='50%'
+endif::[]
+
+== Overview
+
+ 
+
+=== Main Sections
+
+. The section <<ITCAB Worfklow Background>> provides a minimal background  
+ 
+=== Change History
+
+.Change History
+[width="95%",cols="3,^2,10",options="header"]
+|=========================================================
+|Date | Contact |Description 
+
+|3/11/2021 |   piotr.palacz@hcd.ca.gov | Updated to reflect modifications in the Pilot; added change history
+
+|2/28/2021 |   piotr.palacz@hcd.ca.gov | Updated for 1st PROD Pilot
+
+|2/5/2021 |   piotr.palacz@hcd.ca.gov | Document started by separating out user-facing information from technical documentation for TEST
+
+|=========================================================
+
+
+== Terminology and Approach
+
+=== Architecturally Significant Requirements
+
+
+=== Analyzing HCD Requirements
+
+
+image::./images/ITCAB-GroupTree.png[ITCAB Group Tree, align="center" , {size30}]
+
+NOTE: The membership of the respective groups can be managed using ServiceNow-supplied tools. Defining the groups (in terms of their members) is responsibility of the "Fiscal CAB Process Owners"; currently this group has a single member, who also happens to be the manager of the root group for all CAB-created groups: the CTO.
+
+NOTE: In Production, the ability to create new Requests will be limited to the members of the "Fiscal CAB Requestor" group. The picture below shows the members of that group at the time of writing. Again, the members of that group are defined by the owner of the group.
+
+image::./images/ITCAB-RequestorsGroup.png[ITCAB Requestors Group, align="center" , {size15}]
+
+[appendix]
+== Original PDF ITCAB Form
+
+The following pictures show the original PDF forms used in a semi-manual ITCAB process in Fi$Cal.
+
+* Page 1 of 2:
+
+image::./images/ItFormPage01.PNG[PDF ITCAB Form, Page 1 of 2, align="center" , {size60}]
+
+ 
+
+<end>
