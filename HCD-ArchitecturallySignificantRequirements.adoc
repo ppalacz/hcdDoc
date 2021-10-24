@@ -119,6 +119,8 @@ Define all environment-specific terms and abbreviations
 Abbreviations such as "HUD", "CASAS", and similar may be obvious to the HCD staff but not so for the intended recipients.
 
 
+
+
 === Disambiguating Requirements
 
 * Make sure the requirement expresses intended meaning
