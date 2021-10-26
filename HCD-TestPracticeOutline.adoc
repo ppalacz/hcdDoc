@@ -81,15 +81,18 @@ endif::[]
 
 This section describes the following key elements/practices of modern testing process for sizeable software systems:
 
-* Testing many kinds of artifacts - rather than one, namely, User Interface
+* Testing many kinds of artifacts - rather than one (most often, the UI)
 * Mechanizing Testing - rather than relying on manual testing
-* Testing as an integral part of Continuous Integration - rather than activity separated from the development and environment promotions
-* Testing progression and stopping on failure - rather than waving defects and failures through
+* Integrating Testing with Continuous Integration - rather than treating it as an activity separated from the development and environment promotions
+* Adopting Testing Progression: starting with the simplest tests and proceeding to the most complex ones, if the simpler tests succeed, and stopping on failure - rather than waving defects and failures through
 
 
 === Testing Many Kinds of Artifacts
 
-Testing of complex software systems involves testing of many kinds of artifacts that are the building blocks for the target system.
+Testing of complex software systems involves testing of many kinds of artifacts that are the building blocks for the target system. More often than not, each kind of artifact - such as Java class, REST API client, HTML/CSS/javascript UI - require different type of testing. Moreover, testing of some kinds of artifacts is difficult or impossible to do in isolation from other artifacts or components. 
+
+The types of tests most often encountered in mature construction of complex software systems include the following:
+
 
 * Unit Test: this is the least complex form of testing, where the "unit" usually means:
 ** Implementation class (in OO languages like groovy or java, or hybrid ones, like javascript)
@@ -110,29 +113,41 @@ Testing of complex software systems involves testing of many kinds of artifacts 
 * Configuration Test: it is not limited to the specific building blocks of the target system but rather validates expected configuration of a service or an environment. For example, if the environment doesn't have specific components installed, or components of specific versions, than the build fails before it is even started.
 
 
-=== Mechanizing Testing of Artifact Types
+== Mechanizing Testing of Artifact Types
+
+Despite the differences, most test share the same basic feature: they compare the actual outcome obtained from testing the artifact to some expected pre-defined outcome. Once we can pre-define the expected outcomes, mechanization of testing becomes feasible.
+
+Mechanization of testing has crucial advantages over manual modes of testing:
+
+. The tests are unambiguous
+. Test results are reproducible and reliable
+. Testing is cheap and can be executed at any time 
+. It can be integrated into larger automated processes (such as _Continuous Integration_)
+
+Mechanization of testing has an initial cost to it, as it requires writing (usually rather simple) software to test other software. Even though the testing frameworks and tooling (that have been available for more than a decade) make the task relatively simple, mechanization of testing carries a cost. However, this initial investment is paid back again and again over thousands (if not millions) of executions of the automated tests during the lifetime of the system.   
 
 
+=== Progression in Artifact Testing 
 
-=== Progression in Testing Artifacts 
+Automated tests (or actually any tests) should be executed in a progression starting with the tests of the simplest building blocks. This approach is based on the simple idea that, first, starting with the cheapest forms of testing and with simplest artifacts makes sense; second, that in case of any failure of simple artifacts, it doesn't probably make sense (in terms of cost and time) to proceed to testing of more complex artifacts until the defect is fixed.
+
+In practice, the progression can mean the following steps:
 
 * Starting from
 ** Configuration Testing
 ** Static Testing
 ** Unit Testing
+
 * Proceeding to
 ** Interaction and integration testing
 ** (Sub)Process testing
+
 * Ending with UI Testing
 
-Key 
-* Stopping on Failure
-
-
-
-
+The important facet of the progression is to stop the progression when defects are encountered. For example, if the environment configuration isn't right, it doesn't make much sense to embark on unit testing. If any of the unit tests fail, then it doesn't make much sense to continue with interaction testing. What does make sense is to stop before the next step, collect the defect data, and to notify the authors (or the last modifiers) of the failing artifact about the defect. The testing can resume (or restart) when the defects are fixed. 
 
 === Testing As Part of Automated Continuous Integration
+
 
 
 
