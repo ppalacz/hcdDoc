@@ -51,10 +51,7 @@ endif::[]
 
 == Overview
 
- 
-
-=== Motivation and Goals
- 
+This document is intended to provide key concepts and ideas for organizing a modern and mature Test Practice in HCD. In its initial version, it provides material for discussing the current and desired/target state of the testing practices, and the roadmap. The document advocates adopting CI (_Continuous Integration_) approach and tooling for the development and testing practices in HCD. 
  
 === Main Sections
 
@@ -89,7 +86,7 @@ This section describes the following key elements/practices of modern testing pr
 
 === Testing Many Kinds of Artifacts
 
-Testing of complex software systems involves testing of many kinds of artifacts that are the building blocks for the target system. More often than not, each kind of artifact - such as Java class, REST API client, HTML/CSS/javascript UI - require different type of testing. Moreover, testing of some kinds of artifacts is difficult or impossible to do in isolation from other artifacts or components. 
+Testing of complex software systems involves testing of many kinds of artifacts that are the building blocks for the target system. Often, each kind of artifact - such as Java class, REST API client, HTML/CSS/javascript UI - require different type of testing. Moreover, testing of some kinds of artifacts is difficult or impossible to do in isolation from other artifacts or components. 
 
 The types of tests most often encountered in mature construction of complex software systems include the following:
 
@@ -106,11 +103,11 @@ The types of tests most often encountered in mature construction of complex soft
 
 * Integration Test typically validates if interaction of a building block with an external system, resource, or service produces outcomes as expected. There are techniques (such as _mocking_) that allow for this type of testing even in absence of the external system or resource - which, in practice, may be the case.  
 
-* (Sub)Process Test allows for testing of defined business processes/workflows, either in part or as a whole. Note that this is different from UI testing, in which UI must be present, whereas in (sub)Process testing there may be no UI available.
+* (Sub)Process Test allows for testing of defined business processes/workflows, either in part or. Note that this is different from UI testing, in which UI must be present, whereas in (sub)Process testing there may be no UI available.
 
-* UI Test is the most commonly used form of testing that relies on actual or simulated interactions of actual or virtual user with the USer Interface. In its manual form, this is a laborious and not nearly as reliable as automatic testing.
+* UI Test is the most used form of testing that relies on actual or simulated interactions of actual or virtual user with the User Interface. In its manual form, this is a laborious and not nearly as reliable as automatic testing.
 
-* Configuration Test: it is not limited to the specific building blocks of the target system but rather validates expected configuration of a service or an environment. For example, if the environment doesn't have specific components installed, or components of specific versions, than the build fails before it is even started.
+* Configuration Test: it is not limited to the specific building blocks of the target system but rather validates expected configuration of a service or an environment. For example, if the environment doesn't have specific components installed, or components of specific versions, then the build fails before it is even started.
 
 
 === Mechanizing Testing of Artifact Types
@@ -128,7 +125,7 @@ Mechanization of testing has an initial cost to it, as it requires writing (usua
 
 === Progression in Artifact Testing 
 
-Automated tests (or actually any tests) should be executed in a progression starting with the tests of the simplest building blocks. This approach is based on the simple idea that, first, starting with the cheapest forms of testing and with simplest artifacts makes sense; second, that in case of any failure of simple artifacts, it doesn't probably make sense (in terms of cost and time) to proceed to testing of more complex artifacts until the defect is fixed.
+Automated tests (or any tests) should be executed in a progression starting with the tests of the simplest building blocks. This approach is based on the simple idea that, first, starting with the cheapest forms of testing and with simplest artifacts makes sense; second, that in case of any failure of simple artifacts, it doesn't probably make sense (in terms of cost and time) to proceed to testing of more complex artifacts until the defect is fixed.
 
 In practice, the progression can mean the following steps:
 
@@ -149,7 +146,7 @@ The important facet of the progression is to stop the progression when defects a
 
 === Testing As Part of Automated Continuous Integration
 
-In a nutshell, Continuous Integration in software construction is similar to a Business Process: it has specific steps, transitions between steps that can be made under specific conditions, and so on. 
+In a nutshell, Continuous Integration in software construction is like a Business Process: it has specific steps, transitions between steps that can be made under specific conditions, and so on. 
 
 The term _Continuous Integration_ rightly emphasizes the following facets of that process: 
 
@@ -165,11 +162,11 @@ The term _Continuous Integration_ rightly emphasizes the following facets of tha
 ** Change-related event - such as commit of modifications to the version control system
 ** Deployment of the newly built system from one environment to the next 
 
-In practice, all of the above triggers can be used and are used. For example, triggering a build and subsequent automated testing on every commit may seem an overkill but:
+In practice, all the above triggers can be used and are used. For example, triggering a build and subsequent automated testing on every commit may seem an overkill but:
 * Automated testing is cheap
 * Builds can be incremental and fast
 * Developers have fast feedback on health of the committed changes
-* Work and testing becomes incremental, facilitating identification and fixing of defects.
+* Work and testing become incremental, facilitating identification, and fixing of defects.
 
 == Towards a Roadmap for Building a Testing Practice
 
@@ -219,7 +216,7 @@ As indicated in section <<Starting Point>>, none of the above is fully realized 
 * Unit tests (in small numbers)
 * Static analysis tooling (CodeNarc)
 * Continuous Integration software (Jenkins)
-* Specifications for a number of UI-based tests (performed manually)
+* Specifications for several UI-based tests (performed manually)
 
 === Incremental Improvements
  
@@ -241,16 +238,16 @@ Yet another step involves gathering metrics and measuring quality or progress to
 
 === Gathering Metrics, Quality Measurements, and Reporting
 
-Adoption of a mature testing discipline is not complete without being able to gather various metrics and quality-related measurements, and being able to produce related reporting. 
+Adoption of a mature testing discipline is not complete without being able to gather various metrics and quality-related measurements and being able to produce related reporting. 
 
 * Typical and natural metrics typically gathered in the testing process include failure/success counts and rates, both for the current run and historical data. However, this type of information becomes more useful if attached to metrics about the system and (versions of) its components under test. For example, a given number of defects indicates different scale of problems when small deltas are being tested, as contrasted with big modifications or additions to the system. Being able to make this type of distinctions requires linking of the information about test results as produced by the automated tests with branch/version information as available (typically) from the version control system.
 
 * In addition to gathering metrics about how the system/application behaves under test, it is crucial to be able to measure quality of the tests themselves. Fortunately, there are approaches and tooling to accomplish that. The measure of tests' quality most often used in practice is the _Coverage_ of the test in question, usually expressed as a percentage of the tested execution paths versus all available paths of execution in a component. 
 
-** Measuring Coverage is crucial because one can easily produce many tests with 100% success rate with 0% coverage. In such a situation, the tests are worthless. In order to be useful, a test must have a good coverage rate, ideally 100%. This figure is not always achievable or desirable (because of the cost/effort involved), so that practical acceptable coverage values are in the range of 70-90% depending on the situation and adopted standards.
+** Measuring Coverage is crucial because one can easily produce many tests with 100% success rate with 0% coverage. In such a situation, the tests are worthless. To be useful, a test must have a good coverage rate, ideally 100%. This figure is not always achievable or desirable (because of the cost/effort involved), so that practical acceptable coverage values are in the range of 70-90% depending on the situation and adopted standards.
 
 ** In case of Unit Tests, there is tooling that makes it easy to automatically determine coverage (in systems like CASAS). Measuring coverage of tests executing a workflow or a business process is more challenging but still worthy of attention. 
 
-* Reporting and aggregating test data is usually provided functionality in most Continuous Integration software. Even the already mention Jenkins, an Open Source solution, provides sufficient reporting and data aggregation facilities. Moreover, standard capabilities of CI implementations typically include automatic generation and _delivery_ of reports.   
+* Reporting and aggregating test data is usually provided functionality in most Continuous Integration software. Even the already mention Jenkins, an Open-Source solution, provides sufficient reporting and data aggregation facilities. Moreover, standard capabilities of CI implementations typically include automatic generation and _delivery_ of reports.   
 
 <end>
