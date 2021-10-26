@@ -1,0 +1,189 @@
+= Test Practice Outline
+Discussion Material
+
+image::images/HCD_head_web.png[align="center"]
+
+:revnumber: 10/25/2021
+:Author Initials: pxp
+:email: <piotr.palacz@hcd.ca.gov>
+:icons:
+:numbered:
+:toc:
+
+
+ifdef::backend-html5[]
+:twoinches: width='144'
+:full-width: width='100%'
+:half-width: width='50%'
+:half-size: width='50%'
+:thumbnail: width='60'
+:size10: width='10%'
+:size15: width='15%'
+:size25: width='25%'
+:size40: width='40%'
+:size50: width='50%'
+:size60: width='60%'
+:size75: width='75%'
+endif::[]
+ifdef::backend-pdf[]
+:twoinches: pdfwidth='2in'
+:full-width: pdfwidth='100vw'
+:half-width: pdfwidth='50vw'
+:half-size: pdfwidth='50%'
+:thumbnail: pdfwidth='20mm'
+:size10: pdfwidth='10%'
+:size15: pdfwidth='15%'
+:size25: pdfwidth='25%'
+:size40: pdfwidth='40%'
+:size50: pdfwidth='50%'
+:size60: pdfwidth='60%'
+:size75: pdfwidth='75%'
+endif::[]
+ifdef::backend-docbook5[]
+:twoinches: width='50mm'
+:full-width: scaledwidth='100%'
+:half-width: scaledwidth='50%'
+:half-size: width='50%'
+:thumbnail: width='20mm'
+:size40: width='40%'
+:size50: width='50%'
+endif::[]
+
+== Overview
+
+ 
+
+=== Motivation and Goals
+ 
+ 
+=== Main Sections
+
+. The section <<Key Elements of Modern Testing Practice>> identifies key concepts of modern testing practices applicable to software intensive systems and provides a short description of how they hang together
+
+. The section <<Towards a Roadmap for Building a Testing Practice>> provides an outline of the roadmap with respect to testing practices, starting with a summary of the current state and the target desired capabilities of the practice.
+ 
+
+=== Change History
+
+.Change History
+[width="95%",cols="3,^2,10",options="header"]
+|=========================================================
+|Date | Contact |Description 
+
+|10/26/2021 |   piotr.palacz@hcd.ca.gov | 
+
+|10/25/2021 |   piotr.palacz@hcd.ca.gov | Document started  
+
+|=========================================================
+
+
+== Key Elements of Modern Testing Practice
+
+This section describes the following key elements/practices of modern testing process for sizeable software systems:
+
+* Testing many kinds of artifacts - rather than one, namely, User Interface
+* Mechanizing Testing - rather than relying on manual testing
+* Testing as an integral part of Continuous Integration - rather than activity separated from the development and environment promotions
+* Testing progression and stopping on failure - rather than waving defects and failures through
+
+
+=== Testing Many Kinds of Artifacts
+
+Testing of complex software systems involves testing of many kinds of artifacts that are the building blocks for the target system.
+
+* Unit Test: this is the least complex form of testing, where the "unit" usually means:
+** Implementation class (in OO languages like groovy or java, or hybrid ones, like javascript)
+** Implementation function (in functional languages like javascript)
+
+* Static Testing: "static" refers to the forms of testing that do not require executing the code. Typical examples include:
+** Testing of the source for compliance with prescribed standards and/or guidelines
+** Testing for presence of security-, performance-, or reliability-affecting patterns in the source code 
+
+* Interaction Test: tests integration between two units (sometimes more than two), where the objective is to validate is two units interact in expected ways
+
+* Integration Test typically validates if interaction of a building block with an external system, resource, or service produces outcomes as expected. There are techniques (such as _mocking_) that allow for this type of testing even in absence of the external system or resource - which, in practice, may be the case.  
+
+* (Sub)Process Test allows for testing of defined business processes/workflows, either in part or as a whole. Note that this is different from UI testing, in which UI must be present, whereas in (sub)Process testing there may be no UI available.
+
+* UI Test is the most commonly used form of testing that relies on actual or simulated interactions of actual or virtual user with the USer Interface. In its manual form, this is a laborious and not nearly as reliable as automatic testing.
+
+* Configuration Test: it is not limited to the specific building blocks of the target system but rather validates expected configuration of a service or an environment. For example, if the environment doesn't have specific components installed, or components of specific versions, than the build fails before it is even started.
+
+
+=== Mechanizing Testing of Artifact Types
+
+
+
+=== Progression in Testing Artifacts 
+
+* Starting from
+** Configuration Testing
+** Static Testing
+** Unit Testing
+* Proceeding to
+** Interaction and integration testing
+** (Sub)Process testing
+* Ending with UI Testing
+
+Key 
+* Stopping on Failure
+
+
+
+
+
+=== Testing As Part of Automated Continuous Integration
+
+
+
+
+== Towards a Roadmap for Building a Testing Practice
+
+
+=== Starting Point
+
+* The UAT phase is the main testing phase in the system's lifecycle
+** Most tests in this phase are manual
+** Testing is limited to the end user perspective on the system
+
+* Pre-UAT phase testing exists in a rudimentary form
+** Unit tests are present but:
+*** There aren't many of unit tests
+*** They are not part of the mandatory development process
+*** Some are hard-coded to succeed
+*** Their coverage is unknown (not measured)
+** Static code analysis tool (CodeNarc) is present but:
+*** It is not used a lot
+*** It is not clear what kind of actionable items it can produce in the current process
+
+* None of the standard testing steps (unit, integration, interaction, (sub)process, user testing) are integrated within Continuous Integration (Jenkins)
+** The actual testing through Continuous Integration is in practice limited to the build succeeding or failing
+** There is no triggering of the build on committed change(s), or environment promotions, hence the CI is manual and not _continuous_
+
+
+=== Target Capabilities
+
+* Test all testable artifacts when they become available, in a way proper to the type of the artifact under test
+
+
+=== Incremental Improvements
+
+
+=== Measurements and Reporting
+
+* Coverage
+
+* Failure Rates
+
+* Defect rates
+
+* Etc.
+
+
+
+<end>
+
+
+
+
+
