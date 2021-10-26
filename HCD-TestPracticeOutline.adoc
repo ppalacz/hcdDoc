@@ -70,7 +70,7 @@ endif::[]
 |=========================================================
 |Date | Contact |Description 
 
-|10/26/2021 |   piotr.palacz@hcd.ca.gov | 
+|10/26/2021 |   piotr.palacz@hcd.ca.gov | Sections 2 and 3 completed.
 
 |10/25/2021 |   piotr.palacz@hcd.ca.gov | Document started  
 
@@ -113,7 +113,7 @@ The types of tests most often encountered in mature construction of complex soft
 * Configuration Test: it is not limited to the specific building blocks of the target system but rather validates expected configuration of a service or an environment. For example, if the environment doesn't have specific components installed, or components of specific versions, than the build fails before it is even started.
 
 
-== Mechanizing Testing of Artifact Types
+=== Mechanizing Testing of Artifact Types
 
 Despite the differences, most test share the same basic feature: they compare the actual outcome obtained from testing the artifact to some expected pre-defined outcome. Once we can pre-define the expected outcomes, mechanization of testing becomes feasible.
 
@@ -122,10 +122,9 @@ Mechanization of testing has crucial advantages over manual modes of testing:
 . The tests are unambiguous
 . Test results are reproducible and reliable
 . Testing is cheap and can be executed at any time 
-. It can be integrated into larger automated processes (such as _Continuous Integration_)
+. It can be integrated into larger automated processes (such as _Continuous Integration_, often abbreviated as 'CI')
 
 Mechanization of testing has an initial cost to it, as it requires writing (usually rather simple) software to test other software. Even though the testing frameworks and tooling (that have been available for more than a decade) make the task relatively simple, mechanization of testing carries a cost. However, this initial investment is paid back again and again over thousands (if not millions) of executions of the automated tests during the lifetime of the system.   
-
 
 === Progression in Artifact Testing 
 
@@ -133,7 +132,7 @@ Automated tests (or actually any tests) should be executed in a progression star
 
 In practice, the progression can mean the following steps:
 
-* Starting from
+* Starting with
 ** Configuration Testing
 ** Static Testing
 ** Unit Testing
@@ -142,20 +141,50 @@ In practice, the progression can mean the following steps:
 ** Interaction and integration testing
 ** (Sub)Process testing
 
-* Ending with UI Testing
+* Ending with 
+** UI Testing
+** Dedicated forms of Regression Testing
 
 The important facet of the progression is to stop the progression when defects are encountered. For example, if the environment configuration isn't right, it doesn't make much sense to embark on unit testing. If any of the unit tests fail, then it doesn't make much sense to continue with interaction testing. What does make sense is to stop before the next step, collect the defect data, and to notify the authors (or the last modifiers) of the failing artifact about the defect. The testing can resume (or restart) when the defects are fixed. 
 
 === Testing As Part of Automated Continuous Integration
 
+In a nutshell, Continuous Integration in software construction is similar to a Business Process: it has specific steps, transitions between steps that can be made under specific conditions, and so on. 
 
+The term _Continuous Integration_ rightly emphasizes the following facets of that process: 
 
+* Integration of all the steps starting from creating/modifying source code (including configuration files, schemas, etc.) up to and including the deployment of the system into Production. These steps include the following:
+** Accepting changes to the source code from developers (usually, into a version control system)
+** Building the system on a trigger (more about it below)
+** Running all automated tests if the system builds correctly
+** Deploying the built system version to the next environment when applicable (for example, promoting from DEV to TEST, from TEST to UAT, or from UAT to Production)
+** Stopping the process in case of failures and/or defects and notifying the interested parties about them.
 
+* Doing that _continuously_ when specific triggers are present. Typical triggers include the following:
+** Schedule - such as triggering the process at the end of the working day
+** Change-related event - such as commit of modifications to the version control system
+** Deployment of the newly built system from one environment to the next 
+
+In practice, all of the above triggers can be used and are used. For example, triggering a build and subsequent automated testing on every commit may seem an overkill but:
+* Automated testing is cheap
+* Builds can be incremental and fast
+* Developers have fast feedback on health of the committed changes
+* Work and testing becomes incremental, facilitating identification and fixing of defects.
 
 == Towards a Roadmap for Building a Testing Practice
 
+Building on the approach outlined in the previous sections, we can now start considering a Roadmap for building a testing practice. The roadmap needs to include the following elements:
 
-=== Starting Point
+* What is the current starting point?
+* What is the desired target state?
+* How to proceed from the current state to the target?
+* What can be used to measure progress?
+
+The subsections that follow discuss the above questions.
+
+=== The Starting Point
+
+Taking CASAS as an example, the current starting point can be characterized as follows:
 
 * The UAT phase is the main testing phase in the system's lifecycle
 ** Most tests in this phase are manual
@@ -176,29 +205,52 @@ The important facet of the progression is to stop the progression when defects a
 ** There is no triggering of the build on committed change(s), or environment promotions, hence the CI is manual and not _continuous_
 
 
-=== Target Capabilities
+=== Target State and Capabilities
 
-* Test all testable artifacts when they become available, in a way proper to the type of the artifact under test
+The target desired state is the described by adopting Continuous Integration-based approach to testing, as outlined in the section <<Key Elements of Modern Testing Practice>>. In summary, this involves ability to perform the following:
 
+* Automated testing of many kinds of building blocks of the target system
+* Following a prescribed process based on Continuous Integration approach
+* Producing reliable measures of quality of the system under test
+
+As indicated in section <<Starting Point>>, none of the above is fully realized yet, even though the basic elements are already in place, including the following:
+
+* Version control system
+* Unit tests (in small numbers)
+* Static analysis tooling (CodeNarc)
+* Continuous Integration software (Jenkins)
+* Specifications for a number of UI-based tests (performed manually)
 
 === Incremental Improvements
+ 
+Practical adoption of the Roadmap requires incremental improvements. Most of these improvements can be adopted in parallel rather than sequentially. Moreover, they can use what is already in place, even if the element is not used to its full potential (for example, Jenkins as Continuous Integration software as used in CASAS). 
 
+* The first natural step is to automate the existing manual UI tests. Doing so helps reduce the effort required with testing of new system versions (including functional and regression testing is some form), increases reliability of that testing, and provides data for measuring quality changes.
+** Subsequent improvements typically involve: 
+*** Increasing the number and/or quality of the UI tests
+*** Automated reporting of outcomes (using email, dashboards, and similar)
+*** Using transient virtual users for testing and transient side effect, so that there are no persistent side-effects in the environment (or, at least, its central data store) after the testing has been completed.
 
-=== Measurements and Reporting
+The next major step is to adopt the Continuous Integration discipline and introduce incremental improvements in the following areas:
+* Number and quality of Unit Tests
+* Measuring coverage of the Unit Tests and flagging as defective unit tests that provide coverage below an acceptable threshold
+* Introducing additional non-functional or non-UI tests, such integration and interaction tests, preferably with measurable coverage
+* Making sure that detection of defects stops the testing progression and that information about the defects/failures reaches the interested parties automatically (e.g., by email)
 
-* Coverage
+Yet another step involves gathering metrics and measuring quality or progress towards higher quality of the system under test. This is discussed in the following subsection.
 
-* Failure Rates
+=== Gathering Metrics, Quality Measurements, and Reporting
 
-* Defect rates
+Adoption of a mature testing discipline is not complete without being able to gather various metrics and quality-related measurements, and being able to produce related reporting. 
 
-* Etc.
+* Typical and natural metrics typically gathered in the testing process include failure/success counts and rates, both for the current run and historical data. However, this type of information becomes more useful if attached to metrics about the system and (versions of) its components under test. For example, a given number of defects indicates different scale of problems when small deltas are being tested, as contrasted with big modifications or additions to the system. Being able to make this type of distinctions requires linking of the information about test results as produced by the automated tests with branch/version information as available (typically) from the version control system.
 
+* In addition to gathering metrics about how the system/application behaves under test, it is crucial to be able to measure quality of the tests themselves. Fortunately, there are approaches and tooling to accomplish that. The measure of tests' quality most often used in practice is the _Coverage_ of the test in question, usually expressed as a percentage of the tested execution paths versus all available paths of execution in a component. 
 
+** Measuring Coverage is crucial because one can easily produce many tests with 100% success rate with 0% coverage. In such a situation, the tests are worthless. In order to be useful, a test must have a good coverage rate, ideally 100%. This figure is not always achievable or desirable (because of the cost/effort involved), so that practical acceptable coverage values are in the range of 70-90% depending on the situation and adopted standards.
+
+** In case of Unit Tests, there is tooling that makes it easy to automatically determine coverage (in systems like CASAS). Measuring coverage of tests executing a workflow or a business process is more challenging but still worthy of attention. 
+
+* Reporting and aggregating test data is usually provided functionality in most Continuous Integration software. Even the already mention Jenkins, an Open Source solution, provides sufficient reporting and data aggregation facilities. Moreover, standard capabilities of CI implementations typically include automatic generation and _delivery_ of reports.   
 
 <end>
-
-
-
-
-
