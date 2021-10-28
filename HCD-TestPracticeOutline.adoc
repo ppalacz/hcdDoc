@@ -1,9 +1,9 @@
-= Test Practice Outline
+= Test Practice Strategy Outline
 Discussion Material
 
 image::images/HCD_head_web.png[align="center"]
 
-:revnumber: 10/25/2021
+:revnumber: 10/27/2021
 :Author Initials: pxp
 :email: <piotr.palacz@hcd.ca.gov>
 :icons:
@@ -51,7 +51,7 @@ endif::[]
 
 == Overview
 
-This document is intended to provide key concepts and ideas for organizing a modern and mature Test Practice in HCD. In its initial version, it provides material for discussing the current and desired/target state of the testing practices, and the roadmap. The document advocates adopting CI (_Continuous Integration_) approach and tooling for the development and testing practices in HCD. 
+This document is intended to provide key concepts and ideas for organizing a modern and mature Test Practice in HCD. In its initial version, it provides material for discussing the current and desired/target state of the testing practices, and the roadmap. The document advocates adopting CI (_Continuous Integration_) approach and tooling for the development and testing practices in HCD, taking as the . 
  
 === Main Sections
 
@@ -63,9 +63,11 @@ This document is intended to provide key concepts and ideas for organizing a mod
 === Change History
 
 .Change History
-[width="95%",cols="3,^2,10",options="header"]
+[width="98%",cols="3,^5,10",options="header"]
 |=========================================================
 |Date | Contact |Description 
+
+|10/26/2021 |   piotr.palacz@hcd.ca.gov | Minor corrections; generated .docx version.
 
 |10/26/2021 |   piotr.palacz@hcd.ca.gov | Sections 2 and 3 completed.
 
@@ -81,12 +83,12 @@ This section describes the following key elements/practices of modern testing pr
 * Testing many kinds of artifacts - rather than one (most often, the UI)
 * Mechanizing Testing - rather than relying on manual testing
 * Integrating Testing with Continuous Integration - rather than treating it as an activity separated from the development and environment promotions
-* Adopting Testing Progression: starting with the simplest tests and proceeding to the most complex ones, if the simpler tests succeed, and stopping on failure - rather than waving defects and failures through
+* Adopting Testing Progression: starting with the simplest tests and proceeding to the most complex ones, if the simpler tests succeed, and stopping on failure - rather than waving defects and failures through.
 
 
 === Testing Many Kinds of Artifacts
 
-Testing of complex software systems involves testing of many kinds of artifacts that are the building blocks for the target system. Often, each kind of artifact - such as Java class, REST API client, HTML/CSS/javascript UI - require different type of testing. Moreover, testing of some kinds of artifacts is difficult or impossible to do in isolation from other artifacts or components. 
+Testing of complex software systems involves testing of many kinds of artifacts that are the building blocks for the target system. Often, each kind of artifact - such as Java class, REST API client, HTML/CSS/javascript UI - require different types of testing. Moreover, testing of some kinds of artifacts is difficult or impossible to do in isolation from other artifacts or components. 
 
 The types of tests most often encountered in mature construction of complex software systems include the following:
 
@@ -163,6 +165,7 @@ The term _Continuous Integration_ rightly emphasizes the following facets of tha
 ** Deployment of the newly built system from one environment to the next 
 
 In practice, all the above triggers can be used and are used. For example, triggering a build and subsequent automated testing on every commit may seem an overkill but:
+
 * Automated testing is cheap
 * Builds can be incremental and fast
 * Developers have fast feedback on health of the committed changes
@@ -210,7 +213,7 @@ The target desired state is the described by adopting Continuous Integration-bas
 * Following a prescribed process based on Continuous Integration approach
 * Producing reliable measures of quality of the system under test
 
-As indicated in section <<Starting Point>>, none of the above is fully realized yet, even though the basic elements are already in place, including the following:
+As indicated in section <<The Starting Point>>, none of the above is fully realized yet, even though the basic elements are already in place, including the following:
 
 * Version control system
 * Unit tests (in small numbers)
@@ -229,6 +232,7 @@ Practical adoption of the Roadmap requires incremental improvements. Most of the
 *** Using transient virtual users for testing and transient side effect, so that there are no persistent side-effects in the environment (or, at least, its central data store) after the testing has been completed.
 
 The next major step is to adopt the Continuous Integration discipline and introduce incremental improvements in the following areas:
+
 * Number and quality of Unit Tests
 * Measuring coverage of the Unit Tests and flagging as defective unit tests that provide coverage below an acceptable threshold
 * Introducing additional non-functional or non-UI tests, such integration and interaction tests, preferably with measurable coverage

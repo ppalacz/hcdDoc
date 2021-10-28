@@ -1,0 +1,213 @@
+<p><img src="images/HCD_head_web.png" alt="HCD head web" /></p>
+<h1 id="_overview">Overview</h1>
+<p>This document is intended to provide key concepts and ideas for organizing a modern and mature Test Practice in HCD. In its initial version, it provides material for discussing the current and desired/target state of the testing practices, and the roadmap. The document advocates adopting CI (<em>Continuous Integration</em>) approach and tooling for the development and testing practices in HCD, taking as the .</p>
+<h2 id="_main_sections">Main Sections</h2>
+<ol type="1">
+<li><p>The section <a href="#_key_elements_of_modern_testing_practice">Key Elements of Modern Testing Practice</a> identifies key concepts of modern testing practices applicable to software intensive systems and provides a short description of how they hang together</p></li>
+<li><p>The section <a href="#_towards_a_roadmap_for_building_a_testing_practice">Towards a Roadmap for Building a Testing Practice</a> provides an outline of the roadmap with respect to testing practices, starting with a summary of the current state and the target desired capabilities of the practice.</p></li>
+</ol>
+<h2 id="_change_history">Change History</h2>
+<table style="width:100%;">
+<caption>Change History</caption>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 27%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Contact</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>10/26/2021</p></td>
+<td><p><a href="mailto:piotr.palacz@hcd.ca.gov">piotr.palacz@hcd.ca.gov</a></p></td>
+<td><p>Minor corrections; generated .docx version.</p></td>
+</tr>
+<tr class="even">
+<td><p>10/26/2021</p></td>
+<td><p><a href="mailto:piotr.palacz@hcd.ca.gov">piotr.palacz@hcd.ca.gov</a></p></td>
+<td><p>Sections 2 and 3 completed.</p></td>
+</tr>
+<tr class="odd">
+<td><p>10/25/2021</p></td>
+<td><p><a href="mailto:piotr.palacz@hcd.ca.gov">piotr.palacz@hcd.ca.gov</a></p></td>
+<td><p>Document started</p></td>
+</tr>
+</tbody>
+</table>
+<h1 id="_key_elements_of_modern_testing_practice">Key Elements of Modern Testing Practice</h1>
+<p>This section describes the following key elements/practices of modern testing process for sizeable software systems:</p>
+<ul>
+<li><p>Testing many kinds of artifacts - rather than one (most often, the UI)</p></li>
+<li><p>Mechanizing Testing - rather than relying on manual testing</p></li>
+<li><p>Integrating Testing with Continuous Integration - rather than treating it as an activity separated from the development and environment promotions</p></li>
+<li><p>Adopting Testing Progression: starting with the simplest tests and proceeding to the most complex ones, if the simpler tests succeed, and stopping on failure - rather than waving defects and failures through.</p></li>
+</ul>
+<h2 id="_testing_many_kinds_of_artifacts">Testing Many Kinds of Artifacts</h2>
+<p>Testing of complex software systems involves testing of many kinds of artifacts that are the building blocks for the target system. Often, each kind of artifact - such as Java class, REST API client, HTML/CSS/javascript UI - require different types of testing. Moreover, testing of some kinds of artifacts is difficult or impossible to do in isolation from other artifacts or components.</p>
+<p>The types of tests most often encountered in mature construction of complex software systems include the following:</p>
+<ul>
+<li><p>Unit Test: this is the least complex form of testing, where the "unit" usually means:</p>
+<ul>
+<li><p>Implementation class (in OO languages like groovy or java, or hybrid ones, like javascript)</p></li>
+<li><p>Implementation function (in functional languages like javascript)</p></li>
+</ul></li>
+<li><p>Static Testing: "static" refers to the forms of testing that do not require executing the code. Typical examples include:</p>
+<ul>
+<li><p>Testing of the source for compliance with prescribed standards and/or guidelines</p></li>
+<li><p>Testing for presence of security-, performance-, or reliability-affecting patterns in the source code</p></li>
+</ul></li>
+<li><p>Interaction Test: tests integration between two units (sometimes more than two), where the objective is to validate is two units interact in expected ways</p></li>
+<li><p>Integration Test typically validates if interaction of a building block with an external system, resource, or service produces outcomes as expected. There are techniques (such as <em>mocking</em>) that allow for this type of testing even in absence of the external system or resource - which, in practice, may be the case.</p></li>
+<li><p>(Sub)Process Test allows for testing of defined business processes/workflows, either in part or. Note that this is different from UI testing, in which UI must be present, whereas in (sub)Process testing there may be no UI available.</p></li>
+<li><p>UI Test is the most used form of testing that relies on actual or simulated interactions of actual or virtual user with the User Interface. In its manual form, this is a laborious and not nearly as reliable as automatic testing.</p></li>
+<li><p>Configuration Test: it is not limited to the specific building blocks of the target system but rather validates expected configuration of a service or an environment. For example, if the environment doesn’t have specific components installed, or components of specific versions, then the build fails before it is even started.</p></li>
+</ul>
+<h2 id="_mechanizing_testing_of_artifact_types">Mechanizing Testing of Artifact Types</h2>
+<p>Despite the differences, most test share the same basic feature: they compare the actual outcome obtained from testing the artifact to some expected pre-defined outcome. Once we can pre-define the expected outcomes, mechanization of testing becomes feasible.</p>
+<p>Mechanization of testing has crucial advantages over manual modes of testing:</p>
+<ol type="1">
+<li><p>The tests are unambiguous</p></li>
+<li><p>Test results are reproducible and reliable</p></li>
+<li><p>Testing is cheap and can be executed at any time</p></li>
+<li><p>It can be integrated into larger automated processes (such as <em>Continuous Integration</em>, often abbreviated as 'CI')</p></li>
+</ol>
+<p>Mechanization of testing has an initial cost to it, as it requires writing (usually rather simple) software to test other software. Even though the testing frameworks and tooling (that have been available for more than a decade) make the task relatively simple, mechanization of testing carries a cost. However, this initial investment is paid back again and again over thousands (if not millions) of executions of the automated tests during the lifetime of the system.</p>
+<h2 id="_progression_in_artifact_testing">Progression in Artifact Testing</h2>
+<p>Automated tests (or any tests) should be executed in a progression starting with the tests of the simplest building blocks. This approach is based on the simple idea that, first, starting with the cheapest forms of testing and with simplest artifacts makes sense; second, that in case of any failure of simple artifacts, it doesn’t probably make sense (in terms of cost and time) to proceed to testing of more complex artifacts until the defect is fixed.</p>
+<p>In practice, the progression can mean the following steps:</p>
+<ul>
+<li><p>Starting with</p>
+<ul>
+<li><p>Configuration Testing</p></li>
+<li><p>Static Testing</p></li>
+<li><p>Unit Testing</p></li>
+</ul></li>
+<li><p>Proceeding to</p>
+<ul>
+<li><p>Interaction and integration testing</p></li>
+<li><p>(Sub)Process testing</p></li>
+</ul></li>
+<li><p>Ending with</p>
+<ul>
+<li><p>UI Testing</p></li>
+<li><p>Dedicated forms of Regression Testing</p></li>
+</ul></li>
+</ul>
+<p>The important facet of the progression is to stop the progression when defects are encountered. For example, if the environment configuration isn’t right, it doesn’t make much sense to embark on unit testing. If any of the unit tests fail, then it doesn’t make much sense to continue with interaction testing. What does make sense is to stop before the next step, collect the defect data, and to notify the authors (or the last modifiers) of the failing artifact about the defect. The testing can resume (or restart) when the defects are fixed.</p>
+<h2 id="_testing_as_part_of_automated_continuous_integration">Testing As Part of Automated Continuous Integration</h2>
+<p>In a nutshell, Continuous Integration in software construction is like a Business Process: it has specific steps, transitions between steps that can be made under specific conditions, and so on.</p>
+<p>The term <em>Continuous Integration</em> rightly emphasizes the following facets of that process:</p>
+<ul>
+<li><p>Integration of all the steps starting from creating/modifying source code (including configuration files, schemas, etc.) up to and including the deployment of the system into Production. These steps include the following:</p>
+<ul>
+<li><p>Accepting changes to the source code from developers (usually, into a version control system)</p></li>
+<li><p>Building the system on a trigger (more about it below)</p></li>
+<li><p>Running all automated tests if the system builds correctly</p></li>
+<li><p>Deploying the built system version to the next environment when applicable (for example, promoting from DEV to TEST, from TEST to UAT, or from UAT to Production)</p></li>
+<li><p>Stopping the process in case of failures and/or defects and notifying the interested parties about them.</p></li>
+</ul></li>
+<li><p>Doing that <em>continuously</em> when specific triggers are present. Typical triggers include the following:</p>
+<ul>
+<li><p>Schedule - such as triggering the process at the end of the working day</p></li>
+<li><p>Change-related event - such as commit of modifications to the version control system</p></li>
+<li><p>Deployment of the newly built system from one environment to the next</p></li>
+</ul></li>
+</ul>
+<p>In practice, all the above triggers can be used and are used. For example, triggering a build and subsequent automated testing on every commit may seem an overkill but:</p>
+<ul>
+<li><p>Automated testing is cheap</p></li>
+<li><p>Builds can be incremental and fast</p></li>
+<li><p>Developers have fast feedback on health of the committed changes</p></li>
+<li><p>Work and testing become incremental, facilitating identification, and fixing of defects.</p></li>
+</ul>
+<h1 id="_towards_a_roadmap_for_building_a_testing_practice">Towards a Roadmap for Building a Testing Practice</h1>
+<p>Building on the approach outlined in the previous sections, we can now start considering a Roadmap for building a testing practice. The roadmap needs to include the following elements:</p>
+<ul>
+<li><p>What is the current starting point?</p></li>
+<li><p>What is the desired target state?</p></li>
+<li><p>How to proceed from the current state to the target?</p></li>
+<li><p>What can be used to measure progress?</p></li>
+</ul>
+<p>The subsections that follow discuss the above questions.</p>
+<h2 id="_the_starting_point">The Starting Point</h2>
+<p>Taking CASAS as an example, the current starting point can be characterized as follows:</p>
+<ul>
+<li><p>The UAT phase is the main testing phase in the system’s lifecycle</p>
+<ul>
+<li><p>Most tests in this phase are manual</p></li>
+<li><p>Testing is limited to the end user perspective on the system</p></li>
+</ul></li>
+<li><p>Pre-UAT phase testing exists in a rudimentary form</p>
+<ul>
+<li><p>Unit tests are present but:</p>
+<ul>
+<li><p>There aren’t many of unit tests</p></li>
+<li><p>They are not part of the mandatory development process</p></li>
+<li><p>Some are hard-coded to succeed</p></li>
+<li><p>Their coverage is unknown (not measured)</p></li>
+</ul></li>
+<li><p>Static code analysis tool (CodeNarc) is present but:</p>
+<ul>
+<li><p>It is not used a lot</p></li>
+<li><p>It is not clear what kind of actionable items it can produce in the current process</p></li>
+</ul></li>
+</ul></li>
+<li><p>None of the standard testing steps (unit, integration, interaction, (sub)process, user testing) are integrated within Continuous Integration (Jenkins)</p>
+<ul>
+<li><p>The actual testing through Continuous Integration is in practice limited to the build succeeding or failing</p></li>
+<li><p>There is no triggering of the build on committed change(s), or environment promotions, hence the CI is manual and not <em>continuous</em></p></li>
+</ul></li>
+</ul>
+<h2 id="_target_state_and_capabilities">Target State and Capabilities</h2>
+<p>The target desired state is the described by adopting Continuous Integration-based approach to testing, as outlined in the section <a href="#_key_elements_of_modern_testing_practice">Key Elements of Modern Testing Practice</a>. In summary, this involves ability to perform the following:</p>
+<ul>
+<li><p>Automated testing of many kinds of building blocks of the target system</p></li>
+<li><p>Following a prescribed process based on Continuous Integration approach</p></li>
+<li><p>Producing reliable measures of quality of the system under test</p></li>
+</ul>
+<p>As indicated in section <a href="#_the_starting_point">The Starting Point</a>, none of the above is fully realized yet, even though the basic elements are already in place, including the following:</p>
+<ul>
+<li><p>Version control system</p></li>
+<li><p>Unit tests (in small numbers)</p></li>
+<li><p>Static analysis tooling (CodeNarc)</p></li>
+<li><p>Continuous Integration software (Jenkins)</p></li>
+<li><p>Specifications for several UI-based tests (performed manually)</p></li>
+</ul>
+<h2 id="_incremental_improvements">Incremental Improvements</h2>
+<p>Practical adoption of the Roadmap requires incremental improvements. Most of these improvements can be adopted in parallel rather than sequentially. Moreover, they can use what is already in place, even if the element is not used to its full potential (for example, Jenkins as Continuous Integration software as used in CASAS).</p>
+<ul>
+<li><p>The first natural step is to automate the existing manual UI tests. Doing so helps reduce the effort required with testing of new system versions (including functional and regression testing is some form), increases reliability of that testing, and provides data for measuring quality changes.</p>
+<ul>
+<li><p>Subsequent improvements typically involve:</p>
+<ul>
+<li><p>Increasing the number and/or quality of the UI tests</p></li>
+<li><p>Automated reporting of outcomes (using email, dashboards, and similar)</p></li>
+<li><p>Using transient virtual users for testing and transient side effect, so that there are no persistent side-effects in the environment (or, at least, its central data store) after the testing has been completed.</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>The next major step is to adopt the Continuous Integration discipline and introduce incremental improvements in the following areas:</p>
+<ul>
+<li><p>Number and quality of Unit Tests</p></li>
+<li><p>Measuring coverage of the Unit Tests and flagging as defective unit tests that provide coverage below an acceptable threshold</p></li>
+<li><p>Introducing additional non-functional or non-UI tests, such integration and interaction tests, preferably with measurable coverage</p></li>
+<li><p>Making sure that detection of defects stops the testing progression and that information about the defects/failures reaches the interested parties automatically (e.g., by email)</p></li>
+</ul>
+<p>Yet another step involves gathering metrics and measuring quality or progress towards higher quality of the system under test. This is discussed in the following subsection.</p>
+<h2 id="_gathering_metrics_quality_measurements_and_reporting">Gathering Metrics, Quality Measurements, and Reporting</h2>
+<p>Adoption of a mature testing discipline is not complete without being able to gather various metrics and quality-related measurements and being able to produce related reporting.</p>
+<ul>
+<li><p>Typical and natural metrics typically gathered in the testing process include failure/success counts and rates, both for the current run and historical data. However, this type of information becomes more useful if attached to metrics about the system and (versions of) its components under test. For example, a given number of defects indicates different scale of problems when small deltas are being tested, as contrasted with big modifications or additions to the system. Being able to make this type of distinctions requires linking of the information about test results as produced by the automated tests with branch/version information as available (typically) from the version control system.</p></li>
+<li><p>In addition to gathering metrics about how the system/application behaves under test, it is crucial to be able to measure quality of the tests themselves. Fortunately, there are approaches and tooling to accomplish that. The measure of tests' quality most often used in practice is the <em>Coverage</em> of the test in question, usually expressed as a percentage of the tested execution paths versus all available paths of execution in a component.</p>
+<ul>
+<li><p>Measuring Coverage is crucial because one can easily produce many tests with 100% success rate with 0% coverage. In such a situation, the tests are worthless. To be useful, a test must have a good coverage rate, ideally 100%. This figure is not always achievable or desirable (because of the cost/effort involved), so that practical acceptable coverage values are in the range of 70-90% depending on the situation and adopted standards.</p></li>
+<li><p>In case of Unit Tests, there is tooling that makes it easy to automatically determine coverage (in systems like CASAS). Measuring coverage of tests executing a workflow or a business process is more challenging but still worthy of attention.</p></li>
+</ul></li>
+<li><p>Reporting and aggregating test data is usually provided functionality in most Continuous Integration software. Even the already mention Jenkins, an Open-Source solution, provides sufficient reporting and data aggregation facilities. Moreover, standard capabilities of CI implementations typically include automatic generation and <em>delivery</em> of reports.</p></li>
+</ul>
+<p>&lt;end&gt;</p>
