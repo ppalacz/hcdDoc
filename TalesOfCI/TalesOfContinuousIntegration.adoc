@@ -134,17 +134,23 @@ If "development" is treated as a _business process_ (and in some way, it is), ho
 
 ** Triggering actions in response to relevant events
 
-WARNING: The challenges are: (1) To tie all components together (2) To convince people to start using the new way of doing things
+WARNING: The challenges are: (1) To sensibly configure the pieces, (2) to tie all pieces together, and (3) to convince people to adopt and actually use the new way of doing things.
 
 
 == CI Building Blocks, #2/2
 
 The building blocks above are configurable/extensible, using e.g. plugins that cover:
+
 * Running tests and reporting their results
+
 * Generating API/source code documentation
+
 * Sending/receiving notifications/emails
+
 * Static source code analysis
+
 * Moving deployment artifacts among servers, environments
+
 * and so on
 
 Tooling that is not useful for CI includes Visio, Excel, MS Project
@@ -152,20 +158,26 @@ Tooling that is not useful for CI includes Visio, Excel, MS Project
 == The Case of the EASE Project
 
 * EASE Context and Architecture
+
 * Cultural and Technological Starting Points
+
 * CI Implementation in EASE
 
 == EASE Context and Architecture
 
+
 == Cultural and Technological Starting Points
 
 * Traditional, mainframe and System/2-based development culture
-* Challenges in understanding the needs of large software construction (the _Restaurant Metaphor_) 
+* Challenges in understanding the needs of large software construction project (the _Restaurant Metaphor_) 
 * Fear of change and of technological _novelties_, micromanaged
 
 However, it was a clean slate for: 
+
 * Mainstream SOA 
+
 * Incremental/rapid SDLC
+
 * J2EE-based software construction
 
 == CI Implementation in EASE: Building Blocks 
@@ -179,7 +191,6 @@ However, it was a clean slate for:
 * Wiki: JAMWiki (clone of MediaWiki as in https://wikipedia.org)
 
 * IDE: IBM Rational/Eclipse https://www.eclipse.org/
-
 
 == CI Capabilities in EASE
 
@@ -215,7 +226,7 @@ NOTE: No multiple administrators for ##1-6 (with exception of Unit Test creation
 
 ** It makes clear what the _unit_ is expected to do
 
-** It makes aggressive refactoring feasible
+** It makes refactoring feasible, even aggressive refactoring when needed
 
 * Granular and frequent commits decrease version conflicts among committers and my stress in general
 
@@ -256,7 +267,7 @@ NOTE: No multiple administrators for ##1-6 (with exception of Unit Test creation
 
 ** And properly configured to work together
 
-** None of it is a _huge_ effort
+** None of it is a _huge_ effort to implement
 
 == Under-Developed Areas
 
