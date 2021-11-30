@@ -1,0 +1,96 @@
+= HCD Web/Drupal Setup Notes
+For Internal Use Only
+
+image::images/HCD_head_web.png[align="center"]
+
+:revnumber: 11/29/2021
+:Author Initials: pxp
+:email: <piotr.palacz@hcd.ca.gov>
+:icons:
+:numbered:
+:toc:
+
+
+ifdef::backend-html5[]
+:twoinches: width='144'
+:full-width: width='100%'
+:half-width: width='50%'
+:half-size: width='50%'
+:thumbnail: width='60'
+:size10: width='10%'
+:size15: width='15%'
+:size25: width='25%'
+:size40: width='40%'
+:size50: width='50%'
+:size60: width='60%'
+:size75: width='75%'
+endif::[]
+ifdef::backend-pdf[]
+:twoinches: pdfwidth='2in'
+:full-width: pdfwidth='100vw'
+:half-width: pdfwidth='50vw'
+:half-size: pdfwidth='50%'
+:thumbnail: pdfwidth='20mm'
+:size10: pdfwidth='10%'
+:size15: pdfwidth='15%'
+:size25: pdfwidth='25%'
+:size40: pdfwidth='40%'
+:size50: pdfwidth='50%'
+:size60: pdfwidth='60%'
+:size75: pdfwidth='75%'
+endif::[]
+ifdef::backend-docbook5[]
+:twoinches: width='50mm'
+:full-width: scaledwidth='100%'
+:half-width: scaledwidth='50%'
+:half-size: width='50%'
+:thumbnail: width='20mm'
+:size40: width='40%'
+:size50: width='50%'
+endif::[]
+
+== Overview
+
+This document provides an overview of deployment, interactions, and management of Drupal installations at HCD.
+Given the type of information provided, it is _not_ a public document, and it should be circulated only internally. 
+ 
+=== Main Sections
+
+. The section <<Key Elements of Modern Testing Practice>> identifies key concepts of modern testing practices applicable to software intensive systems and provides a short description of how they hang together
+
+. The section <<Towards a Roadmap for Building a Testing Practice>> provides an outline of the roadmap with respect to testing practices, starting with a summary of the current state and the target desired capabilities of the practice.
+ 
+
+=== Change History
+
+.Change History
+[width="98%",cols="3,^5,10",options="header"]
+|=========================================================
+|Date | Contact |Description 
+
+|10/29/2021 |   piotr.palacz@hcd.ca.gov | Diagrams added.
+
+|11/24/2021 |   piotr.palacz@hcd.ca.gov | Document created  
+
+|=========================================================
+
+
+== Context
+
+This section describes the following key elements/practices of modern testing process for sizeable software systems:
+
+* Testing many kinds of artifacts - rather than one (most often, the UI)
+* Mechanizing Testing - rather than relying on manual testing
+* Integrating Testing with Continuous Integration - rather than treating it as an activity separated from the development and environment promotions
+* Adopting Testing Progression: starting with the simplest tests and proceeding to the most complex ones, if the simpler tests succeed, and stopping on failure - rather than waving defects and failures through.
+
+
+== Containers
+
+
+
+== Components
+
+
+
+<end>

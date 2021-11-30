@@ -1,0 +1,303 @@
+= Tales of Continuous Integration
+(or: Lessons Learnt from Introducing CI)
+
+image::images/HCD_head_web.png[align="center"]
+
+:revnumber: 10/21/2021
+:Author Initials: pxp
+:email: <piotr.palacz@hcd.ca.gov>
+:icons:
+:numbered:
+:toc:
+
+
+ifdef::backend-html5[]
+:twoinches: width='144'
+:full-width: width='100%'
+:half-width: width='50%'
+:half-size: width='50%'
+:thumbnail: width='60'
+:size10: width='10%'
+:size15: width='15%'
+:size25: width='25%'
+:size40: width='40%'
+:size50: width='50%'
+:size60: width='60%'
+:size75: width='75%'
+endif::[]
+ifdef::backend-pdf[]
+:twoinches: pdfwidth='2in'
+:full-width: pdfwidth='100vw'
+:half-width: pdfwidth='50vw'
+:half-size: pdfwidth='50%'
+:thumbnail: pdfwidth='20mm'
+:size10: pdfwidth='10%'
+:size15: pdfwidth='15%'
+:size25: pdfwidth='25%'
+:size40: pdfwidth='40%'
+:size50: pdfwidth='50%'
+:size60: pdfwidth='60%'
+:size75: pdfwidth='75%'
+endif::[]
+ifdef::backend-docbook5[]
+:twoinches: width='50mm'
+:full-width: scaledwidth='100%'
+:half-width: scaledwidth='50%'
+:half-size: width='50%'
+:thumbnail: width='20mm'
+:size40: width='40%'
+:size50: width='50%'
+endif::[]
+
+ifdef::backend-revealjs[]
+:twoinches: width='144'
+:full-width: width='100%'
+:half-width: width='50%'
+:half-size: width='50%'
+:thumbnail: width='60'
+:size10: width='10%'
+:size15: width='15%'
+:size25: width='25%'
+:size40: width='40%'
+:size50: width='50%'
+:size60: width='60%'
+:size75: width='75%'
+endif::[]
+
+== Overview
+
+This presentation is about real-life, first-hand experiences when adopting CI in sizeable state projects.
+Much of it covers the years 2008-2012 and a single project, with some additions outside that period.
+
+The presentation is intended as a starting point for discussing CI/CD-related efforts for HCD.
+
+===  Outline
+
+. CI Key Ideas and Building Blocks
+. Sample Case: the EASE Project
+.. Project Context
+.. CI-related choices 
+.. Implemented CI capabilities
+.. Underdeveloped areas
+. Retrospective and Lessons, for the Developer, Tester, Technical Manager
+. What has changed in the meantime?
+.. How these changes affect the need and feasibility of CI/CD now? 
+ 
+== CI Key Ideas 
+
+Software construction (or "development") is like any other "functional" process:
+
+* Has different roles to it
+
+* Has various activities in it
+
+* Some of them are not (yet) automatable, but many may be
+
+* Regardless, they form a workflow or series of related workflows
+
+If "development" is treated as a _business process_ (and in some way, it is), how would we approach it?
+
+
+== Main Pain Points
+
+* Keeping track of versions and their configurations
+
+* Keeping track of dependencies and complex build actions
+
+* Testing in various forms
+
+** Esp. if manual
+
+** Regardless, need to measure and report
+
+* Assembling artifacts and installing them in the target environment
+
+* Triggering applicable actions on specific events (generally, most types of changes)
+
+* Keeping track of the relevant, local know-how
+
+* Keeping track of requests, defects, and their state
+
+
+== CI Building Blocks, #1/2
+
+
+* Version Control System (cvs, subversion, git, etc.): keeping track of versions and their sets
+
+* Build System (make, maven, gradle, etc.): taking care of complex builds
+
+* Wiki (MediaWiki, JAMWiki, JIRA Confluence, etc.): keeping track of know-how
+
+* Issue/Bug Tracking (JIRA, Backlog, Redmine, etc. )
+
+* CI System (Hudson/Jenkings, TeamCity, Bamboo, etc.): 
+
+** Triggering actions in response to relevant events
+
+WARNING: The challenges are: (1) To tie all components together (2) To convince people to start using the new way of doing things
+
+
+== CI Building Blocks, #2/2
+
+The building blocks above are configurable/extensible, using e.g. plugins that cover:
+* Running tests and reporting their results
+* Generating API/source code documentation
+* Sending/receiving notifications/emails
+* Static source code analysis
+* Moving deployment artifacts among servers, environments
+* and so on
+
+Tooling that is not useful for CI includes Visio, Excel, MS Project
+
+== The Case of the EASE Project
+
+* EASE Context and Architecture
+* Cultural and Technological Starting Points
+* CI Implementation in EASE
+
+== EASE Context and Architecture
+
+== Cultural and Technological Starting Points
+
+* Traditional, mainframe and System/2-based development culture
+* Challenges in understanding the needs of large software construction (the _Restaurant Metaphor_) 
+* Fear of change and of technological _novelties_, micromanaged
+
+However, it was a clean slate for: 
+* Mainstream SOA 
+* Incremental/rapid SDLC
+* J2EE-based software construction
+
+== CI Implementation in EASE: Building Blocks 
+
+* Version Control System:  CVS https://en.wikipedia.org/wiki/Concurrent_Versions_System
+
+* Build System: maven https://maven.apache.org
+
+* CI System: Jenkins https://en.wikipedia.org/wiki/Jenkins_(software)
+
+* Wiki: JAMWiki (clone of MediaWiki as in https://wikipedia.org)
+
+* IDE: IBM Rational/Eclipse https://www.eclipse.org/
+
+
+== CI Capabilities in EASE
+
+. IDEs configured with VCS (standard today)
+
+. Automated builds triggered by schedule and commit events
+
+. Generation of source code documentation 
+
+. Static code analysis
+
+. Automated Unit Test execution, including:
+
+.. Coverage determination
+
+.. Reporting of outcomes
+
+.. Notification of failures by email
+
+. Wiki-based document repository, including:
+
+.. Architectural documents and guidelines
+
+.. Standards and Guidelines
+
+.. HOWTOs, code samples, tutorials and introductions
+
+NOTE: No multiple administrators for ##1-6 (with exception of Unit Test creation); all maintenance done on fractional time basis. All software components were Open Source, with exception of the commercial version of Eclipse (RSA IDE)
+
+== Lessons for the Developer 
+
+* Unit Testing turns out to be my friend, after initial pains
+
+** It makes clear what the _unit_ is expected to do
+
+** It makes aggressive refactoring feasible
+
+* Granular and frequent commits decrease version conflicts among committers and my stress in general
+
+** I know where we are, at least at top of the hour 
+
+* I am not subject to the blame game
+
+
+== Lessons for the Tester
+
+* The system I am to test has no trivial _repeated_ failures
+
+* Regression testing at the basic level is already taken care of for me
+
+* Low-level tests are repeatable, with known success rate and coverage, and I can rely on that
+
+* Configuration/assembly problems are rare:
+
+** Everything is built multiple times a day
+
+** The same configuration and built procedures are reused again and again - mechanically
+
+== Lessons for the Technical Lead/Manager
+
+* Acceptance of CI and related practices doesn't happen suddenly or by spontaneous acclamation
+
+* Some technology choices have visible impact on (dis)solving standard problems, such as:
+
+** Sharing (rather than hoarding) the know-how
+
+** Attribution of responsibility (e.g., code/test ownership)
+
+** Maintaining good cadence of work
+
+* The scope of CI/CD can be incrementally grown, but there is a minimal level that must be reached
+
+** Having all required pieces in place (VCS, Build System, CI, e-mailing, Reporting/Documentation generation) 
+
+** And properly configured to work together
+
+** None of it is a _huge_ effort
+
+== Under-Developed Areas
+
+. CI rather than CI/CD
+
+.. CD not yet a mainstream concept
+
+.. Limited access to the target PROD environment (J2EE servers on mainframes [sic!]) managed by a separate department
+
+. No dedicated application for defect tracking (easy to fix in theory, tedious in practice)
+
+. Bad tooling choices for:
+
+.. Maintaining Requirements
+
+.. Traceability to Requirements 
+
+
+.Example
+[example]
+
+example
+
+== Final Slide
+
+
+[appendix]
+== Change History & Notes
+
+NOTE: This is not a PowerPoint presentation. It has been created using a _markup_ both for slides (in this case, AsciiDoc) and for the diagrams (in this case, PlantUML).
+
+
+.Change History
+[width="95%",cols="3,^2,10",options="header"]
+|=========================================================
+|Date | Contact |Description 
+
+|10/21/2021 |   piotr.palacz@hcd.ca.gov |  
+
+|10/20/2021 |   piotr.palacz@hcd.ca.gov | Document started  
+
+|=========================================================
+
+<end>
