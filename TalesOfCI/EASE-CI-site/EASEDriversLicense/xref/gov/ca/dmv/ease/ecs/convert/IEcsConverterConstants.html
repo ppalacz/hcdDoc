@@ -1,0 +1,1035 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" /><title>IEcsConverterConstants xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../../../../../../../apidocs/gov/ca/dmv/ease/ecs/convert/IEcsConverterConstants.html">View Javadoc</a></div><pre>
+
+<a name="1" href="#1">1</a>   <em>/**<em>*</em></em>
+<a name="2" href="#2">2</a>   <em> * This source code contains State of California's confidential and trade secret information.</em>
+<a name="3" href="#3">3</a>   <em> * Any use of this code other than for backup is strictly prohibited.</em>
+<a name="4" href="#4">4</a>   <em> *</em>
+<a name="5" href="#5">5</a>   <em> * Copyright State of California (c) 2008</em>
+<a name="6" href="#6">6</a>   <em> * <a href="http://www.california.gov" target="alexandria_uri">http://www.california.gov</a></em>
+<a name="7" href="#7">7</a>   <em> */</em>
+<a name="8" href="#8">8</a>   <strong>package</strong> gov.ca.dmv.ease.ecs.convert;
+<a name="9" href="#9">9</a>   
+<a name="10" href="#10">10</a>  <em>/**<em>*</em></em>
+<a name="11" href="#11">11</a>  <em> * Description: Interface containing constants for ecs converters</em>
+<a name="12" href="#12">12</a>  <em> * File:ICodeSetNameConstants.java</em>
+<a name="13" href="#13">13</a>  <em> * Module: gov.ca.dmv.ease.bo.code</em>
+<a name="14" href="#14">14</a>  <em> * Created: Apr 19,2010</em>
+<a name="15" href="#15">15</a>  <em> * @author MWTJC1</em>
+<a name="16" href="#16">16</a>  <em> * @version $Revision: 1.49 $</em>
+<a name="17" href="#17">17</a>  <em> * Last Changed: $Date: 2010/08/11 16:17:37 $</em>
+<a name="18" href="#18">18</a>  <em> * Last Changed By: $Author: mwpxr4 $</em>
+<a name="19" href="#19">19</a>  <em> */</em>
+<a name="20" href="#20">20</a>  <strong>public</strong> <strong>interface</strong> <a href="../../../../../../gov/ca/dmv/ease/ecs/convert/IEcsConverterConstants.html">IEcsConverterConstants</a> {
+<a name="21" href="#21">21</a>  	<em class="comment">// Non categorized constants</em>
+<a name="22" href="#22">22</a>  	<em>/**<em>* The constant STAR */</em></em>
+<a name="23" href="#23">23</a>  	String STAR = <span class="string">"*"</span>;
+<a name="24" href="#24">24</a>  	<em>/**<em>* The constant Y */</em></em>
+<a name="25" href="#25">25</a>  	String YES = <span class="string">"Y"</span>;
+<a name="26" href="#26">26</a>  	<em>/**<em>* The constant N */</em></em>
+<a name="27" href="#27">27</a>  	String NO = <span class="string">"N"</span>;
+<a name="28" href="#28">28</a>  	<em class="comment">/////////// SearchPersonByNumberConverter Constants //////////////</em>
+<a name="29" href="#29">29</a>  	<em>/**<em>* The EL i_ no n_ com l_ driv e_ tes t_ fe e_ ind. */</em></em>
+<a name="30" href="#30">30</a>  	String ELI_NON_COML_DRIVE_TEST_FEE_IND = <span class="string">"NON_COML_DRIVE_TEST_FEE_IND"</span>;
+<a name="31" href="#31">31</a>  	<em>/**<em>* The EL i_ motorcycl e_ driv e_ tes t_ fe e_ ind. */</em></em>
+<a name="32" href="#32">32</a>  	String ELI_MOTORCYCLE_DRIVE_TEST_FEE_IND = <span class="string">"MOTORCYCLE_DRIVE_TEST_FEE_IND"</span>;
+<a name="33" href="#33">33</a>  	<em>/**<em>* The EL i_ com l_ d l_ ap p_ fe e_ ind. */</em></em>
+<a name="34" href="#34">34</a>  	String ELI_COML_DL_APP_FEE_IND = <span class="string">"COML_DL_APP_FEE_IND"</span>;
+<a name="35" href="#35">35</a>  	<em>/**<em>* The EL i_ firefighte r_ ap p_ fe e_ ind. */</em></em>
+<a name="36" href="#36">36</a>  	String ELI_FIREFIGHTER_APP_FEE_IND = <span class="string">"FIREFIGHTER_APP_FEE_IND"</span>;
+<a name="37" href="#37">37</a>  	<em>/**<em>* The EL i_ com l_ d l_ driv e_ tes t_ fe e_ ind. */</em></em>
+<a name="38" href="#38">38</a>  	String ELI_COML_DL_DRIVE_TEST_FEE_IND = <span class="string">"COML_DL_DRIVE_TEST _FEE_IND"</span>;
+<a name="39" href="#39">39</a>  	<em class="comment">/////////// DatabaseStatusInquiryConverter Constants //////////////</em>
+<a name="40" href="#40">40</a>  	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="41" href="#41">41</a>  	String TCODE_LTR = <span class="string">"LTR"</span>;
+<a name="42" href="#42">42</a>  	<em class="comment">/////////// DriverRecordUpdateConverter Constants //////////////</em>
+<a name="43" href="#43">43</a>  	<em>/**<em>* Transaction code */</em></em>
+<a name="44" href="#44">44</a>  	String TCODE_DAD = <span class="string">"DAD"</span>;
+<a name="45" href="#45">45</a>  	String TCODE_DAK = <span class="string">"DAK"</span>;
+<a name="46" href="#46">46</a>  	String TCODE_DL6 = <span class="string">"DL6"</span>;
+<a name="47" href="#47">47</a>  	String TCODE_DLX = <span class="string">"DLX"</span>;
+<a name="48" href="#48">48</a>  	String TCODE_DLU = <span class="string">"DLU"</span>;
+<a name="49" href="#49">49</a>  	String TCODE_DLP = <span class="string">"DLP"</span>;
+<a name="50" href="#50">50</a>  	<em>/**<em>* The constant TRANSACTION SUB CODE */</em></em>
+<a name="51" href="#51">51</a>  	String TRANSACTION_SUB_CODE_U = <span class="string">"U"</span>;
+<a name="52" href="#52">52</a>  	<em>/**<em>* The constant REQUESTER CODE PREFIX */</em></em>
+<a name="53" href="#53">53</a>  	String REQUESTER_CODE_PREFIX = <span class="string">"80"</span>;
+<a name="54" href="#54">54</a>  	<em>/**<em>* The constant TTC_DPR1_07M */</em></em>
+<a name="55" href="#55">55</a>  	String TTC_DPR1_07M = <span class="string">"07M"</span>;
+<a name="56" href="#56">56</a>  	<em>/**<em>* The constant TTC_DPR1_14M */</em></em>
+<a name="57" href="#57">57</a>  	String TTC_DPR1_14M = <span class="string">"14M"</span>;
+<a name="58" href="#58">58</a>  	<em>/**<em>* The constant TTC_37U4_37U */</em></em>
+<a name="59" href="#59">59</a>  	String TTC_37U4_37U = <span class="string">"37U"</span>;
+<a name="60" href="#60">60</a>  	<em>/**<em>* The constant TTC_DPR4_30U */</em></em>
+<a name="61" href="#61">61</a>  	String TTC_DPR4_30U = <span class="string">"30U"</span>;
+<a name="62" href="#62">62</a>  	<em>/**<em>* The constant TypeInputCode_C */</em></em>
+<a name="63" href="#63">63</a>  	String TYPE_INPUT_CODE_C = <span class="string">"C"</span>;
+<a name="64" href="#64">64</a>  	<em>/**<em>* The constant TypeInputCode_V */</em></em>
+<a name="65" href="#65">65</a>  	String TYPE_INPUT_CODE_V = <span class="string">"V"</span>;
+<a name="66" href="#66">66</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_PO */</em></em>
+<a name="67" href="#67">67</a>  	String FIELD_MNEMONIC_CODE_PO = <span class="string">"PO"</span>;
+<a name="68" href="#68">68</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_CT */</em></em>
+<a name="69" href="#69">69</a>  	String FIELD_MNEMONIC_CODE_CT = <span class="string">"CT"</span>;
+<a name="70" href="#70">70</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_FP */</em></em>
+<a name="71" href="#71">71</a>  	String FIELD_MNEMONIC_CODE_FP = <span class="string">"FP"</span>;
+<a name="72" href="#72">72</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_MG */</em></em>
+<a name="73" href="#73">73</a>  	String FIELD_MNEMONIC_CODE_MG = <span class="string">"MG"</span>;
+<a name="74" href="#74">74</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_PP */</em></em>
+<a name="75" href="#75">75</a>  	String FIELD_MNEMONIC_CODE_PP = <span class="string">"PP"</span>;
+<a name="76" href="#76">76</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_PN */</em></em>
+<a name="77" href="#77">77</a>  	String FIELD_MNEMONIC_CODE_PN = <span class="string">"PN"</span>;
+<a name="78" href="#78">78</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_PN */</em></em>
+<a name="79" href="#79">79</a>  	String FIELD_MNEMONIC_CODE_0 = <span class="string">"    "</span>;
+<a name="80" href="#80">80</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_PN */</em></em>
+<a name="81" href="#81">81</a>  	String FIELD_MNEMONIC_CODE_2 = <span class="string">"CE04"</span>;
+<a name="82" href="#82">82</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_4 */</em></em>
+<a name="83" href="#83">83</a>  	String FIELD_MNEMONIC_CODE_4 = <span class="string">"INZ "</span>;
+<a name="84" href="#84">84</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_5 */</em></em>
+<a name="85" href="#85">85</a>  	String FIELD_MNEMONIC_CODE_5 = <span class="string">"MX2 "</span>;
+<a name="86" href="#86">86</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_6 */</em></em>
+<a name="87" href="#87">87</a>  	String FIELD_MNEMONIC_CODE_6 = <span class="string">"CNN "</span>;
+<a name="88" href="#88">88</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_7 */</em></em>
+<a name="89" href="#89">89</a>  	String FIELD_MNEMONIC_CODE_7 = <span class="string">"RME "</span>;
+<a name="90" href="#90">90</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_8 */</em></em>
+<a name="91" href="#91">91</a>  	String FIELD_MNEMONIC_CODE_8 = <span class="string">"SL25"</span>;
+<a name="92" href="#92">92</a>  	<em>/**<em>* The constant FIELD_MNEMONIC_CODE_9 */</em></em>
+<a name="93" href="#93">93</a>  	String FIELD_MNEMONIC_CODE_9 = <span class="string">"DN  "</span>;
+<a name="94" href="#94">94</a>  	<em>/**<em>* The constant INPUT_CODE_1 */</em></em>
+<a name="95" href="#95">95</a>  	String INPUT_CODE_1 = <span class="string">"1"</span>;
+<a name="96" href="#96">96</a>  	<em>/**<em>* The constant INPUT_CODE_3 */</em></em>
+<a name="97" href="#97">97</a>  	String INPUT_CODE_3 = <span class="string">"3"</span>;
+<a name="98" href="#98">98</a>  	<em>/**<em>* The constant INPUT_CODE_0 */</em></em>
+<a name="99" href="#99">99</a>  	String INPUT_CODE_0 = <span class="string">"0"</span>;
+<a name="100" href="#100">100</a> 	<em>/**<em>* The constant INPUT_CODE_2 */</em></em>
+<a name="101" href="#101">101</a> 	String INPUT_CODE_2 = <span class="string">"2"</span>;
+<a name="102" href="#102">102</a> 	<em>/**<em>* The constant INPUT_CODE_4 */</em></em>
+<a name="103" href="#103">103</a> 	String INPUT_CODE_4 = <span class="string">"4"</span>;
+<a name="104" href="#104">104</a> 	<em>/**<em>* The constant INPUT_CODE_5 */</em></em>
+<a name="105" href="#105">105</a> 	String INPUT_CODE_5 = <span class="string">"5"</span>;
+<a name="106" href="#106">106</a> 	<em>/**<em>* The constant INPUT_CODE_6 */</em></em>
+<a name="107" href="#107">107</a> 	String INPUT_CODE_6 = <span class="string">"6"</span>;
+<a name="108" href="#108">108</a> 	<em>/**<em>* The constant INPUT_CODE_7 */</em></em>
+<a name="109" href="#109">109</a> 	String INPUT_CODE_7 = <span class="string">"7"</span>;
+<a name="110" href="#110">110</a> 	<em>/**<em>* The constant INPUT_CODE_8 */</em></em>
+<a name="111" href="#111">111</a> 	String INPUT_CODE_8 = <span class="string">"8"</span>;
+<a name="112" href="#112">112</a> 	<em>/**<em>* The constant INPUT_CODE_9 */</em></em>
+<a name="113" href="#113">113</a> 	String INPUT_CODE_9 = <span class="string">"9"</span>;
+<a name="114" href="#114">114</a> 	<em>/**<em>* The constant UPDATE_DATA_30 */</em></em>
+<a name="115" href="#115">115</a> 	String UPDATE_DATA_30 = <span class="string">"30"</span>;
+<a name="116" href="#116">116</a> 	<em>/**<em>* The constant UPDATE_DATA_00 */</em></em>
+<a name="117" href="#117">117</a> 	String UPDATE_DATA_00 = <span class="string">"00"</span>;
+<a name="118" href="#118">118</a> 	<em class="comment">/////////// DeleteMasterReceiptFileConverter Constants //////////////</em>
+<a name="119" href="#119">119</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="120" href="#120">120</a> 	String TCODE_CIC = <span class="string">"CIC"</span>;
+<a name="121" href="#121">121</a> 	<em>/**<em>* The Constant RESPONSE_CODE. */</em></em>
+<a name="122" href="#122">122</a> 	String RESPONSE_CODE = <span class="string">"00"</span>;
+<a name="123" href="#123">123</a> 	<em>/**<em>* The Constant REMOVAL_INDICATOR. */</em></em>
+<a name="124" href="#124">124</a> 	String REMOVAL_INDICATOR = <span class="string">"0"</span>;
+<a name="125" href="#125">125</a> 	<em class="comment">/////////// LegalPresenceVerificationConverter Constants //////////////</em>
+<a name="126" href="#126">126</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="127" href="#127">127</a> 	String TCODE_LPV = <span class="string">"LPV"</span>;
+<a name="128" href="#128">128</a> 	<em>/**<em>* The constant version number. */</em></em>
+<a name="129" href="#129">129</a> 	String VERSION_NUMBER = <span class="string">"1.0"</span>;
+<a name="130" href="#130">130</a> 	<em>/**<em>* The Constant DOCUMENT_TYPE_A. */</em></em>
+<a name="131" href="#131">131</a> 	String DOCUMENT_TYPE_A = <span class="string">"A"</span>;
+<a name="132" href="#132">132</a> 	<em>/**<em>* The Constant DOCUMENT_TYPE_I. */</em></em>
+<a name="133" href="#133">133</a> 	String DOCUMENT_TYPE_I = <span class="string">"I"</span>;
+<a name="134" href="#134">134</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_K. */</em></em>
+<a name="135" href="#135">135</a> 	String BDLP_CODE_FOR_VALID_CANADIAN_PASSPORT_WITH_I94 = <span class="string">"O"</span>;
+<a name="136" href="#136">136</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_4. */</em></em>
+<a name="137" href="#137">137</a> 	String BDLP_CODE_FOR_PERMANENT_RESIDENT_CARD = <span class="string">"4"</span>;
+<a name="138" href="#138">138</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_6. */</em></em>
+<a name="139" href="#139">139</a> 	String BDLP_CODE_FOR_EMPLOYMENT_AUTH_DOC_PRIOR_1989 = <span class="string">"6"</span>;
+<a name="140" href="#140">140</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_7. */</em></em>
+<a name="141" href="#141">141</a> 	String BDLP_CODE_FOR_EMPLOYMENT_AUTH_DOC_PRIOR_1997 = <span class="string">"7"</span>;
+<a name="142" href="#142">142</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_V. */</em></em>
+<a name="143" href="#143">143</a> 	String BDLP_CODE_FOR_EMPLOYMENT_AUTH_DOC = <span class="string">"V"</span>;
+<a name="144" href="#144">144</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_G. */</em></em>
+<a name="145" href="#145">145</a> 	String BDLP_CODE_FOR_CERTIFICATE_OF_NATURALIZATION = <span class="string">"G"</span>;
+<a name="146" href="#146">146</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_H. */</em></em>
+<a name="147" href="#147">147</a> 	String BDLP_CODE_FOR_COUNTRY_OF_CITIZENSHIP = <span class="string">"H"</span>;
+<a name="148" href="#148">148</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_K. */</em></em>
+<a name="149" href="#149">149</a> 	String BDLP_CODE_FOR_CITIZEN_IDENTIFICATION_CARD = <span class="string">"K"</span>;
+<a name="150" href="#150">150</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_L. */</em></em>
+<a name="151" href="#151">151</a> 	String BDLP_CODE_FOR_RESIDENT_ALIEN_CARD = <span class="string">"L"</span>;
+<a name="152" href="#152">152</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_X. */</em></em>
+<a name="153" href="#153">153</a> 	String BDLP_CODE_FOR_MEXICAN_BORDER_CROSSING_CARD = <span class="string">"X"</span>;
+<a name="154" href="#154">154</a> 	<em>/**<em>* The Constant BDLP_VERIFICATION_CODE_Q. */</em></em>
+<a name="155" href="#155">155</a> 	String BDLP_CODE_FOR_NON_RESIDENT_ALIEN_CANADIAN_BORDER_CROSSING_CARD = <span class="string">"Q"</span>;
+<a name="156" href="#156">156</a> 	<em>/**<em>* The Constant BDLP_VERIFICATION_CODE_S. */</em></em>
+<a name="157" href="#157">157</a> 	String BDLP_CODE_FOR_RECORD_OF_ARRIVAL_DEPARTURE_I94W = <span class="string">"S"</span>;
+<a name="158" href="#158">158</a> 	<em>/**<em>* The Constant BDLP_VERIFICATION_CODE_W. */</em></em>
+<a name="159" href="#159">159</a> 	String BDLP_CODE_FOR_TMP_EVIDENCE_OF_LAWFUL_ADMIT_FOR_PERM_RES = <span class="string">"W"</span>;
+<a name="160" href="#160">160</a> 	<em>/**<em>* The Constant BDLP_VERIFICATION_CODE_2. */</em></em>
+<a name="161" href="#161">161</a> 	String BDLP_CODE_FOR_RECORD_OF_ARRIVAL_DEPARTURE_I94 = <span class="string">"2"</span>;
+<a name="162" href="#162">162</a> 	<em>/**<em>* The Constant BDLP_VERIFICATION_CODE_3. */</em></em>
+<a name="163" href="#163">163</a> 	String BDLP_CODE_FOR_REENTRY_PERMIT = <span class="string">"3"</span>;
+<a name="164" href="#164">164</a> 	<em>/**<em>* The Constant BDLP_VERIF_CODE_5. */</em></em>
+<a name="165" href="#165">165</a> 	String BDLP_CODE_FOR_REFUGEE_TRAVEL_DOCUMENT = <span class="string">"5"</span>;
+<a name="166" href="#166">166</a> 	<em>/**<em>* The Constant BDLP_VERIFICATION_CODE_M. */</em></em>
+<a name="167" href="#167">167</a> 	String BDLP_CODE_FOR_TMP_RESIDENT_ID_CARD = <span class="string">"M"</span>;
+<a name="168" href="#168">168</a> 	<em>/**<em>* The constant BENEFIT CODE 5 */</em></em>
+<a name="169" href="#169">169</a> 	String BENEFIT_CODE_5 = <span class="string">"5"</span>;
+<a name="170" href="#170">170</a> 	<em>/**<em>* The constant BENEFIT CODE 60 */</em></em>
+<a name="171" href="#171">171</a> 	String BENEFIT_CODE_60 = <span class="string">"60"</span>;
+<a name="172" href="#172">172</a> 	<em>/**<em>* The Constant DOC_DESC_FOR_BDLP_VERIF_CODE_K. */</em></em>
+<a name="173" href="#173">173</a> 	String DOC_DESC_FOR_BDLP_VERIF_CODE_K = <span class="string">"US CITIZEN IDENTIFICATION CARD"</span>;
+<a name="174" href="#174">174</a> 	<em>/**<em>* The Constant DOC_DESC_FOR_BDLP_VERIF_CODE_L. */</em></em>
+<a name="175" href="#175">175</a> 	String DOC_DESC_FOR_BDLP_VERIF_CODE_L = <span class="string">"RESIDENT ALIEN CARD"</span>;
+<a name="176" href="#176">176</a> 	<em>/**<em>* The Constant DOC_DESC_FOR_BDLP_VERIF_CODE_Q. */</em></em>
+<a name="177" href="#177">177</a> 	String DOC_DESC_FOR_BDLP_VERIF_CODE_Q = <span class="string">"NOR-RES ALIEN BORDER CROSSING"</span>;
+<a name="178" href="#178">178</a> 	<em>/**<em>* The Constant DOC_DESC_FOR_BDLP_VERIF_CODE_X. */</em></em>
+<a name="179" href="#179">179</a> 	String DOC_DESC_FOR_BDLP_VERIF_CODE_X = <span class="string">"MEXICAN BORDER CROSSING"</span>;
+<a name="180" href="#180">180</a> 	<em>/**<em>* The Constant DOCUMENT_ID_20. */</em></em>
+<a name="181" href="#181">181</a> 	String DOCUMENT_ID_20 = <span class="string">"20"</span>;
+<a name="182" href="#182">182</a> 	<em>/**<em>* The Constant DOCUMENT_ID_23. */</em></em>
+<a name="183" href="#183">183</a> 	String DOCUMENT_ID_23 = <span class="string">"23"</span>;
+<a name="184" href="#184">184</a> 	<em>/**<em>* The Constant DOCUMENT_ID_9. */</em></em>
+<a name="185" href="#185">185</a> 	String DOCUMENT_ID_9 = <span class="string">"9"</span>;
+<a name="186" href="#186">186</a> 	<em>/**<em>* The Constant DOCUMENT_ID_3. */</em></em>
+<a name="187" href="#187">187</a> 	String DOCUMENT_ID_3 = <span class="string">"3"</span>;
+<a name="188" href="#188">188</a> 	<em>/**<em>* The Constant DOCUMENT_ID_4. */</em></em>
+<a name="189" href="#189">189</a> 	String DOCUMENT_ID_4 = <span class="string">"4"</span>;
+<a name="190" href="#190">190</a> 	<em>/**<em>* The Constant DOCUMENT_ID_5. */</em></em>
+<a name="191" href="#191">191</a> 	String DOCUMENT_ID_5 = <span class="string">"5"</span>;
+<a name="192" href="#192">192</a> 	<em>/**<em>* The Constant DOCUMENT_ID_1. */</em></em>
+<a name="193" href="#193">193</a> 	String DOCUMENT_ID_1 = <span class="string">"1"</span>;
+<a name="194" href="#194">194</a> 	<em>/**<em>* The Constant DOCUMENT_ID_2. */</em></em>
+<a name="195" href="#195">195</a> 	String DOCUMENT_ID_2 = <span class="string">"2"</span>;
+<a name="196" href="#196">196</a> 	<em>/**<em>* The Constant DOCUMENT_ID_7. */</em></em>
+<a name="197" href="#197">197</a> 	String DOCUMENT_ID_7 = <span class="string">"7"</span>;
+<a name="198" href="#198">198</a> 	<em>/**<em>* The Constant DOCUMENT_ID_8. */</em></em>
+<a name="199" href="#199">199</a> 	String DOCUMENT_ID_8 = <span class="string">"8"</span>;
+<a name="200" href="#200">200</a> 	<em>/**<em>* The Constant DOCUMENT_ID_10. */</em></em>
+<a name="201" href="#201">201</a> 	String DOCUMENT_ID_10 = <span class="string">"10"</span>;
+<a name="202" href="#202">202</a> 	<em>/**<em>* The Constant DOCUMENT_ID_6. */</em></em>
+<a name="203" href="#203">203</a> 	String DOCUMENT_ID_6 = <span class="string">"6"</span>;
+<a name="204" href="#204">204</a> 	<em>/**<em>* The Constant LPV RESPONSE LENGTH. */</em></em>
+<a name="205" href="#205">205</a> 	<strong>int</strong> LPV_RESPONSE_LENGTH = 457;
+<a name="206" href="#206">206</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_CONDITION_1 */</em></em>
+<a name="207" href="#207">207</a> 	String ELIGIBILITY_STATEMENT_CODE_CONDITION_1 = <span class="string">"1"</span>;
+<a name="208" href="#208">208</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_CONDITION_4 */</em></em>
+<a name="209" href="#209">209</a> 	String ELIGIBILITY_STATEMENT_CODE_CONDITION_4 = <span class="string">"4"</span>;
+<a name="210" href="#210">210</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_CONDITION_10 */</em></em>
+<a name="211" href="#211">211</a> 	String ELIGIBILITY_STATEMENT_CODE_CONDITION_10 = <span class="string">"10"</span>;
+<a name="212" href="#212">212</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_CONDITION_18 */</em></em>
+<a name="213" href="#213">213</a> 	String ELIGIBILITY_STATEMENT_CODE_CONDITION_18 = <span class="string">"18"</span>;
+<a name="214" href="#214">214</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_CONDITION_20 */</em></em>
+<a name="215" href="#215">215</a> 	String ELIGIBILITY_STATEMENT_CODE_CONDITION_20 = <span class="string">"20"</span>;
+<a name="216" href="#216">216</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_CONDITION_22 */</em></em>
+<a name="217" href="#217">217</a> 	String ELIGIBILITY_STATEMENT_CODE_CONDITION_22 = <span class="string">"22"</span>;
+<a name="218" href="#218">218</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_CONDITION_24 */</em></em>
+<a name="219" href="#219">219</a> 	String ELIGIBILITY_STATEMENT_CODE_CONDITION_24 = <span class="string">"24"</span>;
+<a name="220" href="#220">220</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_CONDITION_13 */</em></em>
+<a name="221" href="#221">221</a> 	String ELIGIBILITY_STATEMENT_CODE_CONDITION_13 = <span class="string">"13"</span>;
+<a name="222" href="#222">222</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_O */</em></em>
+<a name="223" href="#223">223</a> 	String ELIGIBILITY_STATEMENT_CODE_O = <span class="string">"O"</span>;
+<a name="224" href="#224">224</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_E */</em></em>
+<a name="225" href="#225">225</a> 	String ELIGIBILITY_STATEMENT_CODE_E = <span class="string">"E"</span>;
+<a name="226" href="#226">226</a> 	<em>/**<em>* The Constant ELIGIBILITY_STATEMENT_CODE_I */</em></em>
+<a name="227" href="#227">227</a> 	String ELIGIBILITY_STATEMENT_CODE_I = <span class="string">"I"</span>;
+<a name="228" href="#228">228</a> 	<em>/**<em>* The EXECUTION_STATUS_CODE_0 */</em></em>
+<a name="229" href="#229">229</a> 	<strong>int</strong> EXECUTION_STATUS_CODE_0 = 0;
+<a name="230" href="#230">230</a> 	<em>/**<em>* The EXECUTION_STATUS_CODE_1 */</em></em>
+<a name="231" href="#231">231</a> 	<strong>int</strong> EXECUTION_STATUS_CODE_1 = 1;
+<a name="232" href="#232">232</a> 	<em>/**<em>* The EXECUTION_STATUS_MESSAGE_0 */</em></em>
+<a name="233" href="#233">233</a> 	String EXECUTION_STATUS_MESSAGE_0 = <span class="string">"The Data Found: Process It Per This Document"</span>;
+<a name="234" href="#234">234</a> 	<em>/**<em>* The EXECUTION_STATUS_MESSAGE_1 */</em></em>
+<a name="235" href="#235">235</a> 	String EXECUTION_STATUS_MESSAGE_1 = <span class="string">"The Record Not Found: Record For Further Action"</span>;
+<a name="236" href="#236">236</a> 	<em>/**<em>* The EXECUTION_STATUS_MESSAGE_LOG_ERROR */</em></em>
+<a name="237" href="#237">237</a> 	String EXECUTION_STATUS_MESSAGE_LOG_ERROR = <span class="string">"ATTN: DMV MANAGER/INVALID RESPONSE LENGTH"</span>;
+<a name="238" href="#238">238</a> 	<em class="comment">/////////// ProblemDriverUpdateConverter Constants //////////////</em>
+<a name="239" href="#239">239</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="240" href="#240">240</a> 	String TCODE_DPS = <span class="string">"DPS"</span>;
+<a name="241" href="#241">241</a> 	<em>/**<em>* The OTHER_OSCODE. */</em></em>
+<a name="242" href="#242">242</a> 	String OTHER_OSCODE = <span class="string">"OT"</span>;
+<a name="243" href="#243">243</a> 	<em>/**<em>* The constant ISSUANCE_OFFICE_212 */</em></em>
+<a name="244" href="#244">244</a> 	String ISSUANCE_OFFICE_212 = <span class="string">"212"</span>;
+<a name="245" href="#245">245</a> 	<em>/**<em>* The constant ISSUANCE_OFFICE_231 */</em></em>
+<a name="246" href="#246">246</a> 	String ISSUANCE_OFFICE_231 = <span class="string">"231"</span>;
+<a name="247" href="#247">247</a> 	<em>/**<em>* The Constant QUESTIONABLE_INDICATOR_S */</em></em>
+<a name="248" href="#248">248</a> 	String QUESTIONABLE_INDICATOR_S = <span class="string">"S"</span>;
+<a name="249" href="#249">249</a> 	<em>/**<em>* The Constant ELIGIBILITY_INDICATOR_E */</em></em>
+<a name="250" href="#250">250</a> 	String ELIGIBILITY_INDICATOR_E = <span class="string">"E"</span>;
+<a name="251" href="#251">251</a> 	<em>/**<em>* The Constant ELIGIBILITY_INDICATOR_N */</em></em>
+<a name="252" href="#252">252</a> 	String ELIGIBILITY_INDICATOR_N = <span class="string">"N"</span>;
+<a name="253" href="#253">253</a> 	<em>/**<em>* The Constant DESIGNATE_ACTION_Q */</em></em>
+<a name="254" href="#254">254</a> 	String DESIGNATE_ACTION_Q = <span class="string">"Q"</span>;
+<a name="255" href="#255">255</a> 	<em>/**<em>* The Constant DESIGNATE_ACTION_S */</em></em>
+<a name="256" href="#256">256</a> 	String DESIGNATE_ACTION_S = <span class="string">"S"</span>;
+<a name="257" href="#257">257</a> 	<em>/**<em>* The Constant TYPE_INDICATOR_Nv */</em></em>
+<a name="258" href="#258">258</a> 	String TYPE_INDICATOR_N = <span class="string">"N"</span>;
+<a name="259" href="#259">259</a> 	<em>/**<em>* The Constant TYPE_INDICATOR_P */</em></em>
+<a name="260" href="#260">260</a> 	String TYPE_INDICATOR_P = <span class="string">"P"</span>;
+<a name="261" href="#261">261</a> 	<em>/**<em>* The Constant TYPE_INDICATOR_S */</em></em>
+<a name="262" href="#262">262</a> 	String TYPE_INDICATOR_S = <span class="string">"S"</span>;
+<a name="263" href="#263">263</a> 	<em>/**<em>* The constant STATE_OF_ORIGIN */</em></em>
+<a name="264" href="#264">264</a> 	String STATE_OF_ORIGIN = <span class="string">"ZZ"</span>;
+<a name="265" href="#265">265</a> 	<em class="comment">/////////// ReturnDriverInformationAndFeeIndicatorConverter Constants //////////////</em>
+<a name="266" href="#266">266</a> 	<em>/**<em>* Transaction code */</em></em>
+<a name="267" href="#267">267</a> 	String TCODE_DS5 = <span class="string">"DS5"</span>;
+<a name="268" href="#268">268</a> 	<em>/**<em>* The constant TRANSACTION SUB CODE */</em></em>
+<a name="269" href="#269">269</a> 	String TRANSACTION_SUB_CODE_I = <span class="string">"I"</span>;
+<a name="270" href="#270">270</a> 	<em>/**<em>* The constant TTC_04M */</em></em>
+<a name="271" href="#271">271</a> 	String TTC_04M = <span class="string">"04M"</span>;
+<a name="272" href="#272">272</a> 	<em>/**<em>* The constant TTC_13M */</em></em>
+<a name="273" href="#273">273</a> 	String TTC_13M = <span class="string">"13M"</span>;
+<a name="274" href="#274">274</a> 	<em>/**<em>* The constant DRUG_CODE_8 */</em></em>
+<a name="275" href="#275">275</a> 	String DRUG_CODE_8 = <span class="string">"8"</span>;
+<a name="276" href="#276">276</a> 	<em>/**<em>* The constant PAS_CODE_A */</em></em>
+<a name="277" href="#277">277</a> 	String PAS_CODE_A = <span class="string">"A"</span>;
+<a name="278" href="#278">278</a> 	<em>/**<em>* The constant PAS_CODE_3 */</em></em>
+<a name="279" href="#279">279</a> 	String PAS_CODE_3 = <span class="string">"3"</span>;
+<a name="280" href="#280">280</a> 	<em>/**<em>* The constant HEX_NULL */</em></em>
+<a name="281" href="#281">281</a> 	String HEX_NULL_N = <span class="string">"n"</span>;
+<a name="282" href="#282">282</a> 	<em>/**<em>* The constant space */</em></em>
+<a name="283" href="#283">283</a> 	String SPACE = <span class="string">" "</span>;
+<a name="284" href="#284">284</a> 	<em>/**<em>* Family Law Due Fee Rate Code. */</em></em>
+<a name="285" href="#285">285</a> 	String FAMILY_LAW_DUE_FEE_RATE_CODE = <span class="string">"762"</span>;
+<a name="286" href="#286">286</a> 	<em>/**<em>* Drug Screening Reissue Fee Rate Code. */</em></em>
+<a name="287" href="#287">287</a> 	String DRUG_SCREENING_REISSUE_FEE_RATE_CODE = <span class="string">"749"</span>;
+<a name="288" href="#288">288</a> 	<em>/**<em>* Preliminary Alcohol Screening Reissue Fee Rate Code. */</em></em>
+<a name="289" href="#289">289</a> 	String PRELIMINARY_ALCOHOL_SCREENING_REISSUE_FEE_RATE_CODE = <span class="string">"748"</span>;
+<a name="290" href="#290">290</a> 	<em>/**<em>* Add Restriction Ignition Device Fee Rate Code. */</em></em>
+<a name="291" href="#291">291</a> 	String ADD_RESTRICTION_IGNITION_INTERLOCK_DEVICE_FEE_RATE_CODE = <span class="string">"730"</span>;
+<a name="292" href="#292">292</a> 	<em>/**<em>* Driver License Reissue Type 01 Fee Rate Code. */</em></em>
+<a name="293" href="#293">293</a> 	String DRIVER_LICENSE_REISSUE_TYPE_01_FEE_RATE_CODE = <span class="string">"731"</span>;
+<a name="294" href="#294">294</a> 	<em>/**<em>* Driver License Reissue Type 02 Fee Rate Code. */</em></em>
+<a name="295" href="#295">295</a> 	String DRIVER_LICENSE_REISSUE_TYPE_02_FEE_RATE_CODE = <span class="string">"746"</span>;
+<a name="296" href="#296">296</a> 	<em>/**<em>* Driver License Reissue Type 03 Fee Rate Code. */</em></em>
+<a name="297" href="#297">297</a> 	String DRIVER_LICENSE_REISSUE_TYPE_03_FEE_RATE_CODE = <span class="string">"747"</span>;
+<a name="298" href="#298">298</a> 	<em>/**<em>* Driver License Reissue Type 04 Fee Rate Code. */</em></em>
+<a name="299" href="#299">299</a> 	String DRIVER_LICENSE_REISSUE_TYPE_04_FEE_RATE_CODE = <span class="string">"743"</span>;
+<a name="300" href="#300">300</a> 	<em>/**<em>* Driver License Reissue Type 05 Fee Rate Code. */</em></em>
+<a name="301" href="#301">301</a> 	String DRIVER_LICENSE_REISSUE_TYPE_05_FEE_RATE_CODE = <span class="string">"744"</span>;
+<a name="302" href="#302">302</a> 	<em>/**<em>* The response error code 00. */</em></em>
+<a name="303" href="#303">303</a> 	String RES_ERR_CODE_00 = <span class="string">"00"</span>;
+<a name="304" href="#304">304</a> 	<em>/**<em>* The response error code R0. */</em></em>
+<a name="305" href="#305">305</a> 	String RES_ERR_CODE_R0 = <span class="string">"R0"</span>;
+<a name="306" href="#306">306</a> 	<em>/**<em>* The response error code RO. */</em></em>
+<a name="307" href="#307">307</a> 	String RES_ERR_CODE_RO = <span class="string">"RO"</span>;
+<a name="308" href="#308">308</a> 	<em>/**<em>* The hex null filler */</em></em>
+<a name="309" href="#309">309</a> 	String HEX_FILL = <span class="string">"nn"</span>;
+<a name="310" href="#310">310</a> 	<em>/**<em>* The constant STATE_CODE_04 */</em></em>
+<a name="311" href="#311">311</a> 	String STATE_CODE_04 = <span class="string">"04"</span>;
+<a name="312" href="#312">312</a> 	<em>/**<em>* The constant STATE_CODE_REG_EXP*/</em></em>
+<a name="313" href="#313">313</a> 	String STATE_CODE_REG_EXP = <span class="string">"[0-9][0-9]"</span>;
+<a name="314" href="#314">314</a> 	<em class="comment">/////////// SearchPersonByNameConverter Constants //////////////</em>
+<a name="315" href="#315">315</a> 	<em>/**<em>* The Constant BIRTH_DATE_FIELD_CODE. */</em></em>
+<a name="316" href="#316">316</a> 	String BIRTH_DATE_FIELD_CODE = <span class="string">"B"</span>;
+<a name="317" href="#317">317</a> 	<em>/**<em>* The Constant CITY_FIELD_CODE. */</em></em>
+<a name="318" href="#318">318</a> 	String CITY_FIELD_CODE = <span class="string">"C"</span>;
+<a name="319" href="#319">319</a> 	<em>/**<em>* The Constant HIT_COUNTER. */</em></em>
+<a name="320" href="#320">320</a> 	String HIT_COUNTER = <span class="string">"00"</span>;
+<a name="321" href="#321">321</a> 	<em>/**<em>* The Constant LENGTH_OF_ONE_RECORD_IN_ACTUAL_RESPONSE. */</em></em>
+<a name="322" href="#322">322</a> 	<strong>int</strong> LENGTH_OF_ONE_RECORD_IN_ACTUAL_RESPONSE = 62;
+<a name="323" href="#323">323</a> 	<em>/**<em>* The Constant REQUEST_PART_OF_RESPONSE_LENGTH. */</em></em>
+<a name="324" href="#324">324</a> 	<strong>int</strong> REQUEST_PART_OF_RESPONSE_LENGTH = 75;
+<a name="325" href="#325">325</a> 	<em>/**<em>* The Constant Search Person By Number tcode. */</em></em>
+<a name="326" href="#326">326</a> 	String SEARCH_PERSON_BY_NUMBER_TCODE = <span class="string">"DLA"</span>;
+<a name="327" href="#327">327</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="328" href="#328">328</a> 	String TCODE_ATL = <span class="string">"ATL"</span>;
+<a name="329" href="#329">329</a> 	<em>/**<em>* The constant CODESET_NAME */</em></em>
+<a name="330" href="#330">330</a> 	String CODESET_NAME = <span class="string">"AniMultipleResponseErrorCode"</span>;
+<a name="331" href="#331">331</a> 	<em class="comment">/////////// SendCdlisAndPdpsConverter Constants //////////////</em>
+<a name="332" href="#332">332</a> 	<em>/**<em>* CDLIS/PDPS record length */</em></em>
+<a name="333" href="#333">333</a> 	<strong>int</strong> MESSAGE_PAYLOAD_CDLIS_RECORD_LENGTH = 874;
+<a name="334" href="#334">334</a> 	<em>/**<em>* CDU header length */</em></em>
+<a name="335" href="#335">335</a> 	<strong>int</strong> MESSAGE_PAYLOAD_HEADER_LENGTH = 318;
+<a name="336" href="#336">336</a> 	<em>/**<em>* Logger for this class */</em></em>
+<a name="337" href="#337">337</a> 	<em>/**<em>* The Constant APPLICATION_ID_CDLIS. */</em></em>
+<a name="338" href="#338">338</a> 	String APPLICATION_ID_CDLIS = <span class="string">"02"</span>;
+<a name="339" href="#339">339</a> 	<em>/**<em>* The Constant APPLICATION_ID_PDPS. */</em></em>
+<a name="340" href="#340">340</a> 	String APPLICATION_ID_PDPS = <span class="string">"12"</span>;
+<a name="341" href="#341">341</a> 	<em>/**<em>* The Constant BILLING_ID. */</em></em>
+<a name="342" href="#342">342</a> 	String BILLING_ID = <span class="string">"CA"</span>;
+<a name="343" href="#343">343</a> 	<em>/**<em>*The Constant default SSN */</em></em>
+<a name="344" href="#344">344</a> 	String DEFAULT_SSN = <span class="string">"999999999"</span>;
+<a name="345" href="#345">345</a> 	<em>/**<em>* The Constant DESTINATION. */</em></em>
+<a name="346" href="#346">346</a> 	String DESTINATION = <span class="string">"XX"</span>;
+<a name="347" href="#347">347</a> 	<em>/**<em>* The Constant ERROR_INDICATOR. */</em></em>
+<a name="348" href="#348">348</a> 	String ERROR_INDICATOR = <span class="string">"N"</span>;
+<a name="349" href="#349">349</a> 	<em>/**<em>* The Constant INBOUND_APP_NAME. */</em></em>
+<a name="350" href="#350">350</a> 	String INBOUND_APP_NAME = <span class="string">"DMCS"</span>;
+<a name="351" href="#351">351</a> 	<em>/**<em>* The Constant LAST_SEGMENT_INDICATOR. */</em></em>
+<a name="352" href="#352">352</a> 	String LAST_SEGMENT_INDICATOR = <span class="string">"Y"</span>;
+<a name="353" href="#353">353</a> 	<em>/**<em>* The Constant MESSAGE_LENGTH. */</em></em>
+<a name="354" href="#354">354</a> 	String MESSAGE_LENGTH = <span class="string">"1254"</span>;
+<a name="355" href="#355">355</a> 	<em>/**<em>* The Constant MODE_OF_TRANSMISSION. */</em></em>
+<a name="356" href="#356">356</a> 	String MODE_OF_TRANSMISSION = <span class="string">"1"</span>;
+<a name="357" href="#357">357</a> 	<em>/**<em>* The Constant MSG_DESTINATION. */</em></em>
+<a name="358" href="#358">358</a> 	String MSG_DESTINATION_CDLIS = <span class="string">"XX"</span>;
+<a name="359" href="#359">359</a> 	<em>/**<em>* The Constant MSG_DESTINATION1. */</em></em>
+<a name="360" href="#360">360</a> 	String MSG_DESTINATION_PDPS = <span class="string">"ZZ"</span>;
+<a name="361" href="#361">361</a> 	<em>/**<em>* The Constant MSG_ORIGIN. */</em></em>
+<a name="362" href="#362">362</a> 	String MSG_ORIGIN = <span class="string">"CA"</span>;
+<a name="363" href="#363">363</a> 	<em>/**<em>* The Constant MSG_TYPE. */</em></em>
+<a name="364" href="#364">364</a> 	String MSG_TYPE = <span class="string">"IO"</span>;
+<a name="365" href="#365">365</a> 	<em>/**<em>* The Constant NETWORK_SESSION_MGR_IND. */</em></em>
+<a name="366" href="#366">366</a> 	String NETWORK_SESSION_MGR_IND = <span class="string">"Y"</span>;
+<a name="367" href="#367">367</a> 	<em>/**<em>* The Constant NETWORK_STATUS_INDICATOR. */</em></em>
+<a name="368" href="#368">368</a> 	String NETWORK_STATUS_INDICATOR = <span class="string">"00"</span>;
+<a name="369" href="#369">369</a> 	<em>/**<em>* The Constant NO_OF_RETRIES. */</em></em>
+<a name="370" href="#370">370</a> 	String NO_OF_RETRIES = <span class="string">"0"</span>;
+<a name="371" href="#371">371</a> 	<em>/**<em>* The Constant RECORD_TYPE. */</em></em>
+<a name="372" href="#372">372</a> 	String RECORD_TYPE = <span class="string">""</span>;
+<a name="373" href="#373">373</a> 	<em>/**<em>* The Constant SEGMENT_NUMBER. */</em></em>
+<a name="374" href="#374">374</a> 	String SEGMENT_NUMBER = <span class="string">"01"</span>;
+<a name="375" href="#375">375</a> 	<em>/**<em>* The Constant STORE_FORWARD_TIME. */</em></em>
+<a name="376" href="#376">376</a> 	String STORE_FORWARD_TIME = <span class="string">"0000"</span>;
+<a name="377" href="#377">377</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="378" href="#378">378</a> 	String TCODE_CDU = <span class="string">"CDU"</span>;
+<a name="379" href="#379">379</a> 	<em>/**<em>* The Constant TEST_PRODUCTION_INDICATOR. */</em></em>
+<a name="380" href="#380">380</a> 	String TEST_PRODUCTION_INDICATOR = <span class="string">"P"</span>;
+<a name="381" href="#381">381</a> 	<em>/**<em>* The Constant TIME_OUT_INTERVAL. */</em></em>
+<a name="382" href="#382">382</a> 	String TIME_OUT_INTERVAL = <span class="string">"000040"</span>;
+<a name="383" href="#383">383</a> 	<em>/**<em>* The Constant MESSAGE_TYPE. */</em></em>
+<a name="384" href="#384">384</a> 	String MESSAGE_TYPE_KEY = <span class="string">"MESSAGE_TYPE"</span>;
+<a name="385" href="#385">385</a> 	<em>/**<em>* The Constant ERROR_INDICATOR. */</em></em>
+<a name="386" href="#386">386</a> 	String ERROR_INDICATOR_KEY = <span class="string">"ERROR_INDICATOR"</span>;
+<a name="387" href="#387">387</a> 	<em>/**<em>* The Constant MATCH_COUNT. */</em></em>
+<a name="388" href="#388">388</a> 	String MATCH_COUNT_KEY = <span class="string">"MATCH_COUNT"</span>;
+<a name="389" href="#389">389</a> 	<em>/**<em>* The Constant MATCH_INDICATOR. */</em></em>
+<a name="390" href="#390">390</a> 	String MATCH_INDICATOR_KEY = <span class="string">"MATCH_INDICATOR"</span>;
+<a name="391" href="#391">391</a> 	<em>/**<em>* The Constant AKA_DL_NUMBER_COUNT. */</em></em>
+<a name="392" href="#392">392</a> 	String AKA_DL_NUMBER_COUNT_KEY = <span class="string">"AKA_DL_NUMBER_COUNT"</span>;
+<a name="393" href="#393">393</a> 	<em>/**<em>* The Constant AKA_SSN_NUMBER_COUNT. */</em></em>
+<a name="394" href="#394">394</a> 	String AKA_SSN_NUMBER_COUNT_KEY = <span class="string">"AKA_SSN_NUMBER_COUNT"</span>;
+<a name="395" href="#395">395</a> 	<em>/**<em>* The Constant MATCH_LIMIT_INDICATOR. */</em></em>
+<a name="396" href="#396">396</a> 	String MATCH_LIMIT_INDICATOR_KEY = <span class="string">"MATCH_LIMIT_INDICATOR"</span>;
+<a name="397" href="#397">397</a> 	<em>/**<em>* The Constant MATCH_SEQUENCE_NUMBER_ID. */</em></em>
+<a name="398" href="#398">398</a> 	String MATCH_SEQUENCE_NUMBER_ID_KEY = <span class="string">"MATCH_SEQUENCE_NUMBER_ID"</span>;
+<a name="399" href="#399">399</a> 	<em>/**<em>* The Constant STATE_OF_RECORD_CODE. */</em></em>
+<a name="400" href="#400">400</a> 	String STATE_OF_RECORD_CODE_KEY = <span class="string">"STATE_OF_RECORD_CODE"</span>;
+<a name="401" href="#401">401</a> 	<em>/**<em>* The Constant APPLICATION_ID. */</em></em>
+<a name="402" href="#402">402</a> 	String APPLICATION_ID_KEY = <span class="string">"APPLICATION_ID"</span>;
+<a name="403" href="#403">403</a> 	<em>/**<em>* The Constant RR_NAME. */</em></em>
+<a name="404" href="#404">404</a> 	String RR_NAME_KEY = <span class="string">"RR_NAME"</span>;
+<a name="405" href="#405">405</a> 	<em>/**<em>* The Constant RR_DATE_OF_BIRTH. */</em></em>
+<a name="406" href="#406">406</a> 	String RR_DATE_OF_BIRTH_KEY = <span class="string">"RR_DATE_OF_BIRTH"</span>;
+<a name="407" href="#407">407</a> 	<em>/**<em>* The Constant RR_SOCIAL_SECURITY_NUMBER. */</em></em>
+<a name="408" href="#408">408</a> 	String RR_SOCIAL_SECURITY_NUMBER_KEY = <span class="string">"RR_SOCIAL_SECURITY_NUMBER"</span>;
+<a name="409" href="#409">409</a> 	<em>/**<em>* The Constant RR_DRIVER_LICENSE_NUMBER. */</em></em>
+<a name="410" href="#410">410</a> 	String RR_DRIVER_LICENSE_NUMBER_KEY = <span class="string">"RR_DRIVER_LICENSE_NUMBER"</span>;
+<a name="411" href="#411">411</a> 	<em>/**<em>* The Constant RR_AKA1_NAME. */</em></em>
+<a name="412" href="#412">412</a> 	String RR_AKA1_NAME_KEY = <span class="string">"RR_AKA1_NAME"</span>;
+<a name="413" href="#413">413</a> 	<em>/**<em>* The Constant RR_OUT_OF_STATE_JURISDICTION. */</em></em>
+<a name="414" href="#414">414</a> 	String RR_OUT_OF_STATE_JURISDICTION_KEY = <span class="string">"RR_OUT_OF_STATE_JURISDICTION"</span>;
+<a name="415" href="#415">415</a> 	<em>/**<em>* The Constant RR_OUT_OF_STATE_LICENSE_NUMBER. */</em></em>
+<a name="416" href="#416">416</a> 	String RR_OUT_OF_STATE_LICENSE_NUMBER_KEY = <span class="string">"RR_OUT_OF_STATE_LICENSE_NUMBER"</span>;
+<a name="417" href="#417">417</a> 	<em>/**<em>* The Constant RR_2ND_INQUIRY_INDICATOR. */</em></em>
+<a name="418" href="#418">418</a> 	String RR_2ND_INQUIRY_INDICATOR_KEY = <span class="string">"RR_2ND_INQUIRY_INDICATOR"</span>;
+<a name="419" href="#419">419</a> 	<em>/**<em>* The Constant RR_AKA2_NAME. */</em></em>
+<a name="420" href="#420">420</a> 	String RR_AKA2_NAME_KEY = <span class="string">"RR_AKA2_NAME"</span>;
+<a name="421" href="#421">421</a> 	<em>/**<em>* The Constant RR_OUT_OF_STATE_DL_LAST_5. */</em></em>
+<a name="422" href="#422">422</a> 	String RR_OUT_OF_STATE_DL_LAST_5_KEY = <span class="string">"RR_OUT_OF_STATE_DL_LAST_5"</span>;
+<a name="423" href="#423">423</a> 	<em>/**<em>* The Constant RR_AKA3_NAME. */</em></em>
+<a name="424" href="#424">424</a> 	String RR_AKA3_NAME_KEY = <span class="string">"RR_AKA3_NAME"</span>;
+<a name="425" href="#425">425</a> 	<em>/**<em>* The Constant DL_CLASS. */</em></em>
+<a name="426" href="#426">426</a> 	String DL_CLASS_KEY = <span class="string">"DL_CLASS"</span>;
+<a name="427" href="#427">427</a> 	<em>/**<em>* The Constant DL_ENDORSEMENTS. */</em></em>
+<a name="428" href="#428">428</a> 	String DL_ENDORSEMENTS_KEY = <span class="string">"DL_ENDORSEMENTS"</span>;	
+<a name="429" href="#429">429</a> 	<em>/**<em>* The Constant DL_EXPIRATION_DATE. */</em></em>
+<a name="430" href="#430">430</a> 	String DL_EXPIRATION_DATE_KEY = <span class="string">"DL_EXPIRATION_DATE"</span>;		
+<a name="431" href="#431">431</a> 	<em>/**<em>* The Constant COMMERCIAL_STATUS. */</em></em>
+<a name="432" href="#432">432</a> 	String COMMERCIAL_STATUS_KEY = <span class="string">"COMMERCIAL_STATUS"</span>;		
+<a name="433" href="#433">433</a> 	<em>/**<em>* The Constant NON_COMMERCIAL_STATUS. */</em></em>
+<a name="434" href="#434">434</a> 	String NON_COMMERCIAL_STATUS_KEY = <span class="string">"NON_COMMERCIAL_STATUS"</span>;		
+<a name="435" href="#435">435</a> 	<em>/**<em>* The Constant STATE_OF_ORIGIN. */</em></em>
+<a name="436" href="#436">436</a> 	String STATE_OF_ORIGIN_KEY = <span class="string">"STATE_OF_ORIGIN"</span>;			
+<a name="437" href="#437">437</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE1. */</em></em>
+<a name="438" href="#438">438</a> 	String DL_RESTRICTION_CODE1_KEY = <span class="string">"DL_RESTRICTION_CODE1"</span>;	
+<a name="439" href="#439">439</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE2. */</em></em>
+<a name="440" href="#440">440</a> 	String DL_RESTRICTION_CODE2_KEY = <span class="string">"DL_RESTRICTION_CODE2"</span>;	
+<a name="441" href="#441">441</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE3. */</em></em>
+<a name="442" href="#442">442</a> 	String DL_RESTRICTION_CODE3_KEY = <span class="string">"DL_RESTRICTION_CODE3"</span>;	
+<a name="443" href="#443">443</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE4. */</em></em>
+<a name="444" href="#444">444</a> 	String DL_RESTRICTION_CODE4_KEY = <span class="string">"DL_RESTRICTION_CODE4"</span>;	
+<a name="445" href="#445">445</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE5. */</em></em>
+<a name="446" href="#446">446</a> 	String DL_RESTRICTION_CODE5_KEY = <span class="string">"DL_RESTRICTION_CODE5"</span>;	
+<a name="447" href="#447">447</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE6. */</em></em>
+<a name="448" href="#448">448</a> 	String DL_RESTRICTION_CODE6_KEY = <span class="string">"DL_RESTRICTION_CODE6"</span>;	
+<a name="449" href="#449">449</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE7. */</em></em>
+<a name="450" href="#450">450</a> 	String DL_RESTRICTION_CODE7_KEY = <span class="string">"DL_RESTRICTION_CODE7"</span>;	
+<a name="451" href="#451">451</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE8. */</em></em>
+<a name="452" href="#452">452</a> 	String DL_RESTRICTION_CODE8_KEY = <span class="string">"DL_RESTRICTION_CODE8"</span>;	
+<a name="453" href="#453">453</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE9. */</em></em>
+<a name="454" href="#454">454</a> 	String DL_RESTRICTION_CODE9_KEY = <span class="string">"DL_RESTRICTION_CODE9"</span>;	
+<a name="455" href="#455">455</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE10. */</em></em>
+<a name="456" href="#456">456</a> 	String DL_RESTRICTION_CODE10_KEY = <span class="string">"DL_RESTRICTION_CODE10"</span>;	
+<a name="457" href="#457">457</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE11. */</em></em>
+<a name="458" href="#458">458</a> 	String DL_RESTRICTION_CODE11_KEY = <span class="string">"DL_RESTRICTION_CODE11"</span>;	
+<a name="459" href="#459">459</a> 	<em>/**<em>* The Constant DL_RESTRICTION_CODE12. */</em></em>
+<a name="460" href="#460">460</a> 	String DL_RESTRICTION_CODE12_KEY = <span class="string">"DL_RESTRICTION_CODE12"</span>;
+<a name="461" href="#461">461</a> 	<em>/**<em>* The Constant CURRENT_NAME. */</em></em>
+<a name="462" href="#462">462</a> 	String CURRENT_NAME_KEY = <span class="string">"CURRENT_NAME"</span>;
+<a name="463" href="#463">463</a> 	<em>/**<em>* The Constant AKA1_NAME. */</em></em>
+<a name="464" href="#464">464</a> 	String AKA1_NAME_KEY = <span class="string">"AKA1_NAME"</span>;
+<a name="465" href="#465">465</a> 	<em>/**<em>* The Constant 1ST_AKA_DL_NUMBER_STATE. */</em></em>
+<a name="466" href="#466">466</a> 	String AKA_1ST_DL_NUMBER_STATE_KEY = <span class="string">"1ST_AKA_DL_NUMBER_STATE"</span>;
+<a name="467" href="#467">467</a> 	<em>/**<em>* The Constant 1ST_AKA_DL_NUMBER. */</em></em>
+<a name="468" href="#468">468</a> 	String AKA_1ST_DL_NUMBER_KEY = <span class="string">"1ST_AKA_DL_NUMBER"</span>;
+<a name="469" href="#469">469</a> 	<em>/**<em>* The Constant AKA2_NAME. */</em></em>
+<a name="470" href="#470">470</a> 	String AKA2_NAME_KEY = <span class="string">"AKA2_NAME"</span>;
+<a name="471" href="#471">471</a> 	<em>/**<em>* The Constant AKA3_NAME. */</em></em>
+<a name="472" href="#472">472</a> 	String AKA3_NAME_KEY = <span class="string">"AKA3_NAME"</span>;
+<a name="473" href="#473">473</a> 	<em>/**<em>* The Constant CURRENT_DATE_OF_BIRTH. */</em></em>
+<a name="474" href="#474">474</a> 	String CURRENT_DATE_OF_BIRTH_KEY = <span class="string">"CURRENT_DATE_OF_BIRTH"</span>;
+<a name="475" href="#475">475</a> 	<em>/**<em>* The Constant CURRENT_SEX_CODE. */</em></em>
+<a name="476" href="#476">476</a> 	String CURRENT_SEX_CODE_KEY = <span class="string">"CURRENT_SEX_CODE"</span>;
+<a name="477" href="#477">477</a> 	<em>/**<em>* The Constant CURRENT_HEIGHT. */</em></em>
+<a name="478" href="#478">478</a> 	String CURRENT_HEIGHT_KEY = <span class="string">"CURRENT_HEIGHT"</span>;
+<a name="479" href="#479">479</a> 	<em>/**<em>* The Constant CURRENT_WEIGHT. */</em></em>
+<a name="480" href="#480">480</a> 	String CURRENT_WEIGHT_KEY = <span class="string">"CURRENT_WEIGHT"</span>;
+<a name="481" href="#481">481</a> 	<em>/**<em>* The Constant CURRENT_EYE_COLOR. */</em></em>
+<a name="482" href="#482">482</a> 	String CURRENT_EYE_COLOR_KEY = <span class="string">"CURRENT_EYE_COLOR"</span>;
+<a name="483" href="#483">483</a> 	<em>/**<em>* The Constant CURRENT_PRIMARY_DL_NUMBER_STATE. */</em></em>
+<a name="484" href="#484">484</a> 	String CURRENT_PRIMARY_DL_NUMBER_STATE_KEY = <span class="string">"CURRENT_PRIMARY_DL_NUMBER_STATE"</span>;
+<a name="485" href="#485">485</a> 	<em>/**<em>* The Constant CURRENT_PRIMARY_DL_NUMBER. */</em></em>
+<a name="486" href="#486">486</a> 	String CURRENT_PRIMARY_DL_NUMBER_KEY = <span class="string">"CURRENT_PRIMARY_DL_NUMBER"</span>;
+<a name="487" href="#487">487</a> 	<em>/**<em>* The Constant CURRENT_PRIMARY_SSN_NUMBER. */</em></em>
+<a name="488" href="#488">488</a> 	String CURRENT_PRIMARY_SSN_NUMBER_KEY = <span class="string">"CURRENT_PRIMARY_SSN_NUMBER"</span>;
+<a name="489" href="#489">489</a> 	<em>/**<em>* The Constant AKA_SSN_NUMBER. */</em></em>
+<a name="490" href="#490">490</a> 	String AKA_SSN_NUMBER_KEY = <span class="string">"AKA_SSN_NUMBER"</span>;
+<a name="491" href="#491">491</a> 	<em>/**<em>* The Constant TRANSACTION_CODE. */</em></em>
+<a name="492" href="#492">492</a> 	String TRANSACTION_CODE_KEY = <span class="string">"TRANSACTION_CODE"</span>;
+<a name="493" href="#493">493</a> 	<em>/**<em>* The Constant FILLER. */</em></em>
+<a name="494" href="#494">494</a> 	String FILLER_KEY = <span class="string">"FILLER"</span>;
+<a name="495" href="#495">495</a> 	<em>/**<em>* The Constant DATE_OF_MESSAGE. */</em></em>
+<a name="496" href="#496">496</a> 	String DATE_OF_MESSAGE_KEY = <span class="string">"DATE_OF_MESSAGE"</span>;
+<a name="497" href="#497">497</a> 	<em>/**<em>* The Constant TIME_OF_MESSAGE. */</em></em>
+<a name="498" href="#498">498</a> 	String TIME_OF_MESSAGE_KEY = <span class="string">"TIME_OF_MESSAGE"</span>;
+<a name="499" href="#499">499</a> 	<em>/**<em>* The Constant MESSAGE_ID. */</em></em>
+<a name="500" href="#500">500</a> 	String MESSAGE_ID_KEY = <span class="string">"MESSAGE_ID"</span>;
+<a name="501" href="#501">501</a> 	<em>/**<em>* The Constant NETWORK_STATUS_INDICATOR. */</em></em>
+<a name="502" href="#502">502</a> 	String NETWORK_STATUS_INDICATOR_KEY = <span class="string">"NETWORK_STATUS_INDICATOR"</span>;
+<a name="503" href="#503">503</a> 	<em>/**<em>* The Constant APPLICATION_STATUS_INDICATOR. */</em></em>
+<a name="504" href="#504">504</a> 	String APPLICATION_STATUS_INDICATOR_KEY = <span class="string">"APPLICATION_STATUS_INDICATOR"</span>;
+<a name="505" href="#505">505</a> 	<em>/**<em>* The Constant PROCESSING_STATUS. */</em></em>
+<a name="506" href="#506">506</a> 	String PROCESSING_STATUS_KEY = <span class="string">"PROCESSING_STATUS"</span>;
+<a name="507" href="#507">507</a> 	<em>/**<em>* The Constant LAST_MATCH_INDICATOR. */</em></em>
+<a name="508" href="#508">508</a> 	String LAST_MATCH_INDICATOR_KEY = <span class="string">"LAST_MATCH_INDICATOR"</span>;
+<a name="509" href="#509">509</a> 	<em>/**<em>* The Constant CHANGE_SOR_CODE. */</em></em>
+<a name="510" href="#510">510</a> 	String CHANGE_SOR_CODE_KEY = <span class="string">"CHANGE_SOR_CODE"</span>;
+<a name="511" href="#511">511</a> 	<em>/**<em>* The Constant DUPLICATE_FLAG. */</em></em>
+<a name="512" href="#512">512</a> 	String DUPLICATE_FLAG_KEY = <span class="string">"DUPLICATE_FLAG"</span>;
+<a name="513" href="#513">513</a> 	<em>/**<em>* The Constant AKA_NAME_COUNT. */</em></em>
+<a name="514" href="#514">514</a> 	String AKA_NAME_COUNT_KEY = <span class="string">"AKA_NAME_COUNT"</span>;
+<a name="515" href="#515">515</a> 	<em>/**<em>* The Constant 1ST_HIT_STATE_CODE. */</em></em>
+<a name="516" href="#516">516</a> 	String HIT_1ST_STATE_CODE_KEY = <span class="string">"1ST_HIT_STATE_CODE"</span>;
+<a name="517" href="#517">517</a> 	<em>/**<em>* The Constant ERROR_BLOCK. */</em></em>
+<a name="518" href="#518">518</a> 	String ERROR_BLOCK_KEY = <span class="string">"ERROR_BLOCK"</span>;
+<a name="519" href="#519">519</a> 	<em>/**<em>* The Constant FILTER1. */</em></em>
+<a name="520" href="#520">520</a> 	String FILTER1_KEY = <span class="string">"FILTER1"</span>;
+<a name="521" href="#521">521</a> 	<em>/**<em>* The Constant FILLER2. */</em></em>
+<a name="522" href="#522">522</a> 	String FILLER2_KEY = <span class="string">"FILLER2"</span>;
+<a name="523" href="#523">523</a> 	<em>/**<em>* The Constant FILLER3. */</em></em>
+<a name="524" href="#524">524</a> 	String FILLER3_KEY = <span class="string">"FILLER3"</span>;
+<a name="525" href="#525">525</a> 	<em>/**<em>* The Constant FILLER4. */</em></em>
+<a name="526" href="#526">526</a> 	String FILLER4_KEY = <span class="string">"FILLER4"</span>;
+<a name="527" href="#527">527</a> 	<em>/**<em>* The Constant DL_WITHDRAWAL_PENDING_INDICATOR. */</em></em>
+<a name="528" href="#528">528</a> 	String DL_WITHDRAWAL_PENDING_INDICATOR_KEY = <span class="string">"DL_WITHDRAWAL_PENDING_INDICATOR"</span>;
+<a name="529" href="#529">529</a> 	<em>/**<em>* The Constant ERROR_RESPONSE. */</em></em>
+<a name="530" href="#530">530</a> 	String ERROR_RESPONSE = <span class="string">"ERROR RESPONSE"</span>;
+<a name="531" href="#531">531</a> 	<em>/**<em>* The Constant PARTIAL_RESPONSE. */</em></em>
+<a name="532" href="#532">532</a> 	String PARTIAL_RESPONSE = <span class="string">"PARTIAL RESPONSE"</span>;
+<a name="533" href="#533">533</a> 	<em>/**<em>* The Constant LENGTH_ERROR. */</em></em>
+<a name="534" href="#534">534</a> 	String LENGTH_ERROR = <span class="string">"LENGTH ERROR"</span>;
+<a name="535" href="#535">535</a> 	<em>/**<em>* The Constant NO_RESPONSE_RECEIVED. */</em></em>
+<a name="536" href="#536">536</a> 	String NO_RESPONSE_RECEIVED = <span class="string">"NO RESPONSE RECEIVED"</span>;
+<a name="537" href="#537">537</a> 	<em>/**<em>* The Constant RC. */</em></em>
+<a name="538" href="#538">538</a> 	String CONST_RC = <span class="string">"RC"</span>;
+<a name="539" href="#539">539</a> 	<em>/**<em>* The Constant RD. */</em></em>
+<a name="540" href="#540">540</a> 	String CONST_RD = <span class="string">"RD"</span>;
+<a name="541" href="#541">541</a> 	String CONST_RO = <span class="string">"RO"</span>;
+<a name="542" href="#542">542</a> 	String CONST_R2 = <span class="string">"R2"</span>;
+<a name="543" href="#543">543</a> 	String CONST_R3 = <span class="string">"R3"</span>;
+<a name="544" href="#544">544</a> 	String CONST_XX = <span class="string">"XX"</span>;
+<a name="545" href="#545">545</a> 	String CONST_IO = <span class="string">"IO"</span>;
+<a name="546" href="#546">546</a> 	String CONST_TRUE = <span class="string">"Y"</span>;
+<a name="547" href="#547">547</a> 	String CONST_D = <span class="string">"D"</span>;
+<a name="548" href="#548">548</a> 	String CONST_U = <span class="string">"U"</span>;
+<a name="549" href="#549">549</a> 	String CONST_P = <span class="string">"P"</span>;
+<a name="550" href="#550">550</a> 	String CONST_T = <span class="string">"T"</span>;
+<a name="551" href="#551">551</a> 	String CONST_M = <span class="string">"M"</span>;
+<a name="552" href="#552">552</a> 	String CONST_F = <span class="string">"F"</span>;
+<a name="553" href="#553">553</a> 	String CONST_G = <span class="string">"G"</span>;
+<a name="554" href="#554">554</a> 	String CONST_C = <span class="string">"C"</span>;
+<a name="555" href="#555">555</a> 	String CONST_CNA = <span class="string">"CNA"</span>;
+<a name="556" href="#556">556</a> 	String CONST_4 = <span class="string">"4"</span>;
+<a name="557" href="#557">557</a> 	String CONST_6 = <span class="string">"6"</span>;
+<a name="558" href="#558">558</a> 	<em>/**<em>* The Constant HC. */</em></em>
+<a name="559" href="#559">559</a> 	String CONST_HC = <span class="string">"HC"</span>;
+<a name="560" href="#560">560</a> 	<em>/**<em>* The Constant E. */</em></em>
+<a name="561" href="#561">561</a> 	String CONST_E = <span class="string">"E"</span>;
+<a name="562" href="#562">562</a> 	<em>/**<em>* The Constant L. */</em></em>
+<a name="563" href="#563">563</a> 	String CONST_L = <span class="string">"L"</span>;
+<a name="564" href="#564">564</a> 	<em>/**<em>* The Constant SECOND_INQ_IND. */</em></em>
+<a name="565" href="#565">565</a> 	String SECOND_INQ_IND = <span class="string">"Y"</span>;
+<a name="566" href="#566">566</a> 	<em>/**<em>* The Constant MESSAGE_DEST_COUNTER_1. */</em></em>
+<a name="567" href="#567">567</a> 	String MESSAGE_DEST_COUNTER_1 = <span class="string">"1"</span>;
+<a name="568" href="#568">568</a> 	<em>/**<em>* The Constant MESSAGE_DEST_COUNTER_2. */</em></em>
+<a name="569" href="#569">569</a> 	String MESSAGE_DEST_COUNTER_2 = <span class="string">"2"</span>;
+<a name="570" href="#570">570</a> 	<em>/**<em>* The Constant MALE_GENDER_CODE. */</em></em>
+<a name="571" href="#571">571</a> 	String MALE_GENDER_CODE = <span class="string">"1"</span>;
+<a name="572" href="#572">572</a> 	<em>/**<em>* The Constant FEMALE_GENDER_CODE. */</em></em>
+<a name="573" href="#573">573</a> 	String FEMALE_GENDER_CODE = <span class="string">"2"</span>;
+<a name="574" href="#574">574</a> 	<em>/**<em>* The Constant MALE_GENDER_CODE_VALUE. */</em></em>
+<a name="575" href="#575">575</a> 	String MALE_GENDER_CODE_VALUE = <span class="string">"M"</span>;
+<a name="576" href="#576">576</a> 	<em>/**<em>* The Constant FEMALE_GENDER_CODE_VALUE. */</em></em>
+<a name="577" href="#577">577</a> 	String FEMALE_GENDER_CODE_VALUE = <span class="string">"F"</span>;
+<a name="578" href="#578">578</a> 	<em>/**<em>* The Constant BROWN_COLOR_CODE. */</em></em>
+<a name="579" href="#579">579</a> 	String BROWN_COLOR_CODE = <span class="string">"BRO"</span>;
+<a name="580" href="#580">580</a> 	<em>/**<em>* The Constant BROWN_COLOR_CODE_VALUE. */</em></em>
+<a name="581" href="#581">581</a> 	String BROWN_COLOR_CODE_VALUE = <span class="string">"BRN"</span>;
+<a name="582" href="#582">582</a> 	<em>/**<em>* The Constant HAZEL_COLOR_CODE. */</em></em>
+<a name="583" href="#583">583</a> 	String HAZEL_COLOR_CODE = <span class="string">"HAZ"</span>;
+<a name="584" href="#584">584</a> 	<em>/**<em>* The Constant HAZEL_COLOR_CODE_VALUE. */</em></em>
+<a name="585" href="#585">585</a> 	String HAZEL_COLOR_CODE_VALUE = <span class="string">"HZL"</span>;
+<a name="586" href="#586">586</a> 	<em>/**<em>* The Constant PINK_COLOR_CODE. */</em></em>
+<a name="587" href="#587">587</a> 	String PINK_COLOR_CODE = <span class="string">"PNK"</span>;
+<a name="588" href="#588">588</a> 	<em>/**<em>* The Constant DIC_COLOR_CODE. */</em></em>
+<a name="589" href="#589">589</a> 	String DIC_COLOR_CODE = <span class="string">"DIC"</span>;
+<a name="590" href="#590">590</a> 	<em>/**<em>* The Constant UNK_COLOR_CODE. */</em></em>
+<a name="591" href="#591">591</a> 	String UNK_COLOR_CODE = <span class="string">"UNK"</span>;
+<a name="592" href="#592">592</a> 	String MMDD_FORMAT = <span class="string">"MMdd"</span>;
+<a name="593" href="#593">593</a> 	<em class="comment">/////////// SendLogMessageToNetworkControlCenterConverter Constants //////////////</em>
+<a name="594" href="#594">594</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="595" href="#595">595</a> 	String TCODE_NCC = <span class="string">"NCC"</span>;
+<a name="596" href="#596">596</a> 	<em class="comment">/////////// UpdateDlHistoryConverter Constants //////////////</em>
+<a name="597" href="#597">597</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="598" href="#598">598</a> 	String TCODE_DPR = <span class="string">"DPR"</span>;
+<a name="599" href="#599">599</a> 	<em>/**<em>* The Constant SYM_AT. */</em></em>
+<a name="600" href="#600">600</a> 	String SYM_AT = <span class="string">"@"</span>;
+<a name="601" href="#601">601</a> 	<em class="comment">/////////// UpdateDriverLicenseConverter Constants //////////////</em>
+<a name="602" href="#602">602</a> 	<em>/**<em>* Transaction code */</em></em>
+<a name="603" href="#603">603</a> 	String TCODE_DL5 = <span class="string">"DL5"</span>;
+<a name="604" href="#604">604</a> 	<em>/**<em>* The constant CC_FLAG */</em></em>
+<a name="605" href="#605">605</a> 	String CC_FLAG = <span class="string">"Y"</span>;
+<a name="606" href="#606">606</a> 	<em>/**<em>* The constant A */</em></em>
+<a name="607" href="#607">607</a> 	String CON_A = <span class="string">"A"</span>;
+<a name="608" href="#608">608</a> 	<em class="comment">/////////// UpdateExtendedNameIndexConverter Constants //////////////</em>
+<a name="609" href="#609">609</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="610" href="#610">610</a> 	String TCODE_EN2 = <span class="string">"EN2"</span>;
+<a name="611" href="#611">611</a> 	<em>/**<em>* The Constant FUNCTION. */</em></em>
+<a name="612" href="#612">612</a> 	String FUNCTION_U = <span class="string">"U"</span>;
+<a name="613" href="#613">613</a> 	<em>/**<em>* The Constant RESPONSE_COUNT. */</em></em>
+<a name="614" href="#614">614</a> 	String RESPONSE_COUNT_01 = <span class="string">"01"</span>;
+<a name="615" href="#615">615</a> 	<em>/**<em>* The Constant ACTION. */</em></em>
+<a name="616" href="#616">616</a> 	String ACTION_A = <span class="string">"A"</span>;
+<a name="617" href="#617">617</a> 	<em>/**<em>* The Constant TRUE_OR_AKA_NAME. */</em></em>
+<a name="618" href="#618">618</a> 	String TRUE_OR_AKA_NAME = <span class="string">"T"</span>;
+<a name="619" href="#619">619</a> 	<em>/**<em>* The Constant BDLP_VERIFICATION_CODE. */</em></em>
+<a name="620" href="#620">620</a> 	String BDLP_VERIFICATION_CODE = <span class="string">"N"</span>;
+<a name="621" href="#621">621</a> 	<em class="comment">/////////// ValidateAutomatedReceiptConverter Constants //////////////</em>
+<a name="622" href="#622">622</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="623" href="#623">623</a> 	String TCODE_CIA = <span class="string">"CIA"</span>;
+<a name="624" href="#624">624</a> 	<em>/**<em>* The Constant SIZE_OF_INITIAL_PART_OF_INQUIRY. */</em></em>
+<a name="625" href="#625">625</a> 	<strong>int</strong> SIZE_OF_INITIAL_PART_OF_INQUIRY = 18;
+<a name="626" href="#626">626</a> 	<em>/**<em>* The Constant SIZE_OF_ONE_INQUIRED_VOUCHER. */</em></em>
+<a name="627" href="#627">627</a> 	<strong>int</strong> SIZE_OF_ONE_INQUIRED_VOUCHER = 15;
+<a name="628" href="#628">628</a> 	<em>/**<em>* The Constant GOOD_RESPONSE_SIZE. */</em></em>
+<a name="629" href="#629">629</a> 	<strong>int</strong> SIZE_OF_GOOD_RESPONSE = 95;
+<a name="630" href="#630">630</a> 	<em>/**<em>* The Constant ERROR_RESPONSE_SIZE. */</em></em>
+<a name="631" href="#631">631</a> 	<strong>int</strong> SIZE_OF_ERROR_RESPONSE = 5;
+<a name="632" href="#632">632</a> 	<em>/**<em>* The Constant ERRORMSG_FOR_ERRORCODE_73_AND_74. */</em></em>
+<a name="633" href="#633">633</a> 	String ERRORMSG_FOR_ERRORCODE_73_AND_74 = <span class="string">"F057 - CNA-CANNOT PROCESS Z97 - CANCEL TRANS"</span>;
+<a name="634" href="#634">634</a> 	<em>/**<em>* The Constant ERRORMSG_FOR_ERRORCODE_75. */</em></em>
+<a name="635" href="#635">635</a> 	String ERRORMSG_FOR_ERRORCODE_75 = <span class="string">"F068 - RECEIPT NOT ON FILE - CANNOT PROCESS Z97"</span>;
+<a name="636" href="#636">636</a> 	<em>/**<em>* The Constant ERRORMSG_FOR_ERRORCODE_TR. */</em></em>
+<a name="637" href="#637">637</a> 	String ERRORMSG_FOR_ERRORCODE_TR = <span class="string">"AR NOT FOUND"</span>;
+<a name="638" href="#638">638</a> 	<em>/**<em>* The Constant MISC_RECEIPT_COMMENT */</em></em>
+<a name="639" href="#639">639</a> 	String MISC_RECEIPT_COMMENT = <span class="string">"CNA"</span>;
+<a name="640" href="#640">640</a> 	<em class="comment">/////////// ValidateSsnInquiryConverter Constants //////////////</em>
+<a name="641" href="#641">641</a> 	<em>/**<em>* The Constant TCODE. */</em></em>
+<a name="642" href="#642">642</a> 	String TCODE_SS5 = <span class="string">"SS5"</span>;
+<a name="643" href="#643">643</a> 	<em>/**<em>* The Constant RETURN_CODE_DESCRIPTION_1 */</em></em>
+<a name="644" href="#644">644</a> 	String RETURN_CODE_DESCRIPTION_1 = <span class="string">"SSN, Name and DOB Verified"</span>;
+<a name="645" href="#645">645</a> 	<em>/**<em>* The Constant RETURN_CODE_DESCRIPTION_2 */</em></em>
+<a name="646" href="#646">646</a> 	String RETURN_CODE_DESCRIPTION_2 = <span class="string">"No Such SSN"</span>;
+<a name="647" href="#647">647</a> 	<em>/**<em>* The Constant RETURN_CODE_DESCRIPTION_3 */</em></em>
+<a name="648" href="#648">648</a> 	String RETURN_CODE_DESCRIPTION_3 = <span class="string">"Name Did Not Verify; DOB is Valid"</span>;
+<a name="649" href="#649">649</a> 	<em>/**<em>* The Constant RETURN_CODE_DESCRIPTION_4 */</em></em>
+<a name="650" href="#650">650</a> 	String RETURN_CODE_DESCRIPTION_4 = <span class="string">"DOB Did Not Verify, Name is Valid"</span>;
+<a name="651" href="#651">651</a> 	<em>/**<em>* The Constant RETURN_CODE_DESCRIPTION_5 */</em></em>
+<a name="652" href="#652">652</a> 	String RETURN_CODE_DESCRIPTION_5 = <span class="string">"Name and DOB Did Not Verify"</span>;
+<a name="653" href="#653">653</a> 	<em>/**<em>* The Constant RETURN_CODE_DESCRIPTION_6 */</em></em>
+<a name="654" href="#654">654</a> 	String RETURN_CODE_DESCRIPTION_6 = <span class="string">"Customer Contact Local SSA"</span>;
+<a name="655" href="#655">655</a> 	<em>/**<em>* The Constant RETURN_CODE_DESCRIPTION_9 */</em></em>
+<a name="656" href="#656">656</a> 	String RETURN_CODE_DESCRIPTION_9 = <span class="string">"CNA Unable to Process At This Time"</span>;
+<a name="657" href="#657">657</a> 	<em>/**<em>* The Constant SSN_MESSAGE_LENGTH */</em></em>
+<a name="658" href="#658">658</a> 	<strong>int</strong> SSN_MESSAGE_LENGTH = 268;
+<a name="659" href="#659">659</a> 	<em>/**<em>* The Constant SSN_VERIF_CODE_1 */</em></em>
+<a name="660" href="#660">660</a> 	String SSN_VERIF_CODE_1 = <span class="string">"1"</span>;
+<a name="661" href="#661">661</a> 	<em>/**<em>* The Constant SSN_VERIF_CODE_9 */</em></em>
+<a name="662" href="#662">662</a> 	String SSN_VERIF_CODE_9 = <span class="string">"9"</span>;
+<a name="663" href="#663">663</a> 	<em>/**<em>* The Constant SSN_VERIF_CODE_A */</em></em>
+<a name="664" href="#664">664</a> 	String SSN_VERIF_CODE_A = <span class="string">"A"</span>;
+<a name="665" href="#665">665</a> 	<em>/**<em>* The Constant SSN_VERIF_CODE_D */</em></em>
+<a name="666" href="#666">666</a> 	String SSN_VERIF_CODE_D = <span class="string">"D"</span>;
+<a name="667" href="#667">667</a> 	<em>/**<em>* The Constant SSN_VERIF_CODE_X */</em></em>
+<a name="668" href="#668">668</a> 	String SSN_VERIF_CODE_X = <span class="string">"X"</span>;
+<a name="669" href="#669">669</a> 	<em>/**<em>* The Constant SSN_VERIF_CODE_R */</em></em>
+<a name="670" href="#670">670</a> 	String SSN_VERIF_CODE_R = <span class="string">"R"</span>;
+<a name="671" href="#671">671</a> 	<em class="comment">/////////// ProofInquiryWithCompanyNumberConverter Constants //////////////</em>
+<a name="672" href="#672">672</a> 	<em>/**<em>* The Constant TCODE_DHA */</em></em>
+<a name="673" href="#673">673</a> 	String TCODE_DHA = <span class="string">"DHA"</span>;
+<a name="674" href="#674">674</a> 	<em>/**<em>* The Constant FIELD_OFFICE_CODE */</em></em>
+<a name="675" href="#675">675</a> 	String FIELD_OFFICE_CODE = <span class="string">"80"</span>;
+<a name="676" href="#676">676</a> 	<em>/**<em>* The Constant INFORMATION_CODE */</em></em>
+<a name="677" href="#677">677</a> 	String INFORMATION_CODE = <span class="string">"1"</span>;
+<a name="678" href="#678">678</a> 	<em>/**<em>* The Constant FILE_CODE_N */</em></em>
+<a name="679" href="#679">679</a> 	String FILE_CODE_N = <span class="string">"N"</span>;
+<a name="680" href="#680">680</a> 	<em>/**<em>* The constant DHA_DHB_RETURN_CODESETNAME */</em></em>
+<a name="681" href="#681">681</a> 	String DHA_DHB_RETURN_CODESETNAME = <span class="string">"DhaOrDhbReturnCodes"</span>;
+<a name="682" href="#682">682</a> 	<em>/**<em>* The constant DHA_DHB_RETURN_CODE_00 */</em></em>
+<a name="683" href="#683">683</a> 	String DHA_DHB_RETURN_CODE_00 = <span class="string">"00"</span>;
+<a name="684" href="#684">684</a> 	<em class="comment">/////////// ProofInquiryWithAbbrCompanyNumberConverter Constants //////////////</em>
+<a name="685" href="#685">685</a> 	<em>/**<em>* The Constant TCODE_DHB */</em></em>
+<a name="686" href="#686">686</a> 	String TCODE_DHB = <span class="string">"DHB"</span>;
+<a name="687" href="#687">687</a> 	<em>/**<em>* The Constant FILE_CODE_A */</em></em>
+<a name="688" href="#688">688</a> 	String FILE_CODE_A = <span class="string">"A"</span>;
+<a name="689" href="#689">689</a> 	<em class="comment">/////////// AutomatedNameIndexDlInquiryConverter Constants //////////////</em>
+<a name="690" href="#690">690</a> 	<em>/**<em>* The Constant TCODE_ADQ */</em></em>
+<a name="691" href="#691">691</a> 	String TCODE_ADQ = <span class="string">"ADQ"</span>;
+<a name="692" href="#692">692</a> 	<em>/**<em>* The Constant VARIABLE_DATA_FIELD_CODE */</em></em>
+<a name="693" href="#693">693</a> 	String VARIABLE_DATA_FIELD_CODE = <span class="string">"F"</span>;
+<a name="694" href="#694">694</a> 	<em>/**<em>* The Constant VARIABLE_DATA_LENGTH_001 */</em></em>
+<a name="695" href="#695">695</a> 	String VARIABLE_DATA_LENGTH_000 = <span class="string">"000"</span>;
+<a name="696" href="#696">696</a> 	<em>/**<em>* The Constant VARIABLE_DATA_LENGTH_003 */</em></em>
+<a name="697" href="#697">697</a> 	String VARIABLE_DATA_LENGTH_003 = <span class="string">"003"</span>;
+<a name="698" href="#698">698</a> 	<em>/**<em>* The constant TTC_07Q */</em></em>
+<a name="699" href="#699">699</a> 	String TTC_07Q = <span class="string">"07Q"</span>;
+<a name="700" href="#700">700</a> 	<em>/**<em>* The constant TTC_PRF */</em></em>
+<a name="701" href="#701">701</a> 	String TTC_PRF = <span class="string">"PRF"</span>;
+<a name="702" href="#702">702</a> 	<em>/**<em>* The constant TTC_PF3 */</em></em>
+<a name="703" href="#703">703</a> 	String TTC_PF3 = <span class="string">"PF3"</span>;
+<a name="704" href="#704">704</a> 	<em>/**<em>* The Constant UNLABELED */</em></em>
+<a name="705" href="#705">705</a> 	String UNLABELED = <span class="string">"1"</span>;
+<a name="706" href="#706">706</a> 	<em>/**<em>* The constant ADQ_CODESET_NAME */</em></em>
+<a name="707" href="#707">707</a> 	String ADQ_CODESET_NAME = <span class="string">"AdqReturnCodes"</span>;
+<a name="708" href="#708">708</a> 	<em>/**<em>* The Constant ADQ_REQUEST_PART_OF_RESPONSE_LENGTH. */</em></em>
+<a name="709" href="#709">709</a> 	<strong>int</strong> ADQ_REQUEST_PART_OF_RESPONSE_LENGTH = 80;
+<a name="710" href="#710">710</a> 	<em>/**<em>* The Constant ADQ_ERRORCODE_OF_RESPONSE_LENGTH. */</em></em>
+<a name="711" href="#711">711</a> 	<strong>int</strong> ADQ_ERRORCODE_OF_RESPONSE_LENGTH = 2;
+<a name="712" href="#712">712</a> 	<em>/**<em>* The Constant ADQ_ANIRECORD_OF_RESPONSE_LENGTH. */</em></em>
+<a name="713" href="#713">713</a> 	<strong>int</strong> ADQ_ANIRECORD_OF_RESPONSE_LENGTH = 62;
+<a name="714" href="#714">714</a> 	<em>/**<em>* The constant GOOD_RETURN_CODE */</em></em>
+<a name="715" href="#715">715</a> 	String GOOD_RETURN_CODE = <span class="string">"  "</span>;
+<a name="716" href="#716">716</a> 	<em class="comment">// Converter constants for TCodes DLC, DLD or DFT</em>
+<a name="717" href="#717">717</a> 	<em>/**<em>* The constant TCODE_DLC. */</em></em>
+<a name="718" href="#718">718</a> 	String TCODE_DLC = <span class="string">"DLC"</span>;
+<a name="719" href="#719">719</a> 	<em>/**<em>* The constant TCODE_DLF. */</em></em>
+<a name="720" href="#720">720</a> 	String TCODE_DLF = <span class="string">"DLF"</span>;
+<a name="721" href="#721">721</a> 	<em>/**<em>* The constant TCODE_DLD. */</em></em>
+<a name="722" href="#722">722</a> 	String TCODE_DLD = <span class="string">"DLD"</span>;
+<a name="723" href="#723">723</a> 	<em>/**<em>* The constant TCODE_DLT. */</em></em>
+<a name="724" href="#724">724</a> 	String TCODE_DFT = <span class="string">"DFT"</span>;
+<a name="725" href="#725">725</a> 	<em>/**<em>* The constant TCODE_DRT. */</em></em>
+<a name="726" href="#726">726</a> 	String TCODE_DRT = <span class="string">"DRT"</span>;
+<a name="727" href="#727">727</a> 	<em>/**<em>* The constant DLC DLD Return Code*/</em></em>
+<a name="728" href="#728">728</a> 	String DLC_DLD_RETURN_CODE = <span class="string">"DLC DLD Return Code"</span>;
+<a name="729" href="#729">729</a> 	<em>/**<em>* The Long term CNA Return Code */</em></em>
+<a name="730" href="#730">730</a> 	String LONG_TERM_CNA_RETURN_CODE = <span class="string">"01"</span>;
+<a name="731" href="#731">731</a> 	<em>/**<em>* The constant for the variable data length field */</em></em>
+<a name="732" href="#732">732</a> 	String DATA_LENGTH_FIELD = <span class="string">"\u000000"</span>;
+<a name="733" href="#733">733</a> 	<em>/**<em>* The constant 22. */</em></em>
+<a name="734" href="#734">734</a> 	<strong>int</strong> <strong>int</strong>_22 = 22;
+<a name="735" href="#735">735</a> 	<em>/**<em>* The constant 24. */</em></em>
+<a name="736" href="#736">736</a> 	<strong>int</strong> <strong>int</strong>_24 = 24;
+<a name="737" href="#737">737</a> 	<em>/**<em>* The constant 25. */</em></em>
+<a name="738" href="#738">738</a> 	<strong>int</strong> <strong>int</strong>_25 = 25;
+<a name="739" href="#739">739</a> 	<em class="comment">// The converter constants for TCodes R62, RHC, RHI.</em>
+<a name="740" href="#740">740</a> 	<em>/**<em>* The Constant TCode for R62 */</em></em>
+<a name="741" href="#741">741</a> 	String TCODE_R62 = <span class="string">"R62"</span>;
+<a name="742" href="#742">742</a> 	<em>/**<em>* The Constant TCode for RHC */</em></em>
+<a name="743" href="#743">743</a> 	String TCODE_RHC = <span class="string">"RHC"</span>;
+<a name="744" href="#744">744</a> 	<em>/**<em>* The Constant TCode for RHI */</em></em>
+<a name="745" href="#745">745</a> 	String TCODE_RHI = <span class="string">"RHI"</span>;
+<a name="746" href="#746">746</a> 	<em>/**<em>* The constant 99933*/</em></em>
+<a name="747" href="#747">747</a> 	String CONSTANT_99933 = <span class="string">"99933"</span>;
+<a name="748" href="#748">748</a> 	<em>/**<em>* The info code element 4 */</em></em>
+<a name="749" href="#749">749</a> 	String INFO_CODE_4 = <span class="string">"4"</span>;
+<a name="750" href="#750">750</a> 	<em>/**<em>* The Constant V */</em></em>
+<a name="751" href="#751">751</a> 	String CONSTANT_V = <span class="string">"V"</span>;
+<a name="752" href="#752">752</a> 	<em class="comment">// The converter constants for TCodes DFA, DFP.</em>
+<a name="753" href="#753">753</a> 	<em>/**<em>* The constant TCode for DFA. */</em></em>
+<a name="754" href="#754">754</a> 	String TCODE_DFA = <span class="string">"DFA"</span>;
+<a name="755" href="#755">755</a> 	<em>/**<em>* The constant TCode for DFP. */</em></em>
+<a name="756" href="#756">756</a> 	String TCODE_DFP = <span class="string">"DFP"</span>;
+<a name="757" href="#757">757</a> 	<em>/**<em>* The constant service fee of $1 */</em></em>
+<a name="758" href="#758">758</a> 	String CONSTANT_SERVICE_FEE = <span class="string">"0100"</span>;
+<a name="759" href="#759">759</a> 	<em class="comment">// The State constants</em>
+<a name="760" href="#760">760</a> 	<em>/**<em>* The constant STATE_CA */</em></em>
+<a name="761" href="#761">761</a> 	String STATE_CA = <span class="string">"CA"</span>;
+<a name="762" href="#762">762</a> 	<em class="comment">// Suffix Constants</em>
+<a name="763" href="#763">763</a> 	<em>/**<em>* The constant SUFFIX_JR */</em></em>
+<a name="764" href="#764">764</a> 	String SUFFIX_JR = <span class="string">"JR"</span>;
+<a name="765" href="#765">765</a> 	<em>/**<em>* The constant SUFFIX_SR */</em></em>
+<a name="766" href="#766">766</a> 	String SUFFIX_SR = <span class="string">"SR"</span>;
+<a name="767" href="#767">767</a> 	<em>/**<em>* The constant SUFFIX_II */</em></em>
+<a name="768" href="#768">768</a> 	String SUFFIX_II = <span class="string">"II"</span>;
+<a name="769" href="#769">769</a> 	<em>/**<em>* The constant SUFFIX_III */</em></em>
+<a name="770" href="#770">770</a> 	String SUFFIX_III = <span class="string">"III"</span>;
+<a name="771" href="#771">771</a> 	<em>/**<em>* The constant SUFFIX_IV */</em></em>
+<a name="772" href="#772">772</a> 	String SUFFIX_IV = <span class="string">"IV"</span>;
+<a name="773" href="#773">773</a> 	<em class="comment">// The converter constants for TCode AHQ.</em>
+<a name="774" href="#774">774</a> 	<em>/**<em>* The constant TOCE_AHQ */</em></em>
+<a name="775" href="#775">775</a> 	String TCODE_AHQ = <span class="string">"AHQ"</span>;
+<a name="776" href="#776">776</a> 	<em>/**<em>* The constant REQUESTER_CODE */</em></em>
+<a name="777" href="#777">777</a> 	String REQUESTER_CODE = <span class="string">"99933"</span>;
+<a name="778" href="#778">778</a> 	<em>/**<em>* The constant ANI_ADDRESS_CONST_A */</em></em>
+<a name="779" href="#779">779</a> 	String ANI_ADDRESS_CONST_A = <span class="string">";A"</span>;
+<a name="780" href="#780">780</a> 	<em>/**<em>* The constant ANI_ADDRESS_CONST_C */</em></em>
+<a name="781" href="#781">781</a> 	String ANI_ADDRESS_CONST_C = <span class="string">";C"</span>;
+<a name="782" href="#782">782</a> 	<em>/**<em>* The constant ANI_ADDRESS_CONST_B */</em></em>
+<a name="783" href="#783">783</a> 	String ANI_ADDRESS_CONST_B = <span class="string">";B"</span>;
+<a name="784" href="#784">784</a> 	<em>/**<em>* The constant ANI_ADDRESS_CONST_Y */</em></em>
+<a name="785" href="#785">785</a> 	String ANI_ADDRESS_CONST_Y = <span class="string">";Y"</span>;
+<a name="786" href="#786">786</a> 	<em>/**<em>* The constant ANI_ADDRESS_CONST_M */</em></em>
+<a name="787" href="#787">787</a> 	String ANI_ADDRESS_CONST_M = <span class="string">";M"</span>;
+<a name="788" href="#788">788</a> 	<em>/**<em>* The constant ANI_INFOCODE_H6 */</em></em>
+<a name="789" href="#789">789</a> 	String ANI_INFOCODE_H6 = <span class="string">"H6"</span>;
+<a name="790" href="#790">790</a> 	<em>/**<em>* The constant ANI_INFOCODE_H9 */</em></em>
+<a name="791" href="#791">791</a> 	String ANI_INFOCODE_H9 = <span class="string">"H9"</span>;
+<a name="792" href="#792">792</a> 	<em>/**<em>* The constant ANI_INFOCODE_KX */</em></em>
+<a name="793" href="#793">793</a> 	String ANI_INFOCODE_FIRST_CHAR_K = <span class="string">"K"</span>;
+<a name="794" href="#794">794</a> 	<em>/**<em>* The constant ANI_INFOCODE_K3 */</em></em>
+<a name="795" href="#795">795</a> 	String ANI_INFOCODE_K3 = <span class="string">"K3"</span>;
+<a name="796" href="#796">796</a> 	<em>/**<em>* The constant ANI_INFOCODE_K4 */</em></em>
+<a name="797" href="#797">797</a> 	String ANI_INFOCODE_K4 = <span class="string">"K4"</span>;
+<a name="798" href="#798">798</a> 	<em>/**<em>* The constant ANI_INFOCODE_ */</em></em>
+<a name="799" href="#799">799</a> 	String ANI_INFOCODE_D = <span class="string">"D"</span>;
+<a name="800" href="#800">800</a> 	<em>/**<em>* The constant ANI_INFOCODE_H */</em></em>
+<a name="801" href="#801">801</a> 	String ANI_INFOCODE_H = <span class="string">"H"</span>;
+<a name="802" href="#802">802</a> 	<em>/**<em>* The constant ANI_INFOCODE_K */</em></em>
+<a name="803" href="#803">803</a> 	String ANI_INFOCODE_K = <span class="string">"K"</span>;
+<a name="804" href="#804">804</a> 	<em>/**<em>* The constant ANI_TYPE_INQUIRY_7 */</em></em>
+<a name="805" href="#805">805</a> 	String ANI_TYPE_INQUIRY_7 = <span class="string">"7"</span>;
+<a name="806" href="#806">806</a> 	<em>/**<em>* The constant ANI_TYPE_INQUIRY_8 */</em></em>
+<a name="807" href="#807">807</a> 	String ANI_TYPE_INQUIRY_8 = <span class="string">"8"</span>;
+<a name="808" href="#808">808</a> 	<em>/**<em>* The constant ANI_TYPE_INQUIRY_9 */</em></em>
+<a name="809" href="#809">809</a> 	String ANI_TYPE_INQUIRY_9 = <span class="string">"9"</span>;
+<a name="810" href="#810">810</a> 	<em>/**<em>* The constant TCODE_DQ1 */</em></em>
+<a name="811" href="#811">811</a> 	String TCODE_DQ1 = <span class="string">"DQ1"</span>;
+<a name="812" href="#812">812</a> 	<em>/**<em>* The constant TCODE_DQ1_RESPONSE_LENGTH */</em></em>
+<a name="813" href="#813">813</a> 	<strong>int</strong> TCODE_DQ1_RESPONSE_LENGTH = 189;
+<a name="814" href="#814">814</a> 	<em>/**<em>* The constant TCODE_RP1 */</em></em>
+<a name="815" href="#815">815</a> 	String TCODE_RP1 = <span class="string">"RP1"</span>;
+<a name="816" href="#816">816</a> 	<em>/**<em>* The constant PEASE_OFFICER_REUQEST_FOR_EMPLOYEE */</em></em>
+<a name="817" href="#817">817</a> 	String PEASE_OFFICER_REUQEST_FOR_EMPLOYEE = <span class="string">"EM"</span>;
+<a name="818" href="#818">818</a> 	<em>/**<em>* The constant PEACE_OFFICE_REQUEST_UPDATE_FOR_REGISTERED_OWNER */</em></em>
+<a name="819" href="#819">819</a> 	String PEACE_OFFICE_REQUEST_UPDATE_FOR_REGISTERED_OWNER = <span class="string">"R"</span>;
+<a name="820" href="#820">820</a> 	<em class="comment">//Commercial Status Codes</em>
+<a name="821" href="#821">821</a> 	String INPUT_COMM_STATUS_VAL = <span class="string">"VAL"</span>;
+<a name="822" href="#822">822</a> 	String INPUT_COMM_STATUS_DIS = <span class="string">"DIS"</span>;
+<a name="823" href="#823">823</a> 	String INPUT_COMM_STATUS_REV = <span class="string">"REV"</span>;
+<a name="824" href="#824">824</a> 	String INPUT_COMM_STATUS_SUS = <span class="string">"SUS"</span>;
+<a name="825" href="#825">825</a> 	String INPUT_COMM_STATUS_CAN = <span class="string">"CAN"</span>;
+<a name="826" href="#826">826</a> 	String INPUT_COMM_STATUS_EXP = <span class="string">"EXP"</span>;
+<a name="827" href="#827">827</a> 	String INPUT_COMM_STATUS_OTH = <span class="string">"OTH"</span>;
+<a name="828" href="#828">828</a> 	String INPUT_COMM_STATUS_DED = <span class="string">"DED"</span>;
+<a name="829" href="#829">829</a> 	String INPUT_COMM_STATUS_ELG = <span class="string">"ELG"</span>;
+<a name="830" href="#830">830</a> 	String INPUT_COMM_STATUS_LIC = <span class="string">"LIC"</span>;
+<a name="831" href="#831">831</a> 	String INPUT_COMM_STATUS_NOT = <span class="string">"NOT"</span>;
+<a name="832" href="#832">832</a> 	String INPUT_COMM_STATUS_NEN = <span class="string">"NEN"</span>;
+<a name="833" href="#833">833</a> 	String INPUT_COMM_STATUS_RPD = <span class="string">"RPD"</span>;
+<a name="834" href="#834">834</a> 	
+<a name="835" href="#835">835</a> 	String OUTPUT_COMM_STATUS_VAL = <span class="string">"8"</span>;
+<a name="836" href="#836">836</a> 	String OUTPUT_COMM_STATUS_DIS = <span class="string">"2"</span>;
+<a name="837" href="#837">837</a> 	String OUTPUT_COMM_STATUS_REV = <span class="string">"3"</span>;
+<a name="838" href="#838">838</a> 	String OUTPUT_COMM_STATUS_SUS = <span class="string">"4"</span>;
+<a name="839" href="#839">839</a> 	String OUTPUT_COMM_STATUS_CAN = <span class="string">"5"</span>;
+<a name="840" href="#840">840</a> 	String OUTPUT_COMM_STATUS_EXP = <span class="string">"6"</span>;
+<a name="841" href="#841">841</a> 	String OUTPUT_COMM_STATUS_OTH = <span class="string">"7"</span>;
+<a name="842" href="#842">842</a> 	String OUTPUT_COMM_STATUS_DED = <span class="string">"1"</span>;
+<a name="843" href="#843">843</a> 	String OUTPUT_COMM_STATUS_ELG = <span class="string">"A"</span>;
+<a name="844" href="#844">844</a> 	String OUTPUT_COMM_STATUS_LIC = <span class="string">"B"</span>;
+<a name="845" href="#845">845</a> 	String OUTPUT_COMM_STATUS_NOT = <span class="string">"C"</span>;
+<a name="846" href="#846">846</a> 	String OUTPUT_COMM_STATUS_NEN = <span class="string">"C"</span>;
+<a name="847" href="#847">847</a> 	String OUTPUT_COMM_STATUS_RPD = <span class="string">"D"</span>;
+<a name="848" href="#848">848</a> 	String OUTPUT_COMM_STATUS_DEFAULT = <span class="string">"9"</span>;
+<a name="849" href="#849">849</a> 	
+<a name="850" href="#850">850</a> 	String TTC_DLA = <span class="string">"DLA"</span>;
+<a name="851" href="#851">851</a> 	String TTC_DLE = <span class="string">"DLE"</span>;
+<a name="852" href="#852">852</a> 	String TTC_DLG = <span class="string">"DLG"</span>;
+<a name="853" href="#853">853</a> 		
+<a name="854" href="#854">854</a> 	String ATTACHMENT_23 = <span class="string">"23"</span>;
+<a name="855" href="#855">855</a> 	String ATTACHMENT_51 = <span class="string">"51"</span>;
+<a name="856" href="#856">856</a> 	String ATTACHMENT_52 = <span class="string">"52"</span>;
+<a name="857" href="#857">857</a> 	String ATTACHMENT_54 = <span class="string">"54"</span>;
+<a name="858" href="#858">858</a> 	
+<a name="859" href="#859">859</a> 	String ENDORSEMENT_SB = <span class="string">"SB"</span>;
+<a name="860" href="#860">860</a> 	String ENDORSEMENT_HM = <span class="string">"HM"</span>;
+<a name="861" href="#861">861</a> 	
+<a name="862" href="#862">862</a> 	String RESTRICTION_CODE_29 = <span class="string">"29"</span>;
+<a name="863" href="#863">863</a> 	<strong>int</strong> PDPS_APPLICATION_ID = 12;
+<a name="864" href="#864">864</a> }
+<a name="865" href="#865">865</a> <em>/**<em>*</em></em>
+<a name="866" href="#866">866</a> <em> *  Modification History:</em>
+<a name="867" href="#867">867</a> <em> *</em>
+<a name="868" href="#868">868</a> <em> *  $Log: IEcsConverterConstants.java,v $</em>
+<a name="869" href="#869">869</a> <em> *  Revision 1.49  2010/08/11 16:17:37  mwpxr4</em>
+<a name="870" href="#870">870</a> <em> *  Added new constants for ATL-DLA updates.</em>
+<a name="871" href="#871">871</a> <em> *</em>
+<a name="872" href="#872">872</a> <em> *  Revision 1.48  2010/07/19 20:47:51  mwpxr4</em>
+<a name="873" href="#873">873</a> <em> *  Added new constants as part of update in ATL-DLA converter.</em>
+<a name="874" href="#874">874</a> <em> *</em>
+<a name="875" href="#875">875</a> <em> *  Revision 1.47  2010/06/25 21:01:34  mwhxa2</em>
+<a name="876" href="#876">876</a> <em> *  Added Constants for CDLIS/PDPS Ecs Converter</em>
+<a name="877" href="#877">877</a> <em> *</em>
+<a name="878" href="#878">878</a> <em> *  Revision 1.46  2010/06/21 23:18:46  mwcsj3</em>
+<a name="879" href="#879">879</a> <em> *  Merged SUB_BUSINESS_PROCESS_IMPLEMENTATION branch to HEAD</em>
+<a name="880" href="#880">880</a> <em> *</em>
+<a name="881" href="#881">881</a> <em> *  Revision 1.39.2.2  2010/06/20 18:09:00  mwakg</em>
+<a name="882" href="#882">882</a> <em> *  Rebased to June 20, 2010</em>
+<a name="883" href="#883">883</a> <em> *</em>
+<a name="884" href="#884">884</a> <em> *  Revision 1.45  2010/06/04 22:01:06  mwhxb3</em>
+<a name="885" href="#885">885</a> <em> *  Modified constant name.</em>
+<a name="886" href="#886">886</a> <em> *</em>
+<a name="887" href="#887">887</a> <em> *  Revision 1.44  2010/06/04 20:45:49  mwbxg3</em>
+<a name="888" href="#888">888</a> <em> *  Added New TCODEs for: DAD, DAK, DLX,DLU converters</em>
+<a name="889" href="#889">889</a> <em> *</em>
+<a name="890" href="#890">890</a> <em> *  Revision 1.43  2010/06/03 18:33:07  mwuxb</em>
+<a name="891" href="#891">891</a> <em> *  updated for Tcode RP1</em>
+<a name="892" href="#892">892</a> <em> *</em>
+<a name="893" href="#893">893</a> <em> *  Revision 1.42  2010/06/01 21:13:50  mwhxb3</em>
+<a name="894" href="#894">894</a> <em> *  Updated BDLP constants.</em>
+<a name="895" href="#895">895</a> <em> *</em>
+<a name="896" href="#896">896</a> <em> *  Revision 1.41  2010/06/01 20:56:30  mwhxb3</em>
+<a name="897" href="#897">897</a> <em> *  Updated BDLP constants.</em>
+<a name="898" href="#898">898</a> <em> *</em>
+<a name="899" href="#899">899</a> <em> *  Revision 1.40  2010/06/01 20:40:54  mwhxb3</em>
+<a name="900" href="#900">900</a> <em> *  Updated BDLP constants.</em>
+<a name="901" href="#901">901</a> <em> *</em>
+<a name="902" href="#902">902</a> <em> *  Revision 1.39  2010/05/29 18:27:21  mwuxb</em>
+<a name="903" href="#903">903</a> <em> *  updated for tcode rp1</em>
+<a name="904" href="#904">904</a> <em> *</em>
+<a name="905" href="#905">905</a> <em> *  Revision 1.38  2010/05/22 23:41:27  mwhxb3</em>
+<a name="906" href="#906">906</a> <em> *  Updated VARIABLE_DATA_LENGTH_000.</em>
+<a name="907" href="#907">907</a> <em> *</em>
+<a name="908" href="#908">908</a> <em> *  Revision 1.37  2010/05/22 23:16:36  mwuxb</em>
+<a name="909" href="#909">909</a> <em> *  Added new constants</em>
+<a name="910" href="#910">910</a> <em> *</em>
+<a name="911" href="#911">911</a> <em> *  Revision 1.36  2010/05/22 20:09:39  mwhxb3</em>
+<a name="912" href="#912">912</a> <em> *  Added ANI type inquiry constants.</em>
+<a name="913" href="#913">913</a> <em> *</em>
+<a name="914" href="#914">914</a> <em> *  Revision 1.35  2010/05/22 18:23:13  mwhxb3</em>
+<a name="915" href="#915">915</a> <em> *  Added ANI_ADDRESS_CONSts.</em>
+<a name="916" href="#916">916</a> <em> *</em>
+<a name="917" href="#917">917</a> <em> *  Revision 1.34  2010/05/22 18:06:49  mwhxb3</em>
+<a name="918" href="#918">918</a> <em> *  Updated TOCE_AHQ.</em>
+<a name="919" href="#919">919</a> <em> *</em>
+<a name="920" href="#920">920</a> <em> *  Revision 1.33  2010/05/22 18:04:40  mwhxb3</em>
+<a name="921" href="#921">921</a> <em> *  Added converter constants for TCode AHQ.</em>
+<a name="922" href="#922">922</a> <em> *</em>
+<a name="923" href="#923">923</a> <em> *  Revision 1.32  2010/05/21 00:24:06  mwhxb3</em>
+<a name="924" href="#924">924</a> <em> *  Added TCODE_DLF constant.</em>
+<a name="925" href="#925">925</a> <em> *</em>
+<a name="926" href="#926">926</a> <em> *  Revision 1.31  2010/05/21 00:21:50  mwhxb3</em>
+<a name="927" href="#927">927</a> <em> *  Added TTC_PF3.</em>
+<a name="928" href="#928">928</a> <em> *</em>
+<a name="929" href="#929">929</a> <em> *  Revision 1.30  2010/05/20 00:36:32  mwhxb3</em>
+<a name="930" href="#930">930</a> <em> *  Added SYM_AT constant.</em>
+<a name="931" href="#931">931</a> <em> *</em>
+<a name="932" href="#932">932</a> <em> *  Revision 1.29  2010/05/20 00:24:21  mwhxb3</em>
+<a name="933" href="#933">933</a> <em> *  Added yess. no constants</em>
+<a name="934" href="#934">934</a> <em> *</em>
+<a name="935" href="#935">935</a> <em> *  Revision 1.28  2010/05/20 00:05:31  mwhxb3</em>
+<a name="936" href="#936">936</a> <em> *  Added STATE_CODE_REG_EXP.</em>
+<a name="937" href="#937">937</a> <em> *</em>
+<a name="938" href="#938">938</a> <em> *  Revision 1.27  2010/05/19 23:53:54  mwhxb3</em>
+<a name="939" href="#939">939</a> <em> *  Added state of origin.</em>
+<a name="940" href="#940">940</a> <em> *</em>
+<a name="941" href="#941">941</a> <em> *  Revision 1.26  2010/05/19 23:50:50  mwhxb3</em>
+<a name="942" href="#942">942</a> <em> *  Added ProblemDriverUpdateConverter costansts</em>
+<a name="943" href="#943">943</a> <em> *</em>
+<a name="944" href="#944">944</a> <em> *  Revision 1.25  2010/05/19 23:32:15  mwhxb3</em>
+<a name="945" href="#945">945</a> <em> *  Added UPDATE_DATA constants</em>
+<a name="946" href="#946">946</a> <em> *</em>
+<a name="947" href="#947">947</a> <em> *  Revision 1.24  2010/05/19 23:28:43  mwhxb3</em>
+<a name="948" href="#948">948</a> <em> *  Added * constant.</em>
+<a name="949" href="#949">949</a> <em> *</em>
+<a name="950" href="#950">950</a> <em> *  Revision 1.23  2010/05/19 23:24:41  mwhxb3</em>
+<a name="951" href="#951">951</a> <em> *  Added state and suffix constants.</em>
+<a name="952" href="#952">952</a> <em> *</em>
+<a name="953" href="#953">953</a> <em> *  Revision 1.22  2010/05/19 21:05:18  mwhxb3</em>
+<a name="954" href="#954">954</a> <em> *  Added GOOD_RETURN_CODE.</em>
+<a name="955" href="#955">955</a> <em> *</em>
+<a name="956" href="#956">956</a> <em> *  Revision 1.21  2010/05/19 20:52:17  mwhxb3</em>
+<a name="957" href="#957">957</a> <em> *  Added DHA_DHB_RETURN_CODE_00.</em>
+<a name="958" href="#958">958</a> <em> *</em>
+<a name="959" href="#959">959</a> <em> *  Revision 1.20  2010/05/19 20:46:08  mwhxb3</em>
+<a name="960" href="#960">960</a> <em> *  Added DHA_DHB_RETURN_CODESETNAME.</em>
+<a name="961" href="#961">961</a> <em> *</em>
+<a name="962" href="#962">962</a> <em> *  Revision 1.19  2010/05/19 18:45:08  mwhxb3</em>
+<a name="963" href="#963">963</a> <em> *  Added AutomatedNameIndexDlInquiryConverter constants.</em>
+<a name="964" href="#964">964</a> <em> *</em>
+<a name="965" href="#965">965</a> <em> *  Revision 1.18  2010/05/19 18:37:15  mwhxb3</em>
+<a name="966" href="#966">966</a> <em> *  Added ADQ_CODESET_NAME.</em>
+<a name="967" href="#967">967</a> <em> *</em>
+<a name="968" href="#968">968</a> <em> *  Revision 1.17  2010/05/19 16:34:08  mwpxr4</em>
+<a name="969" href="#969">969</a> <em> *  Moved constants from Converter files to Ecs constants.</em>
+<a name="970" href="#970">970</a> <em> *</em>
+<a name="971" href="#971">971</a> <em> *  Revision 1.16  2010/05/17 17:54:20  mwhxb3</em>
+<a name="972" href="#972">972</a> <em> *  Added Constants</em>
+<a name="973" href="#973">973</a> <em> *</em>
+<a name="974" href="#974">974</a> <em> *  Revision 1.15  2010/05/16 01:05:41  mwhxb3</em>
+<a name="975" href="#975">975</a> <em> *  Added AutomatedNameIndexDlInquiryConverter constants.</em>
+<a name="976" href="#976">976</a> <em> *</em>
+<a name="977" href="#977">977</a> <em> *  Revision 1.14  2010/05/13 18:05:31  mwhxb3</em>
+<a name="978" href="#978">978</a> <em> *  Added constants</em>
+<a name="979" href="#979">979</a> <em> *</em>
+<a name="980" href="#980">980</a> <em> *  Revision 1.13  2010/05/04 21:31:34  mwhxb3</em>
+<a name="981" href="#981">981</a> <em> *  Added constants.</em>
+<a name="982" href="#982">982</a> <em> *</em>
+<a name="983" href="#983">983</a> <em> *  Revision 1.12  2010/05/04 21:27:40  mwhxb3</em>
+<a name="984" href="#984">984</a> <em> *  Added constants.</em>
+<a name="985" href="#985">985</a> <em> *</em>
+<a name="986" href="#986">986</a> <em> *  Revision 1.11  2010/05/04 21:25:34  mwhxb3</em>
+<a name="987" href="#987">987</a> <em> *  Added constants.</em>
+<a name="988" href="#988">988</a> <em> *</em>
+<a name="989" href="#989">989</a> <em> *  Revision 1.10  2010/05/04 21:23:13  mwhxb3</em>
+<a name="990" href="#990">990</a> <em> *  Added constants.</em>
+<a name="991" href="#991">991</a> <em> *</em>
+<a name="992" href="#992">992</a> <em> *  Revision 1.9  2010/05/04 21:16:06  mwhxb3</em>
+<a name="993" href="#993">993</a> <em> *  Added constants.</em>
+<a name="994" href="#994">994</a> <em> *</em>
+<a name="995" href="#995">995</a> <em> *  Revision 1.8  2010/05/04 21:12:56  mwhxb3</em>
+<a name="996" href="#996">996</a> <em> *  Added constants.</em>
+<a name="997" href="#997">997</a> <em> *</em>
+<a name="998" href="#998">998</a> <em> *  Revision 1.7  2010/05/04 21:07:41  mwhxb3</em>
+<a name="999" href="#999">999</a> <em> *  Added constants.</em>
+<a name="1000" href="#1000">1000</a> <em> *</em>
+<a name="1001" href="#1001">1001</a> <em> *  Revision 1.6  2010/05/04 21:03:38  mwhxb3</em>
+<a name="1002" href="#1002">1002</a> <em> *  Added constants.</em>
+<a name="1003" href="#1003">1003</a> <em> *</em>
+<a name="1004" href="#1004">1004</a> <em> *  Revision 1.5  2010/05/04 20:57:38  mwhxb3</em>
+<a name="1005" href="#1005">1005</a> <em> *  Added constants.</em>
+<a name="1006" href="#1006">1006</a> <em> *</em>
+<a name="1007" href="#1007">1007</a> <em> *  Revision 1.4  2010/05/04 20:55:36  mwhxb3</em>
+<a name="1008" href="#1008">1008</a> <em> *  Added constants.</em>
+<a name="1009" href="#1009">1009</a> <em> *</em>
+<a name="1010" href="#1010">1010</a> <em> *  Revision 1.3  2010/05/04 20:50:23  mwhxb3</em>
+<a name="1011" href="#1011">1011</a> <em> *  Added constants.</em>
+<a name="1012" href="#1012">1012</a> <em> *</em>
+<a name="1013" href="#1013">1013</a> <em> *  Revision 1.2  2010/05/04 20:38:59  mwhxb3</em>
+<a name="1014" href="#1014">1014</a> <em> *  Adding constants.</em>
+<a name="1015" href="#1015">1015</a> <em> *</em>
+<a name="1016" href="#1016">1016</a> <em> *  Revision 1.1  2010/04/20 20:19:40  mwtjc1</em>
+<a name="1017" href="#1017">1017</a> <em> *  updated</em>
+<a name="1018" href="#1018">1018</a> <em> *</em>
+<a name="1019" href="#1019">1019</a> <em> *  Revision 1.1  2010/04/19 22:55:11  mwtjc1</em>
+<a name="1020" href="#1020">1020</a> <em> *  interface containing constants for ecs converters</em>
+<a name="1021" href="#1021">1021</a> <em> *</em>
+<a name="1022" href="#1022">1022</a> <em> */</em>
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

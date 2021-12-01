@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" /><title>CdaTaskService xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../../../../../../../../../../../apidocs/gov/ca/dmv/ease/ts/dl/service/impl/CdaTaskService.html">View Javadoc</a></div><pre>
+
+<a name="1" href="#1">1</a>   <em>/**<em>*</em></em>
+<a name="2" href="#2">2</a>   <em> * This source code contains State of California's confidential and trade secret information.</em>
+<a name="3" href="#3">3</a>   <em> * Any use of this code other than for backup is strictly prohibited.</em>
+<a name="4" href="#4">4</a>   <em> * Copyright State of California (c) 2009</em>
+<a name="5" href="#5">5</a>   <em> * <a href="http://www.california.gov" target="alexandria_uri">http://www.california.gov</a></em>
+<a name="6" href="#6">6</a>   <em> */</em>
+<a name="7" href="#7">7</a>   <strong>package</strong> gov.ca.dmv.ease.ts.dl.service.impl;
+<a name="8" href="#8">8</a>   
+<a name="9" href="#9">9</a>   <strong>import</strong> gov.ca.dmv.ease.app.constants.DafInquiryTypes;
+<a name="10" href="#10">10</a>  <strong>import</strong> gov.ca.dmv.ease.app.context.impl.EaseApplicationContext;
+<a name="11" href="#11">11</a>  <strong>import</strong> gov.ca.dmv.ease.bo.IBusinessObject;
+<a name="12" href="#12">12</a>  <strong>import</strong> gov.ca.dmv.ease.bo.admin.impl.Office;
+<a name="13" href="#13">13</a>  <strong>import</strong> gov.ca.dmv.ease.bo.document.impl.DlApplication;
+<a name="14" href="#14">14</a>  <strong>import</strong> gov.ca.dmv.ease.bo.license.impl.EliRecord;
+<a name="15" href="#15">15</a>  <strong>import</strong> gov.ca.dmv.ease.bo.subject.impl.Person;
+<a name="16" href="#16">16</a>  <strong>import</strong> gov.ca.dmv.ease.bo.tx.impl.Transaction;
+<a name="17" href="#17">17</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.request.impl.GetSelectedDafRecordRequestBus;
+<a name="18" href="#18">18</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.request.impl.ProblemDriverUpdateRequestBus;
+<a name="19" href="#19">19</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.request.impl.SendLogMessageToNetworkControlCenterRequestBus;
+<a name="20" href="#20">20</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.request.impl.UpdateDlHistoryRequestBus;
+<a name="21" href="#21">21</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.request.impl.UpdateExtendedNameIndexRequestBus;
+<a name="22" href="#22">22</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.request.impl.UpdateHeadquartersSystemRequestBus;
+<a name="23" href="#23">23</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.response.impl.GetSelectedDafRecordResponseBus;
+<a name="24" href="#24">24</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.response.impl.ProblemDriverUpdateResponseBus;
+<a name="25" href="#25">25</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.response.impl.SendLogMessageToNetworkControlCenterResponseBus;
+<a name="26" href="#26">26</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.response.impl.UpdateDlHistoryResponseBus;
+<a name="27" href="#27">27</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.response.impl.UpdateExtendedNameIndexResponseBus;
+<a name="28" href="#28">28</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.response.impl.UpdateHeadquartersSystemResponseBus;
+<a name="29" href="#29">29</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.service.impl.ProblemDriverUpdateService;
+<a name="30" href="#30">30</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.service.impl.RetrieveDafRecordsService;
+<a name="31" href="#31">31</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.service.impl.SendLogMessageToNetworkControlCenterService;
+<a name="32" href="#32">32</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.service.impl.UpdateDlHistoryService;
+<a name="33" href="#33">33</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.service.impl.UpdateExtendedNameIndexService;
+<a name="34" href="#34">34</a>  <strong>import</strong> gov.ca.dmv.ease.bus.dl.service.impl.UpdateHeadQuartersSystemService;
+<a name="35" href="#35">35</a>  <strong>import</strong> gov.ca.dmv.ease.core.constants.PrintRequestTypes;
+<a name="36" href="#36">36</a>  <strong>import</strong> gov.ca.dmv.ease.core.util.impl.DlApplicationUtil;
+<a name="37" href="#37">37</a>  <strong>import</strong> gov.ca.dmv.ease.core.util.impl.PersonUtil;
+<a name="38" href="#38">38</a>  <strong>import</strong> gov.ca.dmv.ease.fw.error.IErrorCollector;
+<a name="39" href="#39">39</a>  <strong>import</strong> gov.ca.dmv.ease.fw.error.impl.ErrorCollector;
+<a name="40" href="#40">40</a>  <strong>import</strong> gov.ca.dmv.ease.fw.exception.impl.EaseException;
+<a name="41" href="#41">41</a>  <strong>import</strong> gov.ca.dmv.ease.fw.process.IUserContext;
+<a name="42" href="#42">42</a>  <strong>import</strong> gov.ca.dmv.ease.fw.util.EaseUtil;
+<a name="43" href="#43">43</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.request.impl.DafRecordInquiryRequestTs;
+<a name="44" href="#44">44</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.request.impl.PrintRequestTs;
+<a name="45" href="#45">45</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.request.impl.SearchPersonByNumberRequestTs;
+<a name="46" href="#46">46</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.request.impl.UpdateDafRecordRequestTs;
+<a name="47" href="#47">47</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.request.impl.UpdateTransactionRecordRequestTs;
+<a name="48" href="#48">48</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.response.impl.DafRecordInquiryResponseTs;
+<a name="49" href="#49">49</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.response.impl.PrintResponseTs;
+<a name="50" href="#50">50</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.response.impl.SearchPersonByNumberResponseTs;
+<a name="51" href="#51">51</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.response.impl.UpdateDafRecordResponseTs;
+<a name="52" href="#52">52</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.response.impl.UpdateTransactionRecordResponseTs;
+<a name="53" href="#53">53</a>  <strong>import</strong> gov.ca.dmv.ease.ts.impl.TaskService;
+<a name="54" href="#54">54</a>  <strong>import</strong> gov.ca.dmv.ease.tus.persist.request.IPersistenceServiceRequest;
+<a name="55" href="#55">55</a>  <strong>import</strong> gov.ca.dmv.ease.tus.persist.request.factory.impl.PersistenceServiceRequestFactory;
+<a name="56" href="#56">56</a>  <strong>import</strong> gov.ca.dmv.ease.tus.persist.response.impl.RetrieveBusinessObjectResponse;
+<a name="57" href="#57">57</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.factory.impl.PrintServiceRequestFactory;
+<a name="58" href="#58">58</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.impl.AddlInstructionPermitDocumentRequestTus;
+<a name="59" href="#59">59</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.impl.CommercialTestResultsDocumentRequestTus;
+<a name="60" href="#60">60</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.impl.CompositePrintRequest;
+<a name="61" href="#61">61</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.impl.InstructionPermitDocumentRequestTus;
+<a name="62" href="#62">62</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.impl.InterimLicenseDocumentRequestTus;
+<a name="63" href="#63">63</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.impl.IssuanceReferralDocumentRequestTus;
+<a name="64" href="#64">64</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.impl.IssuanceReferralDoublesDocumentRequestTus;
+<a name="65" href="#65">65</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.impl.NonCommercialTestResultsDocumentRequestTus;
+<a name="66" href="#66">66</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.request.impl.VoterRegistrationReceiptRequestTus;
+<a name="67" href="#67">67</a>  <strong>import</strong> gov.ca.dmv.ease.tus.print.response.impl.PrintServiceResponse;
+<a name="68" href="#68">68</a>  <strong>import</strong> gov.ca.dmv.ease.tus.txs.request.impl.DlProcessTransactionRequest;
+<a name="69" href="#69">69</a>  <strong>import</strong> gov.ca.dmv.ease.tus.txs.response.impl.TransactionResponse;
+<a name="70" href="#70">70</a>  <strong>import</strong> gov.ca.dmv.ease.tus.txs.service.impl.TransactionService;
+<a name="71" href="#71">71</a>  
+<a name="72" href="#72">72</a>  <strong>import</strong> java.io.Serializable;
+<a name="73" href="#73">73</a>  <strong>import</strong> java.util.HashSet;
+<a name="74" href="#74">74</a>  <strong>import</strong> java.util.List;
+<a name="75" href="#75">75</a>  <strong>import</strong> java.util.Set;
+<a name="76" href="#76">76</a>  
+<a name="77" href="#77">77</a>  <em>/**<em>* </em></em>
+<a name="78" href="#78">78</a>  <em> * Description: Task service used for CDA business process</em>
+<a name="79" href="#79">79</a>  <em> * File: CdaTaskService.java</em>
+<a name="80" href="#80">80</a>  <em> * Module:  gov.ca.dmv.ease.ts.dl.service.impl</em>
+<a name="81" href="#81">81</a>  <em> * Created: Mar 4, 2010 </em>
+<a name="82" href="#82">82</a>  <em> * @author MWYXG1  </em>
+<a name="83" href="#83">83</a>  <em> * @version $Revision: 1.45 $</em>
+<a name="84" href="#84">84</a>  <em> * Last Changed: $Date: 2010/08/11 20:25:30 $</em>
+<a name="85" href="#85">85</a>  <em> * Last Changed By: $Author: mwcsj3 $</em>
+<a name="86" href="#86">86</a>  <em> * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"</em>
+<a name="87" href="#87">87</a>  <em> */</em>
+<a name="88" href="#88">88</a>  <strong>public</strong> <strong>class</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/service/impl/CdaTaskService.html">CdaTaskService</a> <strong>extends</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/impl/TaskService.html">TaskService</a> implements Serializable {
+<a name="89" href="#89">89</a>  	<em>/**<em>* The Constant serialVersionUID. */</em></em>
+<a name="90" href="#90">90</a>  	<strong>private</strong> <strong>static</strong> <strong>final</strong> <strong>long</strong> serialVersionUID = -4032406692762526436L;
+<a name="91" href="#91">91</a>  	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/service/impl/RetrieveDafRecordsService.html">RetrieveDafRecordsService</a> retrieveDafRecordsService;
+<a name="92" href="#92">92</a>  	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/service/impl/ProblemDriverUpdateService.html">ProblemDriverUpdateService</a> problemDriverUpdateService;
+<a name="93" href="#93">93</a>  	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/service/impl/SendLogMessageToNetworkControlCenterService.html">SendLogMessageToNetworkControlCenterService</a> sendLogMessageToNetworkControlCenterService;
+<a name="94" href="#94">94</a>  	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/service/impl/UpdateDlHistoryService.html">UpdateDlHistoryService</a> updateDlHistoryService;
+<a name="95" href="#95">95</a>  	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/service/impl/UpdateExtendedNameIndexService.html">UpdateExtendedNameIndexService</a> updateExtendedNameIndexService;
+<a name="96" href="#96">96</a>  	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/service/impl/UpdateHeadQuartersSystemService.html">UpdateHeadQuartersSystemService</a> updateHeadQuartersSystemService;
+<a name="97" href="#97">97</a>  	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/tus/txs/service/impl/TransactionService.html">TransactionService</a> transactionService;
+<a name="98" href="#98">98</a>  	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/tus/print/request/factory/impl/PrintServiceRequestFactory.html">PrintServiceRequestFactory</a> printServiceRequestFactory;
+<a name="99" href="#99">99</a>  
+<a name="100" href="#100">100</a> 	<em>/**<em>*</em></em>
+<a name="101" href="#101">101</a> <em>	 * Daf Record inquiry.</em>
+<a name="102" href="#102">102</a> <em>	 * @param tsRequest</em>
+<a name="103" href="#103">103</a> <em>	 * @return DafRecordInquiryResponseTs</em>
+<a name="104" href="#104">104</a> <em>	 */</em>
+<a name="105" href="#105">105</a> 	<strong>public</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/DafRecordInquiryResponseTs.html">DafRecordInquiryResponseTs</a> execute(
+<a name="106" href="#106">106</a> 			DafRecordInquiryRequestTs tsRequest) {
+<a name="107" href="#107">107</a> 		DafRecordInquiryResponseTs tsResponse = <strong>null</strong>;
+<a name="108" href="#108">108</a> 		GetSelectedDafRecordRequestBus busRequest = <strong>null</strong>;
+<a name="109" href="#109">109</a> 		GetSelectedDafRecordResponseBus busResponse = <strong>null</strong>;
+<a name="110" href="#110">110</a> 		IErrorCollector collector = <strong>new</strong> ErrorCollector();
+<a name="111" href="#111">111</a> 		<strong>try</strong> {
+<a name="112" href="#112">112</a> 			<em class="comment">//collector = tsRequest.validate();</em>
+<a name="113" href="#113">113</a> 			<strong>if</strong> (collector.hasErrors()) {
+<a name="114" href="#114">114</a> 				tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/DafRecordInquiryResponseTs.html">DafRecordInquiryResponseTs</a>(collector);
+<a name="115" href="#115">115</a> 			}
+<a name="116" href="#116">116</a> 			<strong>else</strong> {
+<a name="117" href="#117">117</a> 				Transaction transaction = <strong>new</strong> Transaction();
+<a name="118" href="#118">118</a> 				<strong>if</strong> (tsRequest.getDafInquiryTypes().equals(DafInquiryTypes.DAF)) {
+<a name="119" href="#119">119</a> 					transaction.setTransactionIdentifier(tsRequest
+<a name="120" href="#120">120</a> 							.getDafNumber());
+<a name="121" href="#121">121</a> 				}
+<a name="122" href="#122">122</a> 				<strong>else</strong> <strong>if</strong> (tsRequest.getDafInquiryTypes().equals(
+<a name="123" href="#123">123</a> 						DafInquiryTypes.Driver_License)) {
+<a name="124" href="#124">124</a> 					transaction.setLicenseNumber(tsRequest.getLicenseNumber());
+<a name="125" href="#125">125</a> 				}
+<a name="126" href="#126">126</a> 				transaction.setOfficeId(tsRequest.getUserContext()
+<a name="127" href="#127">127</a> 						.getOfficeId());
+<a name="128" href="#128">128</a> 				busRequest = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/request/impl/GetSelectedDafRecordRequestBus.html">GetSelectedDafRecordRequestBus</a>(tsRequest
+<a name="129" href="#129">129</a> 						.getUserContext(), transaction);
+<a name="130" href="#130">130</a> 				busResponse = <strong>this</strong>.retrieveDafRecordsService
+<a name="131" href="#131">131</a> 						.execute(busRequest);
+<a name="132" href="#132">132</a> 				<strong>if</strong> (busResponse.hasErrors()) {
+<a name="133" href="#133">133</a> 					tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/DafRecordInquiryResponseTs.html">DafRecordInquiryResponseTs</a>(busResponse
+<a name="134" href="#134">134</a> 							.getErrorCollector());
+<a name="135" href="#135">135</a> 				}
+<a name="136" href="#136">136</a> 				<strong>else</strong> {
+<a name="137" href="#137">137</a> 					tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/DafRecordInquiryResponseTs.html">DafRecordInquiryResponseTs</a>(busResponse
+<a name="138" href="#138">138</a> 							.getTransaction());
+<a name="139" href="#139">139</a> 				}
+<a name="140" href="#140">140</a> 			}
+<a name="141" href="#141">141</a> 		}
+<a name="142" href="#142">142</a> 		<strong>catch</strong> (Exception e) {
+<a name="143" href="#143">143</a> 			collector.register(e);
+<a name="144" href="#144">144</a> 			tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/DafRecordInquiryResponseTs.html">DafRecordInquiryResponseTs</a>(collector);
+<a name="145" href="#145">145</a> 		}
+<a name="146" href="#146">146</a> 		<strong>return</strong> tsResponse;
+<a name="147" href="#147">147</a> 	}
+<a name="148" href="#148">148</a> 
+<a name="149" href="#149">149</a> 	<em>/**<em>* </em></em>
+<a name="150" href="#150">150</a> <em>	 * This method uses transaction service to update daf record.</em>
+<a name="151" href="#151">151</a> <em>	 * @param tsRequest</em>
+<a name="152" href="#152">152</a> <em>	 * @return UpdateDafRecordResponseTs</em>
+<a name="153" href="#153">153</a> <em>	 */</em>
+<a name="154" href="#154">154</a> 	<strong>public</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateDafRecordResponseTs.html">UpdateDafRecordResponseTs</a> execute(<a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/request/impl/UpdateDafRecordRequestTs.html">UpdateDafRecordRequestTs</a> tsRequest) {
+<a name="155" href="#155">155</a> 		UpdateDafRecordResponseTs tsResponse = <strong>null</strong>;
+<a name="156" href="#156">156</a> 		DlProcessTransactionRequest dlProcessTransactionRequest = <strong>null</strong>;
+<a name="157" href="#157">157</a> 		TransactionResponse transactionResponse = <strong>null</strong>;
+<a name="158" href="#158">158</a> 		IErrorCollector collector = <strong>new</strong> ErrorCollector();
+<a name="159" href="#159">159</a> 		<strong>try</strong> {
+<a name="160" href="#160">160</a> 			collector = tsRequest.validate();
+<a name="161" href="#161">161</a> 			<strong>if</strong> (collector.hasErrors()) {
+<a name="162" href="#162">162</a> 				tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateDafRecordResponseTs.html">UpdateDafRecordResponseTs</a>(collector);
+<a name="163" href="#163">163</a> 			}
+<a name="164" href="#164">164</a> 			<strong>else</strong> {
+<a name="165" href="#165">165</a> 				dlProcessTransactionRequest = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/tus/txs/request/impl/DlProcessTransactionRequest.html">DlProcessTransactionRequest</a>(
+<a name="166" href="#166">166</a> 						tsRequest.getDlProcessContext(), transactionService);
+<a name="167" href="#167">167</a> 				transactionResponse = <strong>this</strong>.transactionService
+<a name="168" href="#168">168</a> 						.execute(dlProcessTransactionRequest);
+<a name="169" href="#169">169</a> 				<strong>if</strong> (transactionResponse.hasErrors()) {
+<a name="170" href="#170">170</a> 					tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateDafRecordResponseTs.html">UpdateDafRecordResponseTs</a>(
+<a name="171" href="#171">171</a> 							transactionResponse.getErrorCollector());
+<a name="172" href="#172">172</a> 				}
+<a name="173" href="#173">173</a> 				<strong>else</strong> {
+<a name="174" href="#174">174</a> 					tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateDafRecordResponseTs.html">UpdateDafRecordResponseTs</a>();
+<a name="175" href="#175">175</a> 				}
+<a name="176" href="#176">176</a> 			}
+<a name="177" href="#177">177</a> 		}
+<a name="178" href="#178">178</a> 		<strong>catch</strong> (Exception e) {
+<a name="179" href="#179">179</a> 			collector.register(e);
+<a name="180" href="#180">180</a> 			tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateDafRecordResponseTs.html">UpdateDafRecordResponseTs</a>(collector);
+<a name="181" href="#181">181</a> 		}
+<a name="182" href="#182">182</a> 		<strong>return</strong> tsResponse;
+<a name="183" href="#183">183</a> 	}
+<a name="184" href="#184">184</a> 
+<a name="185" href="#185">185</a> 	<em>/**<em>* </em></em>
+<a name="186" href="#186">186</a> <em>	 * This method is called when CNA condition happens in Cda process.</em>
+<a name="187" href="#187">187</a> <em>	 * @param tsRequest</em>
+<a name="188" href="#188">188</a> <em>	 * @return SearchPersonByNumberResponseTs</em>
+<a name="189" href="#189">189</a> <em>	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"</em>
+<a name="190" href="#190">190</a> <em>	 */</em>
+<a name="191" href="#191">191</a> 	<strong>public</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/SearchPersonByNumberResponseTs.html">SearchPersonByNumberResponseTs</a> execute(
+<a name="192" href="#192">192</a> 			SearchPersonByNumberRequestTs tsRequest) {
+<a name="193" href="#193">193</a> 		<em class="comment">// begin-user-code</em>
+<a name="194" href="#194">194</a> 		<em class="comment">// TODO Auto-generated method stub</em>
+<a name="195" href="#195">195</a> 		<strong>return</strong> <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/SearchPersonByNumberResponseTs.html">SearchPersonByNumberResponseTs</a>(<strong>new</strong> EliRecord());
+<a name="196" href="#196">196</a> 		<em class="comment">// end-user-code</em>
+<a name="197" href="#197">197</a> 	}
+<a name="198" href="#198">198</a> 
+<a name="199" href="#199">199</a> 	<em>/**<em>* </em></em>
+<a name="200" href="#200">200</a> <em>	 * TCode: NCC – Send a log message to Network Control Center</em>
+<a name="201" href="#201">201</a> <em>	 * @param userContext</em>
+<a name="202" href="#202">202</a> <em>	 * @return SendLogMessageToNetworkControlCenterBus</em>
+<a name="203" href="#203">203</a> <em>	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"</em>
+<a name="204" href="#204">204</a> <em>	 */</em>
+<a name="205" href="#205">205</a> 	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/response/impl/SendLogMessageToNetworkControlCenterResponseBus.html">SendLogMessageToNetworkControlCenterResponseBus</a> executeSendLogMessageToNetworkControlCenter(
+<a name="206" href="#206">206</a> 			IUserContext userContext) {
+<a name="207" href="#207">207</a> 		SendLogMessageToNetworkControlCenterRequestBus busRequest = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/request/impl/SendLogMessageToNetworkControlCenterRequestBus.html">SendLogMessageToNetworkControlCenterRequestBus</a>(
+<a name="208" href="#208">208</a> 				userContext);
+<a name="209" href="#209">209</a> 		<strong>return</strong> <strong>this</strong>.sendLogMessageToNetworkControlCenterService
+<a name="210" href="#210">210</a> 				.execute(busRequest);
+<a name="211" href="#211">211</a> 	}
+<a name="212" href="#212">212</a> 
+<a name="213" href="#213">213</a> 	<em>/**<em>* </em></em>
+<a name="214" href="#214">214</a> <em>	 * TCode: DPR – Survey Information Update 10 Year DL History Update Request</em>
+<a name="215" href="#215">215</a> <em>	 * @param userContext</em>
+<a name="216" href="#216">216</a> <em>	 * @param person</em>
+<a name="217" href="#217">217</a> <em>	 * @return UpdateDlHistoryResponseBus</em>
+<a name="218" href="#218">218</a> <em>	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"</em>
+<a name="219" href="#219">219</a> <em>	 */</em>
+<a name="220" href="#220">220</a> 	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/response/impl/UpdateDlHistoryResponseBus.html">UpdateDlHistoryResponseBus</a> executeUpdateDlHistory(
+<a name="221" href="#221">221</a> 			IUserContext userContext, Person person) {
+<a name="222" href="#222">222</a> 		UpdateDlHistoryRequestBus busRequest = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/request/impl/UpdateDlHistoryRequestBus.html">UpdateDlHistoryRequestBus</a>(
+<a name="223" href="#223">223</a> 				userContext, person);
+<a name="224" href="#224">224</a> 		<strong>return</strong> <strong>this</strong>.updateDlHistoryService.execute(busRequest);
+<a name="225" href="#225">225</a> 	}
+<a name="226" href="#226">226</a> 
+<a name="227" href="#227">227</a> 	<em>/**<em>* </em></em>
+<a name="228" href="#228">228</a> <em>	 * TCode: EN2 – Extended Name Format Update</em>
+<a name="229" href="#229">229</a> <em>	 * @param userContext</em>
+<a name="230" href="#230">230</a> <em>	 * @param person</em>
+<a name="231" href="#231">231</a> <em>	 * @return UpdateExtendedNameIndexResponseBus</em>
+<a name="232" href="#232">232</a> <em>	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"</em>
+<a name="233" href="#233">233</a> <em>	 */</em>
+<a name="234" href="#234">234</a> 	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/response/impl/UpdateExtendedNameIndexResponseBus.html">UpdateExtendedNameIndexResponseBus</a> executeUpdateExtendedNameIndex(
+<a name="235" href="#235">235</a> 			IUserContext userContext, Person person) {
+<a name="236" href="#236">236</a> 		UpdateExtendedNameIndexRequestBus busRequest = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/request/impl/UpdateExtendedNameIndexRequestBus.html">UpdateExtendedNameIndexRequestBus</a>(
+<a name="237" href="#237">237</a> 				userContext, person);
+<a name="238" href="#238">238</a> 		<strong>return</strong> <strong>this</strong>.updateExtendedNameIndexService.execute(busRequest);
+<a name="239" href="#239">239</a> 	}
+<a name="240" href="#240">240</a> 
+<a name="241" href="#241">241</a> 	<em>/**<em>* </em></em>
+<a name="242" href="#242">242</a> <em>	 * TCode: EL1 – Driver License Complete Update Request</em>
+<a name="243" href="#243">243</a> <em>	 * TCode: ELB – Driver License Pending Update Request</em>
+<a name="244" href="#244">244</a> <em>	 * @param userContext</em>
+<a name="245" href="#245">245</a> <em>	 * @param dlApplication</em>
+<a name="246" href="#246">246</a> <em>	 * @param isElb</em>
+<a name="247" href="#247">247</a> <em>	 * @return UpdateHeadquartersSystemResponseBus </em>
+<a name="248" href="#248">248</a> <em>	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"</em>
+<a name="249" href="#249">249</a> <em>	 */</em>
+<a name="250" href="#250">250</a> 	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/response/impl/UpdateHeadquartersSystemResponseBus.html">UpdateHeadquartersSystemResponseBus</a> executeUpdateHeadquaterSystem(
+<a name="251" href="#251">251</a> 			IUserContext userContext, DlApplication dlApplication, <strong>boolean</strong> isElb) {
+<a name="252" href="#252">252</a> 		UpdateHeadquartersSystemRequestBus busRequest = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/request/impl/UpdateHeadquartersSystemRequestBus.html">UpdateHeadquartersSystemRequestBus</a>(
+<a name="253" href="#253">253</a> 				userContext, dlApplication);
+<a name="254" href="#254">254</a> 		UpdateHeadquartersSystemResponseBus busResponse = <strong>null</strong>;
+<a name="255" href="#255">255</a> 		<strong>if</strong> (isElb) {
+<a name="256" href="#256">256</a> 			busResponse = <strong>this</strong>.updateHeadQuartersSystemService
+<a name="257" href="#257">257</a> 					.executeELB(busRequest);
+<a name="258" href="#258">258</a> 		}
+<a name="259" href="#259">259</a> 		<strong>else</strong> {
+<a name="260" href="#260">260</a> 			busResponse = <strong>this</strong>.updateHeadQuartersSystemService
+<a name="261" href="#261">261</a> 					.executeEL1(busRequest);
+<a name="262" href="#262">262</a> 		}
+<a name="263" href="#263">263</a> 		<strong>return</strong> busResponse;
+<a name="264" href="#264">264</a> 	}
+<a name="265" href="#265">265</a> 
+<a name="266" href="#266">266</a> 	<em>/**<em>* </em></em>
+<a name="267" href="#267">267</a> <em>	 * TCode: DPS – Driver License Problem Driver Update Request</em>
+<a name="268" href="#268">268</a> <em>	 * @param userContext</em>
+<a name="269" href="#269">269</a> <em>	 * @param dlApplication</em>
+<a name="270" href="#270">270</a> <em>	 * @return ProblemDriverUpdateResponseBus </em>
+<a name="271" href="#271">271</a> <em>	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"</em>
+<a name="272" href="#272">272</a> <em>	 */</em>
+<a name="273" href="#273">273</a> 	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/response/impl/ProblemDriverUpdateResponseBus.html">ProblemDriverUpdateResponseBus</a> executeProblemDriverUpdate(
+<a name="274" href="#274">274</a> 			IUserContext userContext, DlApplication dlApplication) {
+<a name="275" href="#275">275</a> 		ProblemDriverUpdateRequestBus busRequest = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/request/impl/ProblemDriverUpdateRequestBus.html">ProblemDriverUpdateRequestBus</a>(
+<a name="276" href="#276">276</a> 				userContext, dlApplication);
+<a name="277" href="#277">277</a> 		<strong>return</strong> <strong>this</strong>.problemDriverUpdateService.execute(busRequest);
+<a name="278" href="#278">278</a> 	}
+<a name="279" href="#279">279</a> 
+<a name="280" href="#280">280</a> 	<em>/**<em>* </em></em>
+<a name="281" href="#281">281</a> <em>	 * This method is called when complete the Cda process, need to check for the conditions to trigger the TCodes messages.</em>
+<a name="282" href="#282">282</a> <em>	 * @param tsRequest</em>
+<a name="283" href="#283">283</a> <em>	 * @return UpdateTransactionRecordResponseTs</em>
+<a name="284" href="#284">284</a> <em>	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"</em>
+<a name="285" href="#285">285</a> <em>	 */</em>
+<a name="286" href="#286">286</a> 	<strong>public</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateTransactionRecordResponseTs.html">UpdateTransactionRecordResponseTs</a> execute(
+<a name="287" href="#287">287</a> 			UpdateTransactionRecordRequestTs tsRequest) {
+<a name="288" href="#288">288</a> 		UpdateTransactionRecordResponseTs tsResponse = <strong>null</strong>;
+<a name="289" href="#289">289</a> 		<strong>if</strong> ((tsRequest.getDlApplication().isOriginalApplicationIndicator() == <strong>null</strong>)
+<a name="290" href="#290">290</a> 				|| Boolean.FALSE.equals(tsRequest.getDlApplication()
+<a name="291" href="#291">291</a> 						.isOriginalApplicationIndicator())) {
+<a name="292" href="#292">292</a> 			<em>/**<em>* This logic is handled by the converter </em></em>
+<a name="293" href="#293">293</a> <em>			 </em>
+<a name="294" href="#294">294</a> <em>			//			String originalTtc = dlApplication.getOriginalProcessHistory()</em>
+<a name="295" href="#295">295</a> <em>			//					.getUserContext().getTtc();</em>
+<a name="296" href="#296">296</a> <em>			//			if (ITtcConstants.DLC.equals(originalTtc)</em>
+<a name="297" href="#297">297</a> <em>			//					|| ITtcConstants.DLD.equals(originalTtc)</em>
+<a name="298" href="#298">298</a> <em>			//					|| ITtcConstants.DRT.equals(originalTtc)) {</em>
+<a name="299" href="#299">299</a> <em>			//				//EL2 - Photo Retake Update Request</em>
+<a name="300" href="#300">300</a> <em>			//			}</em>
+<a name="301" href="#301">301</a> <em>			//			else if (ITtcConstants.DLE.equals(originalTtc)) {</em>
+<a name="302" href="#302">302</a> <em>			//				//EL3 </em>
+<a name="303" href="#303">303</a> <em>			//			}</em>
+<a name="304" href="#304">304</a> <em>			//			else if (ITtcConstants.IDA.equals(originalTtc)</em>
+<a name="305" href="#305">305</a> <em>			//					|| ITtcConstants.IDP.equals(originalTtc)</em>
+<a name="306" href="#306">306</a> <em>			//					|| ITtcConstants.IDS.equals(originalTtc)) {</em>
+<a name="307" href="#307">307</a> <em>			//				//EL4</em>
+<a name="308" href="#308">308</a> <em>			//			}</em>
+<a name="309" href="#309">309</a> <em>			//			else {</em>
+<a name="310" href="#310">310</a> <em>			//				//EL1</em>
+<a name="311" href="#311">311</a> <em>			//				UpdateHeadquartersSystemResponseBus updateHeadquartersSystemResponseBus = this</em>
+<a name="312" href="#312">312</a> <em>			//						.executeUpdateHeadquaterSystem(tsRequest</em>
+<a name="313" href="#313">313</a> <em>			//								.getUserContext(),</em>
+<a name="314" href="#314">314</a> <em>			//								tsRequest.getDlApplication(), false);</em>
+<a name="315" href="#315">315</a> <em>			//				if (updateHeadquartersSystemResponseBus.hasErrors()) {</em>
+<a name="316" href="#316">316</a> <em>			//					tsResponse = new UpdateTransactionRecordResponseTs(</em>
+<a name="317" href="#317">317</a> <em>			//							updateHeadquartersSystemResponseBus</em>
+<a name="318" href="#318">318</a> <em>			//									.getErrorCollector());</em>
+<a name="319" href="#319">319</a> <em>			//				}</em>
+<a name="320" href="#320">320</a> <em>			//			} </em>
+<a name="321" href="#321">321</a> <em>			* */</em>
+<a name="322" href="#322">322</a> 			<em class="comment">//EL1 - non original update</em>
+<a name="323" href="#323">323</a> 			UpdateHeadquartersSystemResponseBus updateHeadquartersSystemResponseBus = <strong>this</strong>
+<a name="324" href="#324">324</a> 					.executeUpdateHeadquaterSystem(tsRequest.getUserContext(),
+<a name="325" href="#325">325</a> 							tsRequest.getDlApplication(), false);
+<a name="326" href="#326">326</a> 			<strong>if</strong> (updateHeadquartersSystemResponseBus.hasErrors()) {
+<a name="327" href="#327">327</a> 				tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateTransactionRecordResponseTs.html">UpdateTransactionRecordResponseTs</a>(
+<a name="328" href="#328">328</a> 						updateHeadquartersSystemResponseBus.getErrorCollector());
+<a name="329" href="#329">329</a> 			}
+<a name="330" href="#330">330</a> 		}
+<a name="331" href="#331">331</a> 		<strong>else</strong> {
+<a name="332" href="#332">332</a> 			<em class="comment">//ELB - original update, execute only once</em>
+<a name="333" href="#333">333</a> 			UpdateHeadquartersSystemResponseBus updateHeadquartersSystemResponseBus = <strong>this</strong>
+<a name="334" href="#334">334</a> 					.executeUpdateHeadquaterSystem(tsRequest.getUserContext(),
+<a name="335" href="#335">335</a> 							tsRequest.getDlApplication(), <strong>true</strong>);
+<a name="336" href="#336">336</a> 			<strong>if</strong> (updateHeadquartersSystemResponseBus.hasErrors()) {
+<a name="337" href="#337">337</a> 				tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateTransactionRecordResponseTs.html">UpdateTransactionRecordResponseTs</a>(
+<a name="338" href="#338">338</a> 						updateHeadquartersSystemResponseBus.getErrorCollector());
+<a name="339" href="#339">339</a> 			}
+<a name="340" href="#340">340</a> 		}
+<a name="341" href="#341">341</a> 		<strong>if</strong> (PersonUtil.isNameChanged(tsRequest.getDlApplication()
+<a name="342" href="#342">342</a> 				.getApplicant())
+<a name="343" href="#343">343</a> 				|| <strong>this</strong>.isBirthDateChanged(tsRequest.getDlApplication()
+<a name="344" href="#344">344</a> 						.getApplicant())) {
+<a name="345" href="#345">345</a> 			<em class="comment">//EN2</em>
+<a name="346" href="#346">346</a> 			UpdateExtendedNameIndexResponseBus updateExtendedNameIndexResponseBus = <strong>this</strong>
+<a name="347" href="#347">347</a> 					.executeUpdateExtendedNameIndex(tsRequest.getUserContext(),
+<a name="348" href="#348">348</a> 							tsRequest.getDlApplication().getApplicant());
+<a name="349" href="#349">349</a> 			<strong>if</strong> (updateExtendedNameIndexResponseBus.hasErrors()) {
+<a name="350" href="#350">350</a> 				tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateTransactionRecordResponseTs.html">UpdateTransactionRecordResponseTs</a>(
+<a name="351" href="#351">351</a> 						updateExtendedNameIndexResponseBus.getErrorCollector());
+<a name="352" href="#352">352</a> 			}
+<a name="353" href="#353">353</a> 		}
+<a name="354" href="#354">354</a> 		<em class="comment">// check new incomplete code?</em>
+<a name="355" href="#355">355</a> 		<strong>if</strong> (!EaseUtil.isNullOrBlank(tsRequest.getDlApplication()
+<a name="356" href="#356">356</a> 				.getPdpsRecords())
+<a name="357" href="#357">357</a> 				&amp;&amp; EaseUtil.isNotNull(tsRequest.getDlApplication()
+<a name="358" href="#358">358</a> 						.getExistingDlIncompleteAppReasonCode())) {
+<a name="359" href="#359">359</a> 			<em class="comment">//DPS</em>
+<a name="360" href="#360">360</a> 			ProblemDriverUpdateResponseBus problemDriverUpdateResponseBus = <strong>this</strong>
+<a name="361" href="#361">361</a> 					.executeProblemDriverUpdate(tsRequest.getUserContext(),
+<a name="362" href="#362">362</a> 							tsRequest.getDlApplication());
+<a name="363" href="#363">363</a> 			<strong>if</strong> (problemDriverUpdateResponseBus.hasErrors()) {
+<a name="364" href="#364">364</a> 				tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateTransactionRecordResponseTs.html">UpdateTransactionRecordResponseTs</a>(
+<a name="365" href="#365">365</a> 						problemDriverUpdateResponseBus.getErrorCollector());
+<a name="366" href="#366">366</a> 			}
+<a name="367" href="#367">367</a> 		}
+<a name="368" href="#368">368</a> 		<strong>if</strong> (DlApplicationUtil.isCommercialLicense(tsRequest.getDlApplication()
+<a name="369" href="#369">369</a> 				.getApplicant().getDriverLicense().getExistingLicenseClasses())
+<a name="370" href="#370">370</a> 				|| DlApplicationUtil.isCommercialLicense(tsRequest
+<a name="371" href="#371">371</a> 						.getDlApplication().getApplicant().getDriverLicense()
+<a name="372" href="#372">372</a> 						.getAppliedLicenseClasses())
+<a name="373" href="#373">373</a> 				&amp;&amp; PersonUtil.hasOutOfStateDlHistory(tsRequest
+<a name="374" href="#374">374</a> 						.getDlApplication().getApplicant())) {
+<a name="375" href="#375">375</a> 			<em class="comment">//DPR</em>
+<a name="376" href="#376">376</a> 			UpdateDlHistoryResponseBus updateDlHistoryResponseBus = <strong>this</strong>
+<a name="377" href="#377">377</a> 					.executeUpdateDlHistory(tsRequest.getUserContext(),
+<a name="378" href="#378">378</a> 							tsRequest.getDlApplication().getApplicant());
+<a name="379" href="#379">379</a> 			<strong>if</strong> (updateDlHistoryResponseBus.hasErrors()) {
+<a name="380" href="#380">380</a> 				tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateTransactionRecordResponseTs.html">UpdateTransactionRecordResponseTs</a>(
+<a name="381" href="#381">381</a> 						updateDlHistoryResponseBus.getErrorCollector());
+<a name="382" href="#382">382</a> 			}
+<a name="383" href="#383">383</a> 		}
+<a name="384" href="#384">384</a> 		<strong>if</strong> (tsResponse == <strong>null</strong>) {
+<a name="385" href="#385">385</a> 			tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateTransactionRecordResponseTs.html">UpdateTransactionRecordResponseTs</a>();
+<a name="386" href="#386">386</a> 		}
+<a name="387" href="#387">387</a> 		<strong>else</strong> <strong>if</strong> (tsResponse.hasErrors()) {
+<a name="388" href="#388">388</a> 			<em class="comment">//NCC</em>
+<a name="389" href="#389">389</a> 			SendLogMessageToNetworkControlCenterResponseBus sendLogMessageToNetworkControlCenterResponseBus = <strong>this</strong>
+<a name="390" href="#390">390</a> 					.executeSendLogMessageToNetworkControlCenter(tsRequest
+<a name="391" href="#391">391</a> 							.getUserContext());
+<a name="392" href="#392">392</a> 			<strong>if</strong> (sendLogMessageToNetworkControlCenterResponseBus.hasErrors()) {
+<a name="393" href="#393">393</a> 				tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/UpdateTransactionRecordResponseTs.html">UpdateTransactionRecordResponseTs</a>(
+<a name="394" href="#394">394</a> 						sendLogMessageToNetworkControlCenterResponseBus
+<a name="395" href="#395">395</a> 								.getErrorCollector());
+<a name="396" href="#396">396</a> 			}
+<a name="397" href="#397">397</a> 		}
+<a name="398" href="#398">398</a> 		<strong>return</strong> tsResponse;
+<a name="399" href="#399">399</a> 	}
+<a name="400" href="#400">400</a> 
+<a name="401" href="#401">401</a> 	<strong>private</strong> <strong>boolean</strong> isBirthDateChanged(Person person) {
+<a name="402" href="#402">402</a> 		<em class="comment">//TODO: ID Card BD change</em>
+<a name="403" href="#403">403</a> 		<strong>return</strong> <strong>true</strong>;
+<a name="404" href="#404">404</a> 	}
+<a name="405" href="#405">405</a> 
+<a name="406" href="#406">406</a> 	<em>/**<em>*</em></em>
+<a name="407" href="#407">407</a> <em>	 * CDA print task service</em>
+<a name="408" href="#408">408</a> <em>	 * @param tsRequest</em>
+<a name="409" href="#409">409</a> <em>	 * @return PrintResponseTs</em>
+<a name="410" href="#410">410</a> <em>	 */</em>
+<a name="411" href="#411">411</a> 	<strong>public</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/PrintResponseTs.html">PrintResponseTs</a> processTestResultsAndIssuanceReferralDocuments(
+<a name="412" href="#412">412</a> 			PrintRequestTs tsRequest) {
+<a name="413" href="#413">413</a> 		Set &lt;PrintRequestTypes> printRequestTypes = tsRequest
+<a name="414" href="#414">414</a> 				.getPrintRequestTypes();
+<a name="415" href="#415">415</a> 		<strong>if</strong> (printRequestTypes == <strong>null</strong>) {
+<a name="416" href="#416">416</a> 			printRequestTypes = <strong>new</strong> HashSet &lt;PrintRequestTypes>();
+<a name="417" href="#417">417</a> 			tsRequest.setPrintRequestTypes(printRequestTypes);
+<a name="418" href="#418">418</a> 		}
+<a name="419" href="#419">419</a> 		DlApplication dlApplication = tsRequest.getDlApplication();
+<a name="420" href="#420">420</a> 		printRequestTypes.add(PrintRequestTypes.TEST_RESULTS_1_LDD0631);
+<a name="421" href="#421">421</a> 		<strong>if</strong> (tsRequest.getDlApplication().getApplicant() != <strong>null</strong>
+<a name="422" href="#422">422</a> 				&amp;&amp; tsRequest.getDlApplication().getApplicant()
+<a name="423" href="#423">423</a> 						.getDriverLicense() != <strong>null</strong>) {
+<a name="424" href="#424">424</a> 			<strong>if</strong> (DlApplicationUtil.isCommercialLicense(tsRequest
+<a name="425" href="#425">425</a> 					.getDlApplication().getApplicant().getDriverLicense()
+<a name="426" href="#426">426</a> 					.getExistingLicenseClasses())
+<a name="427" href="#427">427</a> 					|| DlApplicationUtil.isCommercialLicense(tsRequest
+<a name="428" href="#428">428</a> 							.getDlApplication().getApplicant()
+<a name="429" href="#429">429</a> 							.getDriverLicense().getAppliedLicenseClasses())) {
+<a name="430" href="#430">430</a> 				printRequestTypes.add(PrintRequestTypes.TEST_RESULTS_2_LDD0632);
+<a name="431" href="#431">431</a> 			}
+<a name="432" href="#432">432</a> 		}
+<a name="433" href="#433">433</a> 		<strong>if</strong> (DlApplicationUtil.isIssuanceReferalRequired(dlApplication)) {
+<a name="434" href="#434">434</a> 			printRequestTypes.add(PrintRequestTypes.ISSUANCE_REFERRAL_LDP0742);
+<a name="435" href="#435">435</a> 		}
+<a name="436" href="#436">436</a> 		<strong>if</strong> (DlApplicationUtil.isIssuanceReferalDoubleRequired(dlApplication
+<a name="437" href="#437">437</a> 				.getApplicant())) {
+<a name="438" href="#438">438</a> 			printRequestTypes
+<a name="439" href="#439">439</a> 					.add(PrintRequestTypes.ISSUANCE_REFERRAL_DOUBLES_LDP0741);
+<a name="440" href="#440">440</a> 		}
+<a name="441" href="#441">441</a> 		<strong>return</strong> <strong>this</strong>.execute(tsRequest);
+<a name="442" href="#442">442</a> 	}
+<a name="443" href="#443">443</a> 
+<a name="444" href="#444">444</a> 	<em>/**<em>*</em></em>
+<a name="445" href="#445">445</a> <em>	 * CDA print task service</em>
+<a name="446" href="#446">446</a> <em>	 * @param tsRequest</em>
+<a name="447" href="#447">447</a> <em>	 * @return PrintResponseTs</em>
+<a name="448" href="#448">448</a> <em>	 */</em>
+<a name="449" href="#449">449</a> 	@Override
+<a name="450" href="#450">450</a> 	<strong>public</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/PrintResponseTs.html">PrintResponseTs</a> execute(<a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/request/impl/PrintRequestTs.html">PrintRequestTs</a> tsRequest) {
+<a name="451" href="#451">451</a> 		PrintResponseTs tsResponse = <strong>null</strong>;
+<a name="452" href="#452">452</a> 		CompositePrintRequest compositePrintRequest = printServiceRequestFactory
+<a name="453" href="#453">453</a> 				.createCompositePrintRequest(tsRequest.getUserContext());
+<a name="454" href="#454">454</a> 		<strong>try</strong> {
+<a name="455" href="#455">455</a> 			Set &lt;PrintRequestTypes> printRequestTypes = tsRequest
+<a name="456" href="#456">456</a> 					.getPrintRequestTypes();
+<a name="457" href="#457">457</a> 			<strong>if</strong> (!EaseUtil.isNullOrBlank(printRequestTypes)) {
+<a name="458" href="#458">458</a> 				<strong>for</strong> (PrintRequestTypes printRequestType : printRequestTypes) {
+<a name="459" href="#459">459</a> 					<strong>if</strong> (PrintRequestTypes.ADDL_INSTRUCTION_PERMIT_LIMITATIONS_LDD0612
+<a name="460" href="#460">460</a> 							.equals(printRequestType)) {
+<a name="461" href="#461">461</a> 						AddlInstructionPermitDocumentRequestTus addlInstructionPermitDocumentRequestTus = <strong>this</strong>.printServiceRequestFactory
+<a name="462" href="#462">462</a> 								.createAddlInstructionPermitDocumentRequestTus(
+<a name="463" href="#463">463</a> 										tsRequest.getUserContext(), tsRequest
+<a name="464" href="#464">464</a> 												.getDlApplication());
+<a name="465" href="#465">465</a> 						compositePrintRequest
+<a name="466" href="#466">466</a> 								.add(addlInstructionPermitDocumentRequestTus);
+<a name="467" href="#467">467</a> 						<strong>continue</strong>;
+<a name="468" href="#468">468</a> 					}
+<a name="469" href="#469">469</a> 					<strong>if</strong> (PrintRequestTypes.INSTRUCTION_PERMIT_LDD0611
+<a name="470" href="#470">470</a> 							.equals(printRequestType)) {
+<a name="471" href="#471">471</a> 						Office office = retrieveOffice(tsRequest
+<a name="472" href="#472">472</a> 								.getUserContext().getOfficeId(), tsRequest
+<a name="473" href="#473">473</a> 								.getUserContext());
+<a name="474" href="#474">474</a> 						InstructionPermitDocumentRequestTus instructionPermitDocumentRequestTus = <strong>this</strong>.printServiceRequestFactory
+<a name="475" href="#475">475</a> 								.createInstructionPermitDocumentRequestTus(
+<a name="476" href="#476">476</a> 										tsRequest.getUserContext(), tsRequest
+<a name="477" href="#477">477</a> 												.getDlApplication(), office);
+<a name="478" href="#478">478</a> 						compositePrintRequest
+<a name="479" href="#479">479</a> 								.add(instructionPermitDocumentRequestTus);
+<a name="480" href="#480">480</a> 						<strong>continue</strong>;
+<a name="481" href="#481">481</a> 					}
+<a name="482" href="#482">482</a> 					<strong>if</strong> (PrintRequestTypes.ISSUANCE_REFERRAL_DOUBLES_LDP0741
+<a name="483" href="#483">483</a> 							.equals(printRequestType)) {
+<a name="484" href="#484">484</a> 						IssuanceReferralDoublesDocumentRequestTus issuanceReferralDoublesDocumentRequestTus = <strong>this</strong>.printServiceRequestFactory
+<a name="485" href="#485">485</a> 								.createIssuanceReferralDoublesDocumentRequestTus(
+<a name="486" href="#486">486</a> 										tsRequest.getUserContext(), tsRequest
+<a name="487" href="#487">487</a> 												.getDlApplication());
+<a name="488" href="#488">488</a> 						compositePrintRequest
+<a name="489" href="#489">489</a> 								.add(issuanceReferralDoublesDocumentRequestTus);
+<a name="490" href="#490">490</a> 						<strong>continue</strong>;
+<a name="491" href="#491">491</a> 					}
+<a name="492" href="#492">492</a> 					<strong>if</strong> (PrintRequestTypes.ISSUANCE_REFERRAL_LDP0742
+<a name="493" href="#493">493</a> 							.equals(printRequestType)) {
+<a name="494" href="#494">494</a> 						IssuanceReferralDocumentRequestTus issuanceReferralDocumentRequestTus = printServiceRequestFactory
+<a name="495" href="#495">495</a> 								.createIssuanceReferralDocumentRequestTus(
+<a name="496" href="#496">496</a> 										tsRequest.getUserContext(), tsRequest
+<a name="497" href="#497">497</a> 												.getDlApplication());
+<a name="498" href="#498">498</a> 						compositePrintRequest
+<a name="499" href="#499">499</a> 								.add(issuanceReferralDocumentRequestTus);
+<a name="500" href="#500">500</a> 						<strong>continue</strong>;
+<a name="501" href="#501">501</a> 					}
+<a name="502" href="#502">502</a> 					<em class="comment">//					if (PrintRequestTypes.ORGAN_DONOR_1_LDD0851</em>
+<a name="503" href="#503">503</a> 					<em class="comment">//							.equals(printRequestType)) {</em>
+<a name="504" href="#504">504</a> 					<em class="comment">//						OrganDonorDocumentRequestTus organDonorDocumentRequestTus = printServiceRequestFactory</em>
+<a name="505" href="#505">505</a> 					<em class="comment">//								.createOrganDonorDocumentRequestTus(tsRequest</em>
+<a name="506" href="#506">506</a> 					<em class="comment">//										.getUserContext(), tsRequest</em>
+<a name="507" href="#507">507</a> 					<em class="comment">//										.getDlApplication().getApplicant(),</em>
+<a name="508" href="#508">508</a> 					<em class="comment">//										true);</em>
+<a name="509" href="#509">509</a> 					<em class="comment">//						compositePrintRequest.add(organDonorDocumentRequestTus);</em>
+<a name="510" href="#510">510</a> 					<em class="comment">//					}</em>
+<a name="511" href="#511">511</a> 					<em class="comment">//					if (PrintRequestTypes.ORGAN_DONOR_2_LDD0852</em>
+<a name="512" href="#512">512</a> 					<em class="comment">//							.equals(printRequestType)) {</em>
+<a name="513" href="#513">513</a> 					<em class="comment">//						OrganDonorDocumentRequestTus organDonorDocumentRequestTus = printServiceRequestFactory</em>
+<a name="514" href="#514">514</a> 					<em class="comment">//								.createOrganDonorDocumentRequestTus(tsRequest</em>
+<a name="515" href="#515">515</a> 					<em class="comment">//										.getUserContext(), tsRequest</em>
+<a name="516" href="#516">516</a> 					<em class="comment">//										.getDlApplication().getApplicant(),</em>
+<a name="517" href="#517">517</a> 					<em class="comment">//										false);</em>
+<a name="518" href="#518">518</a> 					<em class="comment">//						compositePrintRequest.add(organDonorDocumentRequestTus);</em>
+<a name="519" href="#519">519</a> 					<em class="comment">//					}</em>
+<a name="520" href="#520">520</a> 					<strong>if</strong> (PrintRequestTypes.TEMP_OR_INTERIM_LICENSE_LDD0602
+<a name="521" href="#521">521</a> 							.equals(printRequestType)) {
+<a name="522" href="#522">522</a> 						InterimLicenseDocumentRequestTus interimLicenseDocumentRequestTus = <strong>this</strong>.printServiceRequestFactory
+<a name="523" href="#523">523</a> 								.createInterimLicenseDocumentRequestTus(
+<a name="524" href="#524">524</a> 										tsRequest.getUserContext(), tsRequest
+<a name="525" href="#525">525</a> 												.getDlApplication());
+<a name="526" href="#526">526</a> 						compositePrintRequest
+<a name="527" href="#527">527</a> 								.add(interimLicenseDocumentRequestTus);
+<a name="528" href="#528">528</a> 						<strong>continue</strong>;
+<a name="529" href="#529">529</a> 					}
+<a name="530" href="#530">530</a> 					<strong>if</strong> (PrintRequestTypes.TEST_RESULTS_1_LDD0631
+<a name="531" href="#531">531</a> 							.equals(printRequestType)) {
+<a name="532" href="#532">532</a> 						NonCommercialTestResultsDocumentRequestTus nonCommercialTestResultsDocumentRequestTus = <strong>this</strong>.printServiceRequestFactory
+<a name="533" href="#533">533</a> 								.createNonCommercialTestResultsDocumentRequestTus(
+<a name="534" href="#534">534</a> 										tsRequest.getUserContext(), tsRequest
+<a name="535" href="#535">535</a> 												.getDlApplication());
+<a name="536" href="#536">536</a> 						compositePrintRequest
+<a name="537" href="#537">537</a> 								.add(nonCommercialTestResultsDocumentRequestTus);
+<a name="538" href="#538">538</a> 						<strong>continue</strong>;
+<a name="539" href="#539">539</a> 					}
+<a name="540" href="#540">540</a> 					<strong>if</strong> (PrintRequestTypes.TEST_RESULTS_2_LDD0632
+<a name="541" href="#541">541</a> 							.equals(printRequestType)) {
+<a name="542" href="#542">542</a> 						CommercialTestResultsDocumentRequestTus commercialTestResultsDocumentRequestTus = <strong>this</strong>.printServiceRequestFactory
+<a name="543" href="#543">543</a> 								.createCommercialTestResultsDocumentRequestTus(
+<a name="544" href="#544">544</a> 										tsRequest.getUserContext(), tsRequest
+<a name="545" href="#545">545</a> 												.getDlApplication());
+<a name="546" href="#546">546</a> 						compositePrintRequest
+<a name="547" href="#547">547</a> 								.add(commercialTestResultsDocumentRequestTus);
+<a name="548" href="#548">548</a> 						<strong>continue</strong>;
+<a name="549" href="#549">549</a> 					}
+<a name="550" href="#550">550</a> 					<strong>if</strong> (PrintRequestTypes.VOTER_REGISTRATION_LDD0861
+<a name="551" href="#551">551</a> 							.equals(printRequestType)) {
+<a name="552" href="#552">552</a> 						VoterRegistrationReceiptRequestTus voterRegistrationReceiptRequestTus = <strong>this</strong>.printServiceRequestFactory
+<a name="553" href="#553">553</a> 								.createVoterRegistrationReceiptRequestTus(
+<a name="554" href="#554">554</a> 										tsRequest.getUserContext(), tsRequest
+<a name="555" href="#555">555</a> 												.getDlApplication()
+<a name="556" href="#556">556</a> 												.getApplicant(), tsRequest
+<a name="557" href="#557">557</a> 												.getDlApplication()
+<a name="558" href="#558">558</a> 												.getVoterRegistationRequested()
+<a name="559" href="#559">559</a> 												.getCode());
+<a name="560" href="#560">560</a> 						compositePrintRequest
+<a name="561" href="#561">561</a> 								.add(voterRegistrationReceiptRequestTus);
+<a name="562" href="#562">562</a> 						<strong>continue</strong>;
+<a name="563" href="#563">563</a> 					}
+<a name="564" href="#564">564</a> 				}
+<a name="565" href="#565">565</a> 				<strong>if</strong> (compositePrintRequest.getRequests().size() > 0) {
+<a name="566" href="#566">566</a> 					PrintServiceResponse printServiceResponse = compositePrintRequest
+<a name="567" href="#567">567</a> 							.execute();
+<a name="568" href="#568">568</a> 					<strong>if</strong> (printServiceResponse.hasErrors()) {
+<a name="569" href="#569">569</a> 						tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/PrintResponseTs.html">PrintResponseTs</a>(printServiceResponse
+<a name="570" href="#570">570</a> 								.getErrorCollector());
+<a name="571" href="#571">571</a> 					}
+<a name="572" href="#572">572</a> 					<strong>else</strong> {
+<a name="573" href="#573">573</a> 						tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/PrintResponseTs.html">PrintResponseTs</a>(printServiceResponse);
+<a name="574" href="#574">574</a> 					}
+<a name="575" href="#575">575</a> 				}
+<a name="576" href="#576">576</a> 				<strong>else</strong> {
+<a name="577" href="#577">577</a> 					tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/PrintResponseTs.html">PrintResponseTs</a>();
+<a name="578" href="#578">578</a> 				}
+<a name="579" href="#579">579</a> 			}
+<a name="580" href="#580">580</a> 		}
+<a name="581" href="#581">581</a> 		<strong>catch</strong> (Exception e) {
+<a name="582" href="#582">582</a> 			IErrorCollector collector = <strong>new</strong> ErrorCollector();
+<a name="583" href="#583">583</a> 			collector.register(e);
+<a name="584" href="#584">584</a> 			tsResponse = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/response/impl/PrintResponseTs.html">PrintResponseTs</a>(collector);
+<a name="585" href="#585">585</a> 		}
+<a name="586" href="#586">586</a> 		<strong>return</strong> tsResponse;
+<a name="587" href="#587">587</a> 	}
+<a name="588" href="#588">588</a> 
+<a name="589" href="#589">589</a> 	<em class="comment">//Retrieve Office from DB given the office Id </em>
+<a name="590" href="#590">590</a> 	<strong>private</strong> Office retrieveOffice(String officeId, IUserContext userContext)
+<a name="591" href="#591">591</a> 			throws EaseException {
+<a name="592" href="#592">592</a> 		<em class="comment">// create Office with office id</em>
+<a name="593" href="#593">593</a> 		Office office = <strong>new</strong> Office();
+<a name="594" href="#594">594</a> 		office.setOfficeId(officeId);
+<a name="595" href="#595">595</a> 		<em class="comment">// retrieve office details with office id</em>
+<a name="596" href="#596">596</a> 		<strong>try</strong> {
+<a name="597" href="#597">597</a> 			IBusinessObject busineeObject = retrieveOffice(office, userContext);
+<a name="598" href="#598">598</a> 			<strong>if</strong> (busineeObject != <strong>null</strong>)
+<a name="599" href="#599">599</a> 				office = (Office) busineeObject;
+<a name="600" href="#600">600</a> 		}
+<a name="601" href="#601">601</a> 		<strong>catch</strong> (Exception e) {
+<a name="602" href="#602">602</a> 			<strong>throw</strong> <strong>new</strong> EaseException(<span class="string">"Error getting Office :: "</span> + e.getMessage());
+<a name="603" href="#603">603</a> 		}
+<a name="604" href="#604">604</a> 		<strong>return</strong> office;
+<a name="605" href="#605">605</a> 	}
+<a name="606" href="#606">606</a> 
+<a name="607" href="#607">607</a> 	<em>/**<em>*</em></em>
+<a name="608" href="#608">608</a> <em>	 * This method gets Office object for a given office id from the database</em>
+<a name="609" href="#609">609</a> <em>	 * @param businessObject</em>
+<a name="610" href="#610">610</a> <em>	 * @param userContext</em>
+<a name="611" href="#611">611</a> <em>	 * @return IBusinessObject</em>
+<a name="612" href="#612">612</a> <em>	 */</em>
+<a name="613" href="#613">613</a> 	<strong>private</strong> IBusinessObject retrieveOffice(IBusinessObject businessObject,
+<a name="614" href="#614">614</a> 			IUserContext userContext) throws EaseException {
+<a name="615" href="#615">615</a> 		IBusinessObject retrievedOffice = <strong>null</strong>;
+<a name="616" href="#616">616</a> 		PersistenceServiceRequestFactory factory = (PersistenceServiceRequestFactory) EaseApplicationContext
+<a name="617" href="#617">617</a> 				.getApplicationContext().getBean(
+<a name="618" href="#618">618</a> 						<span class="string">"persistenceServiceRequestFactory"</span>);
+<a name="619" href="#619">619</a> 		IPersistenceServiceRequest request = factory
+<a name="620" href="#620">620</a> 				.createRetrieveBusinessObjectRequest(userContext,
+<a name="621" href="#621">621</a> 						businessObject);
+<a name="622" href="#622">622</a> 		RetrieveBusinessObjectResponse retrieveResponse = (RetrieveBusinessObjectResponse) request
+<a name="623" href="#623">623</a> 				.execute();
+<a name="624" href="#624">624</a> 		<strong>if</strong> (retrieveResponse.hasErrors()) {
+<a name="625" href="#625">625</a> 			<strong>throw</strong> <strong>new</strong> EaseException(retrieveResponse.getErrorCollector()
+<a name="626" href="#626">626</a> 					.toString());
+<a name="627" href="#627">627</a> 		}
+<a name="628" href="#628">628</a> 		<strong>else</strong> {
+<a name="629" href="#629">629</a> 			List &lt;IBusinessObject> bos = retrieveResponse.getResults();
+<a name="630" href="#630">630</a> 			<strong>if</strong> (bos.size() > 0) {
+<a name="631" href="#631">631</a> 				retrievedOffice = bos.get(0);
+<a name="632" href="#632">632</a> 			}
+<a name="633" href="#633">633</a> 		}
+<a name="634" href="#634">634</a> 		<strong>return</strong> retrievedOffice;
+<a name="635" href="#635">635</a> 	}
+<a name="636" href="#636">636</a> 
+<a name="637" href="#637">637</a> 	<em>/**<em>*</em></em>
+<a name="638" href="#638">638</a> <em>	 * @param problemDriverUpdateService the problemDriverUpdateService to set</em>
+<a name="639" href="#639">639</a> <em>	 */</em>
+<a name="640" href="#640">640</a> 	<strong>public</strong> <strong>void</strong> setProblemDriverUpdateService(
+<a name="641" href="#641">641</a> 			ProblemDriverUpdateService problemDriverUpdateService) {
+<a name="642" href="#642">642</a> 		<strong>this</strong>.problemDriverUpdateService = problemDriverUpdateService;
+<a name="643" href="#643">643</a> 	}
+<a name="644" href="#644">644</a> 
+<a name="645" href="#645">645</a> 	<em>/**<em>*</em></em>
+<a name="646" href="#646">646</a> <em>	 * @param sendLogMessageToNetworkControlCenterService the sendLogMessageToNetworkControlCenterService to set</em>
+<a name="647" href="#647">647</a> <em>	 */</em>
+<a name="648" href="#648">648</a> 	<strong>public</strong> <strong>void</strong> setSendLogMessageToNetworkControlCenterService(
+<a name="649" href="#649">649</a> 			SendLogMessageToNetworkControlCenterService sendLogMessageToNetworkControlCenterService) {
+<a name="650" href="#650">650</a> 		<strong>this</strong>.sendLogMessageToNetworkControlCenterService = sendLogMessageToNetworkControlCenterService;
+<a name="651" href="#651">651</a> 	}
+<a name="652" href="#652">652</a> 
+<a name="653" href="#653">653</a> 	<em>/**<em>*</em></em>
+<a name="654" href="#654">654</a> <em>	 * @param updateDlHistoryService the updateDlHistoryService to set</em>
+<a name="655" href="#655">655</a> <em>	 */</em>
+<a name="656" href="#656">656</a> 	<strong>public</strong> <strong>void</strong> setUpdateDlHistoryService(
+<a name="657" href="#657">657</a> 			UpdateDlHistoryService updateDlHistoryService) {
+<a name="658" href="#658">658</a> 		<strong>this</strong>.updateDlHistoryService = updateDlHistoryService;
+<a name="659" href="#659">659</a> 	}
+<a name="660" href="#660">660</a> 
+<a name="661" href="#661">661</a> 	<em>/**<em>*</em></em>
+<a name="662" href="#662">662</a> <em>	 * @param updateExtendedNameIndexService the updateExtendedNameIndexService to set</em>
+<a name="663" href="#663">663</a> <em>	 */</em>
+<a name="664" href="#664">664</a> 	<strong>public</strong> <strong>void</strong> setUpdateExtendedNameIndexService(
+<a name="665" href="#665">665</a> 			UpdateExtendedNameIndexService updateExtendedNameIndexService) {
+<a name="666" href="#666">666</a> 		<strong>this</strong>.updateExtendedNameIndexService = updateExtendedNameIndexService;
+<a name="667" href="#667">667</a> 	}
+<a name="668" href="#668">668</a> 
+<a name="669" href="#669">669</a> 	<em>/**<em>*</em></em>
+<a name="670" href="#670">670</a> <em>	 * @param updateHeadQuartersSystemService the updateHeadQuartersSystemService to set</em>
+<a name="671" href="#671">671</a> <em>	 */</em>
+<a name="672" href="#672">672</a> 	<strong>public</strong> <strong>void</strong> setUpdateHeadQuartersSystemService(
+<a name="673" href="#673">673</a> 			UpdateHeadQuartersSystemService updateHeadQuartersSystemService) {
+<a name="674" href="#674">674</a> 		<strong>this</strong>.updateHeadQuartersSystemService = updateHeadQuartersSystemService;
+<a name="675" href="#675">675</a> 	}
+<a name="676" href="#676">676</a> 
+<a name="677" href="#677">677</a> 	<em>/**<em>*</em></em>
+<a name="678" href="#678">678</a> <em>	 * @param retrieveDafRecordsService the retrieveDafRecordsService to set</em>
+<a name="679" href="#679">679</a> <em>	 */</em>
+<a name="680" href="#680">680</a> 	<strong>public</strong> <strong>void</strong> setRetrieveDafRecordsService(
+<a name="681" href="#681">681</a> 			RetrieveDafRecordsService retrieveDafRecordsService) {
+<a name="682" href="#682">682</a> 		<strong>this</strong>.retrieveDafRecordsService = retrieveDafRecordsService;
+<a name="683" href="#683">683</a> 	}
+<a name="684" href="#684">684</a> 
+<a name="685" href="#685">685</a> 	<em>/**<em>*</em></em>
+<a name="686" href="#686">686</a> <em>	 * @param transactionService the transactionService to set</em>
+<a name="687" href="#687">687</a> <em>	 */</em>
+<a name="688" href="#688">688</a> 	<strong>public</strong> <strong>void</strong> setTransactionService(<a href="../../../../../../../../gov/ca/dmv/ease/tus/txs/service/impl/TransactionService.html">TransactionService</a> transactionService) {
+<a name="689" href="#689">689</a> 		<strong>this</strong>.transactionService = transactionService;
+<a name="690" href="#690">690</a> 	}
+<a name="691" href="#691">691</a> 
+<a name="692" href="#692">692</a> 	<em>/**<em>*</em></em>
+<a name="693" href="#693">693</a> <em>	 * @param printServiceRequestFactory the printServiceRequestFactory to set</em>
+<a name="694" href="#694">694</a> <em>	 */</em>
+<a name="695" href="#695">695</a> 	@Override
+<a name="696" href="#696">696</a> 	<strong>public</strong> <strong>void</strong> setPrintServiceRequestFactory(
+<a name="697" href="#697">697</a> 			PrintServiceRequestFactory printServiceRequestFactory) {
+<a name="698" href="#698">698</a> 		<strong>this</strong>.printServiceRequestFactory = printServiceRequestFactory;
+<a name="699" href="#699">699</a> 	}
+<a name="700" href="#700">700</a> }
+<a name="701" href="#701">701</a> <em>/**<em>*</em></em>
+<a name="702" href="#702">702</a> <em> *  Modification History:</em>
+<a name="703" href="#703">703</a> <em> *</em>
+<a name="704" href="#704">704</a> <em> *  $Log: CdaTaskService.java,v $</em>
+<a name="705" href="#705">705</a> <em> *  Revision 1.45  2010/08/11 20:25:30  mwcsj3</em>
+<a name="706" href="#706">706</a> <em> *  Added retrieveOffice method</em>
+<a name="707" href="#707">707</a> <em> *</em>
+<a name="708" href="#708">708</a> <em> *  Revision 1.44  2010/07/23 20:59:22  mwyxg1</em>
+<a name="709" href="#709">709</a> <em> *  remove unused local variable</em>
+<a name="710" href="#710">710</a> <em> *</em>
+<a name="711" href="#711">711</a> <em> *  Revision 1.43  2010/07/23 20:56:07  mwyxg1</em>
+<a name="712" href="#712">712</a> <em> *  add back InstructionPermitDocumentRequest</em>
+<a name="713" href="#713">713</a> <em> *</em>
+<a name="714" href="#714">714</a> <em> *  Revision 1.42  2010/07/23 17:14:04  mwrrv2</em>
+<a name="715" href="#715">715</a> <em> *  Removed composite print request injection to CdaTaskService and getting request from Factory.</em>
+<a name="716" href="#716">716</a> <em> *</em>
+<a name="717" href="#717">717</a> <em> *  Revision 1.41  2010/07/14 21:55:55  mwpxr4</em>
+<a name="718" href="#718">718</a> <em> *  Commented Instruction Permit Document call. Added TODO about the changes required.</em>
+<a name="719" href="#719">719</a> <em> *</em>
+<a name="720" href="#720">720</a> <em> *  Revision 1.40  2010/06/21 23:18:39  mwcsj3</em>
+<a name="721" href="#721">721</a> <em> *  Merged SUB_BUSINESS_PROCESS_IMPLEMENTATION branch to HEAD</em>
+<a name="722" href="#722">722</a> <em> *</em>
+<a name="723" href="#723">723</a> <em> *  Revision 1.34.4.2  2010/06/20 18:08:55  mwakg</em>
+<a name="724" href="#724">724</a> <em> *  Rebased to June 20, 2010</em>
+<a name="725" href="#725">725</a> <em> *</em>
+<a name="726" href="#726">726</a> <em> *  Revision 1.39  2010/06/16 16:38:45  mwyxg1</em>
+<a name="727" href="#727">727</a> <em> *  update comments</em>
+<a name="728" href="#728">728</a> <em> *</em>
+<a name="729" href="#729">729</a> <em> *  Revision 1.38  2010/06/16 16:38:24  mwyxg1</em>
+<a name="730" href="#730">730</a> <em> *  use voter request code as parameter for voter registration printing request</em>
+<a name="731" href="#731">731</a> <em> *</em>
+<a name="732" href="#732">732</a> <em> *  Revision 1.37  2010/06/16 15:36:14  mwyxg1</em>
+<a name="733" href="#733">733</a> <em> *  refactor VoterRegistrationReceiptRequestTus</em>
+<a name="734" href="#734">734</a> <em> *</em>
+<a name="735" href="#735">735</a> <em> *  Revision 1.36  2010/06/16 02:12:42  mwhxb3</em>
+<a name="736" href="#736">736</a> <em> *  The VoterRegistrationReceipt can be used not only in DlApplication but also for other types of applications. The request needs to be independent of type of application. Update code due to change in request. Removing compilation errors.</em>
+<a name="737" href="#737">737</a> <em> *</em>
+<a name="738" href="#738">738</a> <em> *  Revision 1.35  2010/06/03 16:04:53  mwyxg1</em>
+<a name="739" href="#739">739</a> <em> *  use DlProcessContext instead of CdaProcessContext</em>
+<a name="740" href="#740">740</a> <em> *</em>
+<a name="741" href="#741">741</a> <em> *  Revision 1.34  2010/05/18 20:55:03  mwjxa11</em>
+<a name="742" href="#742">742</a> <em> *  Added dlApplication object to InterimLicenseDocumentRequest call</em>
+<a name="743" href="#743">743</a> <em> *</em>
+<a name="744" href="#744">744</a> <em> *  Revision 1.33  2010/05/09 21:25:39  mwyxg1</em>
+<a name="745" href="#745">745</a> <em> *  fix nullpointer</em>
+<a name="746" href="#746">746</a> <em> *</em>
+<a name="747" href="#747">747</a> <em> *  Revision 1.32  2010/05/09 18:19:45  mwyxg1</em>
+<a name="748" href="#748">748</a> <em> *  fix nullpointer</em>
+<a name="749" href="#749">749</a> <em> *</em>
+<a name="750" href="#750">750</a> <em> *  Revision 1.31  2010/05/06 23:56:33  mwyxg1</em>
+<a name="751" href="#751">751</a> <em> *  add isCommercialLicense</em>
+<a name="752" href="#752">752</a> <em> *</em>
+<a name="753" href="#753">753</a> <em> *  Revision 1.30  2010/05/06 00:09:14  mwcsj3</em>
+<a name="754" href="#754">754</a> <em> *  DlProcessTransactionRequest constructor modified</em>
+<a name="755" href="#755">755</a> <em> *</em>
+<a name="756" href="#756">756</a> <em> *  Revision 1.29  2010/05/04 23:26:42  mwvkm</em>
+<a name="757" href="#757">757</a> <em> *  Made it Serializable</em>
+<a name="758" href="#758">758</a> <em> *</em>
+<a name="759" href="#759">759</a> <em> *  Revision 1.28  2010/05/03 22:10:08  mwjxa11</em>
+<a name="760" href="#760">760</a> <em> *  Updated</em>
+<a name="761" href="#761">761</a> <em> *</em>
+<a name="762" href="#762">762</a> <em> *  Revision 1.27  2010/04/29 21:42:22  mwyxg1</em>
+<a name="763" href="#763">763</a> <em> *  add logic for isIssuanceReferalDoubleRequired</em>
+<a name="764" href="#764">764</a> <em> *</em>
+<a name="765" href="#765">765</a> <em> *  Revision 1.26  2010/04/28 18:06:22  mwyxg1</em>
+<a name="766" href="#766">766</a> <em> *  add LDD0612</em>
+<a name="767" href="#767">767</a> <em> *</em>
+<a name="768" href="#768">768</a> <em> *  Revision 1.25  2010/04/27 20:55:42  mwyxg1</em>
+<a name="769" href="#769">769</a> <em> *  remove duplicated code</em>
+<a name="770" href="#770">770</a> <em> *</em>
+<a name="771" href="#771">771</a> <em> *  Revision 1.24  2010/04/27 20:53:42  mwyxg1</em>
+<a name="772" href="#772">772</a> <em> *  add requests to compositePrintRequest</em>
+<a name="773" href="#773">773</a> <em> *</em>
+<a name="774" href="#774">774</a> <em> *  Revision 1.23  2010/04/27 16:51:45  mwyxg1</em>
+<a name="775" href="#775">775</a> <em> *  inject compositePrintRequest</em>
+<a name="776" href="#776">776</a> <em> *</em>
+<a name="777" href="#777">777</a> <em> *  Revision 1.22  2010/04/22 23:44:06  mwyxg1</em>
+<a name="778" href="#778">778</a> <em> *  change printRequestTypes to set</em>
+<a name="779" href="#779">779</a> <em> *</em>
+<a name="780" href="#780">780</a> <em> *  Revision 1.21  2010/04/22 23:07:01  mwyxg1</em>
+<a name="781" href="#781">781</a> <em> *  add processTestResultsAndIssuanceReferralDocuments</em>
+<a name="782" href="#782">782</a> <em> *</em>
+<a name="783" href="#783">783</a> <em> *  Revision 1.20  2010/04/22 22:08:24  mwyxg1</em>
+<a name="784" href="#784">784</a> <em> *  add print execute method</em>
+<a name="785" href="#785">785</a> <em> *</em>
+<a name="786" href="#786">786</a> <em> *  Revision 1.19  2010/04/15 21:47:54  mwyxg1</em>
+<a name="787" href="#787">787</a> <em> *  fix errors</em>
+<a name="788" href="#788">788</a> <em> *</em>
+<a name="789" href="#789">789</a> <em> *  Revision 1.18  2010/04/13 21:45:35  mwyxg1</em>
+<a name="790" href="#790">790</a> <em> *  combine EL1, EL2, EL3, EL4 together</em>
+<a name="791" href="#791">791</a> <em> *</em>
+<a name="792" href="#792">792</a> <em> *  Revision 1.17  2010/04/13 17:18:34  mwyxg1</em>
+<a name="793" href="#793">793</a> <em> *  Remove ELB call, call end of transaction instead</em>
+<a name="794" href="#794">794</a> <em> *</em>
+<a name="795" href="#795">795</a> <em> *  Revision 1.16  2010/04/13 17:15:02  mwyxg1</em>
+<a name="796" href="#796">796</a> <em> *  Add End of Transaction Process</em>
+<a name="797" href="#797">797</a> <em> *</em>
+<a name="798" href="#798">798</a> <em> *  Revision 1.15  2010/04/13 01:08:28  mwyxg1</em>
+<a name="799" href="#799">799</a> <em> *  Add End of Transaction Process</em>
+<a name="800" href="#800">800</a> <em> *</em>
+<a name="801" href="#801">801</a> <em> *  Revision 1.14  2010/04/08 18:03:44  mwyxg1</em>
+<a name="802" href="#802">802</a> <em> *  add transactionService</em>
+<a name="803" href="#803">803</a> <em> *</em>
+<a name="804" href="#804">804</a> <em> *  Revision 1.13  2010/04/08 16:48:46  mwyxg1</em>
+<a name="805" href="#805">805</a> <em> *  add update daf record execute method</em>
+<a name="806" href="#806">806</a> <em> *</em>
+<a name="807" href="#807">807</a> <em> *  Revision 1.12  2010/04/05 20:59:25  mwcsj3</em>
+<a name="808" href="#808">808</a> <em> *  Creating request object and setting values based on DafInquiryTypes</em>
+<a name="809" href="#809">809</a> <em> *</em>
+<a name="810" href="#810">810</a> <em> *  Revision 1.11  2010/04/05 00:15:49  mwcsj3</em>
+<a name="811" href="#811">811</a> <em> *  Updated DafRecordInquiryResponseTs execute(</em>
+<a name="812" href="#812">812</a> <em> *  			DafRecordInquiryRequestTs tsRequest) method</em>
+<a name="813" href="#813">813</a> <em> *</em>
+<a name="814" href="#814">814</a> <em> *  Revision 1.10  2010/03/31 20:06:16  mwakg</em>
+<a name="815" href="#815">815</a> <em> *  Renamed GetDafRecordsService to RetrieveDafRecordsService and updated the spring config accordingly</em>
+<a name="816" href="#816">816</a> <em> *</em>
+<a name="817" href="#817">817</a> <em> *  Revision 1.8  2010/03/29 21:21:28  mwyxg1</em>
+<a name="818" href="#818">818</a> <em> *  refactor UpdateHeadquartersSystemRequestBus</em>
+<a name="819" href="#819">819</a> <em> *</em>
+<a name="820" href="#820">820</a> <em> *  Revision 1.7  2010/03/29 16:31:18  mwyxg1</em>
+<a name="821" href="#821">821</a> <em> *  use spring config</em>
+<a name="822" href="#822">822</a> <em> *</em>
+<a name="823" href="#823">823</a> <em> *  Revision 1.6  2010/03/26 17:55:57  mwyxg1</em>
+<a name="824" href="#824">824</a> <em> *  add logic</em>
+<a name="825" href="#825">825</a> <em> *</em>
+<a name="826" href="#826">826</a> <em> *  Revision 1.5  2010/03/17 18:16:21  mwyxg1</em>
+<a name="827" href="#827">827</a> <em> *  update comments</em>
+<a name="828" href="#828">828</a> <em> *</em>
+<a name="829" href="#829">829</a> <em> *  Revision 1.4  2010/03/17 00:14:40  mwyxg1</em>
+<a name="830" href="#830">830</a> <em> *  update comments</em>
+<a name="831" href="#831">831</a> <em> *</em>
+<a name="832" href="#832">832</a> <em> */</em>
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

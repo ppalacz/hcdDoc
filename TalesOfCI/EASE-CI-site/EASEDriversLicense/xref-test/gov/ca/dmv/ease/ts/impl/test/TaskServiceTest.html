@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" /><title>TaskServiceTest xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../../../../../../../../../apidocs/gov/ca/dmv/ease/ts/impl/test/TaskServiceTest.html">View Javadoc</a></div><pre>
+
+<a name="1" href="#1">1</a>   <em>/**<em>* * </em></em>
+<a name="2" href="#2">2</a>   <em> * This source code contains State of California's confidential and trade secret information.</em>
+<a name="3" href="#3">3</a>   <em> * Any use of this code other than for backup is strictly prohibited.</em>
+<a name="4" href="#4">4</a>   <em> * Copyright State of California (c) 2009</em>
+<a name="5" href="#5">5</a>   <em> * <a href="http://www.california.gov" target="alexandria_uri">http://www.california.gov</a></em>
+<a name="6" href="#6">6</a>   <em> */</em>
+<a name="7" href="#7">7</a>   <strong>package</strong> gov.ca.dmv.ease.ts.impl.test;
+<a name="8" href="#8">8</a>   
+<a name="9" href="#9">9</a>   <strong>import</strong> gov.ca.dmv.ease.bo.code.impl.CodeSetElement;
+<a name="10" href="#10">10</a>  <strong>import</strong> gov.ca.dmv.ease.bo.dl.record.impl.CdlisRecord;
+<a name="11" href="#11">11</a>  <strong>import</strong> gov.ca.dmv.ease.bo.dl.record.impl.PdpsRecord;
+<a name="12" href="#12">12</a>  <strong>import</strong> gov.ca.dmv.ease.bo.document.impl.DlApplication;
+<a name="13" href="#13">13</a>  <strong>import</strong> gov.ca.dmv.ease.bo.financial.impl.CashPayment;
+<a name="14" href="#14">14</a>  <strong>import</strong> gov.ca.dmv.ease.bo.financial.impl.DebitPayment;
+<a name="15" href="#15">15</a>  <strong>import</strong> gov.ca.dmv.ease.bo.financial.impl.Invoice;
+<a name="16" href="#16">16</a>  <strong>import</strong> gov.ca.dmv.ease.bo.financial.impl.Payment;
+<a name="17" href="#17">17</a>  <strong>import</strong> gov.ca.dmv.ease.bo.financial.impl.Voucher;
+<a name="18" href="#18">18</a>  <strong>import</strong> gov.ca.dmv.ease.bo.locator.impl.Address;
+<a name="19" href="#19">19</a>  <strong>import</strong> gov.ca.dmv.ease.bo.transientobj.impl.VoucherReturnCode;
+<a name="20" href="#20">20</a>  <strong>import</strong> gov.ca.dmv.ease.bo.user.impl.UserContext;
+<a name="21" href="#21">21</a>  <strong>import</strong> gov.ca.dmv.ease.ts.bo.test.fixtures.AddressFixtureFactory;
+<a name="22" href="#22">22</a>  <strong>import</strong> gov.ca.dmv.ease.ts.bo.test.fixtures.CdlisPdpsFixtureFactory;
+<a name="23" href="#23">23</a>  <strong>import</strong> gov.ca.dmv.ease.ts.bo.test.fixtures.CommonFixtureFactory;
+<a name="24" href="#24">24</a>  <strong>import</strong> gov.ca.dmv.ease.ts.bo.test.fixtures.DriverLicenseFixtureFactory;
+<a name="25" href="#25">25</a>  <strong>import</strong> gov.ca.dmv.ease.ts.bo.test.fixtures.InvoiceFixtureFactory;
+<a name="26" href="#26">26</a>  <strong>import</strong> gov.ca.dmv.ease.ts.bo.test.fixtures.UserContextFixtureFactory;
+<a name="27" href="#27">27</a>  <strong>import</strong> gov.ca.dmv.ease.ts.bo.test.fixtures.VoucherFixtureFactory;
+<a name="28" href="#28">28</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.service.impl.IssueDlTaskService;
+<a name="29" href="#29">29</a>  <strong>import</strong> gov.ca.dmv.ease.ts.impl.TaskService;
+<a name="30" href="#30">30</a>  <strong>import</strong> gov.ca.dmv.ease.ts.request.impl.ApproveAuthorizationRequestTs;
+<a name="31" href="#31">31</a>  <strong>import</strong> gov.ca.dmv.ease.ts.request.impl.GenerateDocumentRequestTs;
+<a name="32" href="#32">32</a>  <strong>import</strong> gov.ca.dmv.ease.ts.request.impl.GenerateSequenceNoRequestTs;
+<a name="33" href="#33">33</a>  <strong>import</strong> gov.ca.dmv.ease.ts.request.impl.ValidateAddressRequestTs;
+<a name="34" href="#34">34</a>  <strong>import</strong> gov.ca.dmv.ease.ts.request.impl.ValidateAutomatedReceiptRequestTs;
+<a name="35" href="#35">35</a>  <strong>import</strong> gov.ca.dmv.ease.ts.request.impl.ValidateCollectApplicantDataRequestTs;
+<a name="36" href="#36">36</a>  <strong>import</strong> gov.ca.dmv.ease.ts.response.impl.ApproveAuthorizationResponseTs;
+<a name="37" href="#37">37</a>  <strong>import</strong> gov.ca.dmv.ease.ts.response.impl.GenerateDocumentResponseTs;
+<a name="38" href="#38">38</a>  <strong>import</strong> gov.ca.dmv.ease.ts.response.impl.GenerateSequenceNoResponseTs;
+<a name="39" href="#39">39</a>  <strong>import</strong> gov.ca.dmv.ease.ts.response.impl.ValidateAddressesResponseTs;
+<a name="40" href="#40">40</a>  <strong>import</strong> gov.ca.dmv.ease.ts.response.impl.ValidateAutomatedReceiptResponseTs;
+<a name="41" href="#41">41</a>  <strong>import</strong> gov.ca.dmv.ease.ts.response.impl.ValidateCollectApplicantDataResponseTs;
+<a name="42" href="#42">42</a>  
+<a name="43" href="#43">43</a>  <strong>import</strong> java.math.BigDecimal;
+<a name="44" href="#44">44</a>  <strong>import</strong> java.util.ArrayList;
+<a name="45" href="#45">45</a>  <strong>import</strong> java.util.Date;
+<a name="46" href="#46">46</a>  <strong>import</strong> java.util.List;
+<a name="47" href="#47">47</a>  
+<a name="48" href="#48">48</a>  <strong>import</strong> junit.framework.TestCase;
+<a name="49" href="#49">49</a>  
+<a name="50" href="#50">50</a>  <strong>import</strong> org.junit.After;
+<a name="51" href="#51">51</a>  <strong>import</strong> org.junit.Before;
+<a name="52" href="#52">52</a>  <strong>import</strong> org.junit.Test;
+<a name="53" href="#53">53</a>  
+<a name="54" href="#54">54</a>  <em>/**<em>*</em></em>
+<a name="55" href="#55">55</a>  <em> * Description: I am this and that File: TaskServiceTest.java Module:</em>
+<a name="56" href="#56">56</a>  <em> * gov.ca.dmv.ease.ts.test Created: Jul 8, 2009</em>
+<a name="57" href="#57">57</a>  <em> * </em>
+<a name="58" href="#58">58</a>  <em> * @author MWSXD10</em>
+<a name="59" href="#59">59</a>  <em> * @version $Revision: 1.9 $ Last Changed: $Date: 2010/07/28 00:54:05 $ Last</em>
+<a name="60" href="#60">60</a>  <em> *          Changed By: $Author: mwcsj3 $</em>
+<a name="61" href="#61">61</a>  <em> */</em>
+<a name="62" href="#62">62</a>  <strong>public</strong> <strong>class</strong> <a href="../../../../../../../gov/ca/dmv/ease/ts/impl/test/TaskServiceTest.html">TaskServiceTest</a> <strong>extends</strong> TestCase {
+<a name="63" href="#63">63</a>  	<strong>private</strong> CdlisRecord cdlisRecord;
+<a name="64" href="#64">64</a>  	<strong>private</strong> DlApplication dlApplication;
+<a name="65" href="#65">65</a>  	<em>/**<em>* The fixture. */</em></em>
+<a name="66" href="#66">66</a>  	<strong>private</strong> TaskService fixture = <strong>null</strong>;
+<a name="67" href="#67">67</a>  	<strong>private</strong> Invoice invoice;
+<a name="68" href="#68">68</a>  	<strong>private</strong> PdpsRecord pdpsRecord;
+<a name="69" href="#69">69</a>  	<strong>private</strong> ValidateAddressRequestTs tsRequest;
+<a name="70" href="#70">70</a>  	<strong>private</strong> UserContext userContext = <strong>null</strong>;
+<a name="71" href="#71">71</a>  
+<a name="72" href="#72">72</a>  	<em>/**<em>*</em></em>
+<a name="73" href="#73">73</a>  <em>	 * Sets the up.</em>
+<a name="74" href="#74">74</a>  <em>	 * </em>
+<a name="75" href="#75">75</a>  <em>	 * @throws java.lang.Exception 	 *</em>
+<a name="76" href="#76">76</a>  <em>	 * @throws Exception</em>
+<a name="77" href="#77">77</a>  <em>	 *             the exception</em>
+<a name="78" href="#78">78</a>  <em>	 */</em>
+<a name="79" href="#79">79</a>  	@Override
+<a name="80" href="#80">80</a>  	@Before
+<a name="81" href="#81">81</a>  	<strong>public</strong> <strong>void</strong> setUp() throws Exception {
+<a name="82" href="#82">82</a>  		List &lt;Address> addressList = <strong>new</strong> ArrayList &lt;Address>();
+<a name="83" href="#83">83</a>  		addressList.add(AddressFixtureFactory.createLegalOwnerAddress());
+<a name="84" href="#84">84</a>  		addressList.add(AddressFixtureFactory.createRegisteredOwnerAddress());
+<a name="85" href="#85">85</a>  		userContext = <a href="../../../../../../../gov/ca/dmv/ease/ts/bo/test/fixtures/UserContextFixtureFactory.html">UserContextFixtureFactory</a>
+<a name="86" href="#86">86</a>  				.createUserContextForAddressValidationService();
+<a name="87" href="#87">87</a>  		tsRequest = <strong>new</strong> ValidateAddressRequestTs(addressList, userContext);
+<a name="88" href="#88">88</a>  		fixture = <strong>new</strong> IssueDlTaskService();
+<a name="89" href="#89">89</a>  		dlApplication = DriverLicenseFixtureFactory.createDlApplication();
+<a name="90" href="#90">90</a>  		invoice = InvoiceFixtureFactory.createInvoice();
+<a name="91" href="#91">91</a>  		cdlisRecord = CdlisPdpsFixtureFactory.createCdlisRecords().get(0);
+<a name="92" href="#92">92</a>  		pdpsRecord = CdlisPdpsFixtureFactory.createPdpsRecords().get(0);
+<a name="93" href="#93">93</a>  	}
+<a name="94" href="#94">94</a>  
+<a name="95" href="#95">95</a>  	<em>/**<em>*</em></em>
+<a name="96" href="#96">96</a>  <em>	 * Tear down.</em>
+<a name="97" href="#97">97</a>  <em>	 * </em>
+<a name="98" href="#98">98</a>  <em>	 * @throws java.lang.Exception 	 *</em>
+<a name="99" href="#99">99</a>  <em>	 * @throws Exception</em>
+<a name="100" href="#100">100</a> <em>	 *             the exception</em>
+<a name="101" href="#101">101</a> <em>	 */</em>
+<a name="102" href="#102">102</a> 	@Override
+<a name="103" href="#103">103</a> 	@After
+<a name="104" href="#104">104</a> 	<strong>public</strong> <strong>void</strong> tearDown() throws Exception {
+<a name="105" href="#105">105</a> 	}
+<a name="106" href="#106">106</a> 
+<a name="107" href="#107">107</a> 	@Test
+<a name="108" href="#108">108</a> 	<strong>public</strong> <strong>void</strong> testExecuteApproveAuthorizationResponseTs() {
+<a name="109" href="#109">109</a> 		ApproveAuthorizationRequestTs approveAuthorizationRequestTs = <strong>new</strong> ApproveAuthorizationRequestTs(
+<a name="110" href="#110">110</a> 				userContext, <span class="string">"password"</span>, <span class="string">"role"</span>);
+<a name="111" href="#111">111</a> 		ApproveAuthorizationResponseTs tsResponse = fixture
+<a name="112" href="#112">112</a> 				.execute(approveAuthorizationRequestTs);
+<a name="113" href="#113">113</a> 		assertNotNull(tsResponse);
+<a name="114" href="#114">114</a> 	}
+<a name="115" href="#115">115</a> 
+<a name="116" href="#116">116</a> 	@Test
+<a name="117" href="#117">117</a> 	<strong>public</strong> <strong>void</strong> testExecuteApproveAuthorizationResponseTsErrors() {
+<a name="118" href="#118">118</a> 		ApproveAuthorizationRequestTs approveAuthorizationRequestTs = <strong>new</strong> ApproveAuthorizationRequestTs(
+<a name="119" href="#119">119</a> 				<strong>null</strong>, <strong>null</strong>, <strong>null</strong>);
+<a name="120" href="#120">120</a> 		ApproveAuthorizationResponseTs tsResponse = fixture
+<a name="121" href="#121">121</a> 				.execute(approveAuthorizationRequestTs);
+<a name="122" href="#122">122</a> 		assertNotNull(tsResponse);
+<a name="123" href="#123">123</a> 		assertTrue(tsResponse.hasErrors());
+<a name="124" href="#124">124</a> 	}
+<a name="125" href="#125">125</a> 
+<a name="126" href="#126">126</a> 	@Test
+<a name="127" href="#127">127</a> 	<strong>public</strong> <strong>void</strong> testExecuteApproveAuthorizationResponseTsRoleIsNull() {
+<a name="128" href="#128">128</a> 		ApproveAuthorizationRequestTs approveAuthorizationRequestTs = <strong>new</strong> ApproveAuthorizationRequestTs(
+<a name="129" href="#129">129</a> 				userContext, <span class="string">"password"</span>, <strong>null</strong>);
+<a name="130" href="#130">130</a> 		ApproveAuthorizationResponseTs tsResponse = fixture
+<a name="131" href="#131">131</a> 				.execute(approveAuthorizationRequestTs);
+<a name="132" href="#132">132</a> 		assertNotNull(tsResponse);
+<a name="133" href="#133">133</a> 	}
+<a name="134" href="#134">134</a> 
+<a name="135" href="#135">135</a> 	@Test
+<a name="136" href="#136">136</a> 	<strong>public</strong> <strong>void</strong> testExecuteApproveAuthorizationResponseTsException() {
+<a name="137" href="#137">137</a> 		ApproveAuthorizationResponseTs tsResponse = fixture
+<a name="138" href="#138">138</a> 				.execute((ApproveAuthorizationRequestTs) <strong>null</strong>);
+<a name="139" href="#139">139</a> 		assertNotNull(tsResponse);
+<a name="140" href="#140">140</a> 		assertTrue(tsResponse.hasErrors());
+<a name="141" href="#141">141</a> 	}
+<a name="142" href="#142">142</a> 
+<a name="143" href="#143">143</a> 	@Test
+<a name="144" href="#144">144</a> 	<strong>public</strong> <strong>void</strong> testExecuteGenerateDocumentResponseTs() {
+<a name="145" href="#145">145</a> 		DebitPayment debitPayment = <strong>new</strong> DebitPayment();
+<a name="146" href="#146">146</a> 		debitPayment.setAmount(<strong>new</strong> BigDecimal(100));
+<a name="147" href="#147">147</a> 		List &lt;Payment> payments = <strong>new</strong> ArrayList &lt;Payment>();
+<a name="148" href="#148">148</a> 		payments.add(debitPayment);
+<a name="149" href="#149">149</a> 		CashPayment cashPayment = <strong>new</strong> CashPayment();
+<a name="150" href="#150">150</a> 		cashPayment.setAmount(<strong>new</strong> BigDecimal(200));
+<a name="151" href="#151">151</a> 		payments.add(cashPayment);
+<a name="152" href="#152">152</a> 		Invoice invoice = <strong>new</strong> Invoice();
+<a name="153" href="#153">153</a> 		invoice.setPayments(payments);
+<a name="154" href="#154">154</a> 		GenerateDocumentRequestTs generateDocumentRequestTs = <strong>new</strong> GenerateDocumentRequestTs(
+<a name="155" href="#155">155</a> 				dlApplication, invoice, cdlisRecord, pdpsRecord, userContext);
+<a name="156" href="#156">156</a> 		GenerateDocumentResponseTs tsResponse = fixture
+<a name="157" href="#157">157</a> 				.execute(generateDocumentRequestTs);
+<a name="158" href="#158">158</a> 		assertNotNull(tsResponse);
+<a name="159" href="#159">159</a> 	}
+<a name="160" href="#160">160</a> 
+<a name="161" href="#161">161</a> 	@Test
+<a name="162" href="#162">162</a> 	<strong>public</strong> <strong>void</strong> testExecuteGenerateDocumentResponseTsWithOrganDonor() {
+<a name="163" href="#163">163</a> 		DebitPayment debitPayment = <strong>new</strong> DebitPayment();
+<a name="164" href="#164">164</a> 		debitPayment.setAmount(<strong>new</strong> BigDecimal(100));
+<a name="165" href="#165">165</a> 		List &lt;Payment> payments = <strong>new</strong> ArrayList &lt;Payment>();
+<a name="166" href="#166">166</a> 		payments.add(debitPayment);
+<a name="167" href="#167">167</a> 		CashPayment cashPayment = <strong>new</strong> CashPayment();
+<a name="168" href="#168">168</a> 		cashPayment.setAmount(<strong>new</strong> BigDecimal(200));
+<a name="169" href="#169">169</a> 		payments.add(cashPayment);
+<a name="170" href="#170">170</a> 		Invoice invoice = <strong>new</strong> Invoice();
+<a name="171" href="#171">171</a> 		invoice.setPayments(payments);
+<a name="172" href="#172">172</a> 		dlApplication.setOrganDonor(<strong>true</strong>);
+<a name="173" href="#173">173</a> 		GenerateDocumentRequestTs generateDocumentRequestTs = <strong>new</strong> GenerateDocumentRequestTs(
+<a name="174" href="#174">174</a> 				dlApplication, invoice, cdlisRecord, pdpsRecord, userContext);
+<a name="175" href="#175">175</a> 		GenerateDocumentResponseTs tsResponse = fixture
+<a name="176" href="#176">176</a> 				.execute(generateDocumentRequestTs);
+<a name="177" href="#177">177</a> 		assertNotNull(tsResponse);
+<a name="178" href="#178">178</a> 	}
+<a name="179" href="#179">179</a> 
+<a name="180" href="#180">180</a> 	@Test
+<a name="181" href="#181">181</a> 	<strong>public</strong> <strong>void</strong> testExecuteGenerateDocumentResponseTsWithVoterRegistration() {
+<a name="182" href="#182">182</a> 		<em class="comment">//Voter Registration is null</em>
+<a name="183" href="#183">183</a> 		Invoice invoice = <strong>new</strong> Invoice();
+<a name="184" href="#184">184</a> 		GenerateDocumentRequestTs generateDocumentRequestTs = <strong>new</strong> GenerateDocumentRequestTs(
+<a name="185" href="#185">185</a> 				dlApplication, invoice, cdlisRecord, pdpsRecord, userContext);
+<a name="186" href="#186">186</a> 		GenerateDocumentResponseTs tsResponse = fixture
+<a name="187" href="#187">187</a> 				.execute(generateDocumentRequestTs);
+<a name="188" href="#188">188</a> 		assertNotNull(tsResponse);
+<a name="189" href="#189">189</a> 		<em class="comment">//Voter Registration is not null</em>
+<a name="190" href="#190">190</a> 		dlApplication.setVoterRegistationRequested(<strong>new</strong> CodeSetElement(<span class="string">"Yes"</span>,
+<a name="191" href="#191">191</a> 				<span class="string">"Y"</span>, <span class="string">"Voter registration"</span>));
+<a name="192" href="#192">192</a> 		generateDocumentRequestTs = <strong>new</strong> GenerateDocumentRequestTs(
+<a name="193" href="#193">193</a> 				dlApplication, invoice, cdlisRecord, pdpsRecord, userContext);
+<a name="194" href="#194">194</a> 		tsResponse = fixture.execute(generateDocumentRequestTs);
+<a name="195" href="#195">195</a> 		assertNotNull(tsResponse);
+<a name="196" href="#196">196</a> 	}
+<a name="197" href="#197">197</a> 
+<a name="198" href="#198">198</a> 	@Test
+<a name="199" href="#199">199</a> 	<strong>public</strong> <strong>void</strong> testExecuteGenerateSequenceNoResponseTs() {
+<a name="200" href="#200">200</a> 		String processID = <span class="string">"DL"</span>;
+<a name="201" href="#201">201</a> 		GenerateSequenceNoRequestTs generateSequenceNoRequestTs = <strong>new</strong> GenerateSequenceNoRequestTs(
+<a name="202" href="#202">202</a> 				processID, userContext);
+<a name="203" href="#203">203</a> 		GenerateSequenceNoResponseTs tsResponse = fixture
+<a name="204" href="#204">204</a> 				.execute(generateSequenceNoRequestTs);
+<a name="205" href="#205">205</a> 		assertNotNull(tsResponse);
+<a name="206" href="#206">206</a> 	}
+<a name="207" href="#207">207</a> 
+<a name="208" href="#208">208</a> 	@Test
+<a name="209" href="#209">209</a> 	<strong>public</strong> <strong>void</strong> testExecuteGenerateSequenceNoResponseTsErros() {
+<a name="210" href="#210">210</a> 		GenerateSequenceNoRequestTs generateSequenceNoRequestTs = <strong>new</strong> GenerateSequenceNoRequestTs(
+<a name="211" href="#211">211</a> 				<strong>null</strong>, <strong>null</strong>);
+<a name="212" href="#212">212</a> 		GenerateSequenceNoResponseTs tsResponse = fixture
+<a name="213" href="#213">213</a> 				.execute(generateSequenceNoRequestTs);
+<a name="214" href="#214">214</a> 		assertNotNull(tsResponse);
+<a name="215" href="#215">215</a> 		assertTrue(tsResponse.hasErrors());
+<a name="216" href="#216">216</a> 	}
+<a name="217" href="#217">217</a> 
+<a name="218" href="#218">218</a> 	@Test
+<a name="219" href="#219">219</a> 	<strong>public</strong> <strong>void</strong> testExecuteGenerateSequenceNoResponseTsException() {
+<a name="220" href="#220">220</a> 		GenerateSequenceNoRequestTs generateSequenceNoRequestTs = <strong>null</strong>;
+<a name="221" href="#221">221</a> 		GenerateSequenceNoResponseTs tsResponse = fixture
+<a name="222" href="#222">222</a> 				.execute(generateSequenceNoRequestTs);
+<a name="223" href="#223">223</a> 		assertNotNull(tsResponse);
+<a name="224" href="#224">224</a> 		assertTrue(tsResponse.hasErrors());
+<a name="225" href="#225">225</a> 	}
+<a name="226" href="#226">226</a> 
+<a name="227" href="#227">227</a> 	<em>/**<em>*</em></em>
+<a name="228" href="#228">228</a> <em>	 * Test method for</em>
+<a name="229" href="#229">229</a> <em>	 * {@link gov.ca.dmv.ease.ts.TaskService#execute(gov.ca.dmv.ease.ts.request.ValidateAddressRequestTs)}</em>
+<a name="230" href="#230">230</a> <em>	 * .</em>
+<a name="231" href="#231">231</a> <em>	 */</em>
+<a name="232" href="#232">232</a> 	@Test
+<a name="233" href="#233">233</a> 	<strong>public</strong> <strong>void</strong> testExecuteInValidAddressException() {
+<a name="234" href="#234">234</a> 		ValidateAddressRequestTs validateAddressRequestTs = <strong>null</strong>;
+<a name="235" href="#235">235</a> 		ValidateAddressesResponseTs tsResponse = fixture
+<a name="236" href="#236">236</a> 				.execute(validateAddressRequestTs);
+<a name="237" href="#237">237</a> 		assertNotNull(tsResponse);
+<a name="238" href="#238">238</a> 		assertTrue(tsResponse.hasErrors());
+<a name="239" href="#239">239</a> 	}
+<a name="240" href="#240">240</a> 
+<a name="241" href="#241">241</a> 	<em>/**<em>*</em></em>
+<a name="242" href="#242">242</a> <em>	 * Test method for</em>
+<a name="243" href="#243">243</a> <em>	 * {@link gov.ca.dmv.ease.ts.TaskService#execute(gov.ca.dmv.ease.ts.request.ValidateAddressRequestTs)}</em>
+<a name="244" href="#244">244</a> <em>	 * .</em>
+<a name="245" href="#245">245</a> <em>	 */</em>
+<a name="246" href="#246">246</a> 	@Test
+<a name="247" href="#247">247</a> 	<strong>public</strong> <strong>void</strong> testExecuteInValidAddress() {
+<a name="248" href="#248">248</a> 		ValidateAddressRequestTs validateAddressRequestTs = <strong>new</strong> ValidateAddressRequestTs(
+<a name="249" href="#249">249</a> 				<strong>null</strong>, userContext);
+<a name="250" href="#250">250</a> 		ValidateAddressesResponseTs tsResponse = fixture
+<a name="251" href="#251">251</a> 				.execute(validateAddressRequestTs);
+<a name="252" href="#252">252</a> 		assertNotNull(tsResponse);
+<a name="253" href="#253">253</a> 		assertNull(tsResponse.getAddresses());
+<a name="254" href="#254">254</a> 		assertNotNull(tsResponse.getValidationMessageObject());
+<a name="255" href="#255">255</a> 		<em class="comment">//assertTrue(tsResponse.hasErrors());</em>
+<a name="256" href="#256">256</a> 	}
+<a name="257" href="#257">257</a> 
+<a name="258" href="#258">258</a> 	<em>/**<em>*</em></em>
+<a name="259" href="#259">259</a> <em>	 * Test method for</em>
+<a name="260" href="#260">260</a> <em>	 * {@link gov.ca.dmv.ease.ts.TaskService#execute(gov.ca.dmv.ease.ts.request.ValidateAddressRequestTs)}</em>
+<a name="261" href="#261">261</a> <em>	 * .</em>
+<a name="262" href="#262">262</a> <em>	 */</em>
+<a name="263" href="#263">263</a> 	@Test
+<a name="264" href="#264">264</a> 	<strong>public</strong> <strong>void</strong> testExecuteValidAddress() {
+<a name="265" href="#265">265</a> 		List &lt;Address> addressList = <strong>new</strong> ArrayList &lt;Address>();
+<a name="266" href="#266">266</a> 		addressList.add(AddressFixtureFactory.createMailingAddress());
+<a name="267" href="#267">267</a> 		addressList.add(AddressFixtureFactory.createResidentialAddress());
+<a name="268" href="#268">268</a> 		tsRequest = <strong>new</strong> ValidateAddressRequestTs(addressList, userContext);
+<a name="269" href="#269">269</a> 		ValidateAddressesResponseTs response = fixture.execute(tsRequest);
+<a name="270" href="#270">270</a> 		String expectedCity1 = <span class="string">"THOUSAND OAKS"</span>;
+<a name="271" href="#271">271</a> 		String expectedCity2 = <span class="string">"Sacaramento"</span>;
+<a name="272" href="#272">272</a> 		assertNotNull(response);
+<a name="273" href="#273">273</a> 		assertNotNull(response.getAddresses());
+<a name="274" href="#274">274</a> 		<em class="comment">//assertNotNull(response.getReturnCode());</em>
+<a name="275" href="#275">275</a> 		<em class="comment">// If Valid Address then, Zip code and County Code is returned</em>
+<a name="276" href="#276">276</a> 		assertEquals(tsRequest.getAddresses().get(0).getLine1(), response
+<a name="277" href="#277">277</a> 				.getAddresses().get(0).getLine1());
+<a name="278" href="#278">278</a> 		assertEquals(tsRequest.getAddresses().get(0).getZip(), response
+<a name="279" href="#279">279</a> 				.getAddresses().get(0).getZip());
+<a name="280" href="#280">280</a> 		<em class="comment">//assertEquals("2", response.getReturnCode());</em>
+<a name="281" href="#281">281</a> 		assertEquals(expectedCity1, response.getAddresses().get(0).getCity());
+<a name="282" href="#282">282</a> 		<em class="comment">//assertNotNull(response.getReturnCode());</em>
+<a name="283" href="#283">283</a> 		assertEquals(tsRequest.getAddresses().get(1).getLine1(), response
+<a name="284" href="#284">284</a> 				.getAddresses().get(1).getLine1());
+<a name="285" href="#285">285</a> 		assertEquals(tsRequest.getAddresses().get(1).getZip(), response
+<a name="286" href="#286">286</a> 				.getAddresses().get(1).getZip());
+<a name="287" href="#287">287</a> 		<em class="comment">//assertEquals("1", response.getReturnCode());</em>
+<a name="288" href="#288">288</a> 		assertEquals(expectedCity2, response.getAddresses().get(1).getCity());
+<a name="289" href="#289">289</a> 		<em class="comment">//assertNotNull(response.getReturnCode());</em>
+<a name="290" href="#290">290</a> 	}
+<a name="291" href="#291">291</a> 
+<a name="292" href="#292">292</a> 	<em>/**<em>*</em></em>
+<a name="293" href="#293">293</a> <em>	 * Test execute validate automated receipt.</em>
+<a name="294" href="#294">294</a> <em>	 */</em>
+<a name="295" href="#295">295</a> 	@Test
+<a name="296" href="#296">296</a> 	<strong>public</strong> <strong>void</strong> testExecuteValidateAutomatedReceiptErrors() {
+<a name="297" href="#297">297</a> 		ValidateAutomatedReceiptRequestTs tsRequest = <strong>new</strong> ValidateAutomatedReceiptRequestTs(
+<a name="298" href="#298">298</a> 				<strong>null</strong>, <strong>null</strong>, <strong>null</strong>);
+<a name="299" href="#299">299</a> 		ValidateAutomatedReceiptResponseTs tsResponse = fixture
+<a name="300" href="#300">300</a> 				.execute(tsRequest);
+<a name="301" href="#301">301</a> 		assertNotNull(tsResponse);
+<a name="302" href="#302">302</a> 		assertTrue(tsResponse.hasErrors());
+<a name="303" href="#303">303</a> 	}
+<a name="304" href="#304">304</a> 
+<a name="305" href="#305">305</a> 	<em>/**<em>*</em></em>
+<a name="306" href="#306">306</a> <em>	 * Test execute validate automated receipt.</em>
+<a name="307" href="#307">307</a> <em>	 */</em>
+<a name="308" href="#308">308</a> 	@Test
+<a name="309" href="#309">309</a> 	<strong>public</strong> <strong>void</strong> testExecuteValidateAutomatedReceiptException() {
+<a name="310" href="#310">310</a> 		ValidateAutomatedReceiptRequestTs tsRequest = <strong>null</strong>;
+<a name="311" href="#311">311</a> 		ValidateAutomatedReceiptResponseTs tsResponse = fixture
+<a name="312" href="#312">312</a> 				.execute(tsRequest);
+<a name="313" href="#313">313</a> 		assertNotNull(tsResponse);
+<a name="314" href="#314">314</a> 		assertTrue(tsResponse.hasErrors());
+<a name="315" href="#315">315</a> 	}
+<a name="316" href="#316">316</a> 
+<a name="317" href="#317">317</a> 	<em>/**<em>*</em></em>
+<a name="318" href="#318">318</a> <em>	 * Test execute validate automated receipt.</em>
+<a name="319" href="#319">319</a> <em>	 */</em>
+<a name="320" href="#320">320</a> 	@Test
+<a name="321" href="#321">321</a> 	<strong>public</strong> <strong>void</strong> testExecuteValidateAutomatedReceipt() {
+<a name="322" href="#322">322</a> 		ValidateAutomatedReceiptRequestTs tsRequest = <strong>new</strong> ValidateAutomatedReceiptRequestTs(
+<a name="323" href="#323">323</a> 				VoucherFixtureFactory
+<a name="324" href="#324">324</a> 						.createVouchersForValidateAutomatedReciept(),
+<a name="325" href="#325">325</a> 				CommonFixtureFactory
+<a name="326" href="#326">326</a> 						.createSequenceNumberForValidateAutomatedReciept(),
+<a name="327" href="#327">327</a> 				UserContextFixtureFactory
+<a name="328" href="#328">328</a> 						.createUserContextForValidateAutomatedReciept());
+<a name="329" href="#329">329</a> 		ValidateAutomatedReceiptResponseTs tsResponse = fixture
+<a name="330" href="#330">330</a> 				.execute(tsRequest);
+<a name="331" href="#331">331</a> 		assertNotNull(tsResponse);
+<a name="332" href="#332">332</a> 		<strong>if</strong> (!tsResponse.hasErrors()) {
+<a name="333" href="#333">333</a> 			assertNotNull(tsResponse.getVoucherReturnCodes());
+<a name="334" href="#334">334</a> 			assertTrue(tsResponse.getVoucherReturnCodes().size() > 0);
+<a name="335" href="#335">335</a> 			VoucherReturnCode voucherReturnCode = tsResponse
+<a name="336" href="#336">336</a> 					.getVoucherReturnCodes().get(0);
+<a name="337" href="#337">337</a> 			assertNotNull(voucherReturnCode);
+<a name="338" href="#338">338</a> 			Voucher voucher = voucherReturnCode.getValidatedVoucher();
+<a name="339" href="#339">339</a> 			assertNotNull(voucherReturnCode.getValidatedVoucher());
+<a name="340" href="#340">340</a> 			assertNotNull(voucher.getEmployee());
+<a name="341" href="#341">341</a> 			assertNotNull(voucher.getEmployee().getEmployeeTechId());
+<a name="342" href="#342">342</a> 			assertEquals(<span class="string">"12"</span>, voucher.getEmployee().getEmployeeTechId()
+<a name="343" href="#343">343</a> 					.toString());
+<a name="344" href="#344">344</a> 			assertNotNull(voucher.getOffice());
+<a name="345" href="#345">345</a> 			assertNotNull(voucher.getOffice().getOfficeId());
+<a name="346" href="#346">346</a> 			assertEquals(<span class="string">"130"</span>, voucher.getOffice().getOfficeId().toString());
+<a name="347" href="#347">347</a> 			assertNotNull(voucher.getWorkDate());
+<a name="348" href="#348">348</a> 			assertNotSame(voucher.getWorkDate(), <strong>new</strong> Date());
+<a name="349" href="#349">349</a> 			assertEquals(<span class="string">"9"</span>, voucher.getSequenceNumber().toString());
+<a name="350" href="#350">350</a> 			VoucherReturnCode voucherReturnCode1 = tsResponse
+<a name="351" href="#351">351</a> 					.getVoucherReturnCodes().get(1);
+<a name="352" href="#352">352</a> 			Voucher voucher1 = voucherReturnCode1.getValidatedVoucher();
+<a name="353" href="#353">353</a> 			assertNotNull(voucher1);
+<a name="354" href="#354">354</a> 			assertNotNull(voucher1.getEmployee());
+<a name="355" href="#355">355</a> 			assertNotNull(voucher1.getEmployee().getEmployeeTechId().toString());
+<a name="356" href="#356">356</a> 			assertEquals(<span class="string">"12"</span>, voucher1.getEmployee().getEmployeeTechId());
+<a name="357" href="#357">357</a> 			assertNotNull(voucher1.getOffice());
+<a name="358" href="#358">358</a> 			assertNotNull(voucher1.getOffice().getOfficeId());
+<a name="359" href="#359">359</a> 			assertEquals(<span class="string">"130"</span>, voucher1.getOffice().getOfficeId().toString());
+<a name="360" href="#360">360</a> 			assertNotNull(voucher1.getWorkDate());
+<a name="361" href="#361">361</a> 			assertNotSame(voucher1.getWorkDate(), <strong>new</strong> Date());
+<a name="362" href="#362">362</a> 			assertEquals(<span class="string">"10"</span>, voucher1.getSequenceNumber().toString());
+<a name="363" href="#363">363</a> 			assertNotNull(voucherReturnCode.getReturnCode());
+<a name="364" href="#364">364</a> 			assertNotNull(voucherReturnCode.getReturnCode().getCode());
+<a name="365" href="#365">365</a> 			assertTrue(voucherReturnCode.getReturnCode().getCode().length() > 0);
+<a name="366" href="#366">366</a> 			assertNotNull(voucherReturnCode.getErrorCode());
+<a name="367" href="#367">367</a> 			assertNotNull(voucherReturnCode.getErrorCode().getCode());
+<a name="368" href="#368">368</a> 			assertTrue(voucherReturnCode.getErrorCode().getCode().length() > 0);
+<a name="369" href="#369">369</a> 			assertNotNull(voucherReturnCode1.getReturnCode());
+<a name="370" href="#370">370</a> 			assertNotNull(voucherReturnCode1.getReturnCode().getCode());
+<a name="371" href="#371">371</a> 			assertTrue(voucherReturnCode1.getReturnCode().getCode().length() > 0);
+<a name="372" href="#372">372</a> 			assertNotNull(voucherReturnCode1.getErrorCode());
+<a name="373" href="#373">373</a> 			assertNotNull(voucherReturnCode1.getErrorCode().getCode());
+<a name="374" href="#374">374</a> 			assertTrue(voucherReturnCode1.getErrorCode().getCode().length() > 0);
+<a name="375" href="#375">375</a> 		}
+<a name="376" href="#376">376</a> 	}
+<a name="377" href="#377">377</a> 
+<a name="378" href="#378">378</a> 	@Test
+<a name="379" href="#379">379</a> 	<strong>public</strong> <strong>void</strong> testExecuteValidateCollectApplicantDataResponseTs() {
+<a name="380" href="#380">380</a> 		ValidateCollectApplicantDataRequestTs validateCollectApplicantDataRequestTs = <strong>new</strong> ValidateCollectApplicantDataRequestTs(
+<a name="381" href="#381">381</a> 				dlApplication, userContext);
+<a name="382" href="#382">382</a> 		ValidateCollectApplicantDataResponseTs tsResponse = fixture
+<a name="383" href="#383">383</a> 				.execute(validateCollectApplicantDataRequestTs);
+<a name="384" href="#384">384</a> 		assertNotNull(tsResponse);
+<a name="385" href="#385">385</a> 	}
+<a name="386" href="#386">386</a> 
+<a name="387" href="#387">387</a> 	@Test
+<a name="388" href="#388">388</a> 	<strong>public</strong> <strong>void</strong> testExecuteValidateCollectApplicantDataResponseTsException() {
+<a name="389" href="#389">389</a> 		ValidateCollectApplicantDataRequestTs validateCollectApplicantDataRequestTs = <strong>null</strong>;
+<a name="390" href="#390">390</a> 		ValidateCollectApplicantDataResponseTs tsResponse = fixture
+<a name="391" href="#391">391</a> 				.execute(validateCollectApplicantDataRequestTs);
+<a name="392" href="#392">392</a> 		assertNotNull(tsResponse);
+<a name="393" href="#393">393</a> 		assertTrue(tsResponse.hasErrors());
+<a name="394" href="#394">394</a> 	}
+<a name="395" href="#395">395</a> }
+<a name="396" href="#396">396</a> <em>/**<em>*</em></em>
+<a name="397" href="#397">397</a> <em> * Modification History:</em>
+<a name="398" href="#398">398</a> <em> * </em>
+<a name="399" href="#399">399</a> <em> * $Log: TaskServiceTest.java,v $</em>
+<a name="400" href="#400">400</a> <em> * Revision 1.9  2010/07/28 00:54:05  mwcsj3</em>
+<a name="401" href="#401">401</a> <em> * Commented tests to avoid compilation errors caused by changes made to validate address converter</em>
+<a name="402" href="#402">402</a> <em> *</em>
+<a name="403" href="#403">403</a> <em> * Revision 1.8  2010/06/21 23:18:28  mwcsj3</em>
+<a name="404" href="#404">404</a> <em> * Merged SUB_BUSINESS_PROCESS_IMPLEMENTATION branch to HEAD</em>
+<a name="405" href="#405">405</a> <em> *</em>
+<a name="406" href="#406">406</a> <em> * Revision 1.6.22.2  2010/06/20 18:08:41  mwakg</em>
+<a name="407" href="#407">407</a> <em> * Rebased to June 20, 2010</em>
+<a name="408" href="#408">408</a> <em> *</em>
+<a name="409" href="#409">409</a> <em> * Revision 1.7  2010/06/03 23:57:22  mwhxb3</em>
+<a name="410" href="#410">410</a> <em> * Use ValidatedVoucher instead of voucher.</em>
+<a name="411" href="#411">411</a> <em> *</em>
+<a name="412" href="#412">412</a> <em> * Revision 1.6  2010/03/11 21:21:01  mwtjc1</em>
+<a name="413" href="#413">413</a> <em> * compilation error removed</em>
+<a name="414" href="#414">414</a> <em> *</em>
+<a name="415" href="#415">415</a> <em> * Revision 1.5  2010/03/05 02:06:17  mwrka1</em>
+<a name="416" href="#416">416</a> <em> * changes reverted back</em>
+<a name="417" href="#417">417</a> <em> *</em>
+<a name="418" href="#418">418</a> <em> * Revision 1.4  2010/03/05 00:44:25  mwrka1</em>
+<a name="419" href="#419">419</a> <em> * List&lt;ReturnCode>  property changed  to CodeSetElement serviceVerificationCode property from Address Business object</em>
+<a name="420" href="#420">420</a> <em> *</em>
+<a name="421" href="#421">421</a> <em> * Revision 1.3  2010/02/04 02:42:58  mwrsk</em>
+<a name="422" href="#422">422</a> <em> * Delete CdlisPdpsRecord.java and use CdlisRecord.java &amp; PdpsRecord.java</em>
+<a name="423" href="#423">423</a> <em> *</em>
+<a name="424" href="#424">424</a> <em> * Revision 1.2  2010/01/04 18:29:09  mwvxm6</em>
+<a name="425" href="#425">425</a> <em> * BO Refactoring. List Variabe renaming. Attribute type changes from prmitive to Objects. Spring DI to replace news in constructors. Dummy Helper class methods in place of BO logic.</em>
+<a name="426" href="#426">426</a> <em> *</em>
+<a name="427" href="#427">427</a> <em> * Revision 1.1  2009/11/24 00:18:27  mwsxd10</em>
+<a name="428" href="#428">428</a> <em> * Test cases copied from BUS &amp; TS.</em>
+<a name="429" href="#429">429</a> <em> *</em>
+<a name="430" href="#430">430</a> <em> * Revision 1.33  2009/11/10 01:24:00  mwhxa2</em>
+<a name="431" href="#431">431</a> <em> * Added testExecuteGenerateDocumentResponseTsWithVoterRegistration() to test for Null pointer fix.</em>
+<a name="432" href="#432">432</a> <em> *</em>
+<a name="433" href="#433">433</a> <em> * Revision 1.32  2009/10/21 22:02:22  mwyxg1</em>
+<a name="434" href="#434">434</a> <em> * Added checking busResponse errors</em>
+<a name="435" href="#435">435</a> <em> *</em>
+<a name="436" href="#436">436</a> <em> * Revision 1.31  2009/10/21 20:47:11  mwyxg1</em>
+<a name="437" href="#437">437</a> <em> * Fix Unit Test Errors</em>
+<a name="438" href="#438">438</a> <em> *</em>
+<a name="439" href="#439">439</a> <em> * Revision 1.30  2009/10/20 18:28:04  mwyxg1</em>
+<a name="440" href="#440">440</a> <em> * Add new method</em>
+<a name="441" href="#441">441</a> <em> *</em>
+<a name="442" href="#442">442</a> <em> * Revision 1.29  2009/10/12 18:51:55  mwyxg1</em>
+<a name="443" href="#443">443</a> <em> * Add new test cases</em>
+<a name="444" href="#444">444</a> <em> *</em>
+<a name="445" href="#445">445</a> <em> * Revision 1.28  2009/10/12 18:44:49  mwyxg1</em>
+<a name="446" href="#446">446</a> <em> * Add new test cases</em>
+<a name="447" href="#447">447</a> <em> *</em>
+<a name="448" href="#448">448</a> <em> * Revision 1.27  2009/10/08 21:20:39  mwyxg1</em>
+<a name="449" href="#449">449</a> <em> * Add new tests</em>
+<a name="450" href="#450">450</a> <em> *</em>
+<a name="451" href="#451">451</a> <em> * Revision 1.26  2009/10/08 17:01:10  mwyxg1</em>
+<a name="452" href="#452">452</a> <em> * Fix unit test errors</em>
+<a name="453" href="#453">453</a> <em> *</em>
+<a name="454" href="#454">454</a> <em> * Revision 1.25  2009/10/03 21:28:21  mwpxp2</em>
+<a name="455" href="#455">455</a> <em> * Adjusted imports for fw refactorings; bulk cleanup</em>
+<a name="456" href="#456">456</a> <em> *</em>
+<a name="457" href="#457">457</a> <em> * Revision 1.24  2009/10/01 00:00:39  mwyxg1</em>
+<a name="458" href="#458">458</a> <em> * Remove fixture reference from other projects</em>
+<a name="459" href="#459">459</a> <em> *</em>
+<a name="460" href="#460">460</a> <em> * Revision 1.23  2009/09/30 22:22:38  mwyxg1</em>
+<a name="461" href="#461">461</a> <em> * Updated test case</em>
+<a name="462" href="#462">462</a> <em> *</em>
+<a name="463" href="#463">463</a> <em> * Revision 1.22  2009/09/30 18:24:27  mwyxg1</em>
+<a name="464" href="#464">464</a> <em> * Updated test case</em>
+<a name="465" href="#465">465</a> <em> *</em>
+<a name="466" href="#466">466</a> <em> * Revision 1.21  2009/09/30 00:27:36  mwyxg1</em>
+<a name="467" href="#467">467</a> <em> * Add test cases</em>
+<a name="468" href="#468">468</a> <em> *</em>
+<a name="469" href="#469">469</a> <em> * Revision 1.20  2009/09/01 23:10:52  mwhxa2</em>
+<a name="470" href="#470">470</a> <em> * Fixed Failing JUnit</em>
+<a name="471" href="#471">471</a> <em> *</em>
+<a name="472" href="#472">472</a> <em> * Revision 1.19  2009/09/01 00:11:09  mwhxa2</em>
+<a name="473" href="#473">473</a> <em> * Added User Context and removed Assert</em>
+<a name="474" href="#474">474</a> <em> *</em>
+<a name="475" href="#475">475</a> <em> * Revision 1.18  2009/08/27 06:21:00  mwpxp2</em>
+<a name="476" href="#476">476</a> <em> * Fixed imports for fw migration to compile; bulk cleanup</em>
+<a name="477" href="#477">477</a> <em> *</em>
+<a name="478" href="#478">478</a> <em> * Revision 1.17  2009/08/25 15:21:52  mwsmg6</em>
+<a name="479" href="#479">479</a> <em> * consequences of removing CityCode from Address</em>
+<a name="480" href="#480">480</a> <em> *</em>
+<a name="481" href="#481">481</a> <em> * Revision 1.16  2009/08/11 17:35:58  mwrrv3</em>
+<a name="482" href="#482">482</a> <em> * Refactored and moved CommonFixtureFactory from src/java/test to sre/main/java fixture impl package.</em>
+<a name="483" href="#483">483</a> <em> *</em>
+<a name="484" href="#484">484</a> <em> * Revision 1.15  2009/08/11 00:32:26  mwrka1</em>
+<a name="485" href="#485">485</a> <em> * Refactored. Moved UserContextFixtureFactory from test to main impl.</em>
+<a name="486" href="#486">486</a> <em> *</em>
+<a name="487" href="#487">487</a> <em> * Revision 1.14  2009/08/10 18:26:47  mwhxa2</em>
+<a name="488" href="#488">488</a> <em> * Updated Imports</em>
+<a name="489" href="#489">489</a> <em> *</em>
+<a name="490" href="#490">490</a> <em> * Revision 1.13  2009/08/10 01:18:32  mwakg</em>
+<a name="491" href="#491">491</a> <em> * Fixed refactoring issues</em>
+<a name="492" href="#492">492</a> <em> *</em>
+<a name="493" href="#493">493</a> <em> * Revision 1.12  2009/08/08 17:53:12  mwbxp5</em>
+<a name="494" href="#494">494</a> <em> * Moved fixtures from src/main/java to src/test/java</em>
+<a name="495" href="#495">495</a> <em> *</em>
+<a name="496" href="#496">496</a> <em> * Revision 1.11  2009/08/07 02:59:14  mwhxa2</em>
+<a name="497" href="#497">497</a> <em> * Adding UserContextFixtureFactory fixture factory</em>
+<a name="498" href="#498">498</a> <em> *</em>
+<a name="499" href="#499">499</a> <em> * Revision 1.10  2009/08/07 01:39:34  mwhxa2</em>
+<a name="500" href="#500">500</a> <em> * Adding AddressFixtureFactory fixture factory</em>
+<a name="501" href="#501">501</a> <em> *</em>
+<a name="502" href="#502">502</a> <em> * Revision 1.9  2009/08/07 01:38:34  mwhxa2</em>
+<a name="503" href="#503">503</a> <em> * Adding AddressFixtureFactory fixture factory</em>
+<a name="504" href="#504">504</a> <em> *</em>
+<a name="505" href="#505">505</a> <em> * Revision 1.8  2009/08/05 23:03:11  mwsxd10</em>
+<a name="506" href="#506">506</a> <em> * Test Case updated for Address Validation.</em>
+<a name="507" href="#507">507</a> <em> * Revision 1.7 2009/08/05 21:50:57 mwsxd10</em>
+<a name="508" href="#508">508</a> <em> * Re-factoring is done for maintaining list of addresses and return codes.</em>
+<a name="509" href="#509">509</a> <em> * </em>
+<a name="510" href="#510">510</a> <em> * Revision 1.6 2009/08/04 22:16:08 mwsxd10 TestCase updated.</em>
+<a name="511" href="#511">511</a> <em> * </em>
+<a name="512" href="#512">512</a> <em> * Revision 1.5 2009/08/04 22:04:47 mwsxd10 Test Case updated. Revision 1.4</em>
+<a name="513" href="#513">513</a> <em> * 2009/08/04 20:18:01 mwsxd10 SequnceNumber is included in</em>
+<a name="514" href="#514">514</a> <em> * ValidateAutomatedReceipt call. Revision 1.3 2009/08/04 01:36:58 mwsxd10</em>
+<a name="515" href="#515">515</a> <em> * Payment service calls are made from task service. Revision 1.2 2009/07/22</em>
+<a name="516" href="#516">516</a> <em> * 03:59:33 mwbxp5 Re-factored the factories to accept BIs , not the request</em>
+<a name="517" href="#517">517</a> <em> * Objects and added UserContext also to the Requests.</em>
+<a name="518" href="#518">518</a> <em> * </em>
+<a name="519" href="#519">519</a> <em> * Revision 1.1 2009/07/16 19:03:39 mwsxd10 JUnit test cases updated.</em>
+<a name="520" href="#520">520</a> <em> * </em>
+<a name="521" href="#521">521</a> <em> */</em>
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

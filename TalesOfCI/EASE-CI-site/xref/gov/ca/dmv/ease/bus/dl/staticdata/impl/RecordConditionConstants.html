@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" /><title>RecordConditionConstants xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../../../../../../../../../../../apidocs/gov/ca/dmv/ease/bus/dl/staticdata/impl/RecordConditionConstants.html">View Javadoc</a></div><pre>
+
+<a name="1" href="#1">1</a>   <em>/**<em>*</em></em>
+<a name="2" href="#2">2</a>   <em> * This source code contains State of California's confidential and trade secret information.</em>
+<a name="3" href="#3">3</a>   <em> * Any use of this code other than for backup is strictly prohibited.</em>
+<a name="4" href="#4">4</a>   <em> * Copyright State of California (c) 2009</em>
+<a name="5" href="#5">5</a>   <em> * <a href="http://www.california.gov" target="alexandria_uri">http://www.california.gov</a></em>
+<a name="6" href="#6">6</a>   <em> */</em>
+<a name="7" href="#7">7</a>   <strong>package</strong> gov.ca.dmv.ease.bus.dl.staticdata.impl;
+<a name="8" href="#8">8</a>   
+<a name="9" href="#9">9</a>   <strong>import</strong> java.util.Arrays;
+<a name="10" href="#10">10</a>  <strong>import</strong> java.util.List;
+<a name="11" href="#11">11</a>  
+<a name="12" href="#12">12</a>  <em>/**<em>*</em></em>
+<a name="13" href="#13">13</a>  <em> * Description: Record Condition Constants file</em>
+<a name="14" href="#14">14</a>  <em> * File: RecordConditionConstants.java</em>
+<a name="15" href="#15">15</a>  <em> * Module:  gov.ca.dmv.ease.bus.dl.staticdata.impl</em>
+<a name="16" href="#16">16</a>  <em> * Created: Apr 30, 2010 </em>
+<a name="17" href="#17">17</a>  <em> * @author MWYXG1  </em>
+<a name="18" href="#18">18</a>  <em> * @version $Revision: 1.78 $</em>
+<a name="19" href="#19">19</a>  <em> * Last Changed: $Date: 2010/08/16 16:43:34 $</em>
+<a name="20" href="#20">20</a>  <em> * Last Changed By: $Author: mwuxb $</em>
+<a name="21" href="#21">21</a>  <em> */</em>
+<a name="22" href="#22">22</a>  <strong>public</strong> <strong>interface</strong> <a href="../../../../../../../../gov/ca/dmv/ease/bus/dl/staticdata/impl/RecordConditionConstants.html">RecordConditionConstants</a> {
+<a name="23" href="#23">23</a>  	<em>/**<em>* The constant BLANK. */</em></em>
+<a name="24" href="#24">24</a>  	String BLANK = <span class="string">""</span>;
+<a name="25" href="#25">25</a>  	<em>/**<em>* The constant SPACE. */</em></em>
+<a name="26" href="#26">26</a>  	String SPACE = <span class="string">" "</span>;
+<a name="27" href="#27">27</a>  	<em>/**<em>* The constant TRAVEL_CREW_MODE. */</em></em>
+<a name="28" href="#28">28</a>  	String TRAVEL_CREW_MODE = <span class="string">"T"</span>; 
+<a name="29" href="#29">29</a>  	<em>/**<em>* The constant MANUAL_MODE. */</em></em>
+<a name="30" href="#30">30</a>  	String MANUAL_MODE = <span class="string">"M"</span>;
+<a name="31" href="#31">31</a>  	<em>/**<em>* The constant COUNTER_MODE. */</em></em>
+<a name="32" href="#32">32</a>  	String COUNTER_MODE = <span class="string">"C"</span>;
+<a name="33" href="#33">33</a>  	<em>/**<em>* The constant TRAINING_OFFICE_ID. */</em></em>
+<a name="34" href="#34">34</a>  	String TRAINING_OFFICE_ID = <span class="string">"999"</span>;
+<a name="35" href="#35">35</a>  	<em>/**<em>* The constant A. */</em></em>
+<a name="36" href="#36">36</a>  	String A = <span class="string">"A"</span>;
+<a name="37" href="#37">37</a>  	<em>/**<em>* The constant B. */</em></em>
+<a name="38" href="#38">38</a>  	String B = <span class="string">"B"</span>;
+<a name="39" href="#39">39</a>  	<em>/**<em>* The constant C. */</em></em>
+<a name="40" href="#40">40</a>  	String C = <span class="string">"C"</span>;
+<a name="41" href="#41">41</a>  	<em>/**<em>* The constant D. */</em></em>
+<a name="42" href="#42">42</a>  	String D = <span class="string">"D"</span>;
+<a name="43" href="#43">43</a>  	<em>/**<em>* The constant E. */</em></em>
+<a name="44" href="#44">44</a>  	String E = <span class="string">"E"</span>;
+<a name="45" href="#45">45</a>  	<em>/**<em>* The constant F. */</em></em>
+<a name="46" href="#46">46</a>  	String F = <span class="string">"F"</span>;
+<a name="47" href="#47">47</a>  	<em>/**<em>* The constant I. */</em></em>
+<a name="48" href="#48">48</a>  	String I = <span class="string">"I"</span>;
+<a name="49" href="#49">49</a>  	<em>/**<em>* The constant L. */</em></em>
+<a name="50" href="#50">50</a>  	String L = <span class="string">"L"</span>;
+<a name="51" href="#51">51</a>  	<em>/**<em>* The constant N. */</em></em>
+<a name="52" href="#52">52</a>  	String N = <span class="string">"N"</span>;
+<a name="53" href="#53">53</a>  	<em>/**<em>* The constant M. */</em></em>
+<a name="54" href="#54">54</a>  	String M = <span class="string">"M"</span>;
+<a name="55" href="#55">55</a>  	<em>/**<em>* The constant O. */</em></em>
+<a name="56" href="#56">56</a>  	String O = <span class="string">"O"</span>;
+<a name="57" href="#57">57</a>  	<em>/**<em>* The constant P. */</em></em>
+<a name="58" href="#58">58</a>  	String P = <span class="string">"P"</span>;
+<a name="59" href="#59">59</a>  	<em>/**<em>* The constant R. */</em></em>
+<a name="60" href="#60">60</a>  	String R = <span class="string">"R"</span>;
+<a name="61" href="#61">61</a>  	<em>/**<em>* The constant S. */</em></em>
+<a name="62" href="#62">62</a>  	String S = <span class="string">"S"</span>;
+<a name="63" href="#63">63</a>  	<em>/**<em>* The constant T. */</em></em>
+<a name="64" href="#64">64</a>  	String T = <span class="string">"T"</span>;
+<a name="65" href="#65">65</a>  	<em>/**<em>* The constant V. */</em></em>
+<a name="66" href="#66">66</a>  	String V = <span class="string">"V"</span>;
+<a name="67" href="#67">67</a>  	<em>/**<em>* The constant X. */</em></em>
+<a name="68" href="#68">68</a>  	String X = <span class="string">"X"</span>;
+<a name="69" href="#69">69</a>  	<em>/**<em>* The constant Y. */</em></em>
+<a name="70" href="#70">70</a>  	String Y = <span class="string">"Y"</span>;
+<a name="71" href="#71">71</a>  	<em>/**<em>* The constant Z. */</em></em>
+<a name="72" href="#72">72</a>  	String Z = <span class="string">"Z"</span>;
+<a name="73" href="#73">73</a>  	<em>/**<em>* The constant NO. */</em></em>
+<a name="74" href="#74">74</a>  	String NO = <span class="string">"NO"</span>;
+<a name="75" href="#75">75</a>  	<em>/**<em>* The constant NONE. */</em></em>
+<a name="76" href="#76">76</a>  	String NONE = <span class="string">"NONE"</span>;
+<a name="77" href="#77">77</a>  	<em>/**<em>* The constant TO. */</em></em>
+<a name="78" href="#78">78</a>  	String TO = <span class="string">"TO"</span>;
+<a name="79" href="#79">79</a>  	<em>/**<em>* The constant TRAINING_MODE. */</em></em>
+<a name="80" href="#80">80</a>  	String TRAINING_MODE = <span class="string">"0E"</span>;
+<a name="81" href="#81">81</a>  	<em>/**<em>* The constant DLA. */</em></em>
+<a name="82" href="#82">82</a>  	String DLA = <span class="string">"DLA"</span>; <em class="comment">//DL Application</em>
+<a name="83" href="#83">83</a>  	<em>/**<em>* The constant IDA. */</em></em>
+<a name="84" href="#84">84</a>  	String IDA = <span class="string">"IDA"</span>; <em class="comment">//ID Application</em>
+<a name="85" href="#85">85</a>  	<em>/**<em>* The constant IDS. */</em></em>
+<a name="86" href="#86">86</a>  	String IDS = <span class="string">"IDS"</span>; <em class="comment">//ID for Seniors</em>
+<a name="87" href="#87">87</a>  	<em>/**<em>* The constant IDC. */</em></em>
+<a name="88" href="#88">88</a>  	String IDC = <span class="string">"IDC"</span>;
+<a name="89" href="#89">89</a>  	<em>/**<em>* The constant DLP. */</em></em>
+<a name="90" href="#90">90</a>  	String DLP = <span class="string">"DLP"</span>; <em class="comment">//DL Pending Application</em>
+<a name="91" href="#91">91</a>  	<em>/**<em>* The constant IDP. */</em></em>
+<a name="92" href="#92">92</a>  	String IDP = <span class="string">"IDP"</span>; <em class="comment">//ID Pending Application</em>
+<a name="93" href="#93">93</a>  	<em>/**<em>* The constant ELI. */</em></em>
+<a name="94" href="#94">94</a>  	String ELI = <span class="string">"ELI"</span>;
+<a name="95" href="#95">95</a>  	<em>/**<em>* The constant DLD. */</em></em>
+<a name="96" href="#96">96</a>  	String DLD = <span class="string">"DLD"</span>;
+<a name="97" href="#97">97</a>  	<em>/**<em>* The constant DLC. */</em></em>
+<a name="98" href="#98">98</a>  	String DLC = <span class="string">"DLC"</span>;
+<a name="99" href="#99">99</a>  	<em>/**<em>* The constant DLE. */</em></em>
+<a name="100" href="#100">100</a> 	String DLE = <span class="string">"DLE"</span>;
+<a name="101" href="#101">101</a> 	<em>/**<em>* The constant DRT. */</em></em>
+<a name="102" href="#102">102</a> 	String DRT = <span class="string">"DRT"</span>;
+<a name="103" href="#103">103</a> 	<em>/**<em>* The constant CDA. */</em></em>
+<a name="104" href="#104">104</a> 	String CDA = <span class="string">"CDA"</span>;
+<a name="105" href="#105">105</a> 	<em>/**<em>* The constant DAF. */</em></em>
+<a name="106" href="#106">106</a> 	String DAF = <span class="string">"DAF"</span>;
+<a name="107" href="#107">107</a> 	<em>/**<em>* The constant SPO. */</em></em>
+<a name="108" href="#108">108</a> 	String SPO = <span class="string">"SPO"</span>; <em class="comment">// SP Original Application</em>
+<a name="109" href="#109">109</a> 	<em>/**<em>* The constant SPR. */</em></em>
+<a name="110" href="#110">110</a> 	String SPR = <span class="string">"SPR"</span>; <em class="comment">// SP Renewal</em>
+<a name="111" href="#111">111</a> 	<em>/**<em>* The constant SRX. */</em></em>
+<a name="112" href="#112">112</a> 	String SRX = <span class="string">"SRX"</span>; <em class="comment">// SP Reinstatement </em>
+<a name="113" href="#113">113</a> 	<em>/**<em>* The constant SPD. */</em></em>
+<a name="114" href="#114">114</a> 	String SPD = <span class="string">"SPD"</span>; <em class="comment">// SP Duplicate</em>
+<a name="115" href="#115">115</a> 	<em>/**<em>* The constant SPC. */</em></em>
+<a name="116" href="#116">116</a> 	String SPC = <span class="string">"SPC"</span>; <em class="comment">// SP Correction</em>
+<a name="117" href="#117">117</a> 	<em>/**<em>* The constant ATL. */</em></em>
+<a name="118" href="#118">118</a> 	String ATL = <span class="string">"ATL"</span>;
+<a name="119" href="#119">119</a> 	<em>/**<em>* The constant IRT. */</em></em>
+<a name="120" href="#120">120</a> 	String IRT = <span class="string">"IRT"</span>;
+<a name="121" href="#121">121</a> 	<em>/**<em>* The constant DLM. */</em></em>
+<a name="122" href="#122">122</a> 	String DLM = <span class="string">"DLM"</span>;
+<a name="123" href="#123">123</a> 	<em>/**<em>* The constant ZERO. */</em></em>
+<a name="124" href="#124">124</a> 	String ZERO = <span class="string">"0"</span>;
+<a name="125" href="#125">125</a> 	<em>/**<em>* The constant ONE. */</em></em>
+<a name="126" href="#126">126</a> 	String ONE = <span class="string">"1"</span>;
+<a name="127" href="#127">127</a> 	<em>/**<em>* The constant TWO. */</em></em>
+<a name="128" href="#128">128</a> 	String TWO = <span class="string">"2"</span>;
+<a name="129" href="#129">129</a> 	<em>/**<em>* The constant THREE. */</em></em>
+<a name="130" href="#130">130</a> 	String THREE = <span class="string">"3"</span>;
+<a name="131" href="#131">131</a> 	<em>/**<em>* The constant FOUR. */</em></em>
+<a name="132" href="#132">132</a> 	String FOUR = <span class="string">"4"</span>;
+<a name="133" href="#133">133</a> 	<em>/**<em>* The constant FIVE. */</em></em>
+<a name="134" href="#134">134</a> 	String FIVE = <span class="string">"5"</span>;
+<a name="135" href="#135">135</a> 	<em>/**<em>* The constant SIX. */</em></em>
+<a name="136" href="#136">136</a> 	String SIX = <span class="string">"6"</span>;
+<a name="137" href="#137">137</a> 	<em>/**<em>* The constant SEVEN. */</em></em>
+<a name="138" href="#138">138</a> 	String SEVEN = <span class="string">"7"</span>;
+<a name="139" href="#139">139</a> 	<em>/**<em>* The constant EIGHT. */</em></em>
+<a name="140" href="#140">140</a> 	String EIGHT = <span class="string">"8"</span>;
+<a name="141" href="#141">141</a> 	<em>/**<em>* The constant NINE. */</em></em>
+<a name="142" href="#142">142</a> 	String NINE = <span class="string">"9"</span>;
+<a name="143" href="#143">143</a> 	<em>/**<em>* The constant STATUS_CODE_30. */</em></em>
+<a name="144" href="#144">144</a> 	String STATUS_CODE_30 = <span class="string">"30"</span>;
+<a name="145" href="#145">145</a> 	<em>/**<em>* The constant STATUS_CODE_31. */</em></em>
+<a name="146" href="#146">146</a> 	String STATUS_CODE_31 = <span class="string">"31"</span>;
+<a name="147" href="#147">147</a> 	<em>/**<em>* The constant STATUS_CODE_32. */</em></em>
+<a name="148" href="#148">148</a> 	String STATUS_CODE_32 = <span class="string">"32"</span>;
+<a name="149" href="#149">149</a> 	<em>/**<em>* The constant STATUS_CODE_00. */</em></em>
+<a name="150" href="#150">150</a> 	String STATUS_CODE_00 = <span class="string">"00"</span>;
+<a name="151" href="#151">151</a> 	<em>/**<em>* The constant ENDORSEMENT_HM. */</em></em>
+<a name="152" href="#152">152</a> 	String ENDORSEMENT_HM = <span class="string">"HM"</span>;
+<a name="153" href="#153">153</a> 	<em>/**<em>* The constant SubRecordA. */</em></em>
+<a name="154" href="#154">154</a> 	String SubRecordA = <span class="string">"A"</span>;
+<a name="155" href="#155">155</a> 	<em>/**<em>* The constant SubRecordA2. */</em></em>
+<a name="156" href="#156">156</a> 	String SubRecordA2 = <span class="string">"A2"</span>;
+<a name="157" href="#157">157</a> 	<em>/**<em>* The constant SubRecordB. */</em></em>
+<a name="158" href="#158">158</a> 	String SubRecordB = <span class="string">"B"</span>;
+<a name="159" href="#159">159</a> 	<em>/**<em>* The constant ROUTE_CODE_3503. */</em></em>
+<a name="160" href="#160">160</a> 	Integer ROUTE_CODE_3503 = 3503;
+<a name="161" href="#161">161</a> 	<em>/**<em>* The constant ROUTE_CODE_3510. */</em></em>
+<a name="162" href="#162">162</a> 	Integer ROUTE_CODE_3510 = 3510;
+<a name="163" href="#163">163</a> 	<em>/**<em>* The constant ROUTE_CODE_1100. */</em></em>
+<a name="164" href="#164">164</a> 	Integer ROUTE_CODE_1100 = 1100;
+<a name="165" href="#165">165</a> 	<em>/**<em>* The constant ROUTE_CODE_1199. */</em></em>
+<a name="166" href="#166">166</a> 	Integer ROUTE_CODE_1199 = 1199;
+<a name="167" href="#167">167</a> 	<em>/**<em>* The constant ROUTE_CODE_1000. */</em></em>
+<a name="168" href="#168">168</a> 	Integer ROUTE_CODE_1000 = 1000;
+<a name="169" href="#169">169</a> 	<em>/**<em>* The constant ROUTE_CODE_1099. */</em></em>
+<a name="170" href="#170">170</a> 	Integer ROUTE_CODE_1099 = 1099;
+<a name="171" href="#171">171</a> 	<em>/**<em>* The constant ABC. */</em></em>
+<a name="172" href="#172">172</a> 	String[] ABC = { A, B, C };
+<a name="173" href="#173">173</a> 	<em>/**<em>* The constant ERROR_CODE_01. */</em></em>
+<a name="174" href="#174">174</a> 	String ERROR_CODE_01 = <span class="string">"01"</span>;
+<a name="175" href="#175">175</a> 	<em>/**<em>* The constant ERROR_CODE_02. */</em></em>
+<a name="176" href="#176">176</a> 	String ERROR_CODE_02 = <span class="string">"02"</span>;
+<a name="177" href="#177">177</a> 	<em>/**<em>* The constant ERROR_CODE_03. */</em></em>
+<a name="178" href="#178">178</a> 	String ERROR_CODE_03 = <span class="string">"03"</span>;
+<a name="179" href="#179">179</a> 	<em>/**<em>* The constant ERROR_CODE_05. */</em></em>
+<a name="180" href="#180">180</a> 	String ERROR_CODE_05 = <span class="string">"05"</span>;
+<a name="181" href="#181">181</a> 	<em>/**<em>* The constant ERROR_CODE_06. */</em></em>
+<a name="182" href="#182">182</a> 	String ERROR_CODE_06 = <span class="string">"06"</span>;
+<a name="183" href="#183">183</a> 	<em>/**<em>* The constant ERROR_CODE_07. */</em></em>
+<a name="184" href="#184">184</a> 	String ERROR_CODE_07 = <span class="string">"07"</span>;
+<a name="185" href="#185">185</a> 	<em>/**<em>* The constant ERROR_CODE_08. */</em></em>
+<a name="186" href="#186">186</a> 	String ERROR_CODE_08 = <span class="string">"08"</span>;
+<a name="187" href="#187">187</a> 	<em>/**<em>* The constant ERROR_CODE_09. */</em></em>
+<a name="188" href="#188">188</a> 	String ERROR_CODE_09 = <span class="string">"09"</span>;
+<a name="189" href="#189">189</a> 	<em>/**<em>* The constant SEGMENT_C. */</em></em>
+<a name="190" href="#190">190</a> 	String SEGMENT_C = <span class="string">"C"</span>;
+<a name="191" href="#191">191</a> 	<em>/**<em>* The constant APPLICATION_HELD_PEND_CODE_2. */</em></em>
+<a name="192" href="#192">192</a> 	String APP_HELD_PEND_CODE_2 = <span class="string">"2"</span>;
+<a name="193" href="#193">193</a> 	<em>/**<em>* The constant APPLICATION_HELD_PEND_CODE_6. */</em></em>
+<a name="194" href="#194">194</a> 	String APP_HELD_PEND_CODE_6 = <span class="string">"6"</span>;
+<a name="195" href="#195">195</a> 	<em>/**<em>* The constant APPLICATION_HELD_PEND_CODE_7. */</em></em>
+<a name="196" href="#196">196</a> 	String APP_HELD_PEND_CODE_7 = <span class="string">"7"</span>;
+<a name="197" href="#197">197</a> 	<em>/**<em>* The constant APPLICATION_HELD_PEND_CODE_9. */</em></em>
+<a name="198" href="#198">198</a> 	String APP_HELD_PEND_CODE_9 = <span class="string">"9"</span>;
+<a name="199" href="#199">199</a> 	<em>/**<em>* The constant LICENSE_LOCATION_X. */</em></em>
+<a name="200" href="#200">200</a> 	String LICENSE_LOCATION_X = <span class="string">"X"</span>;
+<a name="201" href="#201">201</a> 	<em>/**<em>* The constant LICENSE_LOCATION_Z. */</em></em>
+<a name="202" href="#202">202</a> 	String LICENSE_LOCATION_Z = <span class="string">"Z"</span>;
+<a name="203" href="#203">203</a> 	<em>/**<em>* The constant LICENSE_LOCATION_0. */</em></em>
+<a name="204" href="#204">204</a> 	String LICENSE_LOCATION_0 = <span class="string">"0"</span>;
+<a name="205" href="#205">205</a> 	<em>/**<em>* The constant LICENSE_LOCATION_1. */</em></em>
+<a name="206" href="#206">206</a> 	String LICENSE_LOCATION_1 = <span class="string">"1"</span>;
+<a name="207" href="#207">207</a> 	<em>/**<em>* The constant LICENSE_LOCATION_2. */</em></em>
+<a name="208" href="#208">208</a> 	String LICENSE_LOCATION_2 = <span class="string">"2"</span>;
+<a name="209" href="#209">209</a> 	<em>/**<em>* The constant LICENSE_LOCATION_3. */</em></em>
+<a name="210" href="#210">210</a> 	String LICENSE_LOCATION_3 = <span class="string">"3"</span>;
+<a name="211" href="#211">211</a> 	<em>/**<em>* The constant LICENSE_LOCATION_4. */</em></em>
+<a name="212" href="#212">212</a> 	String LICENSE_LOCATION_4 = <span class="string">"4"</span>;
+<a name="213" href="#213">213</a> 	<em>/**<em>* The constant LICENSE_EXTENSION_CODE_2. */</em></em>
+<a name="214" href="#214">214</a> 	String LICENSE_EXTENSION_CODE_2 = <span class="string">"2"</span>;
+<a name="215" href="#215">215</a> 	<em>/**<em>* The constant LICENSE_EXTENSION_CODE_4. */</em></em>
+<a name="216" href="#216">216</a> 	String LICENSE_EXTENSION_CODE_4 = <span class="string">"4"</span>;
+<a name="217" href="#217">217</a> 	<em>/**<em>* The constant LICENSE_EXTENSION_CODE_5. */</em></em>
+<a name="218" href="#218">218</a> 	String LICENSE_EXTENSION_CODE_5 = <span class="string">"5"</span>;
+<a name="219" href="#219">219</a> 	<em>/**<em>* The constant LICENSE_EXTENSION_CODE_8. */</em></em>
+<a name="220" href="#220">220</a> 	String LICENSE_EXTENSION_CODE_8 = <span class="string">"8"</span>;
+<a name="221" href="#221">221</a> 	<em>/**<em>* The constant LICENSE_EXTENSION_CODE_9. */</em></em>
+<a name="222" href="#222">222</a> 	String LICENSE_EXTENSION_CODE_9 = <span class="string">"9"</span>;
+<a name="223" href="#223">223</a> 	<em>/**<em>* The constant RESTRICTION_CODE_59. */</em></em>
+<a name="224" href="#224">224</a> 	String RESTRICTION_CODE_59 = <span class="string">"59"</span>;
+<a name="225" href="#225">225</a> 	<em>/**<em>* The constant TTC_IRT. */</em></em>
+<a name="226" href="#226">226</a> 	String TTC_IRT = <span class="string">"IRT"</span>;
+<a name="227" href="#227">227</a> 	<em>/**<em>* The constant TTC_DRT. */</em></em>
+<a name="228" href="#228">228</a> 	String TTC_DRT = <span class="string">"DRT"</span>;
+<a name="229" href="#229">229</a> 	<em>/**<em>* The constant TCODE_ATL. */</em></em>
+<a name="230" href="#230">230</a> 	String TCODE_ATL = <span class="string">"ATL"</span>;
+<a name="231" href="#231">231</a> 	<em>/**<em>* The constant TCODE_DLI. */</em></em>
+<a name="232" href="#232">232</a> 	String TCODE_DLI = <span class="string">"DLI"</span>;
+<a name="233" href="#233">233</a> 	<em>/**<em>* The constant TCODE_DLA. */</em></em>
+<a name="234" href="#234">234</a> 	String TCODE_DLA = <span class="string">"DLA"</span>;
+<a name="235" href="#235">235</a> 	<em>/**<em>* The constant COML_DL_DRIVE_TEST_FEE_IND. */</em></em>
+<a name="236" href="#236">236</a> 	String COML_DL_DRIVE_TEST_FEE_IND = <span class="string">"COML_DL_DRIVE_TEST _FEE_IND"</span>;
+<a name="237" href="#237">237</a> 	<em>/**<em>* The constant SUSP_EFFECTIVE_MSG. */</em></em>
+<a name="238" href="#238">238</a> 	String SUSP_EFFECTIVE_MSG = <span class="string">"SUSP EFF"</span>;
+<a name="239" href="#239">239</a> 	<em>/**<em>* The constant REV_EFFECTIVE_MSG. */</em></em>
+<a name="240" href="#240">240</a> 	String REV_EFFECTIVE_MSG = <span class="string">"REV EFF"</span>;
+<a name="241" href="#241">241</a> 	<em>/**<em>* The constant SUSP_REV_EFFECTIVE_MSG. */</em></em>
+<a name="242" href="#242">242</a> 	String SUSP_REV_EFFECTIVE_MSG = <span class="string">"SUSP/REV EFF"</span>;
+<a name="243" href="#243">243</a> 	<em>/**<em>* The constant FR_SUSP_EFFECTIVE_MSG. */</em></em>
+<a name="244" href="#244">244</a> 	String FR_SUSP_EFFECTIVE_MSG = <span class="string">"FR SUSPP EFF"</span>;
+<a name="245" href="#245">245</a> 	<em>/**<em>* The constant DL_PENDING_APP_MSG. */</em></em>
+<a name="246" href="#246">246</a> 	String DL_PENDING_APP_MSG = <span class="string">"DL PENDAPP/"</span>;
+<a name="247" href="#247">247</a> 	<em>/**<em>* The constant ID_PENDING_APP_MSG. */</em></em>
+<a name="248" href="#248">248</a> 	String ID_PENDING_APP_MSG = <span class="string">"ID PENDAPP/"</span>;
+<a name="249" href="#249">249</a> 	<em>/**<em>* The constant BRC_EXPIRE_MSG. */</em></em>
+<a name="250" href="#250">250</a> 	String BRC_EXPIRE_MSG = <span class="string">"BRC EXPIRE"</span>;
+<a name="251" href="#251">251</a> 	<em>/**<em>* The constant MEDICAL_EXPIRE_MSG. */</em></em>
+<a name="252" href="#252">252</a> 	String MEDICAL_EXPIRE_MSG = <span class="string">"MEDICAL EXP"</span>;
+<a name="253" href="#253">253</a> 	<em>/**<em>* The constant DOUBLE_RECORD_MSG. */</em></em>
+<a name="254" href="#254">254</a> 	String DOUBLE_RECORD_MSG = <span class="string">"XXXXXXXX to XXXXXXXX"</span>;
+<a name="255" href="#255">255</a> 	<em>/**<em>* The constant LIC_LOC_DSR_MSG. */</em></em>
+<a name="256" href="#256">256</a> 	String LIC_LOC_DSR_MSG = <span class="string">"LIC LOC DSR"</span>;
+<a name="257" href="#257">257</a> 	<em>/**<em>* The constant LATEST_DL_ISS. */</em></em>
+<a name="258" href="#258">258</a> 	String LATEST_DL_ISS = <span class="string">"LATEST DL ISS"</span>;
+<a name="259" href="#259">259</a> 	<em>/**<em>* The constant MG_NUMBER_ON_RECORD. */</em></em>
+<a name="260" href="#260">260</a> 	String MG_NUMBER_ON_RECORD = <span class="string">"MG# ON RECORD"</span>;
+<a name="261" href="#261">261</a> 	<em>/**<em>* The constant MG_NUMBERS_EQUAL. */</em></em>
+<a name="262" href="#262">262</a> 	String MG_NUMBERS_EQUAL = <span class="string">"MG NUMBERS EQUAL"</span>;
+<a name="263" href="#263">263</a> 	<em>/**<em>* The constant FORMATTER_MM_DD_YY. */</em></em>
+<a name="264" href="#264">264</a> 	String FORMATTER_MM_DD_YY = <span class="string">"MMddyy"</span>;
+<a name="265" href="#265">265</a> 	<em>/**<em>* The constant CANNOT_CONTINUE_MESSAGE. */</em></em>
+<a name="266" href="#266">266</a> 	String CANNOT_CONTINUE_MESSAGE = <span class="string">"*CANNOT CONTINUE"</span>;
+<a name="267" href="#267">267</a> 	<em>/**<em>* The constant SELECT_PRIMARY_MESSAGE. */</em></em>
+<a name="268" href="#268">268</a> 	String SELECT_PRIMARY_MESSAGE = <span class="string">"*KEY \&quot;P\&quot; TO CONTINUE"</span>;
+<a name="269" href="#269">269</a> 	<em>/**<em>* The constant SELECT_IGNORE_MESSAGE. */</em></em>
+<a name="270" href="#270">270</a> 	String SELECT_IGNORE_MESSAGE = <span class="string">"*KEY \&quot;I\&quot; TO CONTINUE"</span>;
+<a name="271" href="#271">271</a> 	<em>/**<em>* The constant INCOMPLETE_APP_CODE_EX. */</em></em>
+<a name="272" href="#272">272</a> 	String INCOMPLETE_APP_CODE_EX = <span class="string">"EX"</span>;
+<a name="273" href="#273">273</a> 	<em>/**<em>* The constant DL_INCOMPLETE_APP_REASON_CODES. */</em></em>
+<a name="274" href="#274">274</a> 	List &lt;String> DL_INCOMPLETE_APP_REASON_CODES = Arrays.asList(<span class="string">"AC"</span>, 
+<a name="275" href="#275">275</a> 			<span class="string">"AV"</span>, <span class="string">"EX"</span>, <span class="string">"RF"</span>, <span class="string">"FA"</span>, <span class="string">"RJ"</span>, <span class="string">"3F"</span>);
+<a name="276" href="#276">276</a> 	<em>/**<em>* The constant ID_INCOMPLETE_APP_REASON_CODES. */</em></em>
+<a name="277" href="#277">277</a> 	List &lt;String> ID_INCOMPLETE_APP_REASON_CODES = Arrays.asList(<span class="string">"AV"</span>, 
+<a name="278" href="#278">278</a> 			<span class="string">"EX"</span>, <span class="string">"RF"</span>, <span class="string">"FA"</span>);
+<a name="279" href="#279">279</a> 	<em>/**<em>* The driver license application ttc. */</em></em>
+<a name="280" href="#280">280</a> 	List &lt;String> DRIVER_LICENSE_APPLICATION_TTC = Arrays.asList(<span class="string">"DLA"</span>, <span class="string">"DLD"</span>,
+<a name="281" href="#281">281</a> 			<span class="string">"DLE"</span>, <span class="string">"DLC"</span>, <span class="string">"DLP"</span>, <span class="string">"DRT"</span>);
+<a name="282" href="#282">282</a> 	List &lt;String> DLD_DLC_TTC = Arrays.asList(<span class="string">"DLD"</span>, <span class="string">"DLC"</span>);
+<a name="283" href="#283">283</a> 	<em>/**<em>* The id card application ttc. */</em></em>
+<a name="284" href="#284">284</a> 	List &lt;String> IDENTIFICATION_CARD_APPLICATION_TTC = Arrays.asList(<span class="string">"IDA"</span>,
+<a name="285" href="#285">285</a> 			<span class="string">"IDS"</span>, <span class="string">"IDC"</span>, <span class="string">"IDP"</span>, <span class="string">"IRT"</span>);
+<a name="286" href="#286">286</a> 	<em>/**<em>* The salesperson license application. */</em></em>
+<a name="287" href="#287">287</a> 	List &lt;String> SALESPERSON_LICENSE_APPLICATION_TTC = Arrays.asList(<span class="string">"SPO"</span>,
+<a name="288" href="#288">288</a> 			<span class="string">"SPR"</span>, <span class="string">"SRX"</span>, <span class="string">"SPD"</span>, <span class="string">"SPC"</span>);
+<a name="289" href="#289">289</a> 	List &lt;String> NON_MISC_APP_TTC = Arrays.asList(<span class="string">"DLA"</span>, <span class="string">"DLD"</span>,
+<a name="290" href="#290">290</a> 			<span class="string">"DLE"</span>, <span class="string">"DLC"</span>, <span class="string">"DLP"</span>, <span class="string">"DRT"</span>, <span class="string">"IDA"</span>,
+<a name="291" href="#291">291</a> 			<span class="string">"IDS"</span>, <span class="string">"IDC"</span>, <span class="string">"IDP"</span>, <span class="string">"IRT"</span>, <span class="string">"SPO"</span>,
+<a name="292" href="#292">292</a> 			<span class="string">"SPR"</span>, <span class="string">"SRX"</span>, <span class="string">"SPD"</span>, <span class="string">"SPC"</span>);
+<a name="293" href="#293">293</a> 	<em>/**<em>* The valid SSN codes. */</em></em>
+<a name="294" href="#294">294</a> 	List &lt;String> VALID_SSN_CODES = Arrays.asList(<span class="string">"R"</span>, <span class="string">"D"</span>, <span class="string">"X"</span>, <span class="string">"F"</span>, <span class="string">"I"</span>, <span class="string">"T"</span>);
+<a name="295" href="#295">295</a> 	<em>/**<em>* The id card original or pending ttc. */</em></em>
+<a name="296" href="#296">296</a> 	List &lt;String> ID_ORIG_PENDIG_APP_TTC = Arrays.asList(<span class="string">"IDA"</span>, <span class="string">"IDS"</span>, <span class="string">"IDP"</span>);
+<a name="297" href="#297">297</a> 	<em>/**<em>* The original TTC list. */</em></em>
+<a name="298" href="#298">298</a> 	List &lt;String> ORIGINAL_APP_TTC = Arrays.asList(<span class="string">"IDA"</span>, <span class="string">"IDS"</span>, <span class="string">"DLA"</span>);
+<a name="299" href="#299">299</a> 	<em>/**<em>* The License class list. */</em></em>
+<a name="300" href="#300">300</a> 	List &lt;String> LICENSE_CLASS_LIST = Arrays.asList(<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>,
+<a name="301" href="#301">301</a> 			<span class="string">"F"</span>, <span class="string">"M"</span>);
+<a name="302" href="#302">302</a> 	<em>/**<em>* The constant COMMERCIAL_LECENSE_CLASSES. */</em></em>
+<a name="303" href="#303">303</a> 	List &lt;String> COMMERCIAL_LECENSE_CLASSES = Arrays.asList(
+<a name="304" href="#304">304</a> 			<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>);
+<a name="305" href="#305">305</a> 	<em>/**<em>* The constant DYNAMIC_MSG_LIST. */</em></em>
+<a name="306" href="#306">306</a> 	List &lt;String> DYNAMIC_MSG_LIST = Arrays.asList(<span class="string">"SUSP EFF"</span>, <span class="string">"REV EFF"</span>, <span class="string">"SUSP/REV EFF"</span>, 
+<a name="307" href="#307">307</a> 			<span class="string">"FR SUSPP EFF"</span>, <span class="string">"ID PENDAPP/"</span>, <span class="string">"DL PENDAPP/"</span>, <span class="string">"XXXXXXXX to XXXXXXXX"</span>, <span class="string">"BRC EXPIRE"</span>, 
+<a name="308" href="#308">308</a> 			<span class="string">"LIC LOC DSR"</span>, <span class="string">"MEDICAL EXP"</span>, <span class="string">"MG# ON RECORD"</span>, <span class="string">"MG NUMBERS EQUAL"</span>, <span class="string">"LATEST DL ISS"</span>);
+<a name="309" href="#309">309</a> 	<em>/**<em>* The constant RESTRICTIONS_LIST. */</em></em>
+<a name="310" href="#310">310</a> 	List &lt;String> RESTRICTIONS_LIST = Arrays.asList(<span class="string">"04"</span>, <span class="string">"51"</span>, <span class="string">"52"</span>, <span class="string">"91"</span>, <span class="string">"92"</span>, <span class="string">"32"</span>, <span class="string">"03"</span>, 
+<a name="311" href="#311">311</a> 			<span class="string">"08"</span>, <span class="string">"18"</span>, <span class="string">"35"</span>, <span class="string">"36"</span>, <span class="string">"37"</span>, <span class="string">"54"</span>, <span class="string">"55"</span>, <span class="string">"56"</span>, <span class="string">"57"</span>, <span class="string">"77"</span>, <span class="string">"78"</span>, 
+<a name="312" href="#312">312</a> 			<span class="string">"90"</span>, <span class="string">"94"</span>, <span class="string">"96"</span>, <span class="string">"99"</span>);
+<a name="313" href="#313">313</a> 	<em>/**<em>* The constant CANNOT_CONTINUE_MESSAGES. */</em></em>
+<a name="314" href="#314">314</a> 	List &lt;String> CANNOT_CONTINUE_MESSAGES = Arrays.asList(
+<a name="315" href="#315">315</a> 			<span class="string">"*CANCEL-INVALID TTC"</span>, <span class="string">"*CANNOT CONTINUE"</span>, <span class="string">"*CAN'T CONT-PEND TTC"</span>, 
+<a name="316" href="#316">316</a> 			<span class="string">"*RESTART-CLASS REQ"</span>, <span class="string">"*RESTART-KEY DL INQ"</span>, <span class="string">"*VOID - INVALID APP"</span>, 
+<a name="317" href="#317">317</a> 			<span class="string">"*VOID-ADD'L FEE REQ"</span>, <span class="string">"*VOID-FEE REQUIRED"</span>, <span class="string">"*VOID-REKEY NON-ORIG"</span>,
+<a name="318" href="#318">318</a> 			<span class="string">"*VOID-REKEY ORIGINAL"</span>);
+<a name="319" href="#319">319</a> 	<em>/**<em>* The constant CAN_CONTINUE_MESSAGES. */</em></em>
+<a name="320" href="#320">320</a> 	List &lt;String> CAN_CONTINUE_MESSAGES = Arrays.asList(
+<a name="321" href="#321">321</a> 			<span class="string">"*KEY \&quot;P\&quot; TO CONTINUE"</span>, <span class="string">"*KEY \&quot;D\&quot; TO CONTINUE"</span>, <span class="string">"*KEY \&quot;I\&quot; TO CONTINUE"</span>, 
+<a name="322" href="#322">322</a> 			<span class="string">"*KEY \&quot;P\&quot;/\&quot;I\&quot; TO CONT"</span>, <span class="string">"*KEY \&quot;D\&quot;/\&quot;I\&quot; TO CONT"</span>);
+<a name="323" href="#323">323</a> 	
+<a name="324" href="#324">324</a> }
+<a name="325" href="#325">325</a> <em>/**<em>*</em></em>
+<a name="326" href="#326">326</a> <em> *  Modification History:</em>
+<a name="327" href="#327">327</a> <em> *</em>
+<a name="328" href="#328">328</a> <em> *  $Log: RecordConditionConstants.java,v $</em>
+<a name="329" href="#329">329</a> <em> *  Revision 1.78  2010/08/16 16:43:34  mwuxb</em>
+<a name="330" href="#330">330</a> <em> *  added COUNTER_MODE</em>
+<a name="331" href="#331">331</a> <em> *</em>
+<a name="332" href="#332">332</a> <em> *  Revision 1.77  2010/08/12 17:00:28  mwuxb</em>
+<a name="333" href="#333">333</a> <em> *  Updated.</em>
+<a name="334" href="#334">334</a> <em> *</em>
+<a name="335" href="#335">335</a> <em> *  Revision 1.76  2010/08/10 00:28:45  mwuxb</em>
+<a name="336" href="#336">336</a> <em> *  Added RESTRICTIONS_LIST</em>
+<a name="337" href="#337">337</a> <em> *</em>
+<a name="338" href="#338">338</a> <em> *  Revision 1.75  2010/08/09 21:54:25  mwuxb</em>
+<a name="339" href="#339">339</a> <em> *  Added constant LATEST_DL_ISS</em>
+<a name="340" href="#340">340</a> <em> *</em>
+<a name="341" href="#341">341</a> <em> *  Revision 1.74  2010/08/09 17:30:10  mwuxb</em>
+<a name="342" href="#342">342</a> <em> *  Updated.</em>
+<a name="343" href="#343">343</a> <em> *</em>
+<a name="344" href="#344">344</a> <em> *  Revision 1.73  2010/08/07 23:47:54  mwuxb</em>
+<a name="345" href="#345">345</a> <em> *  Updated DYNAMIC_MSG_LIST</em>
+<a name="346" href="#346">346</a> <em> *</em>
+<a name="347" href="#347">347</a> <em> *  Revision 1.72  2010/08/06 20:29:26  mwuxb</em>
+<a name="348" href="#348">348</a> <em> *  Added constant STATUS_CODE_00</em>
+<a name="349" href="#349">349</a> <em> *</em>
+<a name="350" href="#350">350</a> <em> *  Revision 1.71  2010/08/06 17:50:50  mwuxb</em>
+<a name="351" href="#351">351</a> <em> *  Updated.</em>
+<a name="352" href="#352">352</a> <em> *</em>
+<a name="353" href="#353">353</a> <em> *  Revision 1.70  2010/08/02 22:39:41  mwuxb</em>
+<a name="354" href="#354">354</a> <em> *  Added constant LIC_LOC_DSR_MSG</em>
+<a name="355" href="#355">355</a> <em> *</em>
+<a name="356" href="#356">356</a> <em> *  Revision 1.69  2010/07/31 20:43:54  mwuxb</em>
+<a name="357" href="#357">357</a> <em> *  Added constants</em>
+<a name="358" href="#358">358</a> <em> *</em>
+<a name="359" href="#359">359</a> <em> *  Revision 1.68  2010/07/31 20:24:44  mwuxb</em>
+<a name="360" href="#360">360</a> <em> *  Added constant MEDICAL_EXPIRE_MSG</em>
+<a name="361" href="#361">361</a> <em> *</em>
+<a name="362" href="#362">362</a> <em> *  Revision 1.67  2010/07/31 19:18:30  mwuxb</em>
+<a name="363" href="#363">363</a> <em> *  Added constant BRC_EXPIRE_MSG</em>
+<a name="364" href="#364">364</a> <em> *</em>
+<a name="365" href="#365">365</a> <em> *  Revision 1.66  2010/07/31 18:35:24  mwuxb</em>
+<a name="366" href="#366">366</a> <em> *  Added application reason code constants</em>
+<a name="367" href="#367">367</a> <em> *</em>
+<a name="368" href="#368">368</a> <em> *  Revision 1.65  2010/07/31 17:40:20  mwuxb</em>
+<a name="369" href="#369">369</a> <em> *  Added constant INCOMPLETE_APP_CODE_EX</em>
+<a name="370" href="#370">370</a> <em> *</em>
+<a name="371" href="#371">371</a> <em> *  Revision 1.64  2010/07/31 17:29:30  mwuxb</em>
+<a name="372" href="#372">372</a> <em> *  Added constant DL_PENDING_APP_MSG</em>
+<a name="373" href="#373">373</a> <em> *</em>
+<a name="374" href="#374">374</a> <em> *  Revision 1.63  2010/07/30 21:16:29  mwtjc1</em>
+<a name="375" href="#375">375</a> <em> *  MANUAL_MODE and TRAVEL_CREW_MODE added</em>
+<a name="376" href="#376">376</a> <em> *</em>
+<a name="377" href="#377">377</a> <em> *  Revision 1.62  2010/07/27 18:13:24  mwuxb</em>
+<a name="378" href="#378">378</a> <em> *  Added constant SELECT_IGNORE_MESSAGE</em>
+<a name="379" href="#379">379</a> <em> *</em>
+<a name="380" href="#380">380</a> <em> *  Revision 1.61  2010/07/27 17:36:50  mwuxb</em>
+<a name="381" href="#381">381</a> <em> *  Added constant SELECT_PRIMARY_MESSAGE</em>
+<a name="382" href="#382">382</a> <em> *</em>
+<a name="383" href="#383">383</a> <em> *  Revision 1.60  2010/07/27 16:04:26  mwuxb</em>
+<a name="384" href="#384">384</a> <em> *  Added constant CANNOT_CONTINUE_MESSAGE</em>
+<a name="385" href="#385">385</a> <em> *</em>
+<a name="386" href="#386">386</a> <em> *  Revision 1.59  2010/07/27 02:00:44  mwuxb</em>
+<a name="387" href="#387">387</a> <em> *  Added constant RESTRICTION_CODE_59</em>
+<a name="388" href="#388">388</a> <em> *</em>
+<a name="389" href="#389">389</a> <em> *  Revision 1.58  2010/07/27 00:13:15  mwuxb</em>
+<a name="390" href="#390">390</a> <em> *  Added constant COMMERCIAL_LECENSE_CLASSES</em>
+<a name="391" href="#391">391</a> <em> *</em>
+<a name="392" href="#392">392</a> <em> *  Revision 1.57  2010/07/24 00:42:41  mwuxb</em>
+<a name="393" href="#393">393</a> <em> *  Added constant FR_SUSP_EFFECTIVE_MSG</em>
+<a name="394" href="#394">394</a> <em> *</em>
+<a name="395" href="#395">395</a> <em> *  Revision 1.56  2010/07/24 00:33:28  mwuxb</em>
+<a name="396" href="#396">396</a> <em> *  Added constant REV_EFFECTIVE_MSG</em>
+<a name="397" href="#397">397</a> <em> *</em>
+<a name="398" href="#398">398</a> <em> *  Revision 1.55  2010/07/23 22:48:06  mwuxb</em>
+<a name="399" href="#399">399</a> <em> *  Added constant FORMATTER_MM_DD_YY</em>
+<a name="400" href="#400">400</a> <em> *</em>
+<a name="401" href="#401">401</a> <em> *  Revision 1.54  2010/07/23 22:29:30  mwuxb</em>
+<a name="402" href="#402">402</a> <em> *  Added constant SUSP_EFFECTIVE_MSG</em>
+<a name="403" href="#403">403</a> <em> *</em>
+<a name="404" href="#404">404</a> <em> *  Revision 1.53  2010/07/23 22:03:49  mwuxb</em>
+<a name="405" href="#405">405</a> <em> *  Added constant DYNAMIC_MSG_LIST</em>
+<a name="406" href="#406">406</a> <em> *</em>
+<a name="407" href="#407">407</a> <em> *  Revision 1.52  2010/07/22 23:50:41  mwuxb</em>
+<a name="408" href="#408">408</a> <em> *  Added constant DLM</em>
+<a name="409" href="#409">409</a> <em> *</em>
+<a name="410" href="#410">410</a> <em> *  Revision 1.51  2010/07/22 23:48:51  mwuxb</em>
+<a name="411" href="#411">411</a> <em> *  Added attribute NON_MISC_APP_TTC</em>
+<a name="412" href="#412">412</a> <em> *</em>
+<a name="413" href="#413">413</a> <em> *  Revision 1.50  2010/07/06 23:52:02  mwuxb</em>
+<a name="414" href="#414">414</a> <em> *  Updated</em>
+<a name="415" href="#415">415</a> <em> *</em>
+<a name="416" href="#416">416</a> <em> *  Revision 1.49  2010/06/28 20:42:50  mwuxb</em>
+<a name="417" href="#417">417</a> <em> *  Updated</em>
+<a name="418" href="#418">418</a> <em> *</em>
+<a name="419" href="#419">419</a> <em> *  Revision 1.48  2010/06/26 22:57:59  mwuxb</em>
+<a name="420" href="#420">420</a> <em> *  Updated the logic</em>
+<a name="421" href="#421">421</a> <em> *</em>
+<a name="422" href="#422">422</a> <em> *  Revision 1.47  2010/06/26 22:42:13  mwuxb</em>
+<a name="423" href="#423">423</a> <em> *  Updated</em>
+<a name="424" href="#424">424</a> <em> *</em>
+<a name="425" href="#425">425</a> <em> *  Revision 1.46  2010/06/26 22:25:59  mwuxb</em>
+<a name="426" href="#426">426</a> <em> *  Updated</em>
+<a name="427" href="#427">427</a> <em> *</em>
+<a name="428" href="#428">428</a> <em> *  Revision 1.45  2010/06/26 22:18:59  mwuxb</em>
+<a name="429" href="#429">429</a> <em> *  Updated</em>
+<a name="430" href="#430">430</a> <em> *</em>
+<a name="431" href="#431">431</a> <em> *  Revision 1.44  2010/06/26 21:03:24  mwuxb</em>
+<a name="432" href="#432">432</a> <em> *  Updated</em>
+<a name="433" href="#433">433</a> <em> *</em>
+<a name="434" href="#434">434</a> <em> *  Revision 1.43  2010/06/25 21:43:00  mwuxb</em>
+<a name="435" href="#435">435</a> <em> *  Updated</em>
+<a name="436" href="#436">436</a> <em> *</em>
+<a name="437" href="#437">437</a> <em> *  Revision 1.42  2010/06/25 21:27:28  mwuxb</em>
+<a name="438" href="#438">438</a> <em> *  Updated</em>
+<a name="439" href="#439">439</a> <em> *</em>
+<a name="440" href="#440">440</a> <em> *  Revision 1.41  2010/06/25 20:34:52  mwsxl7</em>
+<a name="441" href="#441">441</a> <em> *  Add Sub Record Constants</em>
+<a name="442" href="#442">442</a> <em> *</em>
+<a name="443" href="#443">443</a> <em> *  Revision 1.40  2010/06/25 18:43:25  mwrrv2</em>
+<a name="444" href="#444">444</a> <em> *  Added license class list.</em>
+<a name="445" href="#445">445</a> <em> *</em>
+<a name="446" href="#446">446</a> <em> *  Revision 1.39  2010/06/25 16:08:06  mwsxl7</em>
+<a name="447" href="#447">447</a> <em> *  Add Error code</em>
+<a name="448" href="#448">448</a> <em> *</em>
+<a name="449" href="#449">449</a> <em> *  Revision 1.38  2010/06/25 00:46:17  mwakg</em>
+<a name="450" href="#450">450</a> <em> *  Updated constants</em>
+<a name="451" href="#451">451</a> <em> *</em>
+<a name="452" href="#452">452</a> <em> *  Revision 1.37  2010/06/24 23:09:48  mwuxb</em>
+<a name="453" href="#453">453</a> <em> *  Updated</em>
+<a name="454" href="#454">454</a> <em> *</em>
+<a name="455" href="#455">455</a> <em> *  Revision 1.36  2010/06/24 21:28:29  mwuxb</em>
+<a name="456" href="#456">456</a> <em> *  Updated</em>
+<a name="457" href="#457">457</a> <em> *</em>
+<a name="458" href="#458">458</a> <em> *  Revision 1.35  2010/06/24 21:05:59  mwuxb</em>
+<a name="459" href="#459">459</a> <em> *  Updated</em>
+<a name="460" href="#460">460</a> <em> *</em>
+<a name="461" href="#461">461</a> <em> *  Revision 1.34  2010/06/24 18:13:04  mwuxb</em>
+<a name="462" href="#462">462</a> <em> *  Updated</em>
+<a name="463" href="#463">463</a> <em> *</em>
+<a name="464" href="#464">464</a> <em> *  Revision 1.33  2010/06/24 16:10:31  mwuxb</em>
+<a name="465" href="#465">465</a> <em> *  Updated</em>
+<a name="466" href="#466">466</a> <em> *</em>
+<a name="467" href="#467">467</a> <em> *  Revision 1.32  2010/06/24 02:07:14  mwuxb</em>
+<a name="468" href="#468">468</a> <em> *  Updated</em>
+<a name="469" href="#469">469</a> <em> *</em>
+<a name="470" href="#470">470</a> <em> *  Revision 1.31  2010/06/24 01:31:18  mwuxb</em>
+<a name="471" href="#471">471</a> <em> *  Updated</em>
+<a name="472" href="#472">472</a> <em> *</em>
+<a name="473" href="#473">473</a> <em> *  Revision 1.30  2010/06/23 23:11:40  mwuxb</em>
+<a name="474" href="#474">474</a> <em> *  Updated</em>
+<a name="475" href="#475">475</a> <em> *</em>
+<a name="476" href="#476">476</a> <em> *  Revision 1.29  2010/06/23 22:11:08  mwrrv2</em>
+<a name="477" href="#477">477</a> <em> *  Added VALID_SSN_CODES constants.</em>
+<a name="478" href="#478">478</a> <em> *</em>
+<a name="479" href="#479">479</a> <em> *  Revision 1.28  2010/06/23 21:43:50  mwuxb</em>
+<a name="480" href="#480">480</a> <em> *  Updated</em>
+<a name="481" href="#481">481</a> <em> *</em>
+<a name="482" href="#482">482</a> <em> *  Revision 1.27  2010/06/23 20:53:28  mwuxb</em>
+<a name="483" href="#483">483</a> <em> *  Added constant TTC_DRT</em>
+<a name="484" href="#484">484</a> <em> *</em>
+<a name="485" href="#485">485</a> <em> *  Revision 1.26  2010/06/23 18:29:17  mwuxb</em>
+<a name="486" href="#486">486</a> <em> *  Added constant TTC_IRT</em>
+<a name="487" href="#487">487</a> <em> *</em>
+<a name="488" href="#488">488</a> <em> *  Revision 1.25  2010/06/23 01:54:40  mwuxb</em>
+<a name="489" href="#489">489</a> <em> *  Added constants SALESPERSON_LICENSE_APPLICATION_TTC</em>
+<a name="490" href="#490">490</a> <em> *</em>
+<a name="491" href="#491">491</a> <em> *  Revision 1.24  2010/06/23 01:50:15  mwuxb</em>
+<a name="492" href="#492">492</a> <em> *  Updated</em>
+<a name="493" href="#493">493</a> <em> *</em>
+<a name="494" href="#494">494</a> <em> *  Revision 1.23  2010/06/23 01:43:43  mwuxb</em>
+<a name="495" href="#495">495</a> <em> *  Updated</em>
+<a name="496" href="#496">496</a> <em> *</em>
+<a name="497" href="#497">497</a> <em> *  Revision 1.22  2010/06/23 01:18:02  mwuxb</em>
+<a name="498" href="#498">498</a> <em> *  Updated</em>
+<a name="499" href="#499">499</a> <em> *</em>
+<a name="500" href="#500">500</a> <em> *  Revision 1.21  2010/06/22 22:22:59  mwrrv2</em>
+<a name="501" href="#501">501</a> <em> *  Updated</em>
+<a name="502" href="#502">502</a> <em> *</em>
+<a name="503" href="#503">503</a> <em> *  Revision 1.20  2010/06/22 22:22:23  mwrrv2</em>
+<a name="504" href="#504">504</a> <em> *  Updated</em>
+<a name="505" href="#505">505</a> <em> *</em>
+<a name="506" href="#506">506</a> <em> *  Revision 1.19  2010/06/22 21:49:53  mwuxb</em>
+<a name="507" href="#507">507</a> <em> *  Added constant DRIVER_LICENSE_APPLICATION_TTC</em>
+<a name="508" href="#508">508</a> <em> *</em>
+<a name="509" href="#509">509</a> <em> *  Revision 1.18  2010/06/22 16:56:37  mwuxb</em>
+<a name="510" href="#510">510</a> <em> *  Added constants for error codes.</em>
+<a name="511" href="#511">511</a> <em> *</em>
+<a name="512" href="#512">512</a> <em> *  Revision 1.17  2010/06/22 16:32:50  mwuxb</em>
+<a name="513" href="#513">513</a> <em> *  Added constant SPACE</em>
+<a name="514" href="#514">514</a> <em> *</em>
+<a name="515" href="#515">515</a> <em> *  Revision 1.16  2010/06/21 23:18:45  mwcsj3</em>
+<a name="516" href="#516">516</a> <em> *  Merged SUB_BUSINESS_PROCESS_IMPLEMENTATION branch to HEAD</em>
+<a name="517" href="#517">517</a> <em> *</em>
+<a name="518" href="#518">518</a> <em> *  Revision 1.11.2.2  2010/06/20 18:09:00  mwakg</em>
+<a name="519" href="#519">519</a> <em> *  Rebased to June 20, 2010</em>
+<a name="520" href="#520">520</a> <em> *</em>
+<a name="521" href="#521">521</a> <em> *  Revision 1.15  2010/06/14 20:31:18  mwsxl7</em>
+<a name="522" href="#522">522</a> <em> *  Add "L"</em>
+<a name="523" href="#523">523</a> <em> *</em>
+<a name="524" href="#524">524</a> <em> *  Revision 1.14  2010/06/09 18:52:10  mwsxl7</em>
+<a name="525" href="#525">525</a> <em> *  ADD DPI</em>
+<a name="526" href="#526">526</a> <em> *</em>
+<a name="527" href="#527">527</a> <em> *  Revision 1.13  2010/06/03 22:33:23  mwgxd3</em>
+<a name="528" href="#528">528</a> <em> *  Add constant for ATL</em>
+<a name="529" href="#529">529</a> <em> *</em>
+<a name="530" href="#530">530</a> <em> *  Revision 1.12  2010/06/01 20:11:05  mwllh</em>
+<a name="531" href="#531">531</a> <em> *  added salesperson ttcs</em>
+<a name="532" href="#532">532</a> <em> *</em>
+<a name="533" href="#533">533</a> <em> *  Revision 1.11  2010/05/27 17:37:13  mwgxd3</em>
+<a name="534" href="#534">534</a> <em> *  *** empty log message ***</em>
+<a name="535" href="#535">535</a> <em> *</em>
+<a name="536" href="#536">536</a> <em> *  Revision 1.10  2010/05/25 22:52:40  mwgxd3</em>
+<a name="537" href="#537">537</a> <em> *  Added DlaRule130</em>
+<a name="538" href="#538">538</a> <em> *</em>
+<a name="539" href="#539">539</a> <em> *  Revision 1.9  2010/05/25 21:55:51  mwsxl7</em>
+<a name="540" href="#540">540</a> <em> *  add primary constant</em>
+<a name="541" href="#541">541</a> <em> *</em>
+<a name="542" href="#542">542</a> <em> *  Revision 1.8  2010/05/24 22:26:36  mwgxd3</em>
+<a name="543" href="#543">543</a> <em> *  new rule</em>
+<a name="544" href="#544">544</a> <em> *</em>
+<a name="545" href="#545">545</a> <em> *  Revision 1.7  2010/05/24 21:03:33  mwgxd3</em>
+<a name="546" href="#546">546</a> <em> *  update</em>
+<a name="547" href="#547">547</a> <em> *</em>
+<a name="548" href="#548">548</a> <em> *  Revision 1.6  2010/05/24 18:36:51  mwgxd3</em>
+<a name="549" href="#549">549</a> <em> *  Additional rules</em>
+<a name="550" href="#550">550</a> <em> *</em>
+<a name="551" href="#551">551</a> <em> *  Revision 1.5  2010/05/24 17:51:22  mwgxd3</em>
+<a name="552" href="#552">552</a> <em> *  add a new constant for IRT</em>
+<a name="553" href="#553">553</a> <em> *</em>
+<a name="554" href="#554">554</a> <em> *  Revision 1.4  2010/05/20 00:18:16  mwakg</em>
+<a name="555" href="#555">555</a> <em> *  Cleaned constants</em>
+<a name="556" href="#556">556</a> <em> *</em>
+<a name="557" href="#557">557</a> <em> *  Revision 1.3  2010/05/20 00:08:05  mwakg</em>
+<a name="558" href="#558">558</a> <em> *  Changed the counter mode variable from COUNTER = C</em>
+<a name="559" href="#559">559</a> <em> *</em>
+<a name="560" href="#560">560</a> <em> *  Revision 1.2  2010/05/05 16:58:09  mwyxg1</em>
+<a name="561" href="#561">561</a> <em> *  add ON and OFF</em>
+<a name="562" href="#562">562</a> <em> *</em>
+<a name="563" href="#563">563</a> <em> *  Revision 1.1  2010/04/30 17:14:40  mwyxg1</em>
+<a name="564" href="#564">564</a> <em> *  Copied constants from ActionMessageConstants</em>
+<a name="565" href="#565">565</a> <em> *</em>
+<a name="566" href="#566">566</a> <em> */</em>
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

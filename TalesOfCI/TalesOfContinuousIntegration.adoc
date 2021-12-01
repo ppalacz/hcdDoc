@@ -1,9 +1,9 @@
 = Tales of Continuous Integration
-(or: Lessons Learnt from Introducing CI)
+(or: Lessons Learnt when Adopting CI)
 
 image::images/HCD_head_web.png[align="center"]
 
-:revnumber: 10/21/2021
+:revnumber: 12/01/2021
 :Author Initials: pxp
 :email: <piotr.palacz@hcd.ca.gov>
 :icons:
@@ -39,7 +39,7 @@ ifdef::backend-pdf[]
 :size60: pdfwidth='60%'
 :size75: pdfwidth='75%'
 endif::[]
-ifdef::backend-docbook5[]
+ifdef::backend-docbook[]
 :twoinches: width='50mm'
 :full-width: scaledwidth='100%'
 :half-width: scaledwidth='50%'
@@ -64,12 +64,20 @@ ifdef::backend-revealjs[]
 :size75: width='75%'
 endif::[]
 
-== Overview
+== Introduction
 
-This presentation is about real-life, first-hand experiences when adopting CI in sizeable state projects.
-Much of it covers the years 2008-2012 and a single project, with some additions outside that period.
+This presentation is about real-life, first-hand experiences when adopting CI in sizeable state projects. Most of it covers the years 2008-2012 and a single project, with some additions outside that period.
 
-The presentation is intended as a starting point for discussing CI/CD-related efforts for HCD.
+DevOps is usually described along the following lines:
+
+"DevOps is a set of practices that combines software development (Dev) and IT operations (Ops). 
+It aims to shorten the systems development life cycle and provide continuous delivery with high software quality. - Wikipedia"
+
+The focus here is more on the Dev part of DevOps, partially for historical reasons - as a decade ago the Ops part was rarely - if at all - integrated with the Dev workflow. For the sake of this discussion, the term CI is taken to mean the "Dev" part of DevOps, even though it is often understood more narrowly, as a specific discipline regarding development, e.g., as in the following:
+
+" In software engineering, continuous integration (CI) is the practice of merging all developers' working copies to a shared mainline several times a day. - Wikipedia"
+
+This document is intended for internal circulation as a discussion material for the CI/CD-related efforts within HCD.
 
 ===  Outline
 
@@ -79,9 +87,11 @@ The presentation is intended as a starting point for discussing CI/CD-related ef
 .. CI-related choices 
 .. Implemented CI capabilities
 .. Underdeveloped areas
-. Retrospective and Lessons, for the Developer, Tester, Technical Manager
-. What has changed in the meantime?
-.. How these changes affect the need and feasibility of CI/CD now? 
+. Lessons for:
+.. the Developer, 
+.. the Tester, 
+.. the Technical Manager
+. A Decade+ Later
  
 == CI Key Ideas 
 
@@ -98,11 +108,15 @@ Software construction (or "development") is like any other "functional" process:
 If "development" is treated as a _business process_ (and in some way, it is), how would we approach it?
 
 
-== Main Pain Points
+image::images/ci-lanes.svg[Sample CI Workflow,{size50}, align="center"]
 
-* Keeping track of versions and their configurations
+== Some of the Pain Points
 
-* Keeping track of dependencies and complex build actions
+* Keeping track of: 
+
+** Coding and config artifacts versions 
+
+** Inter-Component dependencies and resulting complex build actions
 
 * Testing in various forms
 
@@ -110,36 +124,32 @@ If "development" is treated as a _business process_ (and in some way, it is), ho
 
 ** Regardless, need to measure and report
 
-* Assembling artifacts and installing them in the target environment
+* Assembling and storing deployable artifacts and installing them in the target environment
 
-* Triggering applicable actions on specific events (generally, most types of changes)
+* Reacting to specific events (most types of changes when committed) and triggering applicable actions 
 
 * Keeping track of the relevant, local know-how
 
 * Keeping track of requests, defects, and their state
 
+* Maintaining traceability from tests/code back to requirements
 
-== CI Building Blocks, #1/2
-
-
-* Version Control System (cvs, subversion, git, etc.): keeping track of versions and their sets
-
-* Build System (make, maven, gradle, etc.): taking care of complex builds
-
-* Wiki (MediaWiki, JAMWiki, JIRA Confluence, etc.): keeping track of know-how
-
-* Issue/Bug Tracking (JIRA, Backlog, Redmine, etc. )
-
-* CI System (Hudson/Jenkings, TeamCity, Bamboo, etc.): 
-
-** Triggering actions in response to relevant events
-
-WARNING: The challenges are: (1) To sensibly configure the pieces, (2) to tie all pieces together, and (3) to convince people to adopt and actually use the new way of doing things.
+== CI Building Blocks
 
 
-== CI Building Blocks, #2/2
+* *Version Control System* (cvs, subversion, git, etc.): keeping track of versions and their sets
 
-The building blocks above are configurable/extensible, using e.g. plugins that cover:
+* *Build System* (make, maven, gradle, etc.): taking care of complex builds and their outcomes
+
+* *Wiki* (MediaWiki, JAMWiki, JIRA Confluence, etc.): keeping track of know-how by the team
+
+* *Issue/Bug Tracking* (JIRA, Backlog, Redmine, etc. )
+
+* *CI System* (Hudson/Jenkings, TeamCity, Bamboo, etc.): Processing change/commit events in a predefined workflow and triggering actions in response to relevant events
+
+NOTE: The building blocks above are configurable/extensible, using e.g. plugins.
+
+Most often used plugins cover the following:
 
 * Running tests and reporting their results
 
@@ -147,26 +157,18 @@ The building blocks above are configurable/extensible, using e.g. plugins that c
 
 * Sending/receiving notifications/emails
 
-* Static source code analysis
+* Statically analyzing the source code as per standards and project guidelines
 
 * Moving deployment artifacts among servers, environments
 
 * and so on
 
-Tooling that is not useful for CI includes Visio, Excel, MS Project
+WARNING: Visio, Excel, MS Project, and similar, are rarely useful as CI tooling.
 
 == The Case of the EASE Project
 
-* EASE Context and Architecture
 
-* Cultural and Technological Starting Points
-
-* CI Implementation in EASE
-
-== EASE Context and Architecture
-
-
-== Cultural and Technological Starting Points
+=== EASE Cultural and Technological Starting Points
 
 * Traditional, mainframe and System/2-based development culture
 * Challenges in understanding the needs of large software construction project (the _Restaurant Metaphor_) 
@@ -180,25 +182,82 @@ However, it was a clean slate for:
 
 * J2EE-based software construction
 
-== CI Implementation in EASE: Building Blocks 
+=== System Overview
 
-* Version Control System:  CVS https://en.wikipedia.org/wiki/Concurrent_Versions_System
+(PDF on-line)
 
-* Build System: maven https://maven.apache.org
+* Business Reference Model
 
-* CI System: Jenkins https://en.wikipedia.org/wiki/Jenkins_(software)
+image::images/DMV-BusinessReferenceModel.png[Business Reference Model,{size90}, align="center"]
 
-* Wiki: JAMWiki (clone of MediaWiki as in https://wikipedia.org)
+* Component Model
 
-* IDE: IBM Rational/Eclipse https://www.eclipse.org/
+image::images/EASE-componentModel.PNG[Component Model,{size90}, align="center"]
 
-== CI Capabilities in EASE
+* Sample Code Metrics
+
+Sample metrics from a single major component ("DL"), servicing Driver Licenses.
+
+image::images/EASE-DL-loc.png[DL Code Size,{size50}, align="center"]
+
+== EASE CI Implementation
+
+=== EASE CI Challenges
+
+. To figure out the CI process and capabilities to support
+
+. To choose tools/components for the process, not the other way around
+
+. To sensibly configure the components
+
+. To tie all the pieces together
+
+. To convince people to adopt and actually use the new way of doing things.
+
+=== EASE CI Basic Setup
+
+image::images/EASE-CI-simple.png[Basic CI Setup,{size60}, align="center"]
+
+=== EASE CI Process Overview
+
+image::images/ci-lanes.svg[Sample CI Workflow,{size100}, align="center"]
+
+
+* The developer modifying the code is responsible for: 
+
+** Keeping all activity version-controlled
+
+** Creating/adjusting the corresponding test(s) for the artifact being worked on
+
+** Resolving failures identified during build, static analysis, automated testing
+
+** Tracing the code and tests back to requirements
+
+* CI is responsible for:
+
+** Orchestrating interactions between CI components
+
+** Scheduling/triggering the builds and tests
+
+** Processing failures (reports, blame, notifications)
+
+** Promoting deployable artifacts on success, among the environments
+
+** Producing, storing, and serving reports, technical documentation, etc.
+
+=== EASE CI Capabilities
 
 . IDEs configured with VCS (standard today)
 
 . Automated builds triggered by schedule and commit events
 
-. Generation of source code documentation 
+. Automated generation of the following:
+
+.. Source code (including Unit Test) documentation 
+
+.. Build and dependency reports
+
+.. More (DEMO)
 
 . Static code analysis
 
@@ -208,7 +267,7 @@ However, it was a clean slate for:
 
 .. Reporting of outcomes
 
-.. Notification of failures by email
+.. Determining whom to notify and notification of failures by email
 
 . Wiki-based document repository, including:
 
@@ -216,13 +275,28 @@ However, it was a clean slate for:
 
 .. Standards and Guidelines
 
-.. HOWTOs, code samples, tutorials and introductions
+.. HOWTOs, code samples, tutorials, cookbooks
 
-NOTE: No multiple administrators for ##1-6 (with exception of Unit Test creation); all maintenance done on fractional time basis. All software components were Open Source, with exception of the commercial version of Eclipse (RSA IDE)
 
-== Lessons for the Developer 
+=== EASE CI Building Blocks 
 
-* Unit Testing turns out to be my friend, after initial pains
+* *Version Control System*:  CVS https://en.wikipedia.org/wiki/Concurrent_Versions_System
+
+* *Build System* and *Artifact Repo*: maven https://maven.apache.org
+
+* *CI System*: Jenkins https://en.wikipedia.org/wiki/Jenkins_(software)
+
+* *Wiki*: JAMWiki (clone of MediaWiki as in https://wikipedia.org)
+
+* *IDE*: IBM Rational/Eclipse https://www.eclipse.org/
+
+NOTE: There were no multiple or dedicated administrators for ##1-6 (with exception of Unit Test creation); all maintenance done on fractional time basis. All software components were Open Source, with exception of the commercial version of Eclipse (RSA IDE)
+
+==  Lessons Learnt
+
+=== For the Developer 
+
+* Unit Testing turns out to be my friend, despite the initial misgivings
 
 ** It makes clear what the _unit_ is expected to do
 
@@ -232,10 +306,9 @@ NOTE: No multiple administrators for ##1-6 (with exception of Unit Test creation
 
 ** I know where we are, at least at top of the hour 
 
-* I am not subject to the blame game
+* I am not subject to the blame game: assignment of defect is objective and mechanized
 
-
-== Lessons for the Tester
+===  For the Tester
 
 * The system I am to test has no trivial _repeated_ failures
 
@@ -249,17 +322,17 @@ NOTE: No multiple administrators for ##1-6 (with exception of Unit Test creation
 
 ** The same configuration and built procedures are reused again and again - mechanically
 
-== Lessons for the Technical Lead/Manager
+* It makes sense for me to automate functional tests and integrate them into the overall CI workflow 
 
-* Acceptance of CI and related practices doesn't happen suddenly or by spontaneous acclamation
+=== For the Technical Lead/Manager
 
-* Some technology choices have visible impact on (dis)solving standard problems, such as:
+* CI is a type of technology that has visible impact on (dis)solving standard problems, such as:
 
 ** Sharing (rather than hoarding) the know-how
 
 ** Attribution of responsibility (e.g., code/test ownership)
 
-** Maintaining good cadence of work
+** Maintaining good cadence of work (through small and frequent commits, builds)
 
 * The scope of CI/CD can be incrementally grown, but there is a minimal level that must be reached
 
@@ -267,37 +340,51 @@ NOTE: No multiple administrators for ##1-6 (with exception of Unit Test creation
 
 ** And properly configured to work together
 
-** None of it is a _huge_ effort to implement
+** None of it is a _big_ effort to implement - single person-weeks are enough to get operational
 
-== Under-Developed Areas
+* Acceptance of CI and related practices doesn't happen suddenly or by spontaneous acclamation
 
-. CI rather than CI/CD
+== A Decade+ Later 
 
-.. CD not yet a mainstream concept
+. CI in EASE did not include CD
+
+.. CD not yet a mainstream concept at the time
 
 .. Limited access to the target PROD environment (J2EE servers on mainframes [sic!]) managed by a separate department
 
-. No dedicated application for defect tracking (easy to fix in theory, tedious in practice)
+. What Has Changed Since? 
 
-. Bad tooling choices for:
+.. Prominence of the Cloud-based solutions and Cloud-first approach
 
-.. Maintaining Requirements
+.. Virtual Machines, Containers (e.g., Docker) entered the mainstream practices
 
-.. Traceability to Requirements 
+.. Expansion of CI to include CD (Continuous Delivery) --> DevOps
+
+.. Natural evolution of tooling (e.g., IDEs, libraries, etc.)
+
+The need for CI hasn't diminished:
+
+* Adopting the Cloud or Cloud-based solutions doesn't remove the need for CI
+
+* VMs, containers simplify CI, Testing, Deployment/Delivery
 
 
-.Example
-[example]
+Surprisingly, some of the original EASE tooling choices are still valid.
 
-example
+== Next Steps
 
-== Final Slide
+In context of HCD, we may want to consider the following:
 
+* The CI/CD capabilities we want and the applicable workflow
+
+* Tooling choices (past and future) and respective evaluation criteria
+
+* Adoption approach and first steps
 
 [appendix]
 == Change History & Notes
 
-NOTE: This is not a PowerPoint presentation. It has been created using a _markup_ both for slides (in this case, AsciiDoc) and for the diagrams (in this case, PlantUML).
+NOTE: This document has been created using a _markup_: for the structure and the text (in this case, AsciiDoc) and for the diagrams (in this case, PlantUML). Consequently, HTML, PDF, and other format renditions of the document are generated from the markup source. Please contact the author(s) for the source.
 
 
 .Change History
@@ -305,9 +392,10 @@ NOTE: This is not a PowerPoint presentation. It has been created using a _markup
 |=========================================================
 |Date | Contact |Description 
 
-|10/21/2021 |   piotr.palacz@hcd.ca.gov |  
-
-|10/20/2021 |   piotr.palacz@hcd.ca.gov | Document started  
+|12/01/2021 |   piotr.palacz@hcd.ca.gov | Added EASE-specific diagrams
+|11/30/2021 |   piotr.palacz@hcd.ca.gov | Added workflow diagram
+|11/21/2021 |   piotr.palacz@hcd.ca.gov | Structure defined
+|11/20/2021 |   piotr.palacz@hcd.ca.gov | Document started  
 
 |=========================================================
 

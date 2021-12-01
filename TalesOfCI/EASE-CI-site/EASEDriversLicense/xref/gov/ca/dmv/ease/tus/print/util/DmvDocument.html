@@ -1,0 +1,959 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" /><title>DmvDocument xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../../../../../../../../../apidocs/gov/ca/dmv/ease/tus/print/util/DmvDocument.html">View Javadoc</a></div><pre>
+
+<a name="1" href="#1">1</a>   <em>/**<em>* *</em></em>
+<a name="2" href="#2">2</a>   <em> * This source code contains State of California's confidential and trade secret information.</em>
+<a name="3" href="#3">3</a>   <em> * Any use of this code other than for backup is strictly prohibited.</em>
+<a name="4" href="#4">4</a>   <em> * Copyright State of California (c) 2009</em>
+<a name="5" href="#5">5</a>   <em> * <a href="http://www.california.gov" target="alexandria_uri">http://www.california.gov</a></em>
+<a name="6" href="#6">6</a>   <em> */</em>
+<a name="7" href="#7">7</a>   <strong>package</strong> gov.ca.dmv.ease.tus.print.util;
+<a name="8" href="#8">8</a>   
+<a name="9" href="#9">9</a>   <em>/**<em>*</em></em>
+<a name="10" href="#10">10</a>  <em> * Description: DmvDocument bean class </em>
+<a name="11" href="#11">11</a>  <em> * File: DmvDocument.java</em>
+<a name="12" href="#12">12</a>  <em> * Module:  gov.ca.dmv.ease.tus.print.convert.impl</em>
+<a name="13" href="#13">13</a>  <em> * Created: Apr 6, 2010 </em>
+<a name="14" href="#14">14</a>  <em> * @author MWJXA11  </em>
+<a name="15" href="#15">15</a>  <em> * @version $Revision: 1.1 $</em>
+<a name="16" href="#16">16</a>  <em> * Last Changed: $Date: 2010/04/09 23:45:25 $</em>
+<a name="17" href="#17">17</a>  <em> * Last Changed By: $Author: mwjxa11 $</em>
+<a name="18" href="#18">18</a>  <em> */</em>
+<a name="19" href="#19">19</a>  <strong>public</strong> <strong>class</strong> <a href="../../../../../../../gov/ca/dmv/ease/tus/print/util/DmvDocument.html">DmvDocument</a> {
+<a name="20" href="#20">20</a>  	<strong>private</strong> String documentName = <strong>null</strong>;
+<a name="21" href="#21">21</a>  	<strong>private</strong> String trainingHeader = <strong>null</strong>;
+<a name="22" href="#22">22</a>  	<strong>private</strong> String licenseId = <strong>null</strong>;
+<a name="23" href="#23">23</a>  	<strong>private</strong> String currentName = <strong>null</strong>;
+<a name="24" href="#24">24</a>  	<strong>private</strong> String photoName = <strong>null</strong>;
+<a name="25" href="#25">25</a>  	<strong>private</strong> String priorName = <strong>null</strong>;
+<a name="26" href="#26">26</a>  	<strong>private</strong> String akaName = <strong>null</strong>;
+<a name="27" href="#27">27</a>  	<strong>private</strong> String currentAddress = <strong>null</strong>;
+<a name="28" href="#28">28</a>  	<strong>private</strong> String photoAddress = <strong>null</strong>;
+<a name="29" href="#29">29</a>  	<strong>private</strong> String priorAddress = <strong>null</strong>;
+<a name="30" href="#30">30</a>  	<strong>private</strong> String residenceAddress = <strong>null</strong>;
+<a name="31" href="#31">31</a>  	<strong>private</strong> String mailingAddress = <strong>null</strong>;
+<a name="32" href="#32">32</a>  	<strong>private</strong> String residenceCity = <strong>null</strong>;
+<a name="33" href="#33">33</a>  	<strong>private</strong> String mailingCity = <strong>null</strong>;
+<a name="34" href="#34">34</a>  	<strong>private</strong> String residenceState = <strong>null</strong>;
+<a name="35" href="#35">35</a>  	<strong>private</strong> String mailingState = <strong>null</strong>;
+<a name="36" href="#36">36</a>  	<strong>private</strong> String city = <strong>null</strong>;
+<a name="37" href="#37">37</a>  	<strong>private</strong> String priorCity = <strong>null</strong>;
+<a name="38" href="#38">38</a>  	<strong>private</strong> String state = <strong>null</strong>;
+<a name="39" href="#39">39</a>  	<strong>private</strong> String priorState = <strong>null</strong>;
+<a name="40" href="#40">40</a>  	<strong>private</strong> String zip = <strong>null</strong>;
+<a name="41" href="#41">41</a>  	<strong>private</strong> String priorZip = <strong>null</strong>;
+<a name="42" href="#42">42</a>  	<strong>private</strong> String dob = <strong>null</strong>;
+<a name="43" href="#43">43</a>  	<strong>private</strong> String officeId = <strong>null</strong>;
+<a name="44" href="#44">44</a>  	<strong>private</strong> String transactionDate = <strong>null</strong>;
+<a name="45" href="#45">45</a>  	<strong>private</strong> String applicationDate = <strong>null</strong>;
+<a name="46" href="#46">46</a>  	<strong>private</strong> String expirationDate = <strong>null</strong>;
+<a name="47" href="#47">47</a>  	<strong>private</strong> String systemDate = <strong>null</strong>;
+<a name="48" href="#48">48</a>  	<strong>private</strong> String systemTime = <strong>null</strong>;
+<a name="49" href="#49">49</a>  	<strong>private</strong> String ssn = <strong>null</strong>;
+<a name="50" href="#50">50</a>  	<strong>private</strong> String applicationText = <strong>null</strong>;
+<a name="51" href="#51">51</a>  	<strong>private</strong> String optionalText = <strong>null</strong>;
+<a name="52" href="#52">52</a>  	<strong>private</strong> String overflowMessage = <strong>null</strong>;
+<a name="53" href="#53">53</a>  	<strong>private</strong> String employeeId = <strong>null</strong>;
+<a name="54" href="#54">54</a>  	<strong>private</strong> String registrationCode = <strong>null</strong>;
+<a name="55" href="#55">55</a>  	<strong>private</strong> String registrationText = <strong>null</strong>;
+<a name="56" href="#56">56</a>  	<strong>private</strong> String cashierId = <strong>null</strong>;
+<a name="57" href="#57">57</a>  	<strong>private</strong> String cashierSequence = <strong>null</strong>;
+<a name="58" href="#58">58</a>  	<strong>private</strong> Integer dafRecordNumber = <strong>null</strong>;
+<a name="59" href="#59">59</a>  	<strong>private</strong> String idExpirationDate = <strong>null</strong>;
+<a name="60" href="#60">60</a>  	<strong>private</strong> String gender = <strong>null</strong>;
+<a name="61" href="#61">61</a>  	<strong>private</strong> String hairColor = <strong>null</strong>;
+<a name="62" href="#62">62</a>  	<strong>private</strong> String eyeColor = <strong>null</strong>;
+<a name="63" href="#63">63</a>  	<strong>private</strong> Integer heightFeet = <strong>null</strong>;
+<a name="64" href="#64">64</a>  	<strong>private</strong> Integer heightInches = <strong>null</strong>;
+<a name="65" href="#65">65</a>  	<strong>private</strong> Integer weightPounds = <strong>null</strong>;
+<a name="66" href="#66">66</a>  	<strong>private</strong> String existingClass1 = <strong>null</strong>;
+<a name="67" href="#67">67</a>  	<strong>private</strong> String existingClass2 = <strong>null</strong>;
+<a name="68" href="#68">68</a>  	<strong>private</strong> String existingClass1Commercial = <strong>null</strong>;
+<a name="69" href="#69">69</a>  	<strong>private</strong> String existingCategory1 = <strong>null</strong>;
+<a name="70" href="#70">70</a>  	<strong>private</strong> String existingCategory2 = <strong>null</strong>;
+<a name="71" href="#71">71</a>  	
+<a name="72" href="#72">72</a>  	<em>/**<em>*</em></em>
+<a name="73" href="#73">73</a>  <em>	 * Gets the Document Name</em>
+<a name="74" href="#74">74</a>  <em>	 * </em>
+<a name="75" href="#75">75</a>  <em>	 * @return the documentName</em>
+<a name="76" href="#76">76</a>  <em>	 */</em>
+<a name="77" href="#77">77</a>  	<strong>public</strong> String getDocumentName() {
+<a name="78" href="#78">78</a>  		<strong>return</strong> documentName;
+<a name="79" href="#79">79</a>  	}
+<a name="80" href="#80">80</a>  	<em>/**<em>*</em></em>
+<a name="81" href="#81">81</a>  <em>	 * Sets the Document Name</em>
+<a name="82" href="#82">82</a>  <em>	 * </em>
+<a name="83" href="#83">83</a>  <em>	 * @param documentName the documentName to set</em>
+<a name="84" href="#84">84</a>  <em>	 */</em>
+<a name="85" href="#85">85</a>  	<strong>public</strong> <strong>void</strong> setDocumentName(String documentName) {
+<a name="86" href="#86">86</a>  		<strong>this</strong>.documentName = documentName;
+<a name="87" href="#87">87</a>  	}
+<a name="88" href="#88">88</a>  
+<a name="89" href="#89">89</a>  	<em>/**<em>*</em></em>
+<a name="90" href="#90">90</a>  <em>	 * Gets the Training Header</em>
+<a name="91" href="#91">91</a>  <em>	 * </em>
+<a name="92" href="#92">92</a>  <em>	 * @return the trainingHeader</em>
+<a name="93" href="#93">93</a>  <em>	 */</em>
+<a name="94" href="#94">94</a>  	<strong>public</strong> String getTrainingHeader() {
+<a name="95" href="#95">95</a>  		<strong>return</strong> trainingHeader;
+<a name="96" href="#96">96</a>  	}
+<a name="97" href="#97">97</a>  	<em>/**<em>*</em></em>
+<a name="98" href="#98">98</a>  <em>	 * Sets the Traning Header</em>
+<a name="99" href="#99">99</a>  <em>	 * </em>
+<a name="100" href="#100">100</a> <em>	 * @param trainingHeader the trainingHeader to set</em>
+<a name="101" href="#101">101</a> <em>	 */</em>
+<a name="102" href="#102">102</a> 	<strong>public</strong> <strong>void</strong> setTrainingHeader(String trainingHeader) {
+<a name="103" href="#103">103</a> 		<strong>this</strong>.trainingHeader = trainingHeader;
+<a name="104" href="#104">104</a> 	}
+<a name="105" href="#105">105</a> 
+<a name="106" href="#106">106</a> 	<em>/**<em>*</em></em>
+<a name="107" href="#107">107</a> <em>	 * Gets the License Id</em>
+<a name="108" href="#108">108</a> <em>	 * </em>
+<a name="109" href="#109">109</a> <em>	 * @return the licenseId</em>
+<a name="110" href="#110">110</a> <em>	 */</em>
+<a name="111" href="#111">111</a> 	<strong>public</strong> String getLicenseId() {
+<a name="112" href="#112">112</a> 		<strong>return</strong> licenseId;
+<a name="113" href="#113">113</a> 	}
+<a name="114" href="#114">114</a> 	<em>/**<em>*</em></em>
+<a name="115" href="#115">115</a> <em>	 * Sets the License Id</em>
+<a name="116" href="#116">116</a> <em>	 * </em>
+<a name="117" href="#117">117</a> <em>	 * @param licenseId the licenseId to set</em>
+<a name="118" href="#118">118</a> <em>	 */</em>
+<a name="119" href="#119">119</a> 	<strong>public</strong> <strong>void</strong> setLicenseId(String licenseId) {
+<a name="120" href="#120">120</a> 		<strong>this</strong>.licenseId = licenseId;
+<a name="121" href="#121">121</a> 	}
+<a name="122" href="#122">122</a> 	
+<a name="123" href="#123">123</a> 	<em>/**<em>*</em></em>
+<a name="124" href="#124">124</a> <em>	 * Gets the Photo Name</em>
+<a name="125" href="#125">125</a> <em>	 * </em>
+<a name="126" href="#126">126</a> <em>	 * @return the photoName</em>
+<a name="127" href="#127">127</a> <em>	 */</em>
+<a name="128" href="#128">128</a> 	<strong>public</strong> String getPhotoName() {
+<a name="129" href="#129">129</a> 		<strong>return</strong> photoName;
+<a name="130" href="#130">130</a> 	}
+<a name="131" href="#131">131</a> 	<em>/**<em>*</em></em>
+<a name="132" href="#132">132</a> <em>	 * Sets the Photo Name</em>
+<a name="133" href="#133">133</a> <em>	 * @param photoName the photoName to set</em>
+<a name="134" href="#134">134</a> <em>	 */</em>
+<a name="135" href="#135">135</a> 	<strong>public</strong> <strong>void</strong> setPhotoName(String photoName) {
+<a name="136" href="#136">136</a> 		<strong>this</strong>.photoName = photoName;
+<a name="137" href="#137">137</a> 	}
+<a name="138" href="#138">138</a> 	
+<a name="139" href="#139">139</a> 	<em>/**<em>*</em></em>
+<a name="140" href="#140">140</a> <em>	 * Gets the Photo Address</em>
+<a name="141" href="#141">141</a> <em>	 * </em>
+<a name="142" href="#142">142</a> <em>	 * @return the photoAddress</em>
+<a name="143" href="#143">143</a> <em>	 */</em>
+<a name="144" href="#144">144</a> 	<strong>public</strong> String getPhotoAddress() {
+<a name="145" href="#145">145</a> 		<strong>return</strong> photoAddress;
+<a name="146" href="#146">146</a> 	}
+<a name="147" href="#147">147</a> 	<em>/**<em>*</em></em>
+<a name="148" href="#148">148</a> <em>	 * Sets the Photo Address</em>
+<a name="149" href="#149">149</a> <em>	 * </em>
+<a name="150" href="#150">150</a> <em>	 * @param photoAddress the photoAddress to set</em>
+<a name="151" href="#151">151</a> <em>	 */</em>
+<a name="152" href="#152">152</a> 	<strong>public</strong> <strong>void</strong> setPhotoAddress(String photoAddress) {
+<a name="153" href="#153">153</a> 		<strong>this</strong>.photoAddress = photoAddress;
+<a name="154" href="#154">154</a> 	}
+<a name="155" href="#155">155</a> 	
+<a name="156" href="#156">156</a> 	<em>/**<em>*</em></em>
+<a name="157" href="#157">157</a> <em>	 * Gets the City</em>
+<a name="158" href="#158">158</a> <em>	 * </em>
+<a name="159" href="#159">159</a> <em>	 * @return the city</em>
+<a name="160" href="#160">160</a> <em>	 */</em>
+<a name="161" href="#161">161</a> 	<strong>public</strong> String getCity() {
+<a name="162" href="#162">162</a> 		<strong>return</strong> city;
+<a name="163" href="#163">163</a> 	}
+<a name="164" href="#164">164</a> 	<em>/**<em>*</em></em>
+<a name="165" href="#165">165</a> <em>	 * Sets the City</em>
+<a name="166" href="#166">166</a> <em>	 * </em>
+<a name="167" href="#167">167</a> <em>	 * @param city the city to set</em>
+<a name="168" href="#168">168</a> <em>	 */</em>
+<a name="169" href="#169">169</a> 	<strong>public</strong> <strong>void</strong> setCity(String city) {
+<a name="170" href="#170">170</a> 		<strong>this</strong>.city = city;
+<a name="171" href="#171">171</a> 	}
+<a name="172" href="#172">172</a> 	
+<a name="173" href="#173">173</a> 	<em>/**<em>*</em></em>
+<a name="174" href="#174">174</a> <em>	 * Gets the State</em>
+<a name="175" href="#175">175</a> <em>	 * </em>
+<a name="176" href="#176">176</a> <em>	 * @return the state</em>
+<a name="177" href="#177">177</a> <em>	 */</em>
+<a name="178" href="#178">178</a> 	<strong>public</strong> String getState() {
+<a name="179" href="#179">179</a> 		<strong>return</strong> state;
+<a name="180" href="#180">180</a> 	}
+<a name="181" href="#181">181</a> 	<em>/**<em>*</em></em>
+<a name="182" href="#182">182</a> <em>	 * Sets the State</em>
+<a name="183" href="#183">183</a> <em>	 * </em>
+<a name="184" href="#184">184</a> <em>	 * @param state the state to set</em>
+<a name="185" href="#185">185</a> <em>	 */</em>
+<a name="186" href="#186">186</a> 	<strong>public</strong> <strong>void</strong> setState(String state) {
+<a name="187" href="#187">187</a> 		<strong>this</strong>.state = state;
+<a name="188" href="#188">188</a> 	}
+<a name="189" href="#189">189</a> 
+<a name="190" href="#190">190</a> 	<em>/**<em>*</em></em>
+<a name="191" href="#191">191</a> <em>	 * Gets the Date of Birth</em>
+<a name="192" href="#192">192</a> <em>	 * </em>
+<a name="193" href="#193">193</a> <em>	 * @return the dob</em>
+<a name="194" href="#194">194</a> <em>	 */</em>
+<a name="195" href="#195">195</a> 	<strong>public</strong> String getDob() {
+<a name="196" href="#196">196</a> 		<strong>return</strong> dob;
+<a name="197" href="#197">197</a> 	}
+<a name="198" href="#198">198</a> 	<em>/**<em>*</em></em>
+<a name="199" href="#199">199</a> <em>	 * Sets the Date of Birth</em>
+<a name="200" href="#200">200</a> <em>	 * </em>
+<a name="201" href="#201">201</a> <em>	 * @param dob the dob to set</em>
+<a name="202" href="#202">202</a> <em>	 */</em>
+<a name="203" href="#203">203</a> 	<strong>public</strong> <strong>void</strong> setDob(String dob) {
+<a name="204" href="#204">204</a> 		<strong>this</strong>.dob = dob;
+<a name="205" href="#205">205</a> 	}
+<a name="206" href="#206">206</a> 
+<a name="207" href="#207">207</a> 	<em>/**<em>*</em></em>
+<a name="208" href="#208">208</a> <em>	 * Gets the Office Id</em>
+<a name="209" href="#209">209</a> <em>	 * </em>
+<a name="210" href="#210">210</a> <em>	 * @return the officeId</em>
+<a name="211" href="#211">211</a> <em>	 */</em>
+<a name="212" href="#212">212</a> 	<strong>public</strong> String getOfficeId() {
+<a name="213" href="#213">213</a> 		<strong>return</strong> officeId;
+<a name="214" href="#214">214</a> 	}
+<a name="215" href="#215">215</a> 	<em>/**<em>*</em></em>
+<a name="216" href="#216">216</a> <em>	 * Sets the Office Id</em>
+<a name="217" href="#217">217</a> <em>	 * </em>
+<a name="218" href="#218">218</a> <em>	 * @param officeId the officeId to set</em>
+<a name="219" href="#219">219</a> <em>	 */</em>
+<a name="220" href="#220">220</a> 	<strong>public</strong> <strong>void</strong> setOfficeId(String officeId) {
+<a name="221" href="#221">221</a> 		<strong>this</strong>.officeId = officeId;
+<a name="222" href="#222">222</a> 	}
+<a name="223" href="#223">223</a> 	
+<a name="224" href="#224">224</a> 	<em>/**<em>*</em></em>
+<a name="225" href="#225">225</a> <em>	 * Gets the Transaction Date</em>
+<a name="226" href="#226">226</a> <em>	 * </em>
+<a name="227" href="#227">227</a> <em>	 * @return the transactionDate</em>
+<a name="228" href="#228">228</a> <em>	 */</em>
+<a name="229" href="#229">229</a> 	<strong>public</strong> String getTransactionDate() {
+<a name="230" href="#230">230</a> 		<strong>return</strong> transactionDate;
+<a name="231" href="#231">231</a> 	}
+<a name="232" href="#232">232</a> 	<em>/**<em>*</em></em>
+<a name="233" href="#233">233</a> <em>	 * Sets the Transaction Date</em>
+<a name="234" href="#234">234</a> <em>	 * </em>
+<a name="235" href="#235">235</a> <em>	 * @param transactionDate the transactionDate to set</em>
+<a name="236" href="#236">236</a> <em>	 */</em>
+<a name="237" href="#237">237</a> 	<strong>public</strong> <strong>void</strong> setTransactionDate(String transactionDate) {
+<a name="238" href="#238">238</a> 		<strong>this</strong>.transactionDate = transactionDate;
+<a name="239" href="#239">239</a> 	}
+<a name="240" href="#240">240</a> 
+<a name="241" href="#241">241</a> 	<em>/**<em>*</em></em>
+<a name="242" href="#242">242</a> <em>	 * Gets the Application Date</em>
+<a name="243" href="#243">243</a> <em>	 * </em>
+<a name="244" href="#244">244</a> <em>	 * @return the applicationDate</em>
+<a name="245" href="#245">245</a> <em>	 */</em>
+<a name="246" href="#246">246</a> 	<strong>public</strong> String getApplicationDate() {
+<a name="247" href="#247">247</a> 		<strong>return</strong> applicationDate;
+<a name="248" href="#248">248</a> 	}
+<a name="249" href="#249">249</a> 	<em>/**<em>*</em></em>
+<a name="250" href="#250">250</a> <em>	 * Sets the Application Date</em>
+<a name="251" href="#251">251</a> <em>	 * </em>
+<a name="252" href="#252">252</a> <em>	 * @param applicationDate the applicationDate to set</em>
+<a name="253" href="#253">253</a> <em>	 */</em>
+<a name="254" href="#254">254</a> 	<strong>public</strong> <strong>void</strong> setApplicationDate(String applicationDate) {
+<a name="255" href="#255">255</a> 		<strong>this</strong>.applicationDate = applicationDate;
+<a name="256" href="#256">256</a> 	}
+<a name="257" href="#257">257</a> 
+<a name="258" href="#258">258</a> 	<em>/**<em>*</em></em>
+<a name="259" href="#259">259</a> <em>	 * Gets the Expiration Date</em>
+<a name="260" href="#260">260</a> <em>	 * </em>
+<a name="261" href="#261">261</a> <em>	 * @return the expirationDate</em>
+<a name="262" href="#262">262</a> <em>	 */</em>
+<a name="263" href="#263">263</a> 	<strong>public</strong> String getExpirationDate() {
+<a name="264" href="#264">264</a> 		<strong>return</strong> expirationDate;
+<a name="265" href="#265">265</a> 	}
+<a name="266" href="#266">266</a> 	<em>/**<em>*</em></em>
+<a name="267" href="#267">267</a> <em>	 * Sets the Expiration Date</em>
+<a name="268" href="#268">268</a> <em>	 * </em>
+<a name="269" href="#269">269</a> <em>	 * @param expirationDate the expirationDate to set</em>
+<a name="270" href="#270">270</a> <em>	 */</em>
+<a name="271" href="#271">271</a> 	<strong>public</strong> <strong>void</strong> setExpirationDate(String expirationDate) {
+<a name="272" href="#272">272</a> 		<strong>this</strong>.expirationDate = expirationDate;
+<a name="273" href="#273">273</a> 	}
+<a name="274" href="#274">274</a> 	
+<a name="275" href="#275">275</a> 	<em>/**<em>*</em></em>
+<a name="276" href="#276">276</a> <em>	 * Gets the System Date</em>
+<a name="277" href="#277">277</a> <em>	 * </em>
+<a name="278" href="#278">278</a> <em>	 * @return the systemDate</em>
+<a name="279" href="#279">279</a> <em>	 */</em>
+<a name="280" href="#280">280</a> 	<strong>public</strong> String getSystemDate() {
+<a name="281" href="#281">281</a> 		<strong>return</strong> systemDate;
+<a name="282" href="#282">282</a> 	}
+<a name="283" href="#283">283</a> 	<em>/**<em>*</em></em>
+<a name="284" href="#284">284</a> <em>	 * Sets the System Date</em>
+<a name="285" href="#285">285</a> <em>	 * </em>
+<a name="286" href="#286">286</a> <em>	 * @param systemDate the systemDate to set</em>
+<a name="287" href="#287">287</a> <em>	 */</em>
+<a name="288" href="#288">288</a> 	<strong>public</strong> <strong>void</strong> setSystemDate(String systemDate) {
+<a name="289" href="#289">289</a> 		<strong>this</strong>.systemDate = systemDate;
+<a name="290" href="#290">290</a> 	}
+<a name="291" href="#291">291</a> 
+<a name="292" href="#292">292</a> 	<em>/**<em>*</em></em>
+<a name="293" href="#293">293</a> <em>	 * Gets the System Time</em>
+<a name="294" href="#294">294</a> <em>	 * </em>
+<a name="295" href="#295">295</a> <em>	 * @return the systemTime</em>
+<a name="296" href="#296">296</a> <em>	 */</em>
+<a name="297" href="#297">297</a> 	<strong>public</strong> String getSystemTime() {
+<a name="298" href="#298">298</a> 		<strong>return</strong> systemTime;
+<a name="299" href="#299">299</a> 	}
+<a name="300" href="#300">300</a> 	<em>/**<em>*</em></em>
+<a name="301" href="#301">301</a> <em>	 * Sets the System Time</em>
+<a name="302" href="#302">302</a> <em>	 * </em>
+<a name="303" href="#303">303</a> <em>	 * @param systemTime the systemTime to set</em>
+<a name="304" href="#304">304</a> <em>	 */</em>
+<a name="305" href="#305">305</a> 	<strong>public</strong> <strong>void</strong> setSystemTime(String systemTime) {
+<a name="306" href="#306">306</a> 		<strong>this</strong>.systemTime = systemTime;
+<a name="307" href="#307">307</a> 	}
+<a name="308" href="#308">308</a> 
+<a name="309" href="#309">309</a> 	<em>/**<em>*</em></em>
+<a name="310" href="#310">310</a> <em>	 * Gets the SSN</em>
+<a name="311" href="#311">311</a> <em>	 * </em>
+<a name="312" href="#312">312</a> <em>	 * @return the ssn</em>
+<a name="313" href="#313">313</a> <em>	 */</em>
+<a name="314" href="#314">314</a> 	<strong>public</strong> String getSsn() {
+<a name="315" href="#315">315</a> 		<strong>return</strong> ssn;
+<a name="316" href="#316">316</a> 	}
+<a name="317" href="#317">317</a> 	<em>/**<em>*</em></em>
+<a name="318" href="#318">318</a> <em>	 * Sets the SSN</em>
+<a name="319" href="#319">319</a> <em>	 * </em>
+<a name="320" href="#320">320</a> <em>	 * @param ssn the ssn to set</em>
+<a name="321" href="#321">321</a> <em>	 */</em>
+<a name="322" href="#322">322</a> 	<strong>public</strong> <strong>void</strong> setSsn(String ssn) {
+<a name="323" href="#323">323</a> 		<strong>this</strong>.ssn = ssn;
+<a name="324" href="#324">324</a> 	}
+<a name="325" href="#325">325</a> 	
+<a name="326" href="#326">326</a> 	<em>/**<em>*</em></em>
+<a name="327" href="#327">327</a> <em>	 * Gets the Application Text</em>
+<a name="328" href="#328">328</a> <em>	 * </em>
+<a name="329" href="#329">329</a> <em>	 * @return the applicationText</em>
+<a name="330" href="#330">330</a> <em>	 */</em>
+<a name="331" href="#331">331</a> 	<strong>public</strong> String getApplicationText() {
+<a name="332" href="#332">332</a> 		<strong>return</strong> applicationText;
+<a name="333" href="#333">333</a> 	}
+<a name="334" href="#334">334</a> 	<em>/**<em>*</em></em>
+<a name="335" href="#335">335</a> <em>	 * Sets the Application Text</em>
+<a name="336" href="#336">336</a> <em>	 * </em>
+<a name="337" href="#337">337</a> <em>	 * @param applicationText the applicationText to set</em>
+<a name="338" href="#338">338</a> <em>	 */</em>
+<a name="339" href="#339">339</a> 	<strong>public</strong> <strong>void</strong> setApplicationText(String applicationText) {
+<a name="340" href="#340">340</a> 		<strong>this</strong>.applicationText = applicationText;
+<a name="341" href="#341">341</a> 	}
+<a name="342" href="#342">342</a> 
+<a name="343" href="#343">343</a> 	<em>/**<em>*</em></em>
+<a name="344" href="#344">344</a> <em>	 * Gets the Optional Text</em>
+<a name="345" href="#345">345</a> <em>	 * </em>
+<a name="346" href="#346">346</a> <em>	 * @return the optionalText</em>
+<a name="347" href="#347">347</a> <em>	 */</em>
+<a name="348" href="#348">348</a> 	<strong>public</strong> String getOptionalText() {
+<a name="349" href="#349">349</a> 		<strong>return</strong> optionalText;
+<a name="350" href="#350">350</a> 	}
+<a name="351" href="#351">351</a> 	<em>/**<em>*</em></em>
+<a name="352" href="#352">352</a> <em>	 * Sets the Optional Text</em>
+<a name="353" href="#353">353</a> <em>	 * </em>
+<a name="354" href="#354">354</a> <em>	 * @param optionalText the optionalText to set</em>
+<a name="355" href="#355">355</a> <em>	 */</em>
+<a name="356" href="#356">356</a> 	<strong>public</strong> <strong>void</strong> setOptionalText(String optionalText) {
+<a name="357" href="#357">357</a> 		<strong>this</strong>.optionalText = optionalText;
+<a name="358" href="#358">358</a> 	}
+<a name="359" href="#359">359</a> 	
+<a name="360" href="#360">360</a> 	<em>/**<em>*</em></em>
+<a name="361" href="#361">361</a> <em>	 * Gets the Overflow Message</em>
+<a name="362" href="#362">362</a> <em>	 * </em>
+<a name="363" href="#363">363</a> <em>	 * @return the overflowMessage</em>
+<a name="364" href="#364">364</a> <em>	 */</em>
+<a name="365" href="#365">365</a> 	<strong>public</strong> String getOverflowMessage() {
+<a name="366" href="#366">366</a> 		<strong>return</strong> overflowMessage;
+<a name="367" href="#367">367</a> 	}
+<a name="368" href="#368">368</a> 	<em>/**<em>*</em></em>
+<a name="369" href="#369">369</a> <em>	 * Sets the Overflow Message</em>
+<a name="370" href="#370">370</a> <em>	 * </em>
+<a name="371" href="#371">371</a> <em>	 * @param overflowMessage the overflowMessage to set</em>
+<a name="372" href="#372">372</a> <em>	 */</em>
+<a name="373" href="#373">373</a> 	<strong>public</strong> <strong>void</strong> setOverflowMessage(String overflowMessage) {
+<a name="374" href="#374">374</a> 		<strong>this</strong>.overflowMessage = overflowMessage;
+<a name="375" href="#375">375</a> 	}
+<a name="376" href="#376">376</a> 	
+<a name="377" href="#377">377</a> 	<em>/**<em>*</em></em>
+<a name="378" href="#378">378</a> <em>	 * Gets the Employee Id</em>
+<a name="379" href="#379">379</a> <em>	 * </em>
+<a name="380" href="#380">380</a> <em>	 * @return the employeeId</em>
+<a name="381" href="#381">381</a> <em>	 */</em>
+<a name="382" href="#382">382</a> 	<strong>public</strong> String getEmployeeId() {
+<a name="383" href="#383">383</a> 		<strong>return</strong> employeeId;
+<a name="384" href="#384">384</a> 	}
+<a name="385" href="#385">385</a> 	<em>/**<em>*</em></em>
+<a name="386" href="#386">386</a> <em>	 * Sets the Employee Id</em>
+<a name="387" href="#387">387</a> <em>	 * </em>
+<a name="388" href="#388">388</a> <em>	 * @param employeeId the employeeId to set</em>
+<a name="389" href="#389">389</a> <em>	 */</em>
+<a name="390" href="#390">390</a> 	<strong>public</strong> <strong>void</strong> setEmployeeId(String employeeId) {
+<a name="391" href="#391">391</a> 		<strong>this</strong>.employeeId = employeeId;
+<a name="392" href="#392">392</a> 	}
+<a name="393" href="#393">393</a> 	
+<a name="394" href="#394">394</a> 	<em>/**<em>*</em></em>
+<a name="395" href="#395">395</a> <em>	 * Gets the Current Name</em>
+<a name="396" href="#396">396</a> <em>	 * </em>
+<a name="397" href="#397">397</a> <em>	 * @return the currentName</em>
+<a name="398" href="#398">398</a> <em>	 */</em>
+<a name="399" href="#399">399</a> 	<strong>public</strong> String getCurrentName() {
+<a name="400" href="#400">400</a> 		<strong>return</strong> currentName;
+<a name="401" href="#401">401</a> 	}
+<a name="402" href="#402">402</a> 	<em>/**<em>*</em></em>
+<a name="403" href="#403">403</a> <em>	 * Sets the Current Name</em>
+<a name="404" href="#404">404</a> <em>	 * </em>
+<a name="405" href="#405">405</a> <em>	 * @param currentName the currentName to set</em>
+<a name="406" href="#406">406</a> <em>	 */</em>
+<a name="407" href="#407">407</a> 	<strong>public</strong> <strong>void</strong> setCurrentName(String currentName) {
+<a name="408" href="#408">408</a> 		<strong>this</strong>.currentName = currentName;
+<a name="409" href="#409">409</a> 	}
+<a name="410" href="#410">410</a> 	
+<a name="411" href="#411">411</a> 	<em>/**<em>*</em></em>
+<a name="412" href="#412">412</a> <em>	 * Gets the Current Address</em>
+<a name="413" href="#413">413</a> <em>	 * </em>
+<a name="414" href="#414">414</a> <em>	 * @return the currentAddress</em>
+<a name="415" href="#415">415</a> <em>	 */</em>
+<a name="416" href="#416">416</a> 	<strong>public</strong> String getCurrentAddress() {
+<a name="417" href="#417">417</a> 		<strong>return</strong> currentAddress;
+<a name="418" href="#418">418</a> 	}
+<a name="419" href="#419">419</a> 	<em>/**<em>*</em></em>
+<a name="420" href="#420">420</a> <em>	 * Sets the Current Address</em>
+<a name="421" href="#421">421</a> <em>	 * </em>
+<a name="422" href="#422">422</a> <em>	 * @param currentAddress the currentAddress to set</em>
+<a name="423" href="#423">423</a> <em>	 */</em>
+<a name="424" href="#424">424</a> 	<strong>public</strong> <strong>void</strong> setCurrentAddress(String currentAddress) {
+<a name="425" href="#425">425</a> 		<strong>this</strong>.currentAddress = currentAddress;
+<a name="426" href="#426">426</a> 	}
+<a name="427" href="#427">427</a> 
+<a name="428" href="#428">428</a> 	<em>/**<em>*</em></em>
+<a name="429" href="#429">429</a> <em>	 * Gets the Prior Name</em>
+<a name="430" href="#430">430</a> <em>	 * </em>
+<a name="431" href="#431">431</a> <em>	 * @return the priorName</em>
+<a name="432" href="#432">432</a> <em>	 */</em>
+<a name="433" href="#433">433</a> 	<strong>public</strong> String getPriorName() {
+<a name="434" href="#434">434</a> 		<strong>return</strong> priorName;
+<a name="435" href="#435">435</a> 	}
+<a name="436" href="#436">436</a> 	<em>/**<em>*</em></em>
+<a name="437" href="#437">437</a> <em>	 * Sets the Prior Name</em>
+<a name="438" href="#438">438</a> <em>	 * </em>
+<a name="439" href="#439">439</a> <em>	 * @param priorName the priorName to set</em>
+<a name="440" href="#440">440</a> <em>	 */</em>
+<a name="441" href="#441">441</a> 	<strong>public</strong> <strong>void</strong> setPriorName(String priorName) {
+<a name="442" href="#442">442</a> 		<strong>this</strong>.priorName = priorName;
+<a name="443" href="#443">443</a> 	}
+<a name="444" href="#444">444</a> 
+<a name="445" href="#445">445</a> 	<em>/**<em>*</em></em>
+<a name="446" href="#446">446</a> <em>	 * Gets the Aka Name</em>
+<a name="447" href="#447">447</a> <em>	 * </em>
+<a name="448" href="#448">448</a> <em>	 * @return the akaName</em>
+<a name="449" href="#449">449</a> <em>	 */</em>
+<a name="450" href="#450">450</a> 	<strong>public</strong> String getAkaName() {
+<a name="451" href="#451">451</a> 		<strong>return</strong> akaName;
+<a name="452" href="#452">452</a> 	}
+<a name="453" href="#453">453</a> 
+<a name="454" href="#454">454</a> 	<em>/**<em>*</em></em>
+<a name="455" href="#455">455</a> <em>	 * Sets the Aka Name</em>
+<a name="456" href="#456">456</a> <em>	 * </em>
+<a name="457" href="#457">457</a> <em>	 * @param akaName the akaName to set</em>
+<a name="458" href="#458">458</a> <em>	 */</em>
+<a name="459" href="#459">459</a> 	<strong>public</strong> <strong>void</strong> setAkaName(String akaName) {
+<a name="460" href="#460">460</a> 		<strong>this</strong>.akaName = akaName;
+<a name="461" href="#461">461</a> 	}
+<a name="462" href="#462">462</a> 
+<a name="463" href="#463">463</a> 	<em>/**<em>*</em></em>
+<a name="464" href="#464">464</a> <em>	 * Gets the Prior Address</em>
+<a name="465" href="#465">465</a> <em>	 * </em>
+<a name="466" href="#466">466</a> <em>	 * @return the priorAddress</em>
+<a name="467" href="#467">467</a> <em>	 */</em>
+<a name="468" href="#468">468</a> 	<strong>public</strong> String getPriorAddress() {
+<a name="469" href="#469">469</a> 		<strong>return</strong> priorAddress;
+<a name="470" href="#470">470</a> 	}
+<a name="471" href="#471">471</a> 	<em>/**<em>*</em></em>
+<a name="472" href="#472">472</a> <em>	 * Sets the Prior Address</em>
+<a name="473" href="#473">473</a> <em>	 * </em>
+<a name="474" href="#474">474</a> <em>	 * @param priorAddress the priorAddress to set</em>
+<a name="475" href="#475">475</a> <em>	 */</em>
+<a name="476" href="#476">476</a> 	<strong>public</strong> <strong>void</strong> setPriorAddress(String priorAddress) {
+<a name="477" href="#477">477</a> 		<strong>this</strong>.priorAddress = priorAddress;
+<a name="478" href="#478">478</a> 	}
+<a name="479" href="#479">479</a> 
+<a name="480" href="#480">480</a> 	<em>/**<em>*</em></em>
+<a name="481" href="#481">481</a> <em>	 * Gets the Residence Address</em>
+<a name="482" href="#482">482</a> <em>	 * </em>
+<a name="483" href="#483">483</a> <em>	 * @return the residenceAddress</em>
+<a name="484" href="#484">484</a> <em>	 */</em>
+<a name="485" href="#485">485</a> 	<strong>public</strong> String getResidenceAddress() {
+<a name="486" href="#486">486</a> 		<strong>return</strong> residenceAddress;
+<a name="487" href="#487">487</a> 	}
+<a name="488" href="#488">488</a> 	<em>/**<em>*</em></em>
+<a name="489" href="#489">489</a> <em>	 * Sets the Residence Address</em>
+<a name="490" href="#490">490</a> <em>	 * </em>
+<a name="491" href="#491">491</a> <em>	 * @param residenceAddress the residenceAddress to set</em>
+<a name="492" href="#492">492</a> <em>	 */</em>
+<a name="493" href="#493">493</a> 	<strong>public</strong> <strong>void</strong> setResidenceAddress(String residenceAddress) {
+<a name="494" href="#494">494</a> 		<strong>this</strong>.residenceAddress = residenceAddress;
+<a name="495" href="#495">495</a> 	}
+<a name="496" href="#496">496</a> 
+<a name="497" href="#497">497</a> 	<em>/**<em>*</em></em>
+<a name="498" href="#498">498</a> <em>	 * Gets the Mailing Address</em>
+<a name="499" href="#499">499</a> <em>	 * </em>
+<a name="500" href="#500">500</a> <em>	 * @return the mailingAddress</em>
+<a name="501" href="#501">501</a> <em>	 */</em>
+<a name="502" href="#502">502</a> 	<strong>public</strong> String getMailingAddress() {
+<a name="503" href="#503">503</a> 		<strong>return</strong> mailingAddress;
+<a name="504" href="#504">504</a> 	}
+<a name="505" href="#505">505</a> 	<em>/**<em>*</em></em>
+<a name="506" href="#506">506</a> <em>	 * Sets the Mailing Address</em>
+<a name="507" href="#507">507</a> <em>	 * </em>
+<a name="508" href="#508">508</a> <em>	 * @param mailingAddress the mailingAddress to set</em>
+<a name="509" href="#509">509</a> <em>	 */</em>
+<a name="510" href="#510">510</a> 	<strong>public</strong> <strong>void</strong> setMailingAddress(String mailingAddress) {
+<a name="511" href="#511">511</a> 		<strong>this</strong>.mailingAddress = mailingAddress;
+<a name="512" href="#512">512</a> 	}
+<a name="513" href="#513">513</a> 
+<a name="514" href="#514">514</a> 	<em>/**<em>*</em></em>
+<a name="515" href="#515">515</a> <em>	 * Gets the Residence City</em>
+<a name="516" href="#516">516</a> <em>	 * </em>
+<a name="517" href="#517">517</a> <em>	 * @return the residenceCity</em>
+<a name="518" href="#518">518</a> <em>	 */</em>
+<a name="519" href="#519">519</a> 	<strong>public</strong> String getResidenceCity() {
+<a name="520" href="#520">520</a> 		<strong>return</strong> residenceCity;
+<a name="521" href="#521">521</a> 	}
+<a name="522" href="#522">522</a> 	<em>/**<em>*</em></em>
+<a name="523" href="#523">523</a> <em>	 * Sets the Residence City</em>
+<a name="524" href="#524">524</a> <em>	 * </em>
+<a name="525" href="#525">525</a> <em>	 * @param residenceCity the residenceCity to set</em>
+<a name="526" href="#526">526</a> <em>	 */</em>
+<a name="527" href="#527">527</a> 	<strong>public</strong> <strong>void</strong> setResidenceCity(String residenceCity) {
+<a name="528" href="#528">528</a> 		<strong>this</strong>.residenceCity = residenceCity;
+<a name="529" href="#529">529</a> 	}
+<a name="530" href="#530">530</a> 
+<a name="531" href="#531">531</a> 	<em>/**<em>*</em></em>
+<a name="532" href="#532">532</a> <em>	 * Gets the Mailing City</em>
+<a name="533" href="#533">533</a> <em>	 * </em>
+<a name="534" href="#534">534</a> <em>	 * @return the mailingCity</em>
+<a name="535" href="#535">535</a> <em>	 */</em>
+<a name="536" href="#536">536</a> 	<strong>public</strong> String getMailingCity() {
+<a name="537" href="#537">537</a> 		<strong>return</strong> mailingCity;
+<a name="538" href="#538">538</a> 	}
+<a name="539" href="#539">539</a> 	<em>/**<em>*</em></em>
+<a name="540" href="#540">540</a> <em>	 * Sets the Mailing City</em>
+<a name="541" href="#541">541</a> <em>	 * </em>
+<a name="542" href="#542">542</a> <em>	 * @param mailingCity the mailingCity to set</em>
+<a name="543" href="#543">543</a> <em>	 */</em>
+<a name="544" href="#544">544</a> 	<strong>public</strong> <strong>void</strong> setMailingCity(String mailingCity) {
+<a name="545" href="#545">545</a> 		<strong>this</strong>.mailingCity = mailingCity;
+<a name="546" href="#546">546</a> 	}
+<a name="547" href="#547">547</a> 
+<a name="548" href="#548">548</a> 	<em>/**<em>*</em></em>
+<a name="549" href="#549">549</a> <em>	 * Gets the Residence State</em>
+<a name="550" href="#550">550</a> <em>	 * </em>
+<a name="551" href="#551">551</a> <em>	 * @return the residenceState</em>
+<a name="552" href="#552">552</a> <em>	 */</em>
+<a name="553" href="#553">553</a> 	<strong>public</strong> String getResidenceState() {
+<a name="554" href="#554">554</a> 		<strong>return</strong> residenceState;
+<a name="555" href="#555">555</a> 	}
+<a name="556" href="#556">556</a> 	<em>/**<em>*</em></em>
+<a name="557" href="#557">557</a> <em>	 * Sets the Residence State</em>
+<a name="558" href="#558">558</a> <em>	 * </em>
+<a name="559" href="#559">559</a> <em>	 * @param residenceState the residenceState to set</em>
+<a name="560" href="#560">560</a> <em>	 */</em>
+<a name="561" href="#561">561</a> 	<strong>public</strong> <strong>void</strong> setResidenceState(String residenceState) {
+<a name="562" href="#562">562</a> 		<strong>this</strong>.residenceState = residenceState;
+<a name="563" href="#563">563</a> 	}
+<a name="564" href="#564">564</a> 
+<a name="565" href="#565">565</a> 	<em>/**<em>*</em></em>
+<a name="566" href="#566">566</a> <em>	 * Gets the Mailing State</em>
+<a name="567" href="#567">567</a> <em>	 * </em>
+<a name="568" href="#568">568</a> <em>	 * @return the mailingState</em>
+<a name="569" href="#569">569</a> <em>	 */</em>
+<a name="570" href="#570">570</a> 	<strong>public</strong> String getMailingState() {
+<a name="571" href="#571">571</a> 		<strong>return</strong> mailingState;
+<a name="572" href="#572">572</a> 	}
+<a name="573" href="#573">573</a> 	<em>/**<em>*</em></em>
+<a name="574" href="#574">574</a> <em>	 * Sets the Mailing State</em>
+<a name="575" href="#575">575</a> <em>	 * </em>
+<a name="576" href="#576">576</a> <em>	 * @param mailingState the mailingState to set</em>
+<a name="577" href="#577">577</a> <em>	 */</em>
+<a name="578" href="#578">578</a> 	<strong>public</strong> <strong>void</strong> setMailingState(String mailingState) {
+<a name="579" href="#579">579</a> 		<strong>this</strong>.mailingState = mailingState;
+<a name="580" href="#580">580</a> 	}
+<a name="581" href="#581">581</a> 
+<a name="582" href="#582">582</a> 	<em>/**<em>*</em></em>
+<a name="583" href="#583">583</a> <em>	 * Gets the Prior City</em>
+<a name="584" href="#584">584</a> <em>	 * </em>
+<a name="585" href="#585">585</a> <em>	 * @return the priorCity</em>
+<a name="586" href="#586">586</a> <em>	 */</em>
+<a name="587" href="#587">587</a> 	<strong>public</strong> String getPriorCity() {
+<a name="588" href="#588">588</a> 		<strong>return</strong> priorCity;
+<a name="589" href="#589">589</a> 	}
+<a name="590" href="#590">590</a> 	<em>/**<em>*</em></em>
+<a name="591" href="#591">591</a> <em>	 * Sets the Prior City</em>
+<a name="592" href="#592">592</a> <em>	 * </em>
+<a name="593" href="#593">593</a> <em>	 * @param priorCity the priorCity to set</em>
+<a name="594" href="#594">594</a> <em>	 */</em>
+<a name="595" href="#595">595</a> 	<strong>public</strong> <strong>void</strong> setPriorCity(String priorCity) {
+<a name="596" href="#596">596</a> 		<strong>this</strong>.priorCity = priorCity;
+<a name="597" href="#597">597</a> 	}
+<a name="598" href="#598">598</a> 
+<a name="599" href="#599">599</a> 	<em>/**<em>*</em></em>
+<a name="600" href="#600">600</a> <em>	 * Gets the Prior State</em>
+<a name="601" href="#601">601</a> <em>	 * </em>
+<a name="602" href="#602">602</a> <em>	 * @return the priorState</em>
+<a name="603" href="#603">603</a> <em>	 */</em>
+<a name="604" href="#604">604</a> 	<strong>public</strong> String getPriorState() {
+<a name="605" href="#605">605</a> 		<strong>return</strong> priorState;
+<a name="606" href="#606">606</a> 	}
+<a name="607" href="#607">607</a> 	<em>/**<em>*</em></em>
+<a name="608" href="#608">608</a> <em>	 * Sets the Prior State</em>
+<a name="609" href="#609">609</a> <em>	 * </em>
+<a name="610" href="#610">610</a> <em>	 * @param priorState the priorState to set</em>
+<a name="611" href="#611">611</a> <em>	 */</em>
+<a name="612" href="#612">612</a> 	<strong>public</strong> <strong>void</strong> setPriorState(String priorState) {
+<a name="613" href="#613">613</a> 		<strong>this</strong>.priorState = priorState;
+<a name="614" href="#614">614</a> 	}
+<a name="615" href="#615">615</a> 
+<a name="616" href="#616">616</a> 	<em>/**<em>*</em></em>
+<a name="617" href="#617">617</a> <em>	 * Gets the Zip</em>
+<a name="618" href="#618">618</a> <em>	 * </em>
+<a name="619" href="#619">619</a> <em>	 * @return the zip</em>
+<a name="620" href="#620">620</a> <em>	 */</em>
+<a name="621" href="#621">621</a> 	<strong>public</strong> String getZip() {
+<a name="622" href="#622">622</a> 		<strong>return</strong> zip;
+<a name="623" href="#623">623</a> 	}
+<a name="624" href="#624">624</a> 	<em>/**<em>*</em></em>
+<a name="625" href="#625">625</a> <em>	 * Sets the Zip</em>
+<a name="626" href="#626">626</a> <em>	 * </em>
+<a name="627" href="#627">627</a> <em>	 * @param zip the zip to set</em>
+<a name="628" href="#628">628</a> <em>	 */</em>
+<a name="629" href="#629">629</a> 	<strong>public</strong> <strong>void</strong> setZip(String zip) {
+<a name="630" href="#630">630</a> 		<strong>this</strong>.zip = zip;
+<a name="631" href="#631">631</a> 	}
+<a name="632" href="#632">632</a> 	
+<a name="633" href="#633">633</a> 	<em>/**<em>*</em></em>
+<a name="634" href="#634">634</a> <em>	 * Gets the Prior Zip</em>
+<a name="635" href="#635">635</a> <em>	 * </em>
+<a name="636" href="#636">636</a> <em>	 * @return the priorZip</em>
+<a name="637" href="#637">637</a> <em>	 */</em>
+<a name="638" href="#638">638</a> 	<strong>public</strong> String getPriorZip() {
+<a name="639" href="#639">639</a> 		<strong>return</strong> priorZip;
+<a name="640" href="#640">640</a> 	}
+<a name="641" href="#641">641</a> 	<em>/**<em>*</em></em>
+<a name="642" href="#642">642</a> <em>	 * Sets the Prior Zip</em>
+<a name="643" href="#643">643</a> <em>	 * </em>
+<a name="644" href="#644">644</a> <em>	 * @param priorZip the priorZip to set</em>
+<a name="645" href="#645">645</a> <em>	 */</em>
+<a name="646" href="#646">646</a> 	<strong>public</strong> <strong>void</strong> setPriorZip(String priorZip) {
+<a name="647" href="#647">647</a> 		<strong>this</strong>.priorZip = priorZip;
+<a name="648" href="#648">648</a> 	}
+<a name="649" href="#649">649</a> 	
+<a name="650" href="#650">650</a> 	<em>/**<em>*</em></em>
+<a name="651" href="#651">651</a> <em>	 * Gets the Registration Code</em>
+<a name="652" href="#652">652</a> <em>	 * </em>
+<a name="653" href="#653">653</a> <em>	 * @return the registrationCode</em>
+<a name="654" href="#654">654</a> <em>	 */</em>
+<a name="655" href="#655">655</a> 	<strong>public</strong> String getRegistrationCode() {
+<a name="656" href="#656">656</a> 		<strong>return</strong> registrationCode;
+<a name="657" href="#657">657</a> 	}
+<a name="658" href="#658">658</a> 	<em>/**<em>*</em></em>
+<a name="659" href="#659">659</a> <em>	 * Sets the Registration Code</em>
+<a name="660" href="#660">660</a> <em>	 * </em>
+<a name="661" href="#661">661</a> <em>	 * @param registrationCode the registrationCode to set</em>
+<a name="662" href="#662">662</a> <em>	 */</em>
+<a name="663" href="#663">663</a> 	<strong>public</strong> <strong>void</strong> setRegistrationCode(String registrationCode) {
+<a name="664" href="#664">664</a> 		<strong>this</strong>.registrationCode = registrationCode;
+<a name="665" href="#665">665</a> 	}
+<a name="666" href="#666">666</a> 	
+<a name="667" href="#667">667</a> 	<em>/**<em>*</em></em>
+<a name="668" href="#668">668</a> <em>	 * Gets the Registration Text</em>
+<a name="669" href="#669">669</a> <em>	 * </em>
+<a name="670" href="#670">670</a> <em>	 * @return the registrationText</em>
+<a name="671" href="#671">671</a> <em>	 */</em>
+<a name="672" href="#672">672</a> 	<strong>public</strong> String getRegistrationText() {
+<a name="673" href="#673">673</a> 		<strong>return</strong> registrationText;
+<a name="674" href="#674">674</a> 	}
+<a name="675" href="#675">675</a> 	<em>/**<em>*</em></em>
+<a name="676" href="#676">676</a> <em>	 * Sets the Registration Text</em>
+<a name="677" href="#677">677</a> <em>	 * </em>
+<a name="678" href="#678">678</a> <em>	 * @param registrationText the registrationText to set</em>
+<a name="679" href="#679">679</a> <em>	 */</em>
+<a name="680" href="#680">680</a> 	<strong>public</strong> <strong>void</strong> setRegistrationText(String registrationText) {
+<a name="681" href="#681">681</a> 		<strong>this</strong>.registrationText = registrationText;
+<a name="682" href="#682">682</a> 	}
+<a name="683" href="#683">683</a> 
+<a name="684" href="#684">684</a> 	<em>/**<em>*</em></em>
+<a name="685" href="#685">685</a> <em>	 * Gets the Cashier Id</em>
+<a name="686" href="#686">686</a> <em>	 * </em>
+<a name="687" href="#687">687</a> <em>	 * @return the cashierId</em>
+<a name="688" href="#688">688</a> <em>	 */</em>
+<a name="689" href="#689">689</a> 	<strong>public</strong> String getCashierId() {
+<a name="690" href="#690">690</a> 		<strong>return</strong> cashierId;
+<a name="691" href="#691">691</a> 	}
+<a name="692" href="#692">692</a> 	<em>/**<em>*</em></em>
+<a name="693" href="#693">693</a> <em>	 * Sets the Cashier Id</em>
+<a name="694" href="#694">694</a> <em>	 * </em>
+<a name="695" href="#695">695</a> <em>	 * @param cashierId the cashierId to set</em>
+<a name="696" href="#696">696</a> <em>	 */</em>
+<a name="697" href="#697">697</a> 	<strong>public</strong> <strong>void</strong> setCashierId(String cashierId) {
+<a name="698" href="#698">698</a> 		<strong>this</strong>.cashierId = cashierId;
+<a name="699" href="#699">699</a> 	}
+<a name="700" href="#700">700</a> 
+<a name="701" href="#701">701</a> 	<em>/**<em>*</em></em>
+<a name="702" href="#702">702</a> <em>	 * Gets the Cashier Sequence</em>
+<a name="703" href="#703">703</a> <em>	 * </em>
+<a name="704" href="#704">704</a> <em>	 * @return the cashierSequence</em>
+<a name="705" href="#705">705</a> <em>	 */</em>
+<a name="706" href="#706">706</a> 	<strong>public</strong> String getCashierSequence() {
+<a name="707" href="#707">707</a> 		<strong>return</strong> cashierSequence;
+<a name="708" href="#708">708</a> 	}
+<a name="709" href="#709">709</a> 	<em>/**<em>*</em></em>
+<a name="710" href="#710">710</a> <em>	 * Sets the Cashier Sequence</em>
+<a name="711" href="#711">711</a> <em>	 * </em>
+<a name="712" href="#712">712</a> <em>	 * @param cashierSequence the cashierSequence to set</em>
+<a name="713" href="#713">713</a> <em>	 */</em>
+<a name="714" href="#714">714</a> 	<strong>public</strong> <strong>void</strong> setCashierSequence(String cashierSequence) {
+<a name="715" href="#715">715</a> 		<strong>this</strong>.cashierSequence = cashierSequence;
+<a name="716" href="#716">716</a> 	}
+<a name="717" href="#717">717</a> 	
+<a name="718" href="#718">718</a> 	<em>/**<em>*</em></em>
+<a name="719" href="#719">719</a> <em>	 * Gets the Daf Record Number</em>
+<a name="720" href="#720">720</a> <em>	 * </em>
+<a name="721" href="#721">721</a> <em>	 * @return the dafRecordNumber</em>
+<a name="722" href="#722">722</a> <em>	 */</em>
+<a name="723" href="#723">723</a> 	<strong>public</strong> Integer getDafRecordNumber() {
+<a name="724" href="#724">724</a> 		<strong>return</strong> dafRecordNumber;
+<a name="725" href="#725">725</a> 	}
+<a name="726" href="#726">726</a> 	<em>/**<em>*</em></em>
+<a name="727" href="#727">727</a> <em>	 * Sets the Daf Record Number</em>
+<a name="728" href="#728">728</a> <em>	 * </em>
+<a name="729" href="#729">729</a> <em>	 * @param dafRecordNumber the dafRecordNumber to set</em>
+<a name="730" href="#730">730</a> <em>	 */</em>
+<a name="731" href="#731">731</a> 	<strong>public</strong> <strong>void</strong> setDafRecordNumber(Integer dafRecordNumber) {
+<a name="732" href="#732">732</a> 		<strong>this</strong>.dafRecordNumber = dafRecordNumber;
+<a name="733" href="#733">733</a> 	}
+<a name="734" href="#734">734</a> 	
+<a name="735" href="#735">735</a> 	<em>/**<em>*</em></em>
+<a name="736" href="#736">736</a> <em>	 * Gets the Id Expiration Date</em>
+<a name="737" href="#737">737</a> <em>	 * </em>
+<a name="738" href="#738">738</a> <em>	 * @return the idExpirationDate</em>
+<a name="739" href="#739">739</a> <em>	 */</em>
+<a name="740" href="#740">740</a> 	<strong>public</strong> String getIdExpirationDate() {
+<a name="741" href="#741">741</a> 		<strong>return</strong> idExpirationDate;
+<a name="742" href="#742">742</a> 	}
+<a name="743" href="#743">743</a> 	<em>/**<em>*</em></em>
+<a name="744" href="#744">744</a> <em>	 * Sets the Id Expiration Date</em>
+<a name="745" href="#745">745</a> <em>	 * </em>
+<a name="746" href="#746">746</a> <em>	 * @param idExpirationDate the idExpirationDate to set</em>
+<a name="747" href="#747">747</a> <em>	 */</em>
+<a name="748" href="#748">748</a> 	<strong>public</strong> <strong>void</strong> setIdExpirationDate(String idExpirationDate) {
+<a name="749" href="#749">749</a> 		<strong>this</strong>.idExpirationDate = idExpirationDate;
+<a name="750" href="#750">750</a> 	}
+<a name="751" href="#751">751</a> 	
+<a name="752" href="#752">752</a> 	<em>/**<em>*</em></em>
+<a name="753" href="#753">753</a> <em>	 * Gets the Gender</em>
+<a name="754" href="#754">754</a> <em>	 * </em>
+<a name="755" href="#755">755</a> <em>	 * @return the gender</em>
+<a name="756" href="#756">756</a> <em>	 */</em>
+<a name="757" href="#757">757</a> 	<strong>public</strong> String getGender() {
+<a name="758" href="#758">758</a> 		<strong>return</strong> gender;
+<a name="759" href="#759">759</a> 	}
+<a name="760" href="#760">760</a> 	<em>/**<em>*</em></em>
+<a name="761" href="#761">761</a> <em>	 * Sets the Gender</em>
+<a name="762" href="#762">762</a> <em>	 * </em>
+<a name="763" href="#763">763</a> <em>	 * @param gender the gender to set</em>
+<a name="764" href="#764">764</a> <em>	 */</em>
+<a name="765" href="#765">765</a> 	<strong>public</strong> <strong>void</strong> setGender(String gender) {
+<a name="766" href="#766">766</a> 		<strong>this</strong>.gender = gender;
+<a name="767" href="#767">767</a> 	}
+<a name="768" href="#768">768</a> 
+<a name="769" href="#769">769</a> 	<em>/**<em>*</em></em>
+<a name="770" href="#770">770</a> <em>	 * Gets the Hair Color</em>
+<a name="771" href="#771">771</a> <em>	 * </em>
+<a name="772" href="#772">772</a> <em>	 * @return the hairColor</em>
+<a name="773" href="#773">773</a> <em>	 */</em>
+<a name="774" href="#774">774</a> 	<strong>public</strong> String getHairColor() {
+<a name="775" href="#775">775</a> 		<strong>return</strong> hairColor;
+<a name="776" href="#776">776</a> 	}
+<a name="777" href="#777">777</a> 	<em>/**<em>*</em></em>
+<a name="778" href="#778">778</a> <em>	 * Sets the Hair Color</em>
+<a name="779" href="#779">779</a> <em>	 * </em>
+<a name="780" href="#780">780</a> <em>	 * @param hairColor the hairColor to set</em>
+<a name="781" href="#781">781</a> <em>	 */</em>
+<a name="782" href="#782">782</a> 	<strong>public</strong> <strong>void</strong> setHairColor(String hairColor) {
+<a name="783" href="#783">783</a> 		<strong>this</strong>.hairColor = hairColor;
+<a name="784" href="#784">784</a> 	}
+<a name="785" href="#785">785</a> 
+<a name="786" href="#786">786</a> 	<em>/**<em>*</em></em>
+<a name="787" href="#787">787</a> <em>	 * Gets the Eye Color</em>
+<a name="788" href="#788">788</a> <em>	 * </em>
+<a name="789" href="#789">789</a> <em>	 * @return the eyeColor</em>
+<a name="790" href="#790">790</a> <em>	 */</em>
+<a name="791" href="#791">791</a> 	<strong>public</strong> String getEyeColor() {
+<a name="792" href="#792">792</a> 		<strong>return</strong> eyeColor;
+<a name="793" href="#793">793</a> 	}
+<a name="794" href="#794">794</a> 	<em>/**<em>*</em></em>
+<a name="795" href="#795">795</a> <em>	 * Sets the Eye Color</em>
+<a name="796" href="#796">796</a> <em>	 * </em>
+<a name="797" href="#797">797</a> <em>	 * @param eyeColor the eyeColor to set</em>
+<a name="798" href="#798">798</a> <em>	 */</em>
+<a name="799" href="#799">799</a> 	<strong>public</strong> <strong>void</strong> setEyeColor(String eyeColor) {
+<a name="800" href="#800">800</a> 		<strong>this</strong>.eyeColor = eyeColor;
+<a name="801" href="#801">801</a> 	}
+<a name="802" href="#802">802</a> 
+<a name="803" href="#803">803</a> 	<em>/**<em>*</em></em>
+<a name="804" href="#804">804</a> <em>	 * Gets the Height in Feet</em>
+<a name="805" href="#805">805</a> <em>	 * </em>
+<a name="806" href="#806">806</a> <em>	 * @return the heightFeet</em>
+<a name="807" href="#807">807</a> <em>	 */</em>
+<a name="808" href="#808">808</a> 	<strong>public</strong> Integer getHeightFeet() {
+<a name="809" href="#809">809</a> 		<strong>return</strong> heightFeet;
+<a name="810" href="#810">810</a> 	}
+<a name="811" href="#811">811</a> 	<em>/**<em>*</em></em>
+<a name="812" href="#812">812</a> <em>	 * Sets the Height in Feet</em>
+<a name="813" href="#813">813</a> <em>	 * </em>
+<a name="814" href="#814">814</a> <em>	 * @param heightFeet the heightFeet to set</em>
+<a name="815" href="#815">815</a> <em>	 */</em>
+<a name="816" href="#816">816</a> 	<strong>public</strong> <strong>void</strong> setHeightFeet(Integer heightFeet) {
+<a name="817" href="#817">817</a> 		<strong>this</strong>.heightFeet = heightFeet;
+<a name="818" href="#818">818</a> 	}
+<a name="819" href="#819">819</a> 
+<a name="820" href="#820">820</a> 	<em>/**<em>*</em></em>
+<a name="821" href="#821">821</a> <em>	 * Gets the Height in Inches</em>
+<a name="822" href="#822">822</a> <em>	 * </em>
+<a name="823" href="#823">823</a> <em>	 * @return the heightInches</em>
+<a name="824" href="#824">824</a> <em>	 */</em>
+<a name="825" href="#825">825</a> 	<strong>public</strong> Integer getHeightInches() {
+<a name="826" href="#826">826</a> 		<strong>return</strong> heightInches;
+<a name="827" href="#827">827</a> 	}
+<a name="828" href="#828">828</a> 	<em>/**<em>*</em></em>
+<a name="829" href="#829">829</a> <em>	 * Sets the Height in Inches</em>
+<a name="830" href="#830">830</a> <em>	 * </em>
+<a name="831" href="#831">831</a> <em>	 * @param heightInches the heightInches to set</em>
+<a name="832" href="#832">832</a> <em>	 */</em>
+<a name="833" href="#833">833</a> 	<strong>public</strong> <strong>void</strong> setHeightInches(Integer heightInches) {
+<a name="834" href="#834">834</a> 		<strong>this</strong>.heightInches = heightInches;
+<a name="835" href="#835">835</a> 	}
+<a name="836" href="#836">836</a> 
+<a name="837" href="#837">837</a> 	<em>/**<em>*</em></em>
+<a name="838" href="#838">838</a> <em>	 * Gets the Weight in Pounds</em>
+<a name="839" href="#839">839</a> <em>	 * </em>
+<a name="840" href="#840">840</a> <em>	 * @return the weightPounds</em>
+<a name="841" href="#841">841</a> <em>	 */</em>
+<a name="842" href="#842">842</a> 	<strong>public</strong> Integer getWeightPounds() {
+<a name="843" href="#843">843</a> 		<strong>return</strong> weightPounds;
+<a name="844" href="#844">844</a> 	}
+<a name="845" href="#845">845</a> 	<em>/**<em>*</em></em>
+<a name="846" href="#846">846</a> <em>	 * Sets the Weight in Pounds</em>
+<a name="847" href="#847">847</a> <em>	 * </em>
+<a name="848" href="#848">848</a> <em>	 * @param weightPounds the weightPounds to set</em>
+<a name="849" href="#849">849</a> <em>	 */</em>
+<a name="850" href="#850">850</a> 	<strong>public</strong> <strong>void</strong> setWeightPounds(Integer weightPounds) {
+<a name="851" href="#851">851</a> 		<strong>this</strong>.weightPounds = weightPounds;
+<a name="852" href="#852">852</a> 	}
+<a name="853" href="#853">853</a> 	
+<a name="854" href="#854">854</a> 	<em>/**<em>*</em></em>
+<a name="855" href="#855">855</a> <em>	 * Gets the Existing Class1</em>
+<a name="856" href="#856">856</a> <em>	 * </em>
+<a name="857" href="#857">857</a> <em>	 * @return the existingClass1</em>
+<a name="858" href="#858">858</a> <em>	 */</em>
+<a name="859" href="#859">859</a> 	<strong>public</strong> String getExistingClass1() {
+<a name="860" href="#860">860</a> 		<strong>return</strong> existingClass1;
+<a name="861" href="#861">861</a> 	}
+<a name="862" href="#862">862</a> 	<em>/**<em>*</em></em>
+<a name="863" href="#863">863</a> <em>	 * Sets the Existing Class1</em>
+<a name="864" href="#864">864</a> <em>	 * </em>
+<a name="865" href="#865">865</a> <em>	 * @param existingClass1 the existingClass1 to set</em>
+<a name="866" href="#866">866</a> <em>	 */</em>
+<a name="867" href="#867">867</a> 	<strong>public</strong> <strong>void</strong> setExistingClass1(String existingClass1) {
+<a name="868" href="#868">868</a> 		<strong>this</strong>.existingClass1 = existingClass1;
+<a name="869" href="#869">869</a> 	}
+<a name="870" href="#870">870</a> 
+<a name="871" href="#871">871</a> 	<em>/**<em>*</em></em>
+<a name="872" href="#872">872</a> <em>	 * Gets the Existing Class2</em>
+<a name="873" href="#873">873</a> <em>	 * </em>
+<a name="874" href="#874">874</a> <em>	 * @return the existingClass2</em>
+<a name="875" href="#875">875</a> <em>	 */</em>
+<a name="876" href="#876">876</a> 	<strong>public</strong> String getExistingClass2() {
+<a name="877" href="#877">877</a> 		<strong>return</strong> existingClass2;
+<a name="878" href="#878">878</a> 	}
+<a name="879" href="#879">879</a> 	<em>/**<em>*</em></em>
+<a name="880" href="#880">880</a> <em>	 * Sets the Existing Class2</em>
+<a name="881" href="#881">881</a> <em>	 * </em>
+<a name="882" href="#882">882</a> <em>	 * @param existingClass2 the existingClass2 to set</em>
+<a name="883" href="#883">883</a> <em>	 */</em>
+<a name="884" href="#884">884</a> 	<strong>public</strong> <strong>void</strong> setExistingClass2(String existingClass2) {
+<a name="885" href="#885">885</a> 		<strong>this</strong>.existingClass2 = existingClass2;
+<a name="886" href="#886">886</a> 	}
+<a name="887" href="#887">887</a> 
+<a name="888" href="#888">888</a> 	<em>/**<em>*</em></em>
+<a name="889" href="#889">889</a> <em>	 * Gets the Existing Class1 Commercial</em>
+<a name="890" href="#890">890</a> <em>	 * </em>
+<a name="891" href="#891">891</a> <em>	 * @return the existingClass1Commercial</em>
+<a name="892" href="#892">892</a> <em>	 */</em>
+<a name="893" href="#893">893</a> 	<strong>public</strong> String getExistingClass1Commercial() {
+<a name="894" href="#894">894</a> 		<strong>return</strong> existingClass1Commercial;
+<a name="895" href="#895">895</a> 	}
+<a name="896" href="#896">896</a> 	<em>/**<em>*</em></em>
+<a name="897" href="#897">897</a> <em>	 * Sets the Existing Class1 Commercial</em>
+<a name="898" href="#898">898</a> <em>	 * </em>
+<a name="899" href="#899">899</a> <em>	 * @param existingClass1Commercial the existingClass1Commercial to set</em>
+<a name="900" href="#900">900</a> <em>	 */</em>
+<a name="901" href="#901">901</a> 	<strong>public</strong> <strong>void</strong> setExistingClass1Commercial(String existingClass1Commercial) {
+<a name="902" href="#902">902</a> 		<strong>this</strong>.existingClass1Commercial = existingClass1Commercial;
+<a name="903" href="#903">903</a> 	}
+<a name="904" href="#904">904</a> 
+<a name="905" href="#905">905</a> 	<em>/**<em>*</em></em>
+<a name="906" href="#906">906</a> <em>	 * Gets the Existing Category1</em>
+<a name="907" href="#907">907</a> <em>	 * </em>
+<a name="908" href="#908">908</a> <em>	 * @return the existingCategory1</em>
+<a name="909" href="#909">909</a> <em>	 */</em>
+<a name="910" href="#910">910</a> 	<strong>public</strong> String getExistingCategory1() {
+<a name="911" href="#911">911</a> 		<strong>return</strong> existingCategory1;
+<a name="912" href="#912">912</a> 	}
+<a name="913" href="#913">913</a> 	<em>/**<em>*</em></em>
+<a name="914" href="#914">914</a> <em>	 * Sets the Existing Category1</em>
+<a name="915" href="#915">915</a> <em>	 * </em>
+<a name="916" href="#916">916</a> <em>	 * @param existingCategory1 the existingCategory1 to set</em>
+<a name="917" href="#917">917</a> <em>	 */</em>
+<a name="918" href="#918">918</a> 	<strong>public</strong> <strong>void</strong> setExistingCategory1(String existingCategory1) {
+<a name="919" href="#919">919</a> 		<strong>this</strong>.existingCategory1 = existingCategory1;
+<a name="920" href="#920">920</a> 	}
+<a name="921" href="#921">921</a> 
+<a name="922" href="#922">922</a> 	<em>/**<em>*</em></em>
+<a name="923" href="#923">923</a> <em>	 * Gets the Existing Category2</em>
+<a name="924" href="#924">924</a> <em>	 * </em>
+<a name="925" href="#925">925</a> <em>	 * @return the existingCategory2</em>
+<a name="926" href="#926">926</a> <em>	 */</em>
+<a name="927" href="#927">927</a> 	<strong>public</strong> String getExistingCategory2() {
+<a name="928" href="#928">928</a> 		<strong>return</strong> existingCategory2;
+<a name="929" href="#929">929</a> 	}
+<a name="930" href="#930">930</a> 	<em>/**<em>*</em></em>
+<a name="931" href="#931">931</a> <em>	 * Sets the Existing Category2</em>
+<a name="932" href="#932">932</a> <em>	 * </em>
+<a name="933" href="#933">933</a> <em>	 * @param existingCategory2 the existingCategory2 to set</em>
+<a name="934" href="#934">934</a> <em>	 */</em>
+<a name="935" href="#935">935</a> 	<strong>public</strong> <strong>void</strong> setExistingCategory2(String existingCategory2) {
+<a name="936" href="#936">936</a> 		<strong>this</strong>.existingCategory2 = existingCategory2;
+<a name="937" href="#937">937</a> 	}
+<a name="938" href="#938">938</a>  }
+<a name="939" href="#939">939</a> <em>/**<em>*</em></em>
+<a name="940" href="#940">940</a> <em> *  Modification History:</em>
+<a name="941" href="#941">941</a> <em> * </em>
+<a name="942" href="#942">942</a> <em> *  $Log: DmvDocument.java,v $</em>
+<a name="943" href="#943">943</a> <em> *  Revision 1.1  2010/04/09 23:45:25  mwjxa11</em>
+<a name="944" href="#944">944</a> <em> *  Bean class to generate the XML input to Exstream Document Generation</em>
+<a name="945" href="#945">945</a> <em> *</em>
+<a name="946" href="#946">946</a> <em> */</em>
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

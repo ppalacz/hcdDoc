@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" /><title>PrintDlaDocumentsActivity xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../../../../../../../../../../../apidocs/gov/ca/dmv/ease/app/activity/common/impl/PrintDlaDocumentsActivity.html">View Javadoc</a></div><pre>
+
+<a name="1" href="#1">1</a>   <em>/**<em>* * </em></em>
+<a name="2" href="#2">2</a>   <em> * This source code contains State of California's confidential and trade secret information.</em>
+<a name="3" href="#3">3</a>   <em> * Any use of this code other than for backup is strictly prohibited.</em>
+<a name="4" href="#4">4</a>   <em> * Copyright State of California (c) 2009</em>
+<a name="5" href="#5">5</a>   <em> * <a href="http://www.california.gov" target="alexandria_uri">http://www.california.gov</a></em>
+<a name="6" href="#6">6</a>   <em> */</em>
+<a name="7" href="#7">7</a>   <strong>package</strong> gov.ca.dmv.ease.app.activity.common.impl;
+<a name="8" href="#8">8</a>   
+<a name="9" href="#9">9</a>   <strong>import</strong> gov.ca.dmv.ease.app.activity.impl.BusinessActivity;
+<a name="10" href="#10">10</a>  <strong>import</strong> gov.ca.dmv.ease.app.context.dl.impl.DlaProcessContext;
+<a name="11" href="#11">11</a>  <strong>import</strong> gov.ca.dmv.ease.app.context.dl.impl.IdProcessContext;
+<a name="12" href="#12">12</a>  <strong>import</strong> gov.ca.dmv.ease.app.context.impl.ProcessContext;
+<a name="13" href="#13">13</a>  <strong>import</strong> gov.ca.dmv.ease.core.constants.PrintRequestTypes;
+<a name="14" href="#14">14</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.request.impl.PrintRequestTs;
+<a name="15" href="#15">15</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.response.impl.PrintResponseTs;
+<a name="16" href="#16">16</a>  <strong>import</strong> gov.ca.dmv.ease.ts.dl.service.impl.IssueDlTaskService;
+<a name="17" href="#17">17</a>  
+<a name="18" href="#18">18</a>  <strong>import</strong> java.util.HashSet;
+<a name="19" href="#19">19</a>  <strong>import</strong> java.util.Set;
+<a name="20" href="#20">20</a>  
+<a name="21" href="#21">21</a>  <em>/**<em>*</em></em>
+<a name="22" href="#22">22</a>  <em> * Description: I handle printing of DL/ID receipts/documents . </em>
+<a name="23" href="#23">23</a>  <em> * File: PrintDocumentActivity.java </em>
+<a name="24" href="#24">24</a>  <em> * Module: gov.ca.dmv.ease.app.activity.common</em>
+<a name="25" href="#25">25</a>  <em> * Created: 2009</em>
+<a name="26" href="#26">26</a>  <em> * </em>
+<a name="27" href="#27">27</a>  <em> * @author MWSYK1</em>
+<a name="28" href="#28">28</a>  <em> * @version $Revision: 1.12 $ </em>
+<a name="29" href="#29">29</a>  <em> * Last Changed: $Date: 2010/08/11 22:35:18 $ </em>
+<a name="30" href="#30">30</a>  <em> * Last Changed By: $Author: mwcsj3 $</em>
+<a name="31" href="#31">31</a>  <em> */</em>
+<a name="32" href="#32">32</a>  <strong>public</strong> <strong>class</strong> <a href="../../../../../../../../gov/ca/dmv/ease/app/activity/common/impl/PrintDlaDocumentsActivity.html">PrintDlaDocumentsActivity</a> <strong>extends</strong> BusinessActivity {
+<a name="33" href="#33">33</a>  	<em>/**<em>* The Constant serialVersionUID. */</em></em>
+<a name="34" href="#34">34</a>  	<strong>private</strong> <strong>static</strong> <strong>final</strong> <strong>long</strong> serialVersionUID = 6680886289840236182L;
+<a name="35" href="#35">35</a>  	<em>/**<em>* The issue dl task service. */</em></em>
+<a name="36" href="#36">36</a>  	<strong>private</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/service/impl/IssueDlTaskService.html">IssueDlTaskService</a> issueDlTaskService;
+<a name="37" href="#37">37</a>  
+<a name="38" href="#38">38</a>  	<em class="comment">/*</em>
+<a name="39" href="#39">39</a>  <em class="comment">	 * (non-Javadoc)</em>
+<a name="40" href="#40">40</a>  <em class="comment">	 * </em>
+<a name="41" href="#41">41</a>  <em class="comment">	 * @see</em>
+<a name="42" href="#42">42</a>  <em class="comment">	 * gov.ca.dmv.ease.activity.BusinessActivity#invokeService(gov.ca.dmv.ease</em>
+<a name="43" href="#43">43</a>  <em class="comment">	 * .app.context.ProcessContext)</em>
+<a name="44" href="#44">44</a>  <em class="comment">	 */</em>
+<a name="45" href="#45">45</a>  	<em>/**<em>*</em></em>
+<a name="46" href="#46">46</a>  <em>	 * @param dlTaskService</em>
+<a name="47" href="#47">47</a>  <em>	 *            the dlTaskService to set</em>
+<a name="48" href="#48">48</a>  <em>	 */</em>
+<a name="49" href="#49">49</a>  	<strong>public</strong> <strong>void</strong> setDlTaskService(<a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/service/impl/IssueDlTaskService.html">IssueDlTaskService</a> dlTaskService) {
+<a name="50" href="#50">50</a>  		<strong>this</strong>.issueDlTaskService = dlTaskService;
+<a name="51" href="#51">51</a>  	}
+<a name="52" href="#52">52</a>  
+<a name="53" href="#53">53</a>  	@Override
+<a name="54" href="#54">54</a>  	<strong>protected</strong> <strong>void</strong> invokeService(ProcessContext processContext) {
+<a name="55" href="#55">55</a>  		PrintRequestTs tsRequest = <strong>null</strong>;
+<a name="56" href="#56">56</a>  		Set &lt;PrintRequestTypes> printRequestTypes = <strong>new</strong> HashSet &lt;PrintRequestTypes>();
+<a name="57" href="#57">57</a>  		<strong>if</strong> (processContext instanceof DlaProcessContext) {
+<a name="58" href="#58">58</a>  			DlaProcessContext dlaProcessContext = (DlaProcessContext) processContext;
+<a name="59" href="#59">59</a>  			tsRequest = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/request/impl/PrintRequestTs.html">PrintRequestTs</a>(dlaProcessContext.getUserContext(),
+<a name="60" href="#60">60</a>  					dlaProcessContext.getDlApplication());
+<a name="61" href="#61">61</a>  		}
+<a name="62" href="#62">62</a>  		<strong>else</strong> <strong>if</strong> (processContext instanceof IdProcessContext) {
+<a name="63" href="#63">63</a>  			IdProcessContext idProcessContext = (IdProcessContext) processContext;
+<a name="64" href="#64">64</a>  			tsRequest = <strong>new</strong> <a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/request/impl/PrintRequestTs.html">PrintRequestTs</a>(idProcessContext.getUserContext(),
+<a name="65" href="#65">65</a>  					idProcessContext.getDlApplication());
+<a name="66" href="#66">66</a>  		}
+<a name="67" href="#67">67</a>  		<em class="comment">//Getting the document/receipt types to be printed</em>
+<a name="68" href="#68">68</a>  		printRequestTypes = determineDocumentsTobePrinted(processContext,
+<a name="69" href="#69">69</a>  				printRequestTypes);
+<a name="70" href="#70">70</a>  		<em class="comment">//By default payment receipt to be printed for every transaction</em>
+<a name="71" href="#71">71</a>  		printRequestTypes.add(PrintRequestTypes.DL_RECEIPT);
+<a name="72" href="#72">72</a>  		<em class="comment">//Calling the print service if there are any documents to be printed</em>
+<a name="73" href="#73">73</a>  		<strong>if</strong> (printRequestTypes.size() > 0) {
+<a name="74" href="#74">74</a>  			tsRequest.setPrintRequestTypes(printRequestTypes);
+<a name="75" href="#75">75</a>  			PrintResponseTs responseTs = issueDlTaskService.execute(tsRequest);
+<a name="76" href="#76">76</a>  			<strong>if</strong> (responseTs.hasErrors()) {
+<a name="77" href="#77">77</a>  				<em class="comment">//this.populateErrorMessages(context, responseTs.getErrorCollector());</em>
+<a name="78" href="#78">78</a>  			}
+<a name="79" href="#79">79</a>  		}
+<a name="80" href="#80">80</a>  	}
+<a name="81" href="#81">81</a>  
+<a name="82" href="#82">82</a>  	<em>/**<em>*</em></em>
+<a name="83" href="#83">83</a>  <em>	 * @param dlaProcessContext</em>
+<a name="84" href="#84">84</a>  <em>	 * @param printRequestTypes</em>
+<a name="85" href="#85">85</a>  <em>	 * @return</em>
+<a name="86" href="#86">86</a>  <em>	 */</em>
+<a name="87" href="#87">87</a>  	<strong>private</strong> Set &lt;PrintRequestTypes> determineDocumentsTobePrinted(
+<a name="88" href="#88">88</a>  			ProcessContext processContext,
+<a name="89" href="#89">89</a>  			Set &lt;PrintRequestTypes> printRequestTypes) {
+<a name="90" href="#90">90</a>  		<strong>if</strong> (processContext instanceof DlaProcessContext) {
+<a name="91" href="#91">91</a>  			DlaProcessContext dlaProcessContext = (DlaProcessContext) processContext;
+<a name="92" href="#92">92</a>  			<strong>if</strong> (dlaProcessContext.getCurrentCDLISRecord() != <strong>null</strong>) {
+<a name="93" href="#93">93</a>  				printRequestTypes
+<a name="94" href="#94">94</a>  						.add(PrintRequestTypes.CDLIS_AND_NDR_MATCHES_REPORT);
+<a name="95" href="#95">95</a>  			}
+<a name="96" href="#96">96</a>  			<strong>if</strong> (dlaProcessContext.getCurrentPDPSRecord() != <strong>null</strong>) {
+<a name="97" href="#97">97</a>  				printRequestTypes
+<a name="98" href="#98">98</a>  						.add(PrintRequestTypes.PDPS_AND_NDR_MATCHES_REPORT);
+<a name="99" href="#99">99</a>  			}
+<a name="100" href="#100">100</a> 			<strong>if</strong> (dlaProcessContext.getDlApplication().isOrganDonor()) {
+<a name="101" href="#101">101</a> 				printRequestTypes.add(PrintRequestTypes.ORGAN_DONOR_1_LDD0851);
+<a name="102" href="#102">102</a> 				<em class="comment">// FIXME how to determine whether its a Non-Renewal Organ Donor</em>
+<a name="103" href="#103">103</a> 				<em class="comment">// Receipt</em>
+<a name="104" href="#104">104</a> 				printRequestTypes.add(PrintRequestTypes.ORGAN_DONOR_2_LDD0852);
+<a name="105" href="#105">105</a> 			}
+<a name="106" href="#106">106</a> 			<em class="comment">// TODO check with the UI/COdesetElement how to check whether Voter</em>
+<a name="107" href="#107">107</a> 			<em class="comment">// registration is requested or not</em>
+<a name="108" href="#108">108</a> 			<strong>if</strong> (dlaProcessContext.getDlApplication()
+<a name="109" href="#109">109</a> 					.getVoterRegistationRequested().getCode().equals(<span class="string">"Y"</span>)) {
+<a name="110" href="#110">110</a> 				printRequestTypes
+<a name="111" href="#111">111</a> 						.add(PrintRequestTypes.VOTER_REGISTRATION_LDD0861);
+<a name="112" href="#112">112</a> 			}
+<a name="113" href="#113">113</a> 		}
+<a name="114" href="#114">114</a> 		<strong>else</strong> <strong>if</strong> (processContext instanceof IdProcessContext) {
+<a name="115" href="#115">115</a> 			IdProcessContext idProcessContext = (IdProcessContext) processContext;
+<a name="116" href="#116">116</a> 			<strong>if</strong> (idProcessContext.getDlApplication().isOrganDonor()) {
+<a name="117" href="#117">117</a> 				printRequestTypes.add(PrintRequestTypes.ORGAN_DONOR_1_LDD0851);
+<a name="118" href="#118">118</a> 				<em class="comment">// FIXME how to determine whether its a Non-Renewal Organ Donor</em>
+<a name="119" href="#119">119</a> 				<em class="comment">// Receipt</em>
+<a name="120" href="#120">120</a> 				printRequestTypes.add(PrintRequestTypes.ORGAN_DONOR_2_LDD0852);
+<a name="121" href="#121">121</a> 			}
+<a name="122" href="#122">122</a> 			<em class="comment">// TODO check with the UI/COdesetElement how to check whether Voter</em>
+<a name="123" href="#123">123</a> 			<em class="comment">// registration is requested or not</em>
+<a name="124" href="#124">124</a> 			<strong>if</strong> (idProcessContext.getDlApplication()
+<a name="125" href="#125">125</a> 					.getVoterRegistationRequested().getCode().equals(<span class="string">"Y"</span>)) {
+<a name="126" href="#126">126</a> 				printRequestTypes
+<a name="127" href="#127">127</a> 						.add(PrintRequestTypes.VOTER_REGISTRATION_LDD0861);
+<a name="128" href="#128">128</a> 			}
+<a name="129" href="#129">129</a> 		}
+<a name="130" href="#130">130</a> 		<strong>return</strong> printRequestTypes;
+<a name="131" href="#131">131</a> 	}
+<a name="132" href="#132">132</a> 
+<a name="133" href="#133">133</a> 	<em>/**<em>*</em></em>
+<a name="134" href="#134">134</a> <em>	 * @param issueDlTaskService the issueDlTaskService to set</em>
+<a name="135" href="#135">135</a> <em>	 */</em>
+<a name="136" href="#136">136</a> 	<strong>public</strong> <strong>void</strong> setIssueDlTaskService(<a href="../../../../../../../../gov/ca/dmv/ease/ts/dl/service/impl/IssueDlTaskService.html">IssueDlTaskService</a> issueDlTaskService) {
+<a name="137" href="#137">137</a> 		<strong>this</strong>.issueDlTaskService = issueDlTaskService;
+<a name="138" href="#138">138</a> 	}
+<a name="139" href="#139">139</a> }
+<a name="140" href="#140">140</a> <em>/**<em>*</em></em>
+<a name="141" href="#141">141</a> <em> * Modification History:</em>
+<a name="142" href="#142">142</a> <em> * </em>
+<a name="143" href="#143">143</a> <em> * $Log: PrintDlaDocumentsActivity.java,v $</em>
+<a name="144" href="#144">144</a> <em> * Revision 1.12  2010/08/11 22:35:18  mwcsj3</em>
+<a name="145" href="#145">145</a> <em> * Updated invokeService method print service call logic</em>
+<a name="146" href="#146">146</a> <em> *</em>
+<a name="147" href="#147">147</a> <em> * Revision 1.11  2010/08/11 21:57:10  mwcsj3</em>
+<a name="148" href="#148">148</a> <em> * Modified invokeService and determineDocumentsTobePrinted methods to support ID printing</em>
+<a name="149" href="#149">149</a> <em> *</em>
+<a name="150" href="#150">150</a> <em> * Revision 1.10  2010/08/06 01:39:02  mwakg</em>
+<a name="151" href="#151">151</a> <em> * Diabled errorCollector for print issues for build. Needs to be reverted</em>
+<a name="152" href="#152">152</a> <em> *</em>
+<a name="153" href="#153">153</a> <em> * Revision 1.9  2010/08/05 21:01:59  mwkfh</em>
+<a name="154" href="#154">154</a> <em> * fixed string compare from == "Y" to .equals("Y")</em>
+<a name="155" href="#155">155</a> <em> *</em>
+<a name="156" href="#156">156</a> <em> * Revision 1.8  2010/07/21 00:00:51  mwcsj3</em>
+<a name="157" href="#157">157</a> <em> * Added DL_RECEIPT print request</em>
+<a name="158" href="#158">158</a> <em> *</em>
+<a name="159" href="#159">159</a> <em> * Revision 1.7  2010/07/20 23:04:55  mwcsj3</em>
+<a name="160" href="#160">160</a> <em> * Added code to stop print service call when no documents are to be printed</em>
+<a name="161" href="#161">161</a> <em> *</em>
+<a name="162" href="#162">162</a> <em> * Revision 1.6  2010/07/19 22:36:01  mwakg</em>
+<a name="163" href="#163">163</a> <em> * Remoevd comments</em>
+<a name="164" href="#164">164</a> <em> *</em>
+<a name="165" href="#165">165</a> <em> * Revision 1.5  2010/07/16 17:24:28  mwcsj3</em>
+<a name="166" href="#166">166</a> <em> * Commented printing call in invokeService method for demo</em>
+<a name="167" href="#167">167</a> <em> *</em>
+<a name="168" href="#168">168</a> <em> * Revision 1.4  2010/06/21 23:18:39  mwcsj3</em>
+<a name="169" href="#169">169</a> <em> * Merged SUB_BUSINESS_PROCESS_IMPLEMENTATION branch to HEAD</em>
+<a name="170" href="#170">170</a> <em> *</em>
+<a name="171" href="#171">171</a> <em> * Revision 1.2.6.2  2010/06/20 18:08:55  mwakg</em>
+<a name="172" href="#172">172</a> <em> * Rebased to June 20, 2010</em>
+<a name="173" href="#173">173</a> <em> *</em>
+<a name="174" href="#174">174</a> <em> * Revision 1.3  2010/06/10 20:17:26  mwsyk1</em>
+<a name="175" href="#175">175</a> <em> * TaskService is updated as IssueDlTaskService</em>
+<a name="176" href="#176">176</a> <em> *</em>
+<a name="177" href="#177">177</a> <em> * Revision 1.2  2010/05/06 04:02:15  mwbxp5</em>
+<a name="178" href="#178">178</a> <em> * Added print related code---Balaji</em>
+<a name="179" href="#179">179</a> <em> * Revision 1.1 2010/05/06 00:29:55</em>
+<a name="180" href="#180">180</a> <em> * mwrka1 Changing the name of teh print activity from PrintDocumentsActivity to</em>
+<a name="181" href="#181">181</a> <em> * PrintDlaDocumentsActivity....Balaji</em>
+<a name="182" href="#182">182</a> <em> * </em>
+<a name="183" href="#183">183</a> <em> * Revision 1.4 2010/03/29 22:39:03 mwsxd10 error message collected using</em>
+<a name="184" href="#184">184</a> <em> * this.populateErrorMessages().</em>
+<a name="185" href="#185">185</a> <em> * </em>
+<a name="186" href="#186">186</a> <em> * Revision 1.3 2010/02/04 01:03:45 mwrsk Delete CdlisPdpsRecord.java and use</em>
+<a name="187" href="#187">187</a> <em> * CdlisRecord.java &amp; PdpsRecord.java</em>
+<a name="188" href="#188">188</a> <em> * </em>
+<a name="189" href="#189">189</a> <em> * Revision 1.2 2010/01/11 21:07:01 mwhxa2 Person is now tied to dlApplication</em>
+<a name="190" href="#190">190</a> <em> * </em>
+<a name="191" href="#191">191</a> <em> * Revision 1.1 2009/11/23 16:25:12 mwrsk Intial commit</em>
+<a name="192" href="#192">192</a> <em> * </em>
+<a name="193" href="#193">193</a> <em> * Revision 1.3 2009/10/13 01:04:23 mwrrv2 provided class description.</em>
+<a name="194" href="#194">194</a> <em> * </em>
+<a name="195" href="#195">195</a> <em> * Revision 1.2 2009/10/07 19:16:32 mwbxp5 Removed LOGGER</em>
+<a name="196" href="#196">196</a> <em> * </em>
+<a name="197" href="#197">197</a> <em> * Revision 1.1 2009/10/03 20:57:26 mwpxp2 Moved into .impl; adjusted imports</em>
+<a name="198" href="#198">198</a> <em> * </em>
+<a name="199" href="#199">199</a> <em> * Revision 1.8 2009/09/16 23:58:18 mwcsj3 Set DlApplicant to DriverLicense</em>
+<a name="200" href="#200">200</a> <em> * object</em>
+<a name="201" href="#201">201</a> <em> * </em>
+<a name="202" href="#202">202</a> <em> * Revision 1.7 2009/08/31 01:29:01 mwakg Fixed print flow</em>
+<a name="203" href="#203">203</a> <em> * </em>
+<a name="204" href="#204">204</a> <em> * Revision 1.6 2009/08/28 22:05:04 mwrrv2 Updated activity</em>
+<a name="205" href="#205">205</a> <em> * </em>
+<a name="206" href="#206">206</a> <em> * Revision 1.5 2009/08/28 01:38:41 mwsmg6 formatting</em>
+<a name="207" href="#207">207</a> <em> * </em>
+<a name="208" href="#208">208</a> <em> * Revision 1.4 2009/08/27 21:15:31 mwjxa11 Removed the responses with constants</em>
+<a name="209" href="#209">209</a> <em> * as references and followed the standard response.hasErrors() checks.</em>
+<a name="210" href="#210">210</a> <em> * </em>
+<a name="211" href="#211">211</a> <em> * Revision 1.3 2009/08/27 18:04:25 mwrrv2 Updated the control flow of the</em>
+<a name="212" href="#212">212</a> <em> * printing documents. Revision 1.2 2009/08/27 08:25:01 mwpxp2 Fixed imports to</em>
+<a name="213" href="#213">213</a> <em> * reflect fw migration; bulk cleanup</em>
+<a name="214" href="#214">214</a> <em> * </em>
+<a name="215" href="#215">215</a> <em> * Revision 1.1 2009/08/26 20:20:46 mwsyk1 updated class name</em>
+<a name="216" href="#216">216</a> <em> * </em>
+<a name="217" href="#217">217</a> <em> * Revision 1.6 2009/08/20 16:54:34 mwsmg6 enhanced logging of various</em>
+<a name="218" href="#218">218</a> <em> * activities</em>
+<a name="219" href="#219">219</a> <em> * </em>
+<a name="220" href="#220">220</a> <em> * Revision 1.5 2009/08/10 23:57:51 mwpxp2 Added logging; bulk cleanup</em>
+<a name="221" href="#221">221</a> <em> * </em>
+<a name="222" href="#222">222</a> <em> * Revision 1.4 2009/08/05 17:00:49 mwsmg6 moved ProcessContext to ...context</em>
+<a name="223" href="#223">223</a> <em> * package</em>
+<a name="224" href="#224">224</a> <em> * </em>
+<a name="225" href="#225">225</a> <em> * Revision 1.3 2009/07/22 21:47:19 mwpxm2 refactor</em>
+<a name="226" href="#226">226</a> <em> * </em>
+<a name="227" href="#227">227</a> <em> * Revision 1.2 2009/07/22 16:42:30 mwpxp2 Added fixmes</em>
+<a name="228" href="#228">228</a> <em> * </em>
+<a name="229" href="#229">229</a> <em> */</em>
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

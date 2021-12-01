@@ -1,21 +1,23 @@
 @startuml
-skinparam  ActivityFontSize 14
+skinparam ActivityFontSize 14
 skinparam ArrowFontSize 14
 skinparam ArrowFontSize italic
 
 title Continuous Integration Process Sketch
 
+|#dee4e8|Developer|
+|#daf0fe|Version Control|
+|#dee4e8|CI|
 |#Linen|Artefact Repo|
 |#c5c5cd|DEV Env|
-|#dee4e8|CI|
-|#daf0fe|Version Control|
 |#Ivory|TEST Env|
-|#dee4e8|Developer|
+|#Ivory|TEST Env|
 
 |Developer|
 start
+    #Yellow:Check out Artifacts;
+    ->Use;
     |Version Control|
-    ->Check out Artefacts;
     #Lavender:Versioned Artefacts;
     |Developer|
     ->Checked out into IDE;
@@ -33,14 +35,14 @@ start
     |Artefact Repo|
     #Lavender:Deployable Artefacts;
     |DEV Env|
-    if () then (failure)
+    |CI|
+    if (Build Failed?) then (failure)
         |CI|
         #Pink:Build Failure Report;
         ->Store;
         |Artefact Repo|
         #Lavender:Stored Report;
         |CI|
-        #Pink:Assign Blame;
         ->Notify;
         |Developer|
         #Yellow:Correct&Commit;
@@ -50,16 +52,16 @@ start
         ->Trigger Static Tests;
         |DEV Env|
         #HotPink:Run Static Tests;
-        if () then (failure)
+        |CI|
+        if (Tests Failed?) then (failure)
             |CI|
             #Pink:Build Failure Report;
-            #Pink:Assign Blame;
             ->Notify;
             |Developer|
             #Yellow:Correct&Commit;
             end
         else (success)
-            |CI|
+            |DEV Env|
             :Assemble Deployables;
             |Artefact Repo|
             ->Store Deployables;
@@ -69,10 +71,10 @@ start
             ->Trigger Test Run;
             |TEST Env|
             #HotPink:Run Automated Tests;
-            if () then (failure)
+            |CI|
+            if (Tests Failed?) then (failure)
                 |CI|
                 #Pink:Build Failure Report;
-                #Pink:Assign Blame;
                 ->Notify;
                 |Developer|
                 #Yellow:Correct&Commit;

@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" /><title>IDataCollectionErrorMessageConstants xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../../../../../../../../../../apidocs/gov/ca/dmv/ease/core/dl/errors/IDataCollectionErrorMessageConstants.html">View Javadoc</a></div><pre>
+
+<a name="1" href="#1">1</a>   <em>/**<em>*</em></em>
+<a name="2" href="#2">2</a>   <em> * This source code contains State of California's confidential and trade secret information.</em>
+<a name="3" href="#3">3</a>   <em> * Any use of this code other than for backup is strictly prohibited.</em>
+<a name="4" href="#4">4</a>   <em> * Copyright State of California (c) 2009</em>
+<a name="5" href="#5">5</a>   <em> * <a href="http://www.california.gov" target="alexandria_uri">http://www.california.gov</a></em>
+<a name="6" href="#6">6</a>   <em> */</em>
+<a name="7" href="#7">7</a>   <strong>package</strong> gov.ca.dmv.ease.core.dl.errors;
+<a name="8" href="#8">8</a>   
+<a name="9" href="#9">9</a>   <em>/**<em>*</em></em>
+<a name="10" href="#10">10</a>  <em> * Description: Data collection error message constants, error messages start with letter D</em>
+<a name="11" href="#11">11</a>  <em> * File: IDataCollectionErrorMessageConstants.java</em>
+<a name="12" href="#12">12</a>  <em> * Module:  gov.ca.dmv.ease.core.dl.errors</em>
+<a name="13" href="#13">13</a>  <em> * Created: Jul 20, 2010</em>
+<a name="14" href="#14">14</a>  <em> * @author mwyxg1</em>
+<a name="15" href="#15">15</a>  <em> * @version $Revision: 1.27 $</em>
+<a name="16" href="#16">16</a>  <em> * Last Changed: $Date: 2010/08/13 17:59:19 $</em>
+<a name="17" href="#17">17</a>  <em> * Last Changed By: $Author: mwcyl $</em>
+<a name="18" href="#18">18</a>  <em> */</em>
+<a name="19" href="#19">19</a>  <strong>public</strong> <strong>interface</strong> <a href="../../../../../../../gov/ca/dmv/ease/core/dl/errors/IDataCollectionErrorMessageConstants.html">IDataCollectionErrorMessageConstants</a> {
+<a name="20" href="#20">20</a>  	<em class="comment">// VR — The city cannot exceed 13 positions unless the OUT OF STATE field is</em>
+<a name="21" href="#21">21</a>  	<em class="comment">// present.DL — If the OUT OF STATE field is present, the city name may not</em>
+<a name="22" href="#22">22</a>  	<em class="comment">// exceed eleven positions.</em>
+<a name="23" href="#23">23</a>  	String CITY_LENGTH_VS_OUT_OF_STATE = <span class="string">"D008"</span>;
+<a name="24" href="#24">24</a>  	<em class="comment">// VR — If the county code is 60 (out-of-state), OUT OF STATE must be</em>
+<a name="25" href="#25">25</a>  	<em class="comment">// completed; if the county code is 01–58, OUT OF STATE must be blank.DL —</em>
+<a name="26" href="#26">26</a>  	<em class="comment">// If the county code is 01–58, the city must be in California and the STATE</em>
+<a name="27" href="#27">27</a>  	<em class="comment">// field must be blank or display "CA". If the county code is 60, STATE must</em>
+<a name="28" href="#28">28</a>  	<em class="comment">// not contain "CA".</em>
+<a name="29" href="#29">29</a>  	String COUNTY_CODE_VS_OUT_OF_STATE = <span class="string">"D009"</span>;
+<a name="30" href="#30">30</a>  	<em class="comment">// The mode must be manual or travel if a DER or APP number is present.</em>
+<a name="31" href="#31">31</a>  	<em class="comment">// If the mode is manual or travel, a DER or APP number must be present.</em>
+<a name="32" href="#32">32</a>  	<em class="comment">// If you are in the wrong mode, cancel the transaction, reset the mode, and</em>
+<a name="33" href="#33">33</a>  	<em class="comment">// rekey.</em>
+<a name="34" href="#34">34</a>  	<em class="comment">// If you are in the correct mode, key the DER or APP number.</em>
+<a name="35" href="#35">35</a>  	String DER_VS_MODE = <span class="string">"D013"</span>;
+<a name="36" href="#36">36</a>  	<em class="comment">// CITY CODE cannot be present if the CITY field is present or vice-versa.</em>
+<a name="37" href="#37">37</a>  	<em class="comment">// Either CITY or CITY CODE must be deleted or keyed.</em>
+<a name="38" href="#38">38</a>  	String CITY_VS_CODED_CITY = <span class="string">"D053"</span>;
+<a name="39" href="#39">39</a>  	<em class="comment">// The city code keyed is not in the city name file. Correct the code or key</em>
+<a name="40" href="#40">40</a>  	<em class="comment">// the entire city name.</em>
+<a name="41" href="#41">41</a>  	String CITY_CODE_NOT_ON_FILE = <span class="string">"D071"</span>;
+<a name="42" href="#42">42</a>  	<em class="comment">// A ZIP code or county code cannot be generated because the address is not</em>
+<a name="43" href="#43">43</a>  	<em class="comment">// in the table or the file is unavailable. Key the ZIP and county codes.</em>
+<a name="44" href="#44">44</a>  	<em class="comment">// NOTE: Check the address abbreviations. An incorrect abbreviation may</em>
+<a name="45" href="#45">45</a>  	<em class="comment">// cause a problem with ZIP code generation. For driver license work, key</em>
+<a name="46" href="#46">46</a>  	<em class="comment">// the ZIP code or county code or both, whichever field(s) is blank.</em>
+<a name="47" href="#47">47</a>  	String UNABLE_TO_GENERATE_ZIP_OR_COUNTY_CODE_MUST_BE_KEYED = <span class="string">"D085"</span>;
+<a name="48" href="#48">48</a>  	<em class="comment">// If the ZIP code is 90000–96699, OUT OF STATE cannot be present; if the</em>
+<a name="49" href="#49">49</a>  	<em class="comment">// ZIP code is other than 99999 or 90000–96699, OUT OF STATE must be</em>
+<a name="50" href="#50">50</a>  	<em class="comment">// present.</em>
+<a name="51" href="#51">51</a>  	String ZIP_CODE_VS_OUT_OF_STATE = <span class="string">"D095"</span>;
+<a name="52" href="#52">52</a>  	<em class="comment">// Driver education and driver training must both be waived or neither can</em>
+<a name="53" href="#53">53</a>  	<em class="comment">// be waived.</em>
+<a name="54" href="#54">54</a>  	String W_INVALID_IF_ANY_OTHER_CODE_PRESENT = <span class="string">"D501"</span>;
+<a name="55" href="#55">55</a>  	String ERASE_STAR_OR_PRESS_CORRECTIONS = <span class="string">"D503"</span>;
+<a name="56" href="#56">56</a>  	String CHANGES_MUST_FIRST_BE_MADE_VIA_A_DL_APP = <span class="string">"D505"</span>;
+<a name="57" href="#57">57</a>  	<em class="comment">// The first position may not be a space, and two or more embedded</em>
+<a name="58" href="#58">58</a>  	<em class="comment">// contiguous spaces are not allowed.</em>
+<a name="59" href="#59">59</a>  	String MAILING_ADDRESS_INVALID = <span class="string">"D506"</span>;
+<a name="60" href="#60">60</a>  	<em class="comment">// County code 59 is invalid. Refer to the City and County Code Book for the</em>
+<a name="61" href="#61">61</a>  	<em class="comment">// correct code.</em>
+<a name="62" href="#62">62</a>  	String INVALID_COUNTY_CODE = <span class="string">"D507"</span>;
+<a name="63" href="#63">63</a>  	<em class="comment">// A customer must be 18 to obtain Certificate A (School Bus) or E</em>
+<a name="64" href="#64">64</a>  	<em class="comment">// (Ambulance Driver) and 21 to obtain Certificate L or Endorsement HM</em>
+<a name="65" href="#65">65</a>  	<em class="comment">// (Hazardous Materials).</em>
+<a name="66" href="#66">66</a>  	String AGE_VS_ENDORSEMENT_CERT_REQUESTED = <span class="string">"D516"</span>;
+<a name="67" href="#67">67</a>  	<em class="comment">// The first position may not be a space or slash, and two or more embedded</em>
+<a name="68" href="#68">68</a>  	<em class="comment">// contiguous spaces or slashes are not allowed. If the mail city is "APO"</em>
+<a name="69" href="#69">69</a>  	<em class="comment">// or "FPO" followed by spaces, the mail state must be "AA," "AE," or "AP".</em>
+<a name="70" href="#70">70</a>  	<em class="comment">// Conversely, if the mail state code keyed is "AA," "AE," or "AP," the mail</em>
+<a name="71" href="#71">71</a>  	<em class="comment">// city must be "APO" or "FPO" followed by spaces.</em>
+<a name="72" href="#72">72</a>  	String MAIL_CITY_INVALID = <span class="string">"D519"</span>;
+<a name="73" href="#73">73</a>  	String TEST_PREVIOUSLY_WAIVED_OR_PASSED = <span class="string">"D522"</span>;
+<a name="74" href="#74">74</a>  	String TEST_PREVIOUSLY_FAILED_CANNOT_WAIVE = <span class="string">"D523"</span>;
+<a name="75" href="#75">75</a>  	String CORRECTION_INVALID = <span class="string">"D524"</span>;
+<a name="76" href="#76">76</a>  	String THIRD_TEST_PREVIOUSLY_POSTED_ERASE_OR_PRESS_CORRECTION = <span class="string">"D525"</span>;
+<a name="77" href="#77">77</a>  	<em class="comment">// A problem was encountered with the local city name file. Erase the CITY</em>
+<a name="78" href="#78">78</a>  	<em class="comment">// CODE field and key the CITY field.</em>
+<a name="79" href="#79">79</a>  	String UNABLE_TO_ACCESS_CITY_NAME_FILE_KEY_CITY = <span class="string">"D526"</span>;
+<a name="80" href="#80">80</a>  	<em class="comment">// The FEE REQUIRED is wrong for the transaction being processed. Change the</em>
+<a name="81" href="#81">81</a>  	<em class="comment">// fee required indicator before pressing ENTER</em>
+<a name="82" href="#82">82</a>  	String INVALID_FEE_INDICATOR = <span class="string">"D527"</span>;
+<a name="83" href="#83">83</a>  	<em class="comment">// If a residence address is present, a residence city or city code must be</em>
+<a name="84" href="#84">84</a>  	<em class="comment">// present. The CITY CODE and CITY fields cannot be present at the same</em>
+<a name="85" href="#85">85</a>  	<em class="comment">// time.</em>
+<a name="86" href="#86">86</a>  	String RESIDENCE_ADDRESS_VS_CITY = <span class="string">"D528"</span>;
+<a name="87" href="#87">87</a>  	<em class="comment">// The first position may not be a space, and two or more embedded</em>
+<a name="88" href="#88">88</a>  	<em class="comment">// contiguous spaces are not allowed.</em>
+<a name="89" href="#89">89</a>  	String RESIDENCE_ADDRESS_INVALID = <span class="string">"D529"</span>;
+<a name="90" href="#90">90</a>  	<em class="comment">// The first position may not be a space or slash, and two or more embedded</em>
+<a name="91" href="#91">91</a>  	<em class="comment">// contiguous spaces or slashes are not allowed. If the residence city is</em>
+<a name="92" href="#92">92</a>  	<em class="comment">// "APO" or "FPO" followed by spaces, the residence state must be "AA,"</em>
+<a name="93" href="#93">93</a>  	<em class="comment">// "AE," or "AP". Conversely, if the residence state code keyed is "AA,"</em>
+<a name="94" href="#94">94</a>  	<em class="comment">// "AE," or "AP," the residence city must be "APO" or "FPO" followed by</em>
+<a name="95" href="#95">95</a>  	<em class="comment">// spaces.</em>
+<a name="96" href="#96">96</a>  	String RESIDENCE_CITY_INVALID = <span class="string">"D530"</span>;
+<a name="97" href="#97">97</a>  	<em class="comment">// The residence address must be keyed if the mailing address is a PO Box,</em>
+<a name="98" href="#98">98</a>  	<em class="comment">// PO Drawer, or General Delivery.</em>
+<a name="99" href="#99">99</a>  	String RESIDENCE_ADDRESS_REQUIRED = <span class="string">"D531"</span>;
+<a name="100" href="#100">100</a> 	<em class="comment">// The first position may not be a space, and two or more embedded</em>
+<a name="101" href="#101">101</a> 	<em class="comment">// contiguous spaces are not allowed.</em>
+<a name="102" href="#102">102</a> 	String COUNTRY_INVALID = <span class="string">"D532"</span>;
+<a name="103" href="#103">103</a> 	<em class="comment">// Neither the full name nor mailing address may be printed on two lines.</em>
+<a name="104" href="#104">104</a> 	<em class="comment">// Shorten one or the other to 27 characters or less.</em>
+<a name="105" href="#105">105</a> 	String FULL_NAME_VS = <span class="string">"D534"</span>;
+<a name="106" href="#106">106</a> 	<em class="comment">// The birth date indicates the customer is older than 18. If the birth date</em>
+<a name="107" href="#107">107</a> 	<em class="comment">// keyed is incorrect, rekey birth date and key the appropriate minor code.</em>
+<a name="108" href="#108">108</a> 	<em class="comment">// If the birth date keyed is correct, erase the minor code. If the customer</em>
+<a name="109" href="#109">109</a> 	<em class="comment">// is less than 18 years old, a minor code is required</em>
+<a name="110" href="#110">110</a> 	String BIRTHDATE_VS_MINOR_CODE = <span class="string">"D536"</span>;
+<a name="111" href="#111">111</a> 	<em class="comment">// Driver education and driver training cannot be waived unless a previous</em>
+<a name="112" href="#112">112</a> 	<em class="comment">// license code is present.</em>
+<a name="113" href="#113">113</a> 	String DR_ED_AND_DR_TRNG_VS_PREV_LIC = <span class="string">"D538"</span>;
+<a name="114" href="#114">114</a> 	<em class="comment">// A minor application for a motorcycle permit or for a class 3 license must</em>
+<a name="115" href="#115">115</a> 	<em class="comment">// indicate completion of both driver education and driver training.</em>
+<a name="116" href="#116">116</a> 	String DR_ED_AND_DR_TRNG_COMPLETION_REQUIRED = <span class="string">"D539"</span>;
+<a name="117" href="#117">117</a> 	<em class="comment">// Codes for driver education and driver training are required.</em>
+<a name="118" href="#118">118</a> 	String DR_ED_DR_TRNG_ENROLLMENT_OR_COMPLETION_REQUIRED = <span class="string">"D540"</span>;
+<a name="119" href="#119">119</a> 	<em class="comment">// If more than one entry is allowed within a field, they must be keyed</em>
+<a name="120" href="#120">120</a> 	<em class="comment">// consecutively from left to right, or top to bottom (08Q).</em>
+<a name="121" href="#121">121</a> 	String FIELDS_MUST_BE_KEYED_CONSECUTIVELY = <span class="string">"D541"</span>;
+<a name="122" href="#122">122</a> 	String PREV_LIC_VS_LIC_LOC_CNTRY_OR_LIC_NUMBER = <span class="string">"D543"</span>;
+<a name="123" href="#123">123</a> 	String PREV_LIC_VS_CNTRY = <span class="string">"D544"</span>;
+<a name="124" href="#124">124</a> 	<em class="comment">// If PREV LIC is present, and is a U.S. state or territory, LIC LOC must be</em>
+<a name="125" href="#125">125</a> 	<em class="comment">// present.</em>
+<a name="126" href="#126">126</a> 	String PREV_LIC_VS_LIC_LOC = <span class="string">"D545"</span>;
+<a name="127" href="#127">127</a> 	String NAME_BIRTHDATE_GENDER_AND_OR_DL_NUMBER_CHANGE_ALSO_REQUIRED_ON_ID = <span class="string">"D549"</span>;
+<a name="128" href="#128">128</a> 	<em class="comment">// If RESIDENCE CITY was not keyed, RESIDENCE STATE cannot be present. If</em>
+<a name="129" href="#129">129</a> 	<em class="comment">// the residence city keyed is "APO" or "FPO" followed by spaces, RESIDENCE</em>
+<a name="130" href="#130">130</a> 	<em class="comment">// STATE must be "AA," "AE," or "AP".</em>
+<a name="131" href="#131">131</a> 	String RESIDENCE_CITY_VS_RESIDENCE_STATED = <span class="string">"D550"</span>;
+<a name="132" href="#132">132</a> 	String INC_APP_RSN_VS_MODE = <span class="string">"D551"</span>;
+<a name="133" href="#133">133</a> 	String PRE_TRIP_INSPECTION_OR_DRIVE_OR_MC_SKILL_VS_EXAMINER_ID = <span class="string">"D556"</span>;
+<a name="134" href="#134">134</a> 	String APP_CLASS_ENDORSEMENT_VS_LAW_TEST = <span class="string">"D558"</span>;
+<a name="135" href="#135">135</a> 	<em class="comment">// The CITY CODE and CITY fields cannot both be present, although one or the</em>
+<a name="136" href="#136">136</a> 	<em class="comment">// other is required on the data collection screen. Either the CITY or CITY</em>
+<a name="137" href="#137">137</a> 	<em class="comment">// CODE field must be deleted or keyed. If the state is not California, the</em>
+<a name="138" href="#138">138</a> 	<em class="comment">// CITY CODE field is invalid or the CITY field must not be a California</em>
+<a name="139" href="#139">139</a> 	<em class="comment">// city. Correct the data as needed.</em>
+<a name="140" href="#140">140</a> 	String CITY_CODE_VS_CITY_VS_STATE = <span class="string">"D560"</span>;
+<a name="141" href="#141">141</a> 	<em class="comment">// If the type of out-of-state license is present, PREV LIC must also be</em>
+<a name="142" href="#142">142</a> 	<em class="comment">// present.</em>
+<a name="143" href="#143">143</a> 	String PREV_LIC_VS_R_P = <span class="string">"D562"</span>;
+<a name="144" href="#144">144</a> 	<em class="comment">// If a type of out-of-state license "Y" is present, driver education and</em>
+<a name="145" href="#145">145</a> 	<em class="comment">// driver training cannot be waived.</em>
+<a name="146" href="#146">146</a> 	String DR_ED_DR_TRNG_VS_R_P = <span class="string">"D563"</span>;
+<a name="147" href="#147">147</a> 	<em class="comment">// Approval authority is required for these conditions. Have a person with</em>
+<a name="148" href="#148">148</a> 	<em class="comment">// approval authority key his/her password or correct the corresponding</em>
+<a name="149" href="#149">149</a> 	<em class="comment">// field.</em>
+<a name="150" href="#150">150</a> 	String APPROVAL_AUTHORITY_PASSWORD_REQUIRED = <span class="string">"D569"</span>;
+<a name="151" href="#151">151</a> 	String AGE_VS_RESTRICTION = <span class="string">"D570"</span>;
+<a name="152" href="#152">152</a> 	String ATTACH_CODE_10_VS_LIMITED_TERM = <span class="string">"D581"</span>;
+<a name="153" href="#153">153</a> 	<em class="comment">//The System shall validate that the Vehicle Salesperson Expiration date</em>
+<a name="154" href="#154">154</a> 	<em class="comment">//is greater than or equal to the current date</em>
+<a name="155" href="#155">155</a> 	String TRANSACTION_CODE_INVALID_FOR_EXP_DATE_OF_LICENSE = <span class="string">"D584"</span>;
+<a name="156" href="#156">156</a> 	String APPCLASS_ENDORSEMENTS_VS_RESTRICT_CODE = <span class="string">"D594"</span>;
+<a name="157" href="#157">157</a> 	<em class="comment">// The number of restrictions carried forward plus the number keyed or</em>
+<a name="158" href="#158">158</a> 	<em class="comment">// generated exceeds five. Determine how many codes must be erased to allow</em>
+<a name="159" href="#159">159</a> 	<em class="comment">// room for those to be brought forward or generated. Record the codes to be</em>
+<a name="160" href="#160">160</a> 	<em class="comment">// erased on a DL 11R to be attached to the photo document. Do not erase</em>
+<a name="161" href="#161">161</a> 	<em class="comment">// CODE 01--CORRECTIVE lenses, if it is present. Key "50" to indicate</em>
+<a name="162" href="#162">162</a> 	<em class="comment">// additional restrictions are noted on the attached form. Driver Safety</em>
+<a name="163" href="#163">163</a> 	<em class="comment">// Restriction 52 cannot be added to the driver record. Complete a DL 11 and</em>
+<a name="164" href="#164">164</a> 	<em class="comment">// forward it to headquarters.</em>
+<a name="165" href="#165">165</a> 	String NO_ROOM_FOR_ALL_RESTRICTIONS = <span class="string">"D596"</span>;
+<a name="166" href="#166">166</a> 	<em class="comment">// The number of attachments carried forward plus the number keyed exceeds</em>
+<a name="167" href="#167">167</a> 	<em class="comment">// five. Determine how many codes must be erased to allow room for the</em>
+<a name="168" href="#168">168</a> 	<em class="comment">// amount of codes yet to be brought forward. Record the codes to be erased</em>
+<a name="169" href="#169">169</a> 	<em class="comment">// on a DL 11 to be attached to the photo document. Erase enough codes to</em>
+<a name="170" href="#170">170</a> 	<em class="comment">// create room for attachments to be brought forward.</em>
+<a name="171" href="#171">171</a> 	String CANNOT_CHANGE_TEST_RESULT = <span class="string">"D598"</span>;
+<a name="172" href="#172">172</a> 	String NO_ROOM_FOR_ALL_ATTACHMENTS = <span class="string">"D599"</span>;
+<a name="173" href="#173">173</a> 	<em class="comment">// In manual or travel mode, the application number must include an alpha</em>
+<a name="174" href="#174">174</a> 	<em class="comment">// prefix. It is assumed to be a DER number which must be in the range</em>
+<a name="175" href="#175">175</a> 	<em class="comment">// 90000000–99999998. If the number is 1–89999999, a prefix must be present.</em>
+<a name="176" href="#176">176</a> 	<em class="comment">// Recheck the application or DER # and rekey it correctly.</em>
+<a name="177" href="#177">177</a> 	String PREFIX_VS_APP_NO = <span class="string">"D601"</span>;
+<a name="178" href="#178">178</a> 	<em class="comment">// The gender keyed on a retake application does not match the gender of</em>
+<a name="179" href="#179">179</a> 	<em class="comment">// record and cannot be changed on this TTC. The gender of record will</em>
+<a name="180" href="#180">180</a> 	<em class="comment">// appear on the photo document.</em>
+<a name="181" href="#181">181</a> 	String GENDER_OF_RECORD_VS_GENDER_OF_APP = <span class="string">"D603"</span>;
+<a name="182" href="#182">182</a> 	String CERT_OF_TRNG_EXP_COMP_NOT_ALLOWED_FOR_MINOR = <span class="string">"D605"</span>;
+<a name="183" href="#183">183</a> 	<em class="comment">// The System shall validate that a Password has to be entered to bypass the</em>
+<a name="184" href="#184">184</a> 	<em class="comment">// application if the License Expiration date is greater than 14 days from the Process Date</em>
+<a name="185" href="#185">185</a> 	String TTC_INVALID_FOR_EXP_DATE_UNLESS_PASSWORD_KEYED = <span class="string">"D608"</span>;
+<a name="186" href="#186">186</a> 	<em class="comment">// EMPLOYER'S LIC #/DATE APP SIGNED REQUIRED FOR ORIG/REINST</em>
+<a name="187" href="#187">187</a> 	<em class="comment">// The System shall validate that the Employer’s License number and/or date of the </em>
+<a name="188" href="#188">188</a> 	<em class="comment">// application signed are/is required for an Original or Reinstate Application (D612).</em>
+<a name="189" href="#189">189</a> 	String EMPLOYERS_LIC_DATE_APP_SIGNED_REQUIRED_FOR_ORIG_REINST = <span class="string">"D612"</span>;
+<a name="190" href="#190">190</a> 	<em class="comment">// Check the license class requirements for endorsement, special</em>
+<a name="191" href="#191">191</a> 	<em class="comment">// certificate, or application category.</em>
+<a name="192" href="#192">192</a> 	String APP_CLASS_VS_ENDORSEMENT_CERT_VS_NON_COML_CATEGORY_REQUESTED = <span class="string">"D617"</span>;
+<a name="193" href="#193">193</a> 	String VISION_VS_CORRECTIVE_LENS_RESTRICTION = <span class="string">"D621"</span>;
+<a name="194" href="#194">194</a> 	<em class="comment">// The previous class(es) is different from the keyed application class(es)</em>
+<a name="195" href="#195">195</a> 	<em class="comment">// displayed at the end of the message. If the application class is correct,</em>
+<a name="196" href="#196">196</a> 	<em class="comment">// continue. If not, restart and key the correct class on the INQUIRY</em>
+<a name="197" href="#197">197</a> 	<em class="comment">// screen.</em>
+<a name="198" href="#198">198</a> 	String LICENSE_CLASS_CHANGE_TO_X_X_X = <span class="string">"D622"</span>;
+<a name="199" href="#199">199</a> 	<em class="comment">// 	Date employed must be the date the employer signed the application</em>
+<a name="200" href="#200">200</a> 	<em class="comment">//and must be within the previous thirty days. Correct the date to reflect</em>
+<a name="201" href="#201">201</a> 	<em class="comment">//the application date or return it to the customer for more</em>
+<a name="202" href="#202">202</a> 	<em class="comment">//current signature.</em>
+<a name="203" href="#203">203</a> 	String DATE_MUST_BE_WITHIN_THIRTY_DAYS_OF_CURRENT_DATE = <span class="string">"D623"</span>;
+<a name="204" href="#204">204</a> 	<em class="comment">// A valid BD/LP Verification code must be keyed: For an original</em>
+<a name="205" href="#205">205</a> 	<em class="comment">// application. When the birth date is changed. On a pending application</em>
+<a name="206" href="#206">206</a> 	<em class="comment">// when "N" (not verified) was previously keyed.</em>
+<a name="207" href="#207">207</a> 	String BD_LP_VERIF_REQUIRED = <span class="string">"D624"</span>;
+<a name="208" href="#208">208</a> 	<em class="comment">// No fee reason code "K" is required if the TTC is DLC (change/correction)</em>
+<a name="209" href="#209">209</a> 	<em class="comment">// and the application class and/or endorsements are different from the</em>
+<a name="210" href="#210">210</a> 	<em class="comment">// previous class and/or endorsements. It cannot be used unless this is a</em>
+<a name="211" href="#211">211</a> 	<em class="comment">// class/endorsement correction. Also, the class/endorsement cannot be</em>
+<a name="212" href="#212">212</a> 	<em class="comment">// changed on a pending application if "K" was previously used as a no-fee</em>
+<a name="213" href="#213">213</a> 	<em class="comment">// reason code.Recheck and rekey the reason code, or restart to key the</em>
+<a name="214" href="#214">214</a> 	<em class="comment">// correct class and endorsements, or press CANCEL to choose another TTC.</em>
+<a name="215" href="#215">215</a> 	String NO_FEE_REASON_CODE_K_VS_CLASS_ENDRS_CORRECTION = <span class="string">"D625"</span>;
+<a name="216" href="#216">216</a> 	<em class="comment">// The ZIP or county code cannot be generated because the address is not in</em>
+<a name="217" href="#217">217</a> 	<em class="comment">// the table or the file is unavailable. Both the ZIP and county code should</em>
+<a name="218" href="#218">218</a> 	<em class="comment">// be verified for accuracy before pressing ENTER again.</em>
+<a name="219" href="#219">219</a> 	String UNABLE_TO_GENERATE_ZIP_OR_COUNTY_CODE_PLEASE_VERIFY = <span class="string">"D630"</span>;
+<a name="220" href="#220">220</a> 	String VISION_VS_TTC = <span class="string">"D631"</span>;
+<a name="221" href="#221">221</a> 	String ATTACH_CODE_23_52_OR_RESTR_63_CANNOT_BE_KEYED = <span class="string">"D660"</span>;
+<a name="222" href="#222">222</a> 	<em class="comment">//	The expiration year of the current vehicle</em>
+<a name="223" href="#223">223</a> 	<em class="comment">//	salesperson license must be within four years of</em>
+<a name="224" href="#224">224</a> 	<em class="comment">//	the process date.</em>
+<a name="225" href="#225">225</a> 	String CURRENT_EXP_YEAR_KEYED_MUST_BE_WITHIN_4_YEARS = <span class="string">"D661"</span>;
+<a name="226" href="#226">226</a> 	<em class="comment">// The birth date keyed on a retake application does not match the birth</em>
+<a name="227" href="#227">227</a> 	<em class="comment">// date of record and cannot be changed on a retake transaction. The birth</em>
+<a name="228" href="#228">228</a> 	<em class="comment">// date of record will be printed on the photo document. If the birth date</em>
+<a name="229" href="#229">229</a> 	<em class="comment">// should be changed, process the application as a correction (DLC or IDC).</em>
+<a name="230" href="#230">230</a> 	<em class="comment">// A name and/or birth date change is not allowed for duplicate driver</em>
+<a name="231" href="#231">231</a> 	<em class="comment">// license transactions.</em>
+<a name="232" href="#232">232</a> 	String NAME_AND_OR_BIRTHDATE_CHANGE_NOT_ALLOWED_FOR_THIS_TTC = <span class="string">"D663"</span>;
+<a name="233" href="#233">233</a> 	String INCOMPLETE_APP_REASON_INVALID = <span class="string">"D664"</span>;
+<a name="234" href="#234">234</a> 	<em class="comment">// PO BX, PO DRW, or GEN DEL cannot be keyed as a residence address.</em>
+<a name="235" href="#235">235</a> 	String POST_OFFICE_ADDRESSES_NOT_ALLOWED_AS_RESIDENCE_ADDRESS = <span class="string">"D665"</span>;
+<a name="236" href="#236">236</a> 	<em class="comment">// The name fields on the HEADQUARTERS INQUIRY or COLLECT DATA screens must</em>
+<a name="237" href="#237">237</a> 	<em class="comment">// contain more than one letter.</em>
+<a name="238" href="#238">238</a> 	String NAME_MUST_HAVE_MORE_THAN_ONE_LETTER = <span class="string">"D670"</span>;
+<a name="239" href="#239">239</a> 	<em class="comment">// If a prefix was keyed, the application number must be in the range</em>
+<a name="240" href="#240">240</a> 	<em class="comment">// 1–8999999. If a prefix was not keyed, the DER number must be in the range</em>
+<a name="241" href="#241">241</a> 	<em class="comment">// 90000000–99999999.</em>
+<a name="242" href="#242">242</a> 	String DER_OR_APP_NUMBER_RANGE = <span class="string">"D672"</span>;
+<a name="243" href="#243">243</a> 	<em class="comment">// If the driver record does not have a military extension present, code "E"</em>
+<a name="244" href="#244">244</a> 	<em class="comment">// cannot be keyed. This message also applies when there was a CNA condition</em>
+<a name="245" href="#245">245</a> 	<em class="comment">// in the initial process, the CNA condition is no longer present in the</em>
+<a name="246" href="#246">246</a> 	<em class="comment">// continue process, and either no record is retrieved or there is no</em>
+<a name="247" href="#247">247</a> 	<em class="comment">// military extension on the record.</em>
+<a name="248" href="#248">248</a> 	String IF_MIL_EXT_NOT_ON_RECORD_IT_CANNOT_BE_ENDED = <span class="string">"D673"</span>;
+<a name="249" href="#249">249</a> 	<em class="comment">// If II, III, IV, JR or SR is a suffix, key a comma between the last name</em>
+<a name="250" href="#250">250</a> 	<em class="comment">// and the suffix. If II, III, IV, JR or SR is the actual last name, do not</em>
+<a name="251" href="#251">251</a> 	<em class="comment">// key a comma. In either case, press ENTER again (or PF1 on miscellaneous</em>
+<a name="252" href="#252">252</a> 	<em class="comment">// fee collection transactions).</em>
+<a name="253" href="#253">253</a> 	String IF_XXX_IS_A_SUFFIX_KEY_COMMA = <span class="string">"D676"</span>;
+<a name="254" href="#254">254</a> 	<em class="comment">// If the last name contains a single letter only, leave as keyed. If not,</em>
+<a name="255" href="#255">255</a> 	<em class="comment">// rekey correctly.</em>
+<a name="256" href="#256">256</a> 	String VERIFY_LAST_NAME = <span class="string">"D677"</span>;
+<a name="257" href="#257">257</a> 	<em class="comment">// The name must be shortened to two 27-position lines to be printed on the</em>
+<a name="258" href="#258">258</a> 	<em class="comment">// photo document. This may be done by changing the middle name to an</em>
+<a name="259" href="#259">259</a> 	<em class="comment">// initial, dropping the suffix, and/or changing the first name to an</em>
+<a name="260" href="#260">260</a> 	<em class="comment">// initial.If one word of the name is longer than 27 positions or if the</em>
+<a name="261" href="#261">261</a> 	<em class="comment">// middle name is to be divided to print on both lines rather than be</em>
+<a name="262" href="#262">262</a> 	<em class="comment">// shortened to an initial, key a slash (/) where that word should be</em>
+<a name="263" href="#263">263</a> 	<em class="comment">// divided for printing.</em>
+<a name="264" href="#264">264</a> 	String NAME_MUST_BE_SHORTENED_OR_DIVIDED_FOR_PRINTING = <span class="string">"D680"</span>;
+<a name="265" href="#265">265</a> 	<em class="comment">// The same address was keyed in both the mailing and residence address</em>
+<a name="266" href="#266">266</a> 	<em class="comment">// fields. If the addresses are the same, leave the residence address fields</em>
+<a name="267" href="#267">267</a> 	<em class="comment">// blank. If the residence address is supposed to be different, correct the</em>
+<a name="268" href="#268">268</a> 	<em class="comment">// keyed mailing or residence address.</em>
+<a name="269" href="#269">269</a> 	String MAILING_AND_RESIDENCE_ADDRESSES_CANNOT_BE_THE_SAME = <span class="string">"D693"</span>;
+<a name="270" href="#270">270</a> 	<em class="comment">// The mail and/or residence city, ZIP code, or county code cannot be</em>
+<a name="271" href="#271">271</a> 	<em class="comment">// verified because of a CNA condition. Be sure that the city is spelled</em>
+<a name="272" href="#272">272</a> 	<em class="comment">// correctly or is shortened to conform to the City and County Code Book and</em>
+<a name="273" href="#273">273</a> 	<em class="comment">// that the ZIP and county codes are present and correct. Press ENTER to</em>
+<a name="274" href="#274">274</a> 	<em class="comment">// continue.</em>
+<a name="275" href="#275">275</a> 	String UNABLE_TO_VERIFY_MAIL_AND_OR_RESIDENCE_CITY = <span class="string">"D696"</span>;
+<a name="276" href="#276">276</a> 	<em class="comment">// Both the mailing and residence cities are not valid according to the City</em>
+<a name="277" href="#277">277</a> 	<em class="comment">// and County Code Book. Rekey as necessary.</em>
+<a name="278" href="#278">278</a> 	String MAIL_AND_RES_CITIES_INVALID_VERIFY_REKEY_OR_IF_CORRECT_PRESS_ENTER = <span class="string">"D698"</span>;
+<a name="279" href="#279">279</a> 	<em class="comment">// The pending application class, endorsement, and/or category has been</em>
+<a name="280" href="#280">280</a> 	<em class="comment">// changed from the class, endorsement, and/or category displayed at the end</em>
+<a name="281" href="#281">281</a> 	<em class="comment">// of the message. If the endorsement and/or category are not displayed in</em>
+<a name="282" href="#282">282</a> 	<em class="comment">// the error message, the endorsement and/or category was not keyed in the</em>
+<a name="283" href="#283">283</a> 	<em class="comment">// initial transaction. If the change is correct, press ENTER to continue.</em>
+<a name="284" href="#284">284</a> 	<em class="comment">// If the class, endorsement and/or category should be changed back to what</em>
+<a name="285" href="#285">285</a> 	<em class="comment">// it was on the pending application, erase the class, endorsement, and/or</em>
+<a name="286" href="#286">286</a> 	<em class="comment">// category before pressing ENTER.</em>
+<a name="287" href="#287">287</a> 	String PENDING_CLASS_ENDORSEMENT_CATEGORY_CHANGED_FROM_XXX_XX_XX_XX_XX_X_X = <span class="string">"D708"</span>;
+<a name="288" href="#288">288</a> 	String ATTACH_CODE_VS_DRIVE_MC_SKILL_RESULT = <span class="string">"D709"</span>;
+<a name="289" href="#289">289</a> 	String ALLOWED_FOR_CLASS_M4_ONLY = <span class="string">"D710"</span>;
+<a name="290" href="#290">290</a> 	<em class="comment">// A gender change was keyed. Key: "Y" in the NEW # REQ field if a new</em>
+<a name="291" href="#291">291</a> 	<em class="comment">// permanent number should be assigned on this transaction.  "N" if the</em>
+<a name="292" href="#292">292</a> 	<em class="comment">// customer insists on retaining the previous permanent number or if this is</em>
+<a name="293" href="#293">293</a> 	<em class="comment">// a gender correction.</em>
+<a name="294" href="#294">294</a> 	String SHOULD_NEW_DL_ID_NUMBER_BE_ASSIGNED = <span class="string">"D712"</span>;
+<a name="295" href="#295">295</a> 	<em class="comment">//For TTC = DLP When processing a Pending application (DLP) and a</em>
+<a name="296" href="#296">296</a> 	<em class="comment">// name, birth date, gender, or DL # was changed in the initial process on a</em>
+<a name="297" href="#297">297</a> 	<em class="comment">// DL application then the System will remind the user to make the same</em>
+<a name="298" href="#298">298</a> 	<em class="comment">// change to the ID</em>
+<a name="299" href="#299">299</a> 	String CHANGES_MADE_IN_INITIAL_PROCESS_REQUIRE_CHANGES_ON_ID = <span class="string">"D717"</span>;
+<a name="300" href="#300">300</a> 	<em class="comment">//The System shall validate that when the applicant has an unexpired ID on file </em>
+<a name="301" href="#301">301</a> 	<em class="comment">//no changes to Name, Birth Date and Sex fields are allowed unless the changes </em>
+<a name="302" href="#302">302</a> 	<em class="comment">//have first been processed through the ID Application process (D718).</em>
+<a name="303" href="#303">303</a> 	String CHANGES_MUST_FIRST_BE_MADE_VIA_AN_ID_APP = <span class="string">"D718"</span>;
+<a name="304" href="#304">304</a> 	<em class="comment">// The mailing address city is not valid according to the City and County</em>
+<a name="305" href="#305">305</a> 	<em class="comment">// Code Book. Rekey as necessary or press ENTER again if it is correct.</em>
+<a name="306" href="#306">306</a> 	String MAIL_CITY_INVALID_VERIFY_REKEY_OR_IF_CORRECT_PRESS_ENTER = <span class="string">"D720"</span>;
+<a name="307" href="#307">307</a> 	<em class="comment">// The residence address city is not valid according to the City and County</em>
+<a name="308" href="#308">308</a> 	<em class="comment">// Code Book. Rekey as necessary or press ENTER again if it is correct.</em>
+<a name="309" href="#309">309</a> 	String RES_CITY_INVALID_VERIFY_REKEY_OR_IF_CORRECT_PRESS_ENTER = <span class="string">"D721"</span>;
+<a name="310" href="#310">310</a> 	<em class="comment">// A valid medical examination report (not yet expired) is required for any</em>
+<a name="311" href="#311">311</a> 	<em class="comment">// commercial license. Key the medical expiration date from the medical</em>
+<a name="312" href="#312">312</a> 	<em class="comment">// report the customer submits. For TTC DLA, key this date on either the DL</em>
+<a name="313" href="#313">313</a> 	<em class="comment">// INQUIRY RESPONSE or the TEST RESULTS screen. For all other TTCs, key the</em>
+<a name="314" href="#314">314</a> 	<em class="comment">// date on the DL INQUIRY RESPONSE screen.</em>
+<a name="315" href="#315">315</a> 	<em class="comment">// If M/C TRNG code "W" was keyed, the PREV LIC field must indicate another</em>
+<a name="316" href="#316">316</a> 	<em class="comment">// state. Correct either entry according to whether or not the customer had</em>
+<a name="317" href="#317">317</a> 	<em class="comment">// a Class M equivalent on an out-of-state license.</em>
+<a name="318" href="#318">318</a> 	String M_C_TRNG_W_REQUIRES_PREV_LIC = <span class="string">"D729"</span>;
+<a name="319" href="#319">319</a> 	<em class="comment">// An "X" can only be keyed under CNA conditions when an "N" was keyed in</em>
+<a name="320" href="#320">320</a> 	<em class="comment">// the ORIGINAL? field on the HEADQUARTERS INQUIRY screen. Th "X" indicates</em>
+<a name="321" href="#321">321</a> 	<em class="comment">// the customer had a previous California Class M/4 license. Otherwise, the</em>
+<a name="322" href="#322">322</a> 	<em class="comment">// record would have been checked.</em>
+<a name="323" href="#323">323</a> 	String M_C_TRNG_X_DURING_CNA_FOR_NON_ORIGINALS_ONLY = <span class="string">"D730"</span>;
+<a name="324" href="#324">324</a> 	String MEDICAL_EXP_DATE_REQUIRED = <span class="string">"D754"</span>;
+<a name="325" href="#325">325</a> 	<em class="comment">//Removal of a restriction for no air brakes or automatic transmission from a commercial license requires a</em>
+<a name="326" href="#326">326</a> 	<em class="comment">//fee-paid renewal transaction. Process as a TTC DLA or do not delete the restriction(s).</em>
+<a name="327" href="#327">327</a> 	String REM_RESTR_REQUIRES_FEE_PAID_DLA = <span class="string">"D755"</span>;
+<a name="328" href="#328">328</a> 	<em class="comment">//Removal of restrictions for air brakes (48) or automatic transmission (64) can occur only if</em>
+<a name="329" href="#329">329</a> 	<em class="comment">//the previous license was commercial and restrictions 48 and/or 64 were present on the record.</em>
+<a name="330" href="#330">330</a> 	<em class="comment">//The REM RESTR field should be keyed on a DLA transaction only when either or both of these restrictions</em>
+<a name="331" href="#331">331</a> 	<em class="comment">//are to be removed. A fee is required.</em>
+<a name="332" href="#332">332</a> 	String PREV_LIC_MUST_BE_COMML_AIR_BRKS_AND_OR_AUTOM_TRANS_RESTR = <span class="string">"D761"</span>;
+<a name="333" href="#333">333</a> 	<em class="comment">// The expiration date of the Medical Examination Report cannot be more than</em>
+<a name="334" href="#334">334</a> 	<em class="comment">// two years in the future. Check the date and rekey. If necessary, advise</em>
+<a name="335" href="#335">335</a> 	<em class="comment">// the customer that he/she will need a more current medical examination.</em>
+<a name="336" href="#336">336</a> 	String MEDICAL_EXP_MUST_BE_WITHIN_2_YEARS = <span class="string">"D762"</span>;
+<a name="337" href="#337">337</a> 	String LT_MUST_BE_PROCESSED_AS_DLA = <span class="string">"D766"</span>;
+<a name="338" href="#338">338</a> 	<em class="comment">// Restriction 71, 72, 73, or 80 through 87 was keyed on the TEST RESULT screen, and one of</em>
+<a name="339" href="#339">339</a> 	<em class="comment">// these restrictions is already on the driving record. Erase restrictions 71, 72, 73, or 80</em>
+<a name="340" href="#340">340</a> 	<em class="comment">// through 87 and continue.</em>
+<a name="341" href="#341">341</a> 	String CANNOT_ADD_MORE_THAN_ONE_RESTRICTION = <span class="string">"D769"</span>;
+<a name="342" href="#342">342</a> 	<em class="comment">// A driving test and fee is required for the following; Removing a</em>
+<a name="343" href="#343">343</a> 	<em class="comment">// commercial air brake or automatic transmission restriction.</em>
+<a name="344" href="#344">344</a> 	<em class="comment">// Administering a subsequent non-commercial Class C drive and/or a M/C</em>
+<a name="345" href="#345">345</a> 	<em class="comment">// skill test.</em>
+<a name="346" href="#346">346</a> 	String WAIVE_OR_EXPERIENCE_MUST_BE_ERASED_FROM_PRE_TRIP_FIELDS = <span class="string">"D784"</span>;
+<a name="347" href="#347">347</a> 	String COMML_NON_COMML_DRIVE_TEST_FEE_REQUIRED = <span class="string">"D785"</span>;
+<a name="348" href="#348">348</a> 	String ATTACHMENT_CODES_51_AND_54_CANNOT_BOTH_BE_PRESENT = <span class="string">"D789"</span>;
+<a name="349" href="#349">349</a> 	String ATTACH_CODE_54_NOT_VALID_FOR_COMM_APP = <span class="string">"D791"</span>;
+<a name="350" href="#350">350</a> 	<em class="comment">// A social security number must be collected before a photo can be taken.</em>
+<a name="351" href="#351">351</a> 	String SOCIAL_SECURITY_NUMBER_REQUIRED = <span class="string">"D803"</span>;
+<a name="352" href="#352">352</a> 	<em class="comment">// After 1/1/89, original and renewal applications must use the alpha</em>
+<a name="353" href="#353">353</a> 	<em class="comment">// license classification system. On or after 4/1/92, all transactions must</em>
+<a name="354" href="#354">354</a> 	<em class="comment">// use the alpha classes.</em>
+<a name="355" href="#355">355</a> 	String MUST_USE_ALPHA_LICENSE_CLASSES = <span class="string">"D805"</span>;
+<a name="356" href="#356">356</a> 	<em class="comment">//A Certificate of Training (DL 170) may be used for a Commercial or</em>
+<a name="357" href="#357">357</a> 	<em class="comment">// Firefighter application only.</em>
+<a name="358" href="#358">358</a> 	String CERT_OF_TRAINING_ONLY_ALLOWED_FOR_COMMERCIAL_OR_FIREFIGHTER = <span class="string">"D811"</span>;
+<a name="359" href="#359">359</a> 	<em class="comment">// The barcode number must be keyed with the barcode prefix unless the keyed</em>
+<a name="360" href="#360">360</a> 	<em class="comment">// prefix is "Z" (indicates the document will not be microfilmed). If the</em>
+<a name="361" href="#361">361</a> 	<em class="comment">// document will not be microfilmed, key prefix "Z" and erase the barcode</em>
+<a name="362" href="#362">362</a> 	<em class="comment">// number. If the document requires microfilming, key the barcode prefix and</em>
+<a name="363" href="#363">363</a> 	<em class="comment">// the barcode number from the document. If the TTC is DLP or IDP, the</em>
+<a name="364" href="#364">364</a> 	<em class="comment">// barcode prefix and number is optional. However, if the barcode prefix is</em>
+<a name="365" href="#365">365</a> 	<em class="comment">// not keyed, the barcode number cannot be keyed.</em>
+<a name="366" href="#366">366</a> 	String BARCODE_PREFIX_VS_BARCODE_NUMBER = <span class="string">"D819"</span>;
+<a name="367" href="#367">367</a> 	<em class="comment">// For non-CDL transactions that require a PDPS inquiry, the name, gender,</em>
+<a name="368" href="#368">368</a> 	<em class="comment">// and birth date cannot be changed in the continue process. For CDL</em>
+<a name="369" href="#369">369</a> 	<em class="comment">// transactions, once the second inquiry to CDLIS/PDPS has been made or the</em>
+<a name="370" href="#370">370</a> 	<em class="comment">// continue process has started, the name, gender, birth date, social</em>
+<a name="371" href="#371">371</a> 	<em class="comment">// security number, previous state, and license number cannot be changed. If</em>
+<a name="372" href="#372">372</a> 	<em class="comment">// the information is incorrect:  In the initial process, restart. In the</em>
+<a name="373" href="#373">373</a> 	<em class="comment">// continue process, update the application pending. Key TTC DLP and make</em>
+<a name="374" href="#374">374</a> 	<em class="comment">// the necessary changes in the initial process. If the information as</em>
+<a name="375" href="#375">375</a> 	<em class="comment">// previously keyed was correct, press ENTER again.</em>
+<a name="376" href="#376">376</a> 	String INFO_CANNOT_BE_CHANGED_AT_THIS_POINT_IN_APP_PROCESS = <span class="string">"D820"</span>;
+<a name="377" href="#377">377</a> 	<em class="comment">// For a TTC DRT transaction, the social security number keyed does not</em>
+<a name="378" href="#378">378</a> 	<em class="comment">// match the social security number retrieved from the record. The record</em>
+<a name="379" href="#379">379</a> 	<em class="comment">// SSN on record will be used.</em>
+<a name="380" href="#380">380</a> 	String SSN_ON_RECORD_VS_SSN_KEYED = <span class="string">"D821"</span>;
+<a name="381" href="#381">381</a> 	<em class="comment">// The barcode number keyed for the DL44#, DE#, or DT# field failed program</em>
+<a name="382" href="#382">382</a> 	<em class="comment">// validation. Rekey the correct barcode number from the document. If the</em>
+<a name="383" href="#383">383</a> 	<em class="comment">// barcode number was keyed correctly for the: DL44# field, key "Z" for the</em>
+<a name="384" href="#384">384</a> 	<em class="comment">// barcode prefix and erase the barcode number. DE# or DT# field, key "Z"</em>
+<a name="385" href="#385">385</a> 	<em class="comment">// in the appropriate DE# or DT# field, spacing out the rest of the field.</em>
+<a name="386" href="#386">386</a> 	<em class="comment">// Manually key the DR ED and/or DR TRNG codes. This means the document was</em>
+<a name="387" href="#387">387</a> 	<em class="comment">// barcoded incorrectly.</em>
+<a name="388" href="#388">388</a> 	String BARCODE_No_FAILED_VALIDATION_CHECK = <span class="string">"D822"</span>;
+<a name="389" href="#389">389</a> 	<em class="comment">// A previously keyed "R" (referral of birth verification) cannot be erased</em>
+<a name="390" href="#390">390</a> 	<em class="comment">// or changed to "N" (not verified). The "R" must be retained until</em>
+<a name="391" href="#391">391</a> 	<em class="comment">// verified. "Y" can be keyed with a valid password.</em>
+<a name="392" href="#392">392</a> 	String PREVIOUS_BD_VERIF_R_CANNOT_BE_ERASED_OR_CHANGED_TO_N = <span class="string">"D832"</span>;
+<a name="393" href="#393">393</a> 	<em class="comment">// Changes in descriptive data are not allowed for TTC DLD on the CDL</em>
+<a name="394" href="#394">394</a> 	<em class="comment">// inquiry screen. Key the changes on the data collect screen. Descriptive</em>
+<a name="395" href="#395">395</a> 	<em class="comment">// changes are also not allowed for TTC DLD on the data collect screen in</em>
+<a name="396" href="#396">396</a> 	<em class="comment">// telephone units, because a new photo must be taken. If descriptive data</em>
+<a name="397" href="#397">397</a> 	<em class="comment">// must be changed, cancel this transaction and ask the customer to go to a</em>
+<a name="398" href="#398">398</a> 	<em class="comment">// field office. Otherwise, press ENTER to continue.</em>
+<a name="399" href="#399">399</a> 	String DESCRIPTIVE_DATA_CHANGE_NOT_ALLOWED_FOR_THIS_PROCESS = <span class="string">"D845"</span>;
+<a name="400" href="#400">400</a> 	String PHOTO_REQUIRED = <span class="string">"D846"</span>;
+<a name="401" href="#401">401</a> 	<em class="comment">// A TTC DLD was started with a request that a photo NOT be taken (the</em>
+<a name="402" href="#402">402</a> 	<em class="comment">// previous photo on file would be used). In processing this pending</em>
+<a name="403" href="#403">403</a> 	<em class="comment">// transaction, a new photo is not allowed. If a new photo is requested,</em>
+<a name="404" href="#404">404</a> 	<em class="comment">// void this application and restart a new TTC DLD transaction.</em>
+<a name="405" href="#405">405</a> 	String VOID_TRANSACTION_AND_REKEY_FOR_PHOTO_TO_BE_TAKEN = <span class="string">"D848"</span>;
+<a name="406" href="#406">406</a> 	<em class="comment">// A new photo must be taken for this application. Key "E" (exception) for a</em>
+<a name="407" href="#407">407</a> 	<em class="comment">// temporary exemption. Otherwise, press ENTER to continue.</em>
+<a name="408" href="#408">408</a> 	String A_NEW_PHOTO_IS_REQUIRED_FOR_THIS_APP = <span class="string">"D849"</span>;
+<a name="409" href="#409">409</a> 	<em class="comment">// If the mail city keyed is "APO" or "FPO" followed by spaces, the mail</em>
+<a name="410" href="#410">410</a> 	<em class="comment">// state must be "AA", "AE", or "AP".</em>
+<a name="411" href="#411">411</a> 	String MAIL_CITY_VS_MAIL_STATE = <span class="string">"D853"</span>;
+<a name="412" href="#412">412</a> 	<em class="comment">// The combination of codes keyed for driver education and driver training</em>
+<a name="413" href="#413">413</a> 	<em class="comment">// is invalid. If driver education is "E," driver training must be "E". It</em>
+<a name="414" href="#414">414</a> 	<em class="comment">// cannot be "C" (completed) or "N" (not enrolled).</em>
+<a name="415" href="#415">415</a> 	String DR_ED_VS_DR_TRNG = <span class="string">"D854"</span>;
+<a name="416" href="#416">416</a> 	String SSN_CANNOT_BE_DELETED = <span class="string">"D855"</span>;
+<a name="417" href="#417">417</a> 	<em class="comment">// If the INS document prefix is keyed, the INS document number must also be</em>
+<a name="418" href="#418">418</a> 	<em class="comment">// keyed, and vice versa. Either key both fields or delete both fields.</em>
+<a name="419" href="#419">419</a> 	String INS_DOC_PREFIX_VS_INS_DOC_NO = <span class="string">"D856"</span>;
+<a name="420" href="#420">420</a> 	<em class="comment">// INS information cannot be keyed on TTC DLD and TTC DRT transactions.</em>
+<a name="421" href="#421">421</a> 	<em class="comment">// Keyed information has been cleared. Press ENTER to continue.</em>
+<a name="422" href="#422">422</a> 	String INS_INFO_CANNOT_BE_KEYED_ON_DLD_AND_DRT_TRANSACTIONS = <span class="string">"D858"</span>;
+<a name="423" href="#423">423</a> 	<em class="comment">// If INS prefix "A" is keyed, the document number keyed must not be less</em>
+<a name="424" href="#424">424</a> 	<em class="comment">// than 1,000,000 or greater than 999,999,999. If INS prefix "I" is keyed,</em>
+<a name="425" href="#425">425</a> 	<em class="comment">// the document number keyed must be 11 positions.</em>
+<a name="426" href="#426">426</a> 	String INS_DOC_PREFIX_VS_INS_DOC_NO_RANGE = <span class="string">"D859"</span>;
+<a name="427" href="#427">427</a> 	<em class="comment">// The INS document expires in less than 30 days. Processing cannot</em>
+<a name="428" href="#428">428</a> 	<em class="comment">// continue.</em>
+<a name="429" href="#429">429</a> 	String INS_DOC_EXP_LESS_THAN_30_DAYS = <span class="string">"D860"</span>;
+<a name="430" href="#430">430</a> 	<em class="comment">// The INS document expires in less than 60 days. This is a warning. Press</em>
+<a name="431" href="#431">431</a> 	<em class="comment">// ENTER to continue.</em>
+<a name="432" href="#432">432</a> 	String INS_DOC_EXP_LESS_THAN_60_DAYS = <span class="string">"D861"</span>;
+<a name="433" href="#433">433</a> 	<em class="comment">// The INS document has expired. Processing cannot continue.</em>
+<a name="434" href="#434">434</a> 	String INS_DOC_EXP_DATE_VS_CURRENT_DATE = <span class="string">"D862"</span>;
+<a name="435" href="#435">435</a> 	<em class="comment">// If the INS expiration date is keyed, the INS document prefix and number</em>
+<a name="436" href="#436">436</a> 	<em class="comment">// must also be keyed. Either key the INS document prefix and number, or</em>
+<a name="437" href="#437">437</a> 	<em class="comment">// delete the INS expiration date.</em>
+<a name="438" href="#438">438</a> 	String INS_DOC_EXP_DATE_VS_INS_DOC_NO = <span class="string">"D863"</span>;
+<a name="439" href="#439">439</a> 	<em class="comment">// If the BD/LP code is "L," "M," or "V," the INS document prefix and number</em>
+<a name="440" href="#440">440</a> 	<em class="comment">// must be keyed. If the BD/LP code is "M" or "V," the INS document</em>
+<a name="441" href="#441">441</a> 	<em class="comment">// expiration date must also be keyed.</em>
+<a name="442" href="#442">442</a> 	String BD_LP_CODE_VS_INS_DOC_NO_VS_INS_DOC_EXP_DATE = <span class="string">"D864"</span>;
+<a name="443" href="#443">443</a> 	<em class="comment">// The BD/LP code keyed is not allowed for Legal Presence/Limited Term</em>
+<a name="444" href="#444">444</a> 	<em class="comment">// renewal transactions.</em>
+<a name="445" href="#445">445</a> 	String INVALID_BD_LP_CODE_ON_RENEWAL = <span class="string">"D866"</span>;
+<a name="446" href="#446">446</a> 	String CANNOT_BE_KEYED = <span class="string">"D868"</span>;
+<a name="447" href="#447">447</a> 	String SSN_INVALID = <span class="string">"D877"</span>;
+<a name="448" href="#448">448</a> 	<em class="comment">// The previous SSN keyed was not validated by the Social Security</em>
+<a name="449" href="#449">449</a> 	<em class="comment">// Administration. To continue processing, a new SSN must be keyed.</em>
+<a name="450" href="#450">450</a> 	String A_NEW_SSN_IS_REQUIRED = <span class="string">"D878"</span>;
+<a name="451" href="#451">451</a> 	<em class="comment">// For TTC DLP and CDA transactions, changes to the DR ED and/or DR TRNG</em>
+<a name="452" href="#452">452</a> 	<em class="comment">// fields are not allowed. If new codes are required, scan or key the</em>
+<a name="453" href="#453">453</a> 	<em class="comment">// correct DE# or DT# from the Driver Education or Driver Training</em>
+<a name="454" href="#454">454</a> 	<em class="comment">// Certificate. This will generate the correct DE ED and/or DR TRNG codes.</em>
+<a name="455" href="#455">455</a> 	<em class="comment">// If the scan fails or the number has been keyed correctly, key a "Z" in</em>
+<a name="456" href="#456">456</a> 	<em class="comment">// the appropriate DE# or DT# field, spacing out the rest of the field, and</em>
+<a name="457" href="#457">457</a> 	<em class="comment">// manually key the DR ED and/or DR TRNG codes.</em>
+<a name="458" href="#458">458</a> 	String CHANGE_TO_DR_ED_DT_TRNG_NOT_ALLOWED_FOR_PROCESS = <span class="string">"D880"</span>;
+<a name="459" href="#459">459</a> 	<em class="comment">// The DE# and/or DT# is invalid. Valid DE# prefixes are "A," "B," "D," "I,"</em>
+<a name="460" href="#460">460</a> 	<em class="comment">// and "K". Valid DT# prefixes are "C," "E," "J," and "L". Be sure the</em>
+<a name="461" href="#461">461</a> 	<em class="comment">// number is scanned or keyed in the appropriate field. If it was scanned or</em>
+<a name="462" href="#462">462</a> 	<em class="comment">// keyed correctly, key a "Z" in the appropriate DE# or DT# field, spacing</em>
+<a name="463" href="#463">463</a> 	<em class="comment">// out the rest of the field, and manually key the DR ED and/or DR TRNG</em>
+<a name="464" href="#464">464</a> 	<em class="comment">// codes.If "Z" is keyed for DE# or DT#, the rest of the field must be blank</em>
+<a name="465" href="#465">465</a> 	<em class="comment">// to manually key the DR ED and/or DR TRNG codes.</em>
+<a name="466" href="#466">466</a> 	String INVALID_DE_DT_BARCODE_NO = <span class="string">"D881"</span>;
+<a name="467" href="#467">467</a> 	String NAME_BD_OR_SSN_CHG_IS_REQ = <span class="string">"D887"</span>;
+<a name="468" href="#468">468</a> 	String RESTRICTION_64_VS_65 = <span class="string">"D888"</span>;
+<a name="469" href="#469">469</a> 	String SSN_NOT_VERIFIED = <span class="string">"D889"</span>;
+<a name="470" href="#470">470</a> 	String VCS_TRANSACTION_IN_PROCESS = <span class="string">"D890"</span>;
+<a name="471" href="#471">471</a> 	String NEED_SSN = <span class="string">"D891"</span>;
+<a name="472" href="#472">472</a> 	<em class="comment">// When the SSN Verified code on recored is "A" or "C," the SSN and or SSN</em>
+<a name="473" href="#473">473</a> 	<em class="comment">// VERIFIED fields can be changed by Issuance unit personnel only.</em>
+<a name="474" href="#474">474</a> 	String CANNOT_CHANGE_SSN_OR_SSN_VERIF = <span class="string">"D892"</span>;
+<a name="475" href="#475">475</a> 	<em class="comment">// The temporary license issued pending a background record check has</em>
+<a name="476" href="#476">476</a> 	<em class="comment">// expired. This application must be pended for completion by headquarters.</em>
+<a name="477" href="#477">477</a> 	String CANNOT_CONTINUE_MUST_PEND_APPLICATION = <span class="string">"D896"</span>;
+<a name="478" href="#478">478</a> 	<em class="comment">// If the application is for commercial class A, B, or C, the mailing state</em>
+<a name="479" href="#479">479</a> 	<em class="comment">// must be "CA" if no residence address is present. If the residence address</em>
+<a name="480" href="#480">480</a> 	<em class="comment">// is present, the residence state must be "CA".</em>
+<a name="481" href="#481">481</a> 	String CANNOT_CONTINUE_MUST_BE_A_CA_RESIDENT = <span class="string">"D898"</span>;
+<a name="482" href="#482">482</a> 	<em class="comment">// This message will display when the first two digits of the out-of-state</em>
+<a name="483" href="#483">483</a> 	<em class="comment">// driver license match the state code. Verify the out-of-state driver</em>
+<a name="484" href="#484">484</a> 	<em class="comment">// license number as keyed. If it is: Correct, press ENTER. Incorrect, key</em>
+<a name="485" href="#485">485</a> 	<em class="comment">// the correct number.</em>
+<a name="486" href="#486">486</a> 	String VERIFY_OUT_OF_STATE_DL_NUMBER = <span class="string">"D900"</span>;
+<a name="487" href="#487">487</a> 	<em class="comment">//Matching data received. Please review and update the driver license number displayed to</em>
+<a name="488" href="#488">488</a> 	<em class="comment">//allow the application to continue. The record contains matching data found in the DAF.</em>
+<a name="489" href="#489">489</a> 	String CANNOT_CONTINUE_MATCHING_THE_10_YR_HIST_REC_IN_DAF_FILE_REVIEW_XXXXXXXX = <span class="string">"D901"</span>;
+<a name="490" href="#490">490</a> 	<em class="comment">// A gender change requires a "Y" or "N" in the New # Req Field. If the "Y"</em>
+<a name="491" href="#491">491</a> 	<em class="comment">// or "N" is not keyed, the technician must restart the application or undo</em>
+<a name="492" href="#492">492</a> 	<em class="comment">// the gender change to continue.</em>
+<a name="493" href="#493">493</a> 	String GENDER_CHANGE_REQUIRES_Y_OR_N_KEYED_IN_NEW_NO_REQ_FIELD = <span class="string">"D902"</span>;
+<a name="494" href="#494">494</a> 	<em class="comment">//The out-of-state driver license (OSDL) keyed does not match the CDLIS/PDPS response or no response</em>
+<a name="495" href="#495">495</a> 	<em class="comment">//was received. Verify that the OSDL is keyed correctly.</em>
+<a name="496" href="#496">496</a> 	<em class="comment">//If it is:Incorrect, restart and key the correct number.Correct, press ENTER or PF1 to continue.</em>
+<a name="497" href="#497">497</a> 	String PREV_LIC_KEYED_VS_CDLIS_LIC_RETURNED_PRESS_ENTER_OR_PF1_TO_CONTINUE = <span class="string">"D903"</span>;
+<a name="498" href="#498">498</a> }
+<a name="499" href="#499">499</a> <em>/**<em>*</em></em>
+<a name="500" href="#500">500</a> <em> *  Modification History:</em>
+<a name="501" href="#501">501</a> <em> *</em>
+<a name="502" href="#502">502</a> <em> *  $Log: IDataCollectionErrorMessageConstants.java,v $</em>
+<a name="503" href="#503">503</a> <em> *  Revision 1.27  2010/08/13 17:59:19  mwcyl</em>
+<a name="504" href="#504">504</a> <em> *  added D718</em>
+<a name="505" href="#505">505</a> <em> *</em>
+<a name="506" href="#506">506</a> <em> *  Revision 1.26  2010/08/13 16:26:17  mwcyl</em>
+<a name="507" href="#507">507</a> <em> *  add D612</em>
+<a name="508" href="#508">508</a> <em> *</em>
+<a name="509" href="#509">509</a> <em> *  Revision 1.25  2010/08/12 16:02:17  mwcyl</em>
+<a name="510" href="#510">510</a> <em> *  CURRENT_EXP_YEAR_KEYED_MUST_BE_WITHIN_4_YEARS</em>
+<a name="511" href="#511">511</a> <em> *</em>
+<a name="512" href="#512">512</a> <em> *  Revision 1.24  2010/08/11 19:14:02  mwskh1</em>
+<a name="513" href="#513">513</a> <em> *  Added D556, D784</em>
+<a name="514" href="#514">514</a> <em> *</em>
+<a name="515" href="#515">515</a> <em> *  Revision 1.23  2010/08/11 00:01:32  mwyxg1</em>
+<a name="516" href="#516">516</a> <em> *  add D524 and D525</em>
+<a name="517" href="#517">517</a> <em> *</em>
+<a name="518" href="#518">518</a> <em> *  Revision 1.22  2010/08/10 23:55:50  mwyxg1</em>
+<a name="519" href="#519">519</a> <em> *  add D503</em>
+<a name="520" href="#520">520</a> <em> *</em>
+<a name="521" href="#521">521</a> <em> *  Revision 1.21  2010/08/10 23:37:46  mwyxg1</em>
+<a name="522" href="#522">522</a> <em> *  add D558</em>
+<a name="523" href="#523">523</a> <em> *</em>
+<a name="524" href="#524">524</a> <em> *  Revision 1.20  2010/08/10 23:33:45  mwyxg1</em>
+<a name="525" href="#525">525</a> <em> *  add D522</em>
+<a name="526" href="#526">526</a> <em> *</em>
+<a name="527" href="#527">527</a> <em> *  Revision 1.19  2010/08/10 23:06:35  mwyxg1</em>
+<a name="528" href="#528">528</a> <em> *  add new test results 2 rules</em>
+<a name="529" href="#529">529</a> <em> *</em>
+<a name="530" href="#530">530</a> <em> *  Revision 1.18  2010/08/10 22:20:27  mwyxg1</em>
+<a name="531" href="#531">531</a> <em> *  add new test results 2 rules</em>
+<a name="532" href="#532">532</a> <em> *</em>
+<a name="533" href="#533">533</a> <em> *  Revision 1.17  2010/08/06 17:37:56  mwyxk</em>
+<a name="534" href="#534">534</a> <em> *  added D623 data collection error messages</em>
+<a name="535" href="#535">535</a> <em> *</em>
+<a name="536" href="#536">536</a> <em> *  Revision 1.16  2010/08/03 22:08:23  mwyxg1</em>
+<a name="537" href="#537">537</a> <em> *  add new constants</em>
+<a name="538" href="#538">538</a> <em> *</em>
+<a name="539" href="#539">539</a> <em> *  Revision 1.15  2010/08/03 18:39:54  mwyxg1</em>
+<a name="540" href="#540">540</a> <em> *  add new constants</em>
+<a name="541" href="#541">541</a> <em> *</em>
+<a name="542" href="#542">542</a> <em> *  Revision 1.14  2010/08/01 20:18:17  mwyxg1</em>
+<a name="543" href="#543">543</a> <em> *  add new restriction validations</em>
+<a name="544" href="#544">544</a> <em> *</em>
+<a name="545" href="#545">545</a> <em> *  Revision 1.13  2010/08/01 19:26:41  mwyxg1</em>
+<a name="546" href="#546">546</a> <em> *  add new restriction validations</em>
+<a name="547" href="#547">547</a> <em> *</em>
+<a name="548" href="#548">548</a> <em> *  Revision 1.12  2010/07/30 23:27:57  mwcyl</em>
+<a name="549" href="#549">549</a> <em> *  added d584</em>
+<a name="550" href="#550">550</a> <em> *</em>
+<a name="551" href="#551">551</a> <em> *  Revision 1.11  2010/07/30 22:53:02  mwcyl</em>
+<a name="552" href="#552">552</a> <em> *  add 608</em>
+<a name="553" href="#553">553</a> <em> *</em>
+<a name="554" href="#554">554</a> <em> *  Revision 1.10  2010/07/22 18:24:08  mwyxg1</em>
+<a name="555" href="#555">555</a> <em> *  refactor, add CDA Daf Inquiry validations</em>
+<a name="556" href="#556">556</a> <em> *</em>
+<a name="557" href="#557">557</a> <em> *  Revision 1.9  2010/07/20 23:02:28  mwyxg1</em>
+<a name="558" href="#558">558</a> <em> *  add more constants</em>
+<a name="559" href="#559">559</a> <em> *</em>
+<a name="560" href="#560">560</a> <em> *  Revision 1.8  2010/07/20 22:27:33  mwyxg1</em>
+<a name="561" href="#561">561</a> <em> *  remove data collection error messages, use IDataCollectionErrorMessageConstants</em>
+<a name="562" href="#562">562</a> <em> *</em>
+<a name="563" href="#563">563</a> <em> *  Revision 1.7  2010/07/20 22:13:57  mwyxg1</em>
+<a name="564" href="#564">564</a> <em> *  remove data collection error messages, use IDataCollectionErrorMessageConstants</em>
+<a name="565" href="#565">565</a> <em> *</em>
+<a name="566" href="#566">566</a> <em> *  Revision 1.6  2010/07/20 21:48:15  mwyxg1</em>
+<a name="567" href="#567">567</a> <em> *  remove data collection error messages, use IDataCollectionErrorMessageConstants</em>
+<a name="568" href="#568">568</a> <em> *</em>
+<a name="569" href="#569">569</a> <em> *  Revision 1.5  2010/07/20 21:36:00  mwskh1</em>
+<a name="570" href="#570">570</a> <em> *  added D545, D663, D717</em>
+<a name="571" href="#571">571</a> <em> *</em>
+<a name="572" href="#572">572</a> <em> *  Revision 1.4  2010/07/20 18:03:28  mwyxg1</em>
+<a name="573" href="#573">573</a> <em> *  add more constants</em>
+<a name="574" href="#574">574</a> <em> *</em>
+<a name="575" href="#575">575</a> <em> *  Revision 1.3  2010/07/20 17:55:21  mwyxg1</em>
+<a name="576" href="#576">576</a> <em> *  add more constants</em>
+<a name="577" href="#577">577</a> <em> *</em>
+<a name="578" href="#578">578</a> <em> *  Revision 1.2  2010/07/20 17:40:44  mwyxg1</em>
+<a name="579" href="#579">579</a> <em> *  add more constants</em>
+<a name="580" href="#580">580</a> <em> *</em>
+<a name="581" href="#581">581</a> <em> *  Revision 1.1  2010/07/20 17:23:34  mwyxg1</em>
+<a name="582" href="#582">582</a> <em> *  add new</em>
+<a name="583" href="#583">583</a> <em> *</em>
+<a name="584" href="#584">584</a> <em> */</em>
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+
