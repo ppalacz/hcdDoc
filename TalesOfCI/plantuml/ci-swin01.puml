@@ -1,0 +1,87 @@
+@startuml
+skinparam  ActivityFontSize 14
+skinparam ArrowFontSize 14
+skinparam ArrowFontSize italic
+
+title Continuous Integration Process Sketch
+
+|#Linen|Artefact Repo|
+|#c5c5cd|DEV Env|
+|#dee4e8|CI|
+|#daf0fe|Version Control|
+|#Ivory|TEST Env|
+|#dee4e8|Developer|
+
+|Developer|
+start
+    |Version Control|
+    ->Check out Artefacts;
+    #Lavender:Versioned Artefacts;
+    |Developer|
+    ->Checked out into IDE;
+    #Yellow:Create/Modify Artefacts;
+    ->Commit Artefacts;
+    |Version Control|
+    #Lavender:Versioned Artifacts;
+    ->Signal Commit;
+    |CI| 
+    :Process Commit;
+    |DEV Env|
+    ->Trigger;
+    #HotPink:Execute Build;
+    ->Use;
+    |Artefact Repo|
+    #Lavender:Deployable Artefacts;
+    |DEV Env|
+    if () then (failure)
+        |CI|
+        #Pink:Build Failure Report;
+        ->Store;
+        |Artefact Repo|
+        #Lavender:Stored Report;
+        |CI|
+        #Pink:Assign Blame;
+        ->Notify;
+        |Developer|
+        #Yellow:Correct&Commit;
+        end
+    else (success)
+        |CI|
+        ->Trigger Static Tests;
+        |DEV Env|
+        #HotPink:Run Static Tests;
+        if () then (failure)
+            |CI|
+            #Pink:Build Failure Report;
+            #Pink:Assign Blame;
+            ->Notify;
+            |Developer|
+            #Yellow:Correct&Commit;
+            end
+        else (success)
+            |CI|
+            :Assemble Deployables;
+            |Artefact Repo|
+            ->Store Deployables;
+            #Lavender:Deployable Artefacts;
+            |CI|
+            #Lime:Deploy to TEST Env;
+            ->Trigger Test Run;
+            |TEST Env|
+            #HotPink:Run Automated Tests;
+            if () then (failure)
+                |CI|
+                #Pink:Build Failure Report;
+                #Pink:Assign Blame;
+                ->Notify;
+                |Developer|
+                #Yellow:Correct&Commit;
+                end
+            else (success)
+            |CI|
+            #Lime:Deploy to PROD Env;
+            stop
+            endif    
+        endif    
+    endif    
+@enduml

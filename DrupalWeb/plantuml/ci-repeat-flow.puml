@@ -1,0 +1,30 @@
+@startuml
+
+title CI Process Sketch
+
+|#dee4e8|Developer|
+|#daf0fe|Version Control|
+|#dee4e8|CI|
+|#dee4e8|Artefact Repo|
+|#c4c9cd|DEV Env|
+|#daf0fe|TEST Env|
+|#daf0fe|PROD Env|
+
+|Developer|
+:Checkout Artefacts;
+start
+    |Developer|
+    repeat
+        :Modify Artefacts;
+        |Version Control|
+        ->Commit Version;
+        :Versioned Artefact
+         
+        |CI|
+    repeat while (Build and Tests Succeed?) is (yes ) then (no)
+
+    
+    
+stop
+
+@enduml
