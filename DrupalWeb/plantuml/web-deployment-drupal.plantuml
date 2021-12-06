@@ -1,0 +1,111 @@
+@startuml
+'!theme sketchy-outline
+hide stereotype
+
+'skinparam linetype ortho
+
+<style>
+  ' Styles to apply to components to indicate something of note:
+  ' in-scope (<<i>>)
+  .i {
+    BackgroundColor SkyBlue
+    FontStyle bold
+    FontSize 16
+  }
+  .dockany {
+    BackgroundColor LimeGreen
+    FontStyle bold
+    'FontColor DarkGray
+    FontSize 14
+  }
+ .dockproxy {
+    BackgroundColor Gold
+    'FontStyle italic
+    'FontColor DarkGray
+    FontSize 14
+  }
+  .dockprod {
+    BackgroundColor DarkGreen
+    FontStyle bold
+    'FontColor DarkGray
+    FontSize 14
+  }
+
+  .dockdev {
+    BackgroundColor Lime
+    FontStyle italic
+    'FontColor DarkGray
+    FontSize 14
+  }
+
+   .docktest {
+    BackgroundColor YellowGreen
+    FontStyle italic
+    'FontColor DarkGray
+    FontSize 14
+  }
+
+
+}
+</style>
+' Legend colours need to be updated manually :-(
+legend
+|<back:SkyBlue><b>Linux Server        .</b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+endlegend
+
+rectangle "HCD Web/Drupal Deployment" {
+   'rectangle "PROD" as prod {
+        'rectangle "WebProxy01" as webProxy {
+       node "WebProxy01" as webProxy {
+            component "acceleratorproxyapache" as acpa <<dockproxy>>
+            component "homekeyproxyapache" as hkpa <<dockproxy>>
+            component "elementsproxyapache" as elpa <<dockproxy>>
+            component "aprproxyapache" as appa <<dockproxy>>
+            component "casasproxyapache" as capa <<dockproxy>>
+            component "mainproxyapache" as mapa <<dockproxy>>
+            component "internalproxyapache" as inpa <<dockproxy>>
+        }
+        rectangle "WebProxy02" as webProxyFailOver {
+        "Failover for HCD Site"
+        }
+
+        rectangle "Web Servers PROD"  as webServers  {
+            rectangle "starfruit" as web025 {
+                rectangle "acceleratorapache" as aca <<dockany>>
+                rectangle "homekeyapache" as hka <<dockany>>
+                rectangle "w3prodapache" as w3a <<dockany>>
+            }
+        }
+    '}
+
+    rectangle "DEV/TEST" as webDevServers  {
+            rectangle "pumpkin" as web124 {
+                rectangle "acceleratorapache" <<dockany>>
+                rectangle "homekeyapache" <<dockany>>
+                rectangle "homekeydevapache" <<dockdev>>
+                rectangle "w3prodapache" <<dockany>>
+            }
+        }
+
+    rectangle "Drupal Servers" as drupalServers {
+        rectangle "Accelerator" <<i>>
+        rectangle "Homekey" <<i>>
+    }
+
+   rectangle "Database Servers" as dbServers {
+        rectangle MySQL01 <<i>>
+    }
+
+ 
+    
+}
+
+
+webProxy -down-> webServers
+webProxy <..> webProxyFailOver
+webServers -down-> drupalServers
+drupalServers -down-> dbServers
+
+
+@enduml
