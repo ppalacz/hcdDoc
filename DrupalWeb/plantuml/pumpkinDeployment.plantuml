@@ -1,4 +1,4 @@
-@startuml
+@startuml "Docker Containers on pumpkin"
 '!theme sketchy-outline
 hide stereotype
 
@@ -56,7 +56,7 @@ endlegend
 
 'title "HCD DEV/TEST Web/Drupal Deployment" 
    
-   node "pumpkin\nOracle Linux 8.5" <<i>> as pumpkin8 {
+   node "pumpkin\nOracle Linux 8" <<i>> as pumpkin8 {
 
   folder "/opt/calhomedisaster" as optacalhome {
       artifact "Web Forms"
@@ -165,9 +165,9 @@ endlegend
    }
 
 
-  'docker -up-> boxdev :runs
-  'docker -right-> boxuat :runs
-  'docker -down-> boxother :runs
+  docker -up-> boxdev :runs
+  docker -right-> boxuat :runs
+  docker -down-> boxother :runs
   optaccdev ...> dockaccdev :creates
   optacc ...> dockacc :creates
 'webProxy -down-> webServers

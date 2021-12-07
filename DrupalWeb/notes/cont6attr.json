@@ -1,0 +1,110 @@
+[
+  {
+    "Names": "nofaapache",
+    "Image": "fedora/apache:11042021",
+    "Ports": "165.235.4.61:80->80/tcp, 165.235.4.61:443->443/tcp, 3000/tcp",
+    "Mounts": "/opt/nofa/apac…,/opt/nofa/webr…,/opt/accelerat…,/opt/homekey/d…,/opt/nofa/drup…",
+    "Networks": "nofadfa",
+    "Command": "\"/bin/bash /docker-s…\""
+  }
+]
+[
+  {
+    "Names": "nofadfa",
+    "Image": "wildfly/nofa:09302021",
+    "Ports": "165.235.4.61:8080->8080/tcp, 165.235.4.61:9990->9990/tcp",
+    "Mounts": "/opt/accelerat…,/opt/nofa/drup…,/opt/homekey/d…,/opt/nofa/wild…",
+    "Networks": "nofadfa",
+    "Command": "\"/opt/jboss/wildfly/…\""
+  }
+]
+[
+  {
+    "Names": "w3uatapache",
+    "Image": "w3uat/drupal:10112021",
+    "Ports": "165.235.4.30:80->80/tcp, 165.235.4.30:443->443/tcp",
+    "Mounts": "/opt/w3uat/sync,/opt/w3uat/dru…,/opt/w3uat/web…",
+    "Networks": "bridge",
+    "Command": "\"/bin/bash /docker-s…\""
+  }
+]
+[
+  {
+    "Names": "keycloakd",
+    "Image": "keycloak:10192021",
+    "Ports": "165.235.4.61:8443->8443/tcp, 165.235.4.61:8888->8080/tcp",
+    "Mounts": "/opt/nofa/keyc…",
+    "Networks": "nofadfa",
+    "Command": "\"/opt/jboss/keycloak…\""
+  }
+]
+[
+  {
+    "Names": "acceleratordevapache",
+    "Image": "acceleratordev/drupal:09222021",
+    "Ports": "165.235.4.56:80->80/tcp, 165.235.4.56:443->443/tcp",
+    "Mounts": "/opt/accelerat…,/opt/accelerat…,/opt/accelerat…",
+    "Networks": "bridge",
+    "Command": "\"/bin/bash /docker-s…\""
+  }
+]
+[
+  {
+    "Names": "w3devapache",
+    "Image": "w3dev/drupal:09222021",
+    "Ports": "165.235.4.58:80->80/tcp, 165.235.4.58:443->443/tcp",
+    "Mounts": "/opt/w3dev/sync,/opt/w3dev/dru…,/opt/w3dev/web…",
+    "Networks": "bridge",
+    "Command": "\"/bin/bash /docker-s…\""
+  }
+]
+[
+  {
+    "Names": "nofaappdb",
+    "Image": "mysql/mysql-server",
+    "Ports": "33060-33061/tcp, 165.235.4.124:8306->3306/tcp",
+    "Mounts": "/nofaapp/mysql…,/nofaapp/mysql…,/nofaapp/mysql…",
+    "Networks": "bridge",
+    "Command": "\"/entrypoint.sh mysq…\""
+  }
+]
+[
+  {
+    "Names": "homekeyapache",
+    "Image": "homekeydfa/drupal:09222021",
+    "Ports": "165.235.4.59:80->80/tcp, 165.235.4.59:443->443/tcp",
+    "Mounts": "/opt/homekey/c…,/opt/homekey/d…,/opt/homekey/w…,/opt/homekey/a…",
+    "Networks": "bridge",
+    "Command": "\"/bin/bash /docker-s…\""
+  }
+]
+[
+  {
+    "Names": "homekeydevapache",
+    "Image": "homekeydev/drupal:09222021",
+    "Ports": "165.235.4.50:80->80/tcp, 165.235.4.50:443->443/tcp",
+    "Mounts": "/opt/homekeyde…,/opt/homekeyde…,/opt/homekeyde…",
+    "Networks": "bridge",
+    "Command": "\"/bin/bash /docker-s…\""
+  }
+]
+[
+  {
+    "Names": "mysql-hcdwebsite",
+    "Image": "mysql/mysql-server",
+    "Ports": "33060-33061/tcp, 165.235.4.124:6306->3306/tcp",
+    "Mounts": "/hcdwebsite/my…,/hcdwebsite/my…,/hcdwebsite/my…",
+    "Networks": "hcdwebsite-network",
+    "Command": "\"/entrypoint.sh mysq…\""
+  }
+]
+[
+  {
+    "Names": "mysql-hcddeloitte",
+    "Image": "mysql/mysql-server",
+    "Ports": "33060-33061/tcp, 165.235.4.56:7306->3306/tcp",
+    "Mounts": "/hcddeloitte/m…,/hcddeloitte/m…,/hcddeloitte/m…",
+    "Networks": "hcddeloitte-network",
+    "Command": "\"/entrypoint.sh mysq…\""
+  }
+]
