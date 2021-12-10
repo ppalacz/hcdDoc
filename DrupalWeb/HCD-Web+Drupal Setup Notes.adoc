@@ -62,7 +62,7 @@ The configuration and deployment information presented is based on the following
 * Various shell/cli scripts
 
 
-WARNING: Given the type of information provided, it is _not_ a public document, and it should be circulated only internally. 
+WARNING: Given the type of information provided, it is _not_ a public document, and its internal circulation should be limited to people with direct or oversight responsibility for the areas described.
  
 === Main Sections
 
@@ -90,7 +90,7 @@ WARNING: Given the type of information provided, it is _not_ a public document, 
 
 
 
-== DEV and TEST for Web
+== DEV and TEST Environments for Web-related Apps
 
 
 

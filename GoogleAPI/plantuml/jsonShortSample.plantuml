@@ -1,0 +1,70 @@
+@startjson
+{
+  "normalizedInput": {
+    "line1": "73 Dean Road",
+    "city": "Sacramento",
+    "state": "CA",
+    "zip": "95815"
+  },
+  "kind": "civicinfo#representativeInfoResponse",
+  "divisions": {
+    "ocd-division/country:us/state:ca/sldu:6": {
+      "name": "California State Senate district 6",
+      "officeIndices": [
+        0
+      ]
+    }
+  },
+  "offices": [
+    {
+      "name": "CA State Senator",
+      "divisionId": "ocd-division/country:us/state:ca/sldu:6",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "legislatorUpperBody"
+      ],
+      "officialIndices": [
+        0
+      ]
+    }
+  ],
+  "officials": [
+    {
+      "name": "Richard Pan",
+      "address": [
+        {
+          "line1": "State Capitol",
+          "line2": "1315",
+          "city": "Sacramento",
+          "state": "CA",
+          "zip": "95814"
+        }
+      ],
+      "party": "Democratic Party",
+      "phones": [
+        "(916) 651-4006"
+      ],
+      "urls": [
+        "https://sd06.senate.ca.gov/",
+        "https://en.wikipedia.org/wiki/Richard_Pan"
+      ],
+      "photoUrl": "http://senate.ca.gov/sites/senate.ca.gov/files/senator_photos/pan-richard.jpg",
+      "emails": [
+        "senator.pan@sen.ca.gov"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "SenRichardPan"
+        },
+        {
+          "type": "Twitter",
+          "id": "DrPanMD"
+        }
+      ]
+    }
+  ]
+}
+@endjson
