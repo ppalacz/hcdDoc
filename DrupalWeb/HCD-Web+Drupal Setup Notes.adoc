@@ -7,7 +7,7 @@ image::images/HCD_head_web.png[align="center"]
 :Author Initials: pxp
 :email: <piotr.palacz@hcd.ca.gov>
 :icons:
-:numbered:
+:numiered:
 :toc:
 
 
@@ -56,9 +56,7 @@ Given the type of information provided, it is _not_ a public document, and it sh
  
 === Main Sections
 
-. The section <<Key Elements of Modern Testing Practice>> identifies key concepts of modern testing practices applicable to software intensive systems and provides a short description of how they hang together
-
-. The section <<Towards a Roadmap for Building a Testing Practice>> provides an outline of the roadmap with respect to testing practices, starting with a summary of the current state and the target desired capabilities of the practice.
+ 
  
 
 === Change History

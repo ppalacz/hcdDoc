@@ -1,0 +1,518 @@
+= Housing Elements Recovery Notes
+For Internal Use Only
+
+image::images/HCD_head_web.png[align="center"]
+
+:revnumber: 11/29/2021
+:Author Initials: pxp
+:email: <piotr.palacz@hcd.ca.gov>
+:icons:
+:numiered:
+:toc:
+
+
+ifdef::backend-html5[]
+:twoinches: width='144'
+:full-width: width='100%'
+:half-width: width='50%'
+:half-size: width='50%'
+:thumbnail: width='60'
+:size10: width='10%'
+:size15: width='15%'
+:size25: width='25%'
+:size40: width='40%'
+:size50: width='50%'
+:size60: width='60%'
+:size75: width='75%'
+endif::[]
+ifdef::backend-pdf[]
+:twoinches: pdfwidth='2in'
+:full-width: pdfwidth='100vw'
+:half-width: pdfwidth='50vw'
+:half-size: pdfwidth='50%'
+:thumbnail: pdfwidth='20mm'
+:size10: pdfwidth='10%'
+:size15: pdfwidth='15%'
+:size25: pdfwidth='25%'
+:size40: pdfwidth='40%'
+:size50: pdfwidth='50%'
+:size60: pdfwidth='60%'
+:size75: pdfwidth='75%'
+endif::[]
+ifdef::backend-docbook5[]
+:twoinches: width='50mm'
+:full-width: scaledwidth='100%'
+:half-width: scaledwidth='50%'
+:half-size: width='50%'
+:thumbnail: width='20mm'
+:size40: width='40%'
+:size50: width='50%'
+endif::[]
+
+== Overview
+
+This document provides an overview of installation and configuration of the components required for Housing Elements web app, including the following:
+
+* Apache Web Server
+* Tomcat Container
+* MySql Database
+* MySql Connector
+
+The main intended audience are \*nix administrators.
+Given the type of information provided, it is _not_ a public document, and it should be circulated only internally.
+
+
+== Prerequisites
+
+Most of the operations described in these notes require, as a minimum, elevated privileges on the target server - in the form of sudo group membership. 
+
+The notes reflect the needs of specific family of Linux distributions - namely, _rpm_-based distributions, and specifically RHEL, Centos, Oracle Linux 7.x and 8.x distributions.
+
+The actual installs have been performed in CentOS 8.5. 
+
+One of the ways to determine the distribution name and version, is to issue the  following:
+
+----
+cat /etc/centos-release
+
+-> CentOS Linux release 8.5.2111
+----
+
+== Installing and Configuring Tomcat
+
+=== Sources
+
+https://www.linuxtechi.com/install-apache-tomcat9-centos7-rhel7-ubuntu16-04/
+
+
+=== Prerequisites
+
+* Java - jdk 1.8 required?
+
+Have:
+
+-----
+java --version
+openjdk 17.0.1 2021-10-19
+OpenJDK Runtime Environment Temurin-17.0.1+12 (build 17.0.1+12)
+OpenJDK 64-Bit Server VM Temurin-17.0.1+12 (build 17.0.1+12, mixed mode, sharing)
+-----
+
+=== Tomcat Versions
+
+https://projects.apache.org/project.html?tomcat
+Releases (from DOAP):
+
+    Download: http://tomcat.apache.org/
+    10.0.14 (2021-12-08): Latest Stable 10.0.x Release
+    9.0.56 (2021-12-08): Latest Stable 9.0.x Release
+    8.5.73 (2021-11-17): Latest Stable 8.5.x Release
+
+https://tomcat.apache.org/
+
+=== Download
+
+10.0.4 binary distribution:
+
+https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.14/bin/apache-tomcat-10.0.14.zip
+
+=== Installation of Binaries
+
+sudo tar -zxpvf apache-tomcat-10.0.14.tar.gz -C /opt
+sudo mv /opt/apache-tomcat-10.0.14 /opt/tomcat
+
+=== Env Variable Setup
+
+----
+echo "export CATALINA_HOME='/opt/tomcat/'" >> ~/.bashrc
+echo "export CATALINA_HOME='/opt/tomcat/'" >> ~/.zshrc
+source ~/.zshrc
+
+echo $CATALINA_HOME
+/opt/tomcat/
+
+----
+
+=== JVM Config
+
+
+
+----
+JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Xmx512m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC"
+----
+
+See https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-centos-7-via-yum .
+
+=== User/Role Config
+
+In /opt/tomcat/conf/tomcat-users.xml
+
+----
+  
+  <user username="admin" password="<a pass>" roles="admin-gui, manager-jmx,manager-scrip"/>
+  <user username="status" password="<a pass>" roles="manager-status"/>
+  
+----
+=== Starting Instance
+
+
+
+----
+sudo /opt/tomcat/bin/startup.sh
+Using CATALINA_BASE:   /opt/tomcat
+Using CATALINA_HOME:   /opt/tomcat
+Using CATALINA_TMPDIR: /opt/tomcat/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /opt/tomcat/bin/bootstrap.jar:/opt/tomcat/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+----
+
+
+=== Firewall Config
+
+* Default port is typically 8080. This can be verified:
+
+----
+
+cat ./conf/server.xml | grep "port="
+-> <Connector port="8080" protocol="HTTP/1.1"
+
+----
+
+Firewall mods:
+
+----
+sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+-> success
+sudo firewall-cmd --reload
+-> success
+----
+
+=== Checking Status
+
+* Web url for checking the status and config of a Tomcat instance is  http://localhost:8080/manager/status
+
+* However, by default, this page is available on the local host only. 
+
+To change that, the following file needs editing:
+
+/opt/tomcat/webapps/host-manager/META-INF/context.xml
+
+----
+<!-- pxp 211215
+
+   <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+
+-->
+----
+
+Same for sudo vim /opt/tomcat/webapps/host-manager/META-INF/context.xml
+
+
+
+== MySQL 
+
+=== Prerequisites
+ 
+Access to the binary package of MySql requires an account for Oracle TechNet.
+This is free.
+
+=== Binary Package
+
+https://dev.mysql.com/downloads/repo/yum/
+
+https://dev.mysql.com/downloads/file/?id=508899
+
+NOTE: Requires login
+
+Steps: 
+
+(1) Define dev.mysql.com repo:
+
+----
+wget https://dev.mysql.com/get/mysql80-community-release-el8-2.noarch.rpm
+
+md5sum mysql80-community-release-el8-2.noarch.rpm
+0ba3feb1c9ee35d30e5ae683accaf54b  mysql80-community-release-el8-2.noarch.rp
+
+sudo rpm -ivvh ./mysql80-community-release-el8-2.noarch.rpm
+[sudo] password for ppalacz@hcd.ca.gov:
+ufdio:       1 reads,    17154 total bytes in 0.000011 secs
+ufdio:       1 reads,     5442 total bytes in 0.000002 secs
+ufdio:       1 reads,    17154 total bytes in 0.000011 secs
+D: ============== ./mysql80-community-release-el8-2.noarch.rpm
+ 
+----
+
+(2) Install the binaries from that repo:
+
+----
+sudo yum install mysql-server
+
+-> Installed:
+  mecab-0.996-1.module_el8.4.0+589+11e12751.9.x86_64                                  mysql-8.0.26-1.module_el8.4.0+915+de215114.x86_64
+  mysql-common-8.0.26-1.module_el8.4.0+915+de215114.x86_64                            mysql-errmsg-8.0.26-1.module_el8.4.0+915+de215114.x86_64
+  mysql-server-8.0.26-1.module_el8.4.0+915+de215114.x86_64                            protobuf-lite-3.5.0-13.el8.x86_64
+
+Complete!
+----
+
+=== Starting MySQL SErver
+
+(1) Starting the MySql service:
+
+----
+sudo systemctl start mysqld
+----
+
+(2) Checking status:
+
+----
+sudo systemctl status mysqld
+● mysqld.service - MySQL 8.0 database server
+   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; disabled; vendor preset: disabled)
+   Active: active (running) since Wed 2021-12-15 15:26:05 EST; 7s ago
+  Process: 453763 ExecStartPost=/usr/libexec/mysql-check-upgrade (code=exited, status=0/SUCCESS)
+  Process: 453636 ExecStartPre=/usr/libexec/mysql-prepare-db-dir mysqld.service (code=exited, status=0/SUCCESS)
+  Process: 453611 ExecStartPre=/usr/libexec/mysql-check-socket (code=exited, status=0/SUCCESS)
+ Main PID: 453718 (mysqld)
+   Status: "Server is operational"
+    Tasks: 38 (limit: 49161)
+   Memory: 452.5M
+   CGroup: /system.slice/mysqld.service
+           └─453718 /usr/libexec/mysqld --basedir=/usr
+
+Dec 15 15:25:58 piotr systemd[1]: Starting MySQL 8.0 database server...
+Dec 15 15:25:58 piotr mysql-prepare-db-dir[453636]: Initializing MySQL database
+Dec 15 15:26:05 piotr systemd[1]: Started MySQL 8.0 database server.
+----
+
+=== Securization
+
+----
+sudo mysql_secure_installation
+----
+
+----
+Securing the MySQL server deployment.
+
+Connecting to MySQL using a blank password.
+
+VALIDATE PASSWORD COMPONENT can be used to test passwords
+and improve security. It checks the strength of password
+and allows the users to set only those passwords which are
+secure enough. Would you like to setup VALIDATE PASSWORD component?
+
+Press y|Y for Yes, any other key for No: y
+
+There are three levels of password validation policy:
+
+LOW    Length >= 8
+MEDIUM Length >= 8, numeric, mixed case, and special characters
+STRONG Length >= 8, numeric, mixed case, special characters and dictionary                  file
+
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 1
+Please set the password for root here.
+
+New password:
+
+Re-enter new password:
+
+Estimated strength of the password: 100
+Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y
+By default, a MySQL installation has an anonymous user,
+allowing anyone to log into MySQL without having to have
+a user account created for them. This is intended only for
+testing, and to make the installation go a bit smoother.
+You should remove them before moving into a production
+environment.
+
+Remove anonymous users? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+
+Normally, root should only be allowed to connect from
+'localhost'. This ensures that someone cannot guess at
+the root password from the network.
+
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+By default, MySQL comes with a database named 'test' that
+anyone can access. This is also intended only for testing,
+and should be removed before moving into a production
+environment.
+
+
+Remove test database and access to it? (Press y|Y for Yes, any other key for No) : n
+
+ ... skipping.
+Reloading the privilege tables will ensure that all changes
+made so far will take effect immediately.
+
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
+Success.
+
+All done!
+----
+
+=== Testing Installation
+
+----
+mysqladmin -u root -p version
+Enter password:
+mysqladmin  Ver 8.0.26 for Linux on x86_64 (Source distribution)
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Server version          8.0.26
+Protocol version        10
+Connection              Localhost via UNIX socket
+UNIX socket             /var/lib/mysql/mysql.sock
+Uptime:                 3 min 53 sec
+
+Threads: 2  Questions: 12  Slow queries: 0  Opens: 132  Flush tables: 3  Open tables: 48  Queries per second avg: 0.05
+----
+
+----
+mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.26 Source distribution
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+----
+
+==  MyPhpAdmin Installation
+
+
+=== Prerequisites
+
+* PHP
+
+sudo yum module install php:7.2
+
+Installed:
+  nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                         php-cli-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-common-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                                 php-fpm-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-json-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                                   php-mbstring-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-xml-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+
+Complete!
+
+php -v
+PHP 7.2.24 (cli) (built: Oct 22 2019 08:28:36) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+
+
+* php-fpm (The PHP FastCGI Process Manager)
+
+----
+sudo systemctl enable --now php-fpm
+Created symlink /etc/systemd/system/multi-user.target.wants/php-fpm.service → /usr/lib/systemd/system/php-fpm.service.
+ ⚙ ppalacz@hcd.ca.gov@piotr  ~/MySql  systemctl status php-fpm
+● php-fpm.service - The PHP FastCGI Process Manager
+   Loaded: loaded (/usr/lib/systemd/system/php-fpm.service; enabled; vendor preset: disabled)
+   Active: active (running) since Wed 2021-12-15 15:36:39 EST; 22s ago
+ Main PID: 454634 (php-fpm)
+   Status: "Processes active: 0, idle: 5, Requests: 0, slow: 0, Traffic: 0req/sec"
+    Tasks: 6 (limit: 49161)
+   Memory: 7.9M
+   CGroup: /system.slice/php-fpm.service
+           ├─454634 php-fpm: master process (/etc/php-fpm.conf)
+           ├─454635 php-fpm: pool www
+           ├─454636 php-fpm: pool www
+           ├─454637 php-fpm: pool www
+           ├─454638 php-fpm: pool www
+           └─454639 php-fpm: pool www
+
+
+PHP FPM service listens on a Unix socket – /run/php-fpm/www.sock
+----
+
+* PHP extensions
+
+----
+sudo yum -y install php php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json
+
+Installed:
+  autoconf-2.69-29.el8.noarch                                                         automake-1.16.1-7.el8.noarch
+  gcc-c++-8.5.0-4.el8_5.x86_64                                                        gd-2.2.5-7.el8.x86_64
+  libXpm-3.5.12-8.el8.x86_64                                                          libstdc++-devel-8.5.0-4.el8_5.x86_64
+  libtool-2.4.6-25.el8.x86_64                                                         libzip-1.5.1-2.module_el8.2.0+313+b04d0a66.x86_64
+  m4-1.4.18-7.el8.x86_64                                                              pcre-cpp-8.42-6.el8.x86_64
+  pcre-devel-8.42-6.el8.x86_64                                                        pcre-utf16-8.42-6.el8.x86_64
+  pcre-utf32-8.42-6.el8.x86_64                                                        php-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-bcmath-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                              php-devel-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-gd-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                                  php-mysqlnd-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-pdo-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                                 php-pear-1:1.10.5-9.module_el8.2.0+313+b04d0a66.noarch
+  php-pecl-zip-1.15.3-1.module_el8.2.0+313+b04d0a66.x86_64                            php-process-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+
+Complete!
+----
+
+=== Installation
+
+https://computingforgeeks.com/install-and-configure-phpmyadmin-on-rhel-8/
+
+Downloads: https://www.phpmyadmin.net/downloads/
+
+Version 5.1: https://files.phpmyadmin.net/phpMyAdmin/5.1.1/phpMyAdmin-5.1.1-all-languages.zip
+
+
+== MySQL Driver
+
+=== Prerequisites
+
+
+* Oracle TechNet account
+
+* JDK, 1.* or higher, depending on the target version of Tomcat.
+
+----
+sudo yum install java-headless
+----
+
+=== Driver from Oracle
+
+https://dev.mysql.com/downloads/file/\?id\=507321
+
+wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.27-1.el8.noarch.rpm
+
+sudo rpm -iUvh mysql-connector-java-8.0.27-1.el8.noarch.rpm
+
+=== Config
+
+https://www.mulesoft.com/tcat/tomcat-mysql#resource-refs
+
+== MySQL
+
+
+== Connecting Tomcat to MySQL
+
+https://www.mulesoft.com/tcat/tomcat-mysql
+
+
