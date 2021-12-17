@@ -1,0 +1,62 @@
+@startuml "hcddeloitte-network on pumpkin"
+'!theme sketchy-outline
+hide stereotype
+
+
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+endlegend
+
+'title "HCD DEV/TEST Web/Drupal Deployment" 
+   
+   node "pumpkin\nOracle Linux 8.5" <<i>> as pumpkin8 #AliceBlue {
+
+    ''''folders'''''
+
+    folder "/hcddeloitte"  as fdel #AliceBlue{ 
+    }
+
+    folder "/hcdwebsite"  as fdelweb #AliceBlue{ 
+    }
+
+    
+    '''''cloud'''''
+
+'[
+'  {
+'    "Names": "mysql-hcdwebsite",
+'    "Image": "mysql/mysql-server",
+'    "Ports": "33060-33061/tcp, 165.235.4.124:6306->3306/tcp",
+'    "Mounts": "/hcdwebsite/myâ€¦,/hcdwebsite/myâ€¦,/hcdwebsite/myâ€¦",
+'    "Networks": "hcdwebsite-network",
+'    "Command": "\"/entrypoint.sh mysqâ€¦\""
+'  }
+' 
+'  {
+'    "Names": "mysql-hcddeloitte",
+'    "Image": "mysql/mysql-server",
+'    "Ports": "33060-33061/tcp, 165.235.4.56:7306->3306/tcp",
+'    "Mounts": "/hcddeloitte/mâ€¦,/hcddeloitte/mâ€¦,/hcddeloitte/mâ€¦",
+'    "Networks": "hcddeloitte-network",
+'    "Command": "\"/entrypoint.sh mysqâ€¦\""
+'  }
+']
+
+    cloud "hcddeloitte-network" #SeaShell {
+
+        component "cddeloitte" as dockdel #LightGreen {
+            database "MySql Server\n165.235.4.124:3306\n/var/lib/mysql\nuser 'mysql'" as dbdel  
+        }
+        dockdel ..> fdel :mounts
+
+        component "mysql-hcdwebsite" as dockdelweb #LightGreen {
+            database "MySql\n165.235.4.56:3306\n/hcdwebsite/mysql" as dbdelweb  
+        }
+        dockdelweb ..> fdelweb :mounts
+
+  }  
+
+
+@enduml

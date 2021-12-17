@@ -249,11 +249,13 @@ D: ============== ./mysql80-community-release-el8-2.noarch.rpm
 
 ----
 sudo yum install mysql-server
-
 -> Installed:
-  mecab-0.996-1.module_el8.4.0+589+11e12751.9.x86_64                                  mysql-8.0.26-1.module_el8.4.0+915+de215114.x86_64
-  mysql-common-8.0.26-1.module_el8.4.0+915+de215114.x86_64                            mysql-errmsg-8.0.26-1.module_el8.4.0+915+de215114.x86_64
-  mysql-server-8.0.26-1.module_el8.4.0+915+de215114.x86_64                            protobuf-lite-3.5.0-13.el8.x86_64
+  mecab-0.996-1.module_el8.4.0+589+11e12751.9.x86_64      
+  mysql-8.0.26-1.module_el8.4.0+915+de215114.x86_64
+  mysql-common-8.0.26-1.module_el8.4.0+915+de215114.x86_64 
+  mysql-errmsg-8.0.26-1.module_el8.4.0+915+de215114.x86_64
+  mysql-server-8.0.26-1.module_el8.4.0+915+de215114.x86_64 
+  protobuf-lite-3.5.0-13.el8.x86_64
 
 Complete!
 ----
@@ -362,7 +364,7 @@ All done!
 ----
 mysqladmin -u root -p version
 Enter password:
-mysqladmin  Ver 8.0.26 for Linux on x86_64 (Source distribution)
+-> mysqladmin  Ver 8.0.26 for Linux on x86_64 (Source distribution)
 Copyright (c) 2000, 2021, Oracle and/or its affiliates.
 
 Oracle is a registered trademark of Oracle Corporation and/or its
@@ -381,7 +383,7 @@ Threads: 2  Questions: 12  Slow queries: 0  Opens: 132  Flush tables: 3  Open ta
 ----
 mysql -u root -p
 Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
+-> Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 11
 Server version: 8.0.26 Source distribution
 
@@ -407,34 +409,41 @@ mysql> show databases;
 
 ==  MyPhpAdmin Installation
 
-
 === Prerequisites
 
 * PHP
 
+----
 sudo yum module install php:7.2
-
-Installed:
-  nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                         php-cli-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
-  php-common-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                                 php-fpm-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
-  php-json-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                                   php-mbstring-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+-> Installed:
+  nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch
+  php-cli-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-common-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64     
+  php-fpm-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-json-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64       
+  php-mbstring-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
   php-xml-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
 
 Complete!
+----
 
+----
 php -v
-PHP 7.2.24 (cli) (built: Oct 22 2019 08:28:36) ( NTS )
+-> PHP 7.2.24 (cli) (built: Oct 22 2019 08:28:36) ( NTS )
 Copyright (c) 1997-2018 The PHP Group
 Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
-
+----
 
 * php-fpm (The PHP FastCGI Process Manager)
 
 ----
 sudo systemctl enable --now php-fpm
-Created symlink /etc/systemd/system/multi-user.target.wants/php-fpm.service → /usr/lib/systemd/system/php-fpm.service.
- ⚙ ppalacz@hcd.ca.gov@piotr  ~/MySql  systemctl status php-fpm
-● php-fpm.service - The PHP FastCGI Process Manager
+-> Created symlink /etc/systemd/system/multi-user.target.wants/php-fpm.service → /usr/lib/systemd/system/php-fpm.service.
+----
+
+----
+systemctl status php-fpm
+-> php-fpm.service - The PHP FastCGI Process Manager
    Loaded: loaded (/usr/lib/systemd/system/php-fpm.service; enabled; vendor preset: disabled)
    Active: active (running) since Wed 2021-12-15 15:36:39 EST; 22s ago
  Main PID: 454634 (php-fpm)
@@ -448,28 +457,38 @@ Created symlink /etc/systemd/system/multi-user.target.wants/php-fpm.service → 
            ├─454637 php-fpm: pool www
            ├─454638 php-fpm: pool www
            └─454639 php-fpm: pool www
-
+----
 
 PHP FPM service listens on a Unix socket – /run/php-fpm/www.sock
-----
 
 * PHP extensions
 
 ----
 sudo yum -y install php php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json
 
-Installed:
-  autoconf-2.69-29.el8.noarch                                                         automake-1.16.1-7.el8.noarch
-  gcc-c++-8.5.0-4.el8_5.x86_64                                                        gd-2.2.5-7.el8.x86_64
-  libXpm-3.5.12-8.el8.x86_64                                                          libstdc++-devel-8.5.0-4.el8_5.x86_64
-  libtool-2.4.6-25.el8.x86_64                                                         libzip-1.5.1-2.module_el8.2.0+313+b04d0a66.x86_64
-  m4-1.4.18-7.el8.x86_64                                                              pcre-cpp-8.42-6.el8.x86_64
-  pcre-devel-8.42-6.el8.x86_64                                                        pcre-utf16-8.42-6.el8.x86_64
-  pcre-utf32-8.42-6.el8.x86_64                                                        php-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
-  php-bcmath-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                              php-devel-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
-  php-gd-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                                  php-mysqlnd-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
-  php-pdo-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64                                 php-pear-1:1.10.5-9.module_el8.2.0+313+b04d0a66.noarch
-  php-pecl-zip-1.15.3-1.module_el8.2.0+313+b04d0a66.x86_64                            php-process-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+-> Installed:
+  autoconf-2.69-29.el8.noarch 
+  automake-1.16.1-7.el8.noarch
+  gcc-c++-8.5.0-4.el8_5.x86_64 
+  gd-2.2.5-7.el8.x86_64
+  libXpm-3.5.12-8.el8.x86_64  
+  libstdc++-devel-8.5.0-4.el8_5.x86_64
+  libtool-2.4.6-25.el8.x86_64 
+  libzip-1.5.1-2.module_el8.2.0+313+b04d0a66.x86_64
+  m4-1.4.18-7.el8.x86_64      
+  pcre-cpp-8.42-6.el8.x86_64
+  pcre-devel-8.42-6.el8.x86_64 
+  pcre-utf16-8.42-6.el8.x86_64
+  pcre-utf32-8.42-6.el8.x86_64 
+  php-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-bcmath-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64  
+  php-devel-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-gd-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64      
+  php-mysqlnd-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
+  php-pdo-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64     
+  php-pear-1:1.10.5-9.module_el8.2.0+313+b04d0a66.noarch
+  php-pecl-zip-1.15.3-1.module_el8.2.0+313+b04d0a66.x86_64 
+  php-process-7.2.24-1.module_el8.2.0+313+b04d0a66.x86_64
 
 Complete!
 ----

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="585px" preserveAspectRatio="none" style="width:903px;height:585px;background:#FFFFFF;" version="1.1" viewBox="0 0 903 585" width="903px" zoomAndPan="magnify"><defs><filter height="300%" id="f1dgt55khwji1g" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter><filter height="1" id="b1dgt55khwji1g0" width="1" x="0" y="0"><feFlood flood-color="#F0F8FF" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b1dgt55khwji1g1" width="1" x="0" y="0"><feFlood flood-color="#90EE90" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b1dgt55khwji1g2" width="1" x="0" y="0"><feFlood flood-color="#FFF5EE" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter></defs><g><!--MD5=[d3013eb309a248c62385093ffd2add38]
+cluster pumpkin8--><polygon fill="#F0F8FF" filter="url(#f1dgt55khwji1g)" points="16,16,26,6,886,6,886,483,876,493,16,493,16,16" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="876" x2="886" y1="16" y2="6"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="876" y1="16" y2="16"/><line style="stroke:#000000;stroke-width:1.5;" x1="876" x2="876" y1="16" y2="493"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="69" x="412.5" y="31.9951">pumpkin</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="130" x="382" y="48.292">Oracle Linux 8.5</text><!--MD5=[39a5872d865de61eba07178027678ce6]
+cluster fopt--><polygon fill="#F0F8FF" filter="url(#f1dgt55khwji1g)" points="52,265,91,265,98,287.2969,862,287.2969,862,469,52,469,52,265" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="52" x2="98" y1="287.2969" y2="287.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="33" x="56" y="279.9951">/opt</text><!--MD5=[bb0f33dfda132f44a16bfcde9a9b1ef2]
+cluster foptnofa--><polygon fill="#F0F8FF" filter="url(#f1dgt55khwji1g)" points="340,316,383,316,390,338.2969,830,338.2969,830,437,340,437,340,316" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="340" x2="390" y1="338.2969" y2="338.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="344" y="330.9951">nofa</text><!--MD5=[0c298fe63d203b7586971c31a8e4a3b0]
+cluster nofadfa\n--><path d="M276.728,81.5412 C288.6261,59.6328 304.6356,61.641 316.563,81.5132 C327.0166,60.2082 348.7813,62.8668 360.0352,80.6226 C371.6978,63.8768 383.4447,59.0765 397.4195,78.2137 C410.8161,60.2957 430.8449,58.0734 442.8908,79.7644 C452.1891,60.421 469.4812,57.9421 484.1103,73.4617 C497.4142,54.8411 510.4307,49.9538 526.0122,71.0594 C536.0048,54.8921 553.1897,54.5456 562.9057,71.3688 C576.0718,54.594 592.9764,54.2537 602.248,75.4085 C615.7751,53.6022 634.7547,57.0222 648.075,75.6429 C661.959,56.5659 673.5487,60.0546 686.0793,77.0681 C696.393,60.0036 714.0276,58.2907 724.7753,76.5933 C737.2164,58.6875 754.1857,58.9413 765.5503,77.7877 C778.6464,57.1193 802.2899,56.0655 813.2815,80.0379 C827.0443,59.3015 845.0947,65.8759 854,85 C856.068,85.1539 856.9352,86.8191 855.7069,88.5555 C886.1324,101.5048 890.7351,124.7954 862.1123,144.5049 C888.8346,169.9973 878.8397,196.4458 847,208 C849.9863,207.5007 851.0385,208.8475 850.5126,211.6908 C836.0944,232.0021 823.0837,234.4658 808.0639,212.2919 C796.2143,232.1403 784.8557,228.2653 771.998,213.3374 C760.2502,239.3565 744.7758,237.2136 727.4833,218.9053 C712.666,238.2957 698.6638,237.8728 686.9455,215.8703 C677.3511,239.914 660.3462,239.2582 644.9441,221.7394 C631.2174,241.2281 615.8631,242.8858 601.4904,222.4424 C589.6438,241.086 571.342,239.6162 562.0571,219.8149 C551.6491,236.3758 534.113,236.8492 526.217,217.3203 C514.4279,237.9569 497.1415,239.0348 483.6272,219.1327 C470.2886,239.1993 454.5908,237.0181 443.166,217.1917 C429.6632,240.5123 413.3409,243.961 397.3763,219.5535 C383.3298,235.4409 367.27,231.68 358.1311,213.8426 C342.4195,236.1867 329.0801,233.6107 314.2288,212.9641 C292.2205,232.045 275.787,231.1846 266,201 C267.898,199.2257 269.5255,199.6672 270.1025,202.2452 C239.25,187.5977 236.9361,167.6072 260.3003,143.8578 C230.6079,116.591 236.5964,92.5212 273,78 C275.5546,77.5638 277.3886,78.5926 276.728,81.5412 " fill="#FFF5EE" filter="url(#f1dgt55khwji1g)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="64" x="528" y="95.9951">nofadfa</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="562.5" y="112.292"/><!--MD5=[cf5df9a0430f64233809c56b1b032f0d]
+cluster bridge\n--><path d="M56.0671,80.2924 C58.7542,73.0771 64.666,73.4627 68.9621,78.6147 C72.2238,72.7346 78.9309,72.3969 82.4464,78.3249 C86.3924,71.3191 91.6781,70.9915 96.2437,77.7016 C100.0574,69.5911 105.9181,70.8409 110.6465,76.7627 C113.911,69.1711 120.3813,68.6322 125.1699,75.1994 C127.9263,68.8024 134.109,68.1968 138.5056,73.2968 C143.0421,68.7619 149.327,69.9943 151.5767,76.1047 C156.4165,68.4838 161.7894,69.893 165.9842,76.7468 C169.4519,71.0141 174.4434,70.8506 178.2992,76.3203 C184.0114,70.7952 188.6219,69.9633 192.8955,77.8823 C197.8293,70.905 204.0174,73.4688 207.1013,79.8496 C215.7757,73.7071 222.2747,75.0892 226,85.5 C226.9471,85.8275 227.1781,86.3316 226.5234,87.1632 C233.5189,89.9943 233.5635,96.3256 227.9291,100.4891 C234.8349,104.6718 234.7047,111.8763 227.9928,116.1146 C235.5731,119.7427 235.969,125.0082 228.8383,129.5612 C235.415,133.7344 235.4794,138.8306 229.3536,143.4743 C235.6874,147.6821 235.7864,154.4892 228.7768,158.1733 C234.4797,162.0848 235.4573,168.8889 228.271,172.3401 C235.9038,176.1165 236.5701,183.9669 228.6744,188.1397 C233.9634,199.02 231.8609,205.6893 219,207.5 C219.3449,206.8866 219.9118,206.939 220.2537,207.5032 C215.7837,213.2452 211.7628,213.8405 206.9121,207.9394 C203.0598,214.6282 196.9217,216.0874 192.4977,208.5172 C189.8285,215.8975 184.5959,215.7833 179.8971,210.5436 C176.1121,215.6098 169.5816,216.3349 166.6608,209.5763 C162.7373,218.1075 156.7898,217.9615 151.4842,210.9236 C147.4948,217.5059 141.5996,218.4057 137.6748,210.8605 C134.0694,216.9328 126.9924,216.6892 123.5126,210.7128 C119.5313,215.2007 115.7203,216.0051 112.0365,210.3753 C107.2172,217.6978 102.4376,218.5896 96.8856,211.1262 C91.4028,217.1392 86.781,214.5303 83.8563,208.3849 C80.3646,215.7533 74.2777,214.2675 70.2421,208.9696 C59.4362,215.8006 51.2558,213.4962 48,200.5 C48.3221,200.1069 48.7621,200.142 48.9524,200.6408 C41.7531,196.9508 41.4754,190.8808 48.3426,186.5809 C42.4376,183.3015 42.024,178.2163 47.3642,174.0582 C40.0954,169.3214 40.1107,162.88 46.9825,157.8109 C40.7539,153.8694 38.978,149.9008 45.3057,144.3905 C38.1588,139.2685 39.9923,133.4452 46.4821,129.3929 C40.6234,125.7358 40.3616,119.9139 46.5928,116.3594 C38.4141,111.0853 39.7766,105.2534 47.4857,100.8967 C39.4862,89.9402 42.5782,82.6049 55,78.5 C56.2515,78.3799 56.5974,79.3517 56.0671,80.2924 " fill="#FFF5EE" filter="url(#f1dgt55khwji1g)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="111.5" y="96.4951">bridge</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="139.5" y="112.792"/><!--MD5=[3d93e657cea2528719009dc70ac1436c]
+entity foptnofakey--><polygon fill="#F0F8FF" filter="url(#f1dgt55khwji1g)" points="712,359,758,359,765,380,806,380,806,413.2969,712,413.2969,712,359" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="712" x2="765" y1="380" y2="380"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="722" y="399.9951">keycloak</text><!--MD5=[9ff006fae389d77948a880ac6dfed061]
+entity foptnofadr--><polygon fill="#F0F8FF" filter="url(#f1dgt55khwji1g)" points="490.5,359,536.5,359,543.5,380,565.5,380,565.5,413.2969,490.5,413.2969,490.5,359" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="490.5" x2="543.5" y1="380" y2="380"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="500.5" y="399.9951">drupal</text><!--MD5=[fa87716353d60da80661cb97a490a196]
+entity foptnofawild--><polygon fill="#F0F8FF" filter="url(#f1dgt55khwji1g)" points="601,359,647,359,654,380,677,380,677,413.2969,601,413.2969,601,359" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="601" x2="654" y1="380" y2="380"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="611" y="399.9951">wildfly</text><!--MD5=[af1243702fbb8609737ff505017e1225]
+entity foptnofasqld--><polygon fill="#F0F8FF" filter="url(#f1dgt55khwji1g)" points="383,359,429,359,436,380,455,380,455,413.2969,383,413.2969,383,359" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="383" x2="436" y1="380" y2="380"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="393" y="399.9951">mysql</text><!--MD5=[c6127a74f357246eb219aa6602599f09]
+entity foptacc--><polygon fill="#F0F8FF" filter="url(#f1dgt55khwji1g)" points="68,359,114,359,121,380,180,380,180,413.2969,68,413.2969,68,359" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="68" x2="121" y1="380" y2="380"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="78" y="399.9951">accelerator</text><!--MD5=[537234eedc727e319deb2b8a27e49c66]
+entity fopthk--><polygon fill="#F0F8FF" filter="url(#f1dgt55khwji1g)" points="215.5,359,261.5,359,268.5,380,312.5,380,312.5,413.2969,215.5,413.2969,215.5,359" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="215.5" x2="268.5" y1="380" y2="380"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="225.5" y="399.9951">homekey</text><!--MD5=[13d1b1cdaf1b8335b0fe2375541f122b]
+entity nofaap--><rect fill="#90EE90" filter="url(#f1dgt55khwji1g)" height="78.8906" style="stroke:#A80036;stroke-width:1.5;" width="156" x="274" y="121"/><rect fill="#90EE90" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="410" y="126"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="408" y="128"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="408" y="132"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="289" y="153.9951">nofaapache</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="289" y="170.292">165.235.4.61:80</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="289" y="186.5889">Apache</text><!--MD5=[c8a82d9ca167b26e7c47f3819e35a607]
+entity nofawf--><rect fill="#90EE90" filter="url(#f1dgt55khwji1g)" height="78.8906" style="stroke:#A80036;stroke-width:1.5;" width="173" x="465.5" y="121"/><rect fill="#90EE90" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="618.5" y="126"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="616.5" y="128"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="616.5" y="132"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="480.5" y="153.9951">nofadfa</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133" x="480.5" y="170.292">165.235.4.61:8080</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="480.5" y="186.5889">JBoss WildFly</text><!--MD5=[a18793da8d1a3805cd6bf41dcc0c1e8a]
+entity nofakc--><rect fill="#90EE90" filter="url(#f1dgt55khwji1g)" height="78.8906" style="stroke:#A80036;stroke-width:1.5;" width="172" x="674" y="121"/><rect fill="#90EE90" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="826" y="126"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="824" y="128"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="824" y="132"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="689" y="153.9951">keycloakd</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="689" y="170.292">165.235.4.61:8443</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="689" y="186.5889">JBoss WildFly</text><!--MD5=[c1985618219cdf704f2ae07ac58ef079]
+entity dbnofa--><path d="M56.5,131.5 C56.5,121.5 137,121.5 137,121.5 C137,121.5 217.5,121.5 217.5,131.5 L217.5,189.3906 C217.5,199.3906 137,199.3906 137,199.3906 C137,199.3906 56.5,199.3906 56.5,189.3906 L56.5,131.5 " fill="#90EE90" filter="url(#f1dgt55khwji1g)" style="stroke:#000000;stroke-width:1.5;"/><path d="M56.5,131.5 C56.5,141.5 137,141.5 137,141.5 C137,141.5 217.5,141.5 217.5,131.5 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="66.5" y="158.4951">mysql</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="66.5" y="174.792">165.235.4.124:8306</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="66.5" y="191.0889">MySql Server</text><!--MD5=[821d9c63c64481e92e3d181910d11466]
+link nofaap to foptacc--><path d="M291.335,200.031 C273.514,209.552 253.545,218.572 234,224 C218.346,228.348 99.1694,220.202 88,232 C56.6701,265.094 81.5367,320.121 102.613,354.382 " fill="none" id="nofaap-to-foptacc" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="105.423,358.867,104.035,349.1164,102.7686,354.6297,97.2553,353.3634,105.423,358.867" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="89" y="245.0669">mounts</text><!--MD5=[70802456bc4383464e1603f81f7666a1]
+link nofaap to foptnofa--><path d="M342.275,200.053 C340.093,210.362 338.1,221.546 337,232 C336.209,239.514 334.343,241.927 337,249 C338.662,253.423 342.269,252.604 344,257 C349.1308,270.0333 351.9784,284.4036 353.356,298.6637 C353.7004,302.2287 353.9529,305.7868 354.1263,309.3154 C354.213,311.0797 354.2798,312.8367 354.3285,314.5834 C354.3407,315.0201 354.3517,315.4561 354.3616,315.8915 " fill="none" id="nofaap-to-foptnofa" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="354.3616,315.8915,358.1556,306.8027,354.2478,310.8928,350.1577,306.9849,354.3616,315.8915" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="338" y="245.0669">mounts</text><!--MD5=[88440b0cb8b55223f15f8af49c1d3918]
+link nofaap to fopthk--><path d="M289.939,200.098 C272.431,209.377 252.97,218.256 234,224 C217.112,229.113 166.832,218.909 155,232 C124.932,265.266 184.801,247.948 197,257 C228.989,280.738 247.073,324.284 256.194,353.927 " fill="none" id="nofaap-to-fopthk" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="257.688,358.925,258.9417,349.1563,256.2555,354.1346,251.2771,351.4483,257.688,358.925" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="156" y="245.0669">mounts</text><!--MD5=[ef8633c9a97b95214b72652dd685383b]
+link nofawf to foptnofawild--><path d="M610.728,200.164 C620.492,209.382 629.286,220.062 635,232 C653.566,270.79 650.256,321.684 645.309,353.874 " fill="none" id="nofawf-to-foptnofawild" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="644.505,358.875,649.8838,350.6246,645.2992,353.9385,641.9853,349.3539,644.505,358.875" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="643" y="245.0669">mounts</text><!--MD5=[32dd4f38b45db8e0e8c56d4e7f3bc49b]
+link nofawf to fopthk--><path d="M524.263,200.388 C509.009,218.533 488.428,238.42 465,249 C438.015,261.186 356.908,240.99 332,257 C298.083,278.801 279.984,323.455 271.189,353.815 " fill="none" id="nofawf-to-fopthk" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="269.755,358.933,276.0344,351.3455,271.1037,354.1183,268.3309,349.1876,269.755,358.933" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="492" y="245.0669">mounts</text><!--MD5=[4728283f0cc03390894ae7c31f7583ca]
+link nofawf to foptacc--><path d="M498.519,200.142 C482.668,209.665 464.777,218.657 447,224 C410.781,234.886 314.23,225.35 277,232 C258.873,235.238 212.358,245.471 198,257 C166.498,282.295 145.76,324.871 134.458,353.917 " fill="none" id="nofawf-to-foptacc" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="132.591,358.816,139.5334,351.8301,134.3713,354.1437,132.0578,348.9816,132.591,358.816" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="278" y="245.0669">mounts</text><!--MD5=[5a8a1a169f967a6f3518402036a3a028]
+link nofawf to foptnofadr--><path d="M566.365,200.159 C569.52,210.37 572.397,221.479 574,232 C580.625,275.467 561.407,323.768 545.811,354.249 " fill="none" id="nofawf-to-foptnofadr" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="543.344,358.985,551.0504,352.8522,545.6546,354.5509,543.9559,349.1552,543.344,358.985" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="577" y="245.0669">mounts</text><!--MD5=[68c4bb8bc3c6e34e7c35f4536ae370d7]
+link nofakc to foptnofakey--><path d="M759.827,200.176 C759.632,243.699 759.32,313.557 759.14,353.766 " fill="none" id="nofakc-to-foptnofakey" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="759.116,358.998,763.1571,350.0164,759.1389,353.9981,755.1572,349.9798,759.116,358.998" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="760" y="245.0669">mounts</text><!--MD5=[e75de204d3d862ee062ba51642eddecf]
+link dbnofa to foptnofasqld--><path d="M198.703,199.634 C217.136,209.274 237.823,218.455 258,224 C272.382,227.953 380.864,222.077 392,232 C425.781,262.102 426.884,318.45 423.63,353.721 " fill="none" id="dbnofa-to-foptnofasqld" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="423.121,358.767,428.0032,350.2134,423.6223,353.7922,420.0436,349.4113,423.121,358.767" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="407" y="245.0669">mounts</text><rect fill="#DDDDDD" height="62.8906" rx="5" ry="5" style="stroke:#000000;stroke-width:1.0;" width="159" x="365" y="507"/><text fill="#000000" filter="url(#b1dgt55khwji1g0)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="99" x="371" y="526.9951">Linux Server</text><text fill="#000000" filter="url(#b1dgt55khwji1g1)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="139" x="371" y="543.292">Docker Container</text><text fill="#000000" filter="url(#b1dgt55khwji1g2)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="127" x="371" y="559.5889">Docker Network</text><line style="stroke:#000000;stroke-width:1.0;" x1="371" x2="518" y1="514" y2="514"/><line style="stroke:#000000;stroke-width:1.0;" x1="371" x2="518" y1="530.2969" y2="530.2969"/><line style="stroke:#000000;stroke-width:1.0;" x1="371" x2="518" y1="546.5938" y2="546.5938"/><line style="stroke:#000000;stroke-width:1.0;" x1="371" x2="518" y1="562.8906" y2="562.8906"/><line style="stroke:#000000;stroke-width:1.0;" x1="371" x2="371" y1="514" y2="562.8906"/><line style="stroke:#000000;stroke-width:1.0;" x1="518" x2="518" y1="514" y2="562.8906"/><!--MD5=[fed37eb1f2d2f9283a3f8d4735e97ee4]
+@startuml
+'!theme sketchy-outline
+hide stereotype
+
+'skinparam linetype ortho
+
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+endlegend
+
+'title "HCD DEV/TEST Web/Drupal Deployment" 
+   
+   node "pumpkin\nOracle Linux 8.5" <<i>> as pumpkin8 #AliceBlue {
+
+    ''''folders'''''
+
+    folder "/opt" as fopt #AliceBlue { 
+        folder "nofa" as foptnofa #AliceBlue {    
+        
+            folder "keycloak" as foptnofakey  #AliceBlue {     
+            }
+            folder "drupal" as foptnofadr  #AliceBlue {     
+            }
+            folder "wildfly" as foptnofawild  #AliceBlue {     
+            }
+           folder "mysql" as foptnofasqld  #AliceBlue {     
+            }
+        }
+        folder "accelerator" as foptacc  #AliceBlue {     
+        }
+        folder "homekey" as fopthk  #AliceBlue {     
+        }
+    }
+    
+    '''''cloud'''''
+    cloud "nofadfa\n" #SeaShell {
+   
+    component "nofaapache\n165.235.4.61:80\nApache" as nofaap #LightGreen {  
+    }
+
+    nofaap ..> foptacc :mounts
+    nofaap ..> foptnofa :mounts
+    nofaap ..> fopthk :mounts
+
+    component "nofadfa\n165.235.4.61:8080\nJBoss WildFly" as nofawf #LightGreen {
+      
+    }
+
+    nofawf ..> foptnofawild :mounts
+    nofawf ..> fopthk :mounts
+    nofawf ..> foptacc :mounts
+    nofawf ..> foptnofadr :mounts
+
+    component "keycloakd\n165.235.4.61:8443\nJBoss WildFly" as nofakc #LightGreen {
+    }  
+    nofakc ..> foptnofakey :mounts
+  
+    'cloud "nofadfa"
+  }  
+     
+  cloud "bridge\n" #SeaShell {
+    database "mysql\n165.235.4.124:8306\nMySql Server" as dbnofa #LightGreen {
+    }  
+      
+    dbnofa ..> foptnofasqld :mounts
+    }
+}
+@enduml
+
+@startuml
+hide stereotype
+
+
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+endlegend
+
+   
+   node "pumpkin\nOracle Linux 8.5" <<i>> as pumpkin8 #AliceBlue {
+
+
+    folder "/opt" as fopt #AliceBlue { 
+        folder "nofa" as foptnofa #AliceBlue {    
+        
+            folder "keycloak" as foptnofakey  #AliceBlue {     
+            }
+            folder "drupal" as foptnofadr  #AliceBlue {     
+            }
+            folder "wildfly" as foptnofawild  #AliceBlue {     
+            }
+           folder "mysql" as foptnofasqld  #AliceBlue {     
+            }
+        }
+        folder "accelerator" as foptacc  #AliceBlue {     
+        }
+        folder "homekey" as fopthk  #AliceBlue {     
+        }
+    }
+    
+    cloud "nofadfa\n" #SeaShell {
+   
+    component "nofaapache\n165.235.4.61:80\nApache" as nofaap #LightGreen {  
+    }
+
+    nofaap ..> foptacc :mounts
+    nofaap ..> foptnofa :mounts
+    nofaap ..> fopthk :mounts
+
+    component "nofadfa\n165.235.4.61:8080\nJBoss WildFly" as nofawf #LightGreen {
+      
+    }
+
+    nofawf ..> foptnofawild :mounts
+    nofawf ..> fopthk :mounts
+    nofawf ..> foptacc :mounts
+    nofawf ..> foptnofadr :mounts
+
+    component "keycloakd\n165.235.4.61:8443\nJBoss WildFly" as nofakc #LightGreen {
+    }  
+    nofakc ..> foptnofakey :mounts
+  
+  }  
+     
+  cloud "bridge\n" #SeaShell {
+    database "mysql\n165.235.4.124:8306\nMySql Server" as dbnofa #LightGreen {
+    }  
+      
+    dbnofa ..> foptnofasqld :mounts
+    }
+}
+@enduml
+
+PlantUML version 1.2021.16beta3(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

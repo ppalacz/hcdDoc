@@ -1,0 +1,40 @@
+@startuml "HCD Overview"
+'!theme sketchy-outline
+hide stereotype
+
+'skinparam linetype ortho
+ 
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+endlegend
+
+node A { 
+  component oracle19cUATMain #LightGreen 
+	component  orionaggregator  
+	component weaveworks_scope  
+  }
+
+node "tangerine\nCAPES DB Prod'" as tangerine 	#AliceBlue { 
+	component capesprod #LightGreen
+	component weaveworks_scope #LightGreen
+	component orionaggregator #LightGreen
+	 
+}
+
+node "cherry\nCAPES WebLogic " as cherry #AliceBlue 	{  
+	  component "capesprod\nweblogic" as capesprod #LightGreen
+	   component	"Orion\nSolarwinds" as orion-orionaggregator #LightGreen
+	   component	 weaveworks #LightGreen
+	 	component  capesprodapache #LightGreen
+	  component	 coresprodapache #LightGreen
+}
+
+'node "banana\nDev, UAT, Test for CASAS" as banana	#AliceBlue { 
+'	component oracle19cUATMain #LightGreen {}
+'	component  orionaggregator #LightGreen {}
+'	component weaveworks_scope #LightGreen {}
+'}
+
+@enduml

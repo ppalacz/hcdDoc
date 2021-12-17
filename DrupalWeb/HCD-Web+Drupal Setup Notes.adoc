@@ -51,11 +51,27 @@ endif::[]
 
 == Overview
 
-This document provides an overview of deployment, interactions, and management of Drupal installations at HCD.
-Given the type of information provided, it is _not_ a public document, and it should be circulated only internally. 
+This document provides an overview of deployment of web-related servers, containers, and servers at HCD.
+
+The configuration and deployment information presented is based on the following:
+
+* Docker runtime metadata for the docker containers active at the time of writing
+
+* Configuration files (e.g., for Apache httpd, MySql server)
+
+* Various shell/cli scripts
+
+
+WARNING: Given the type of information provided, it is _not_ a public document, and its internal circulation should be limited to people with direct or oversight responsibility for the areas described.
  
 === Main Sections
 
+<<<<<<< HEAD
+=======
+
+. The section <<DEV and TEST for Web>> describes how DEV and TEST environments for Web-related applications are organized at HCD.
+
+>>>>>>> e9de0e605f809baf68cb239832660f0809b95e47
  
  
 
@@ -66,7 +82,7 @@ Given the type of information provided, it is _not_ a public document, and it sh
 |=========================================================
 |Date | Contact |Description 
 
-|10/29/2021 |   piotr.palacz@hcd.ca.gov | Diagrams added.
+|12/06/2021 |   piotr.palacz@hcd.ca.gov | Diagrams added.
 
 |11/24/2021 |   piotr.palacz@hcd.ca.gov | Document created  
 
@@ -75,20 +91,36 @@ Given the type of information provided, it is _not_ a public document, and it sh
 
 == Context
 
-This section describes the following key elements/practices of modern testing process for sizeable software systems:
-
-* Testing many kinds of artifacts - rather than one (most often, the UI)
-* Mechanizing Testing - rather than relying on manual testing
-* Integrating Testing with Continuous Integration - rather than treating it as an activity separated from the development and environment promotions
-* Adopting Testing Progression: starting with the simplest tests and proceeding to the most complex ones, if the simpler tests succeed, and stopping on failure - rather than waving defects and failures through.
 
 
-== Containers
+== DEV and TEST Environments for Web-related Apps
 
 
 
-== Components
+=== Docker DEV and TEST Overview
 
+// image::images/MID02-naming.png[Naming MID Server,width=50%,align="center"
+
+=== Docker Networks on Pumpkin
+
+image::plantuml/pumpkinByNetwork.svg[Docker Networks on pumpkin,{size75}, align="center"]
+
+
+==== Bridge Network
+
+image::plantuml/pumpkinNetBridge.svg[Bridge Network on pumpkin,{size75}, align="center"]
+
+==== Deloitte Network
+
+image::plantuml/pumpkinNetDeloitte.svg[Deloitte Network on pumpkin,{size60},align="center"]
+
+==== HCD Network
+
+image::plantuml/pumpkinNetHcd.svg[HCD Network on pumpkin,{size20}, align="center"]
+
+==== Nofadfa Network
+
+image::plantuml/pumpkinNetNofadfa.svg[Nofadfa Network on pumpkin,{size60}, align="center"]
 
 
 <end>

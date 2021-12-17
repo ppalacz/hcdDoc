@@ -1,0 +1,179 @@
+@startuml "Docker Containers on pumpkin"
+'!theme sketchy-outline
+hide stereotype
+
+'skinparam linetype ortho
+
+<style>
+  ' Styles to apply to components to indicate something of note:
+  ' in-scope (<<i>>)
+  .i {
+    BackgroundColor SkyBlue
+    FontStyle bold
+    FontSize 16
+  }
+  .dockany {
+    BackgroundColor LimeGreen
+    FontStyle bold
+    'FontColor DarkGray
+    FontSize 14
+  }
+ .dockproxy {
+    BackgroundColor Gold
+    'FontStyle italic
+    'FontColor DarkGray
+    FontSize 14
+  }
+  .dockprod {
+    BackgroundColor DarkGreen
+    FontStyle bold
+    'FontColor DarkGray
+    FontSize 14
+  }
+
+  .dockdev {
+    BackgroundColor Lime
+    FontStyle italic
+    'FontColor DarkGray
+    FontSize 14
+  }
+
+   .dockertest {
+    BackgroundColor YellowGreen
+    FontStyle italic
+    'FontColor DarkGray
+    FontSize 14
+  }
+
+
+}
+</style>
+
+legend
+|<back:SkyBlue><b>Linux Server        .</b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+endlegend
+
+'title "HCD DEV/TEST Web/Drupal Deployment" 
+   
+   node "pumpkin\nOracle Linux 8" <<i>> as pumpkin8 {
+
+  folder "/opt/calhomedisaster" as optacalhome {
+      artifact "Web Forms"
+      'artifact "Weblogic binaries"
+      'artifact "Static html"
+
+    }  
+
+ folder "/opt/homekey" as opthomekey {
+      artifact "Homekey docker build"
+      'artifact "Weblogic binaries"
+      'artifact "Static html"
+
+    }  
+
+    folder "/opt/homekeydev" as opthomekeydev {
+      artifact "Homekey DEV docker build"
+      'artifact "Weblogic binaries"
+      'artifact "Static html"
+
+    }  
+
+   folder "/opt/acceleratordev" as optaccdev {
+      artifact "Accelerator DEV docker build"
+      'artifact "Weblogic binaries"
+      'artifact "Static html"
+
+    }   
+
+   folder "/opt/accelerator" as optacc {
+    
+      artifact "Accelerator docker build"
+      'artifact "Weblogic binaries"
+      'artifact "Static html"
+    }
+
+    folder "hcdwebsite" {
+      database "MySql\n165.235.4.124\n/hcdwebsite/sql" as dbhcd
+    }
+
+    folder "hcddeloitte" {
+      database "MySql\n165.235.4.124\n/var/lib/mysql\nuser 'mysql'" as dbdel
+    }
+
+    folder "nofaapp" {
+      database "MySql\n165.235.4.124\n/nofaap/mysql\nuser 'aristotle'" as dbnofa
+
+    }
+
+
+      node "Docker v.20.10.11" <<dockerany>> as docker { 
+
+   
+
+
+  rectangle "DEV" as boxdev {
+
+    component  "acceleratordevapache" as dockaccdev {
+      artifact "PHP 7.4" as phpaccdev
+	    boundary  "URL:acceleratordev.hcd.ca.gov" <<dockdev>>
+      control  "WebLogic Admin\n10.250.20.10" as boxdevwladm <<dockdev>>
+      component "WebLogic" as boxdevwl <<dockdev>>
+      boxdevwladm ...> boxdevwl
+
+    } 
+
+    component  "homekeydevapache"  {
+      artifact "PHP 7.4" as phphomekeydev
+	    boundary "URL:homekeydev.hcd.ca.gov"
+    }
+
+  component  "w3devapache"   {
+    'artifact "PHP 7.4" as phpaccdev
+	   boundary "URL: w3devdfa.hcd.ca.gov" <<dockdev>>
+	   }
+  }
+  
+ 
+
+  rectangle "UAT" as boxuat {
+
+	  component  "w3uatapache"  {
+      'artifact "PHP 7.4"
+      boundary "?"  <<dockdev>>
+	  }
+  }
+
+  rectangle "Test?" as boxother {
+     
+    component  "acceleratorapache" as dockacc   {
+      boundary "?"  <<dockdev>>
+      artifact "PHP 7.4" as phpacc
+    }
+  
+    component  "homekeyapache"  {
+      artifact "CentOS 8\nPHP 7.4" as confacc
+      boundary "URL: homekeydfa.hcd.ca.gov"  
+    }
+ 
+    component  "nofaapache"   {
+      artifact "PHP 7.4" as phpnofa
+      boundary "URL: nofadfa.hcd.ca.gov"  
+    }
+  }
+      }
+   }
+
+
+  docker -up-> boxdev :runs
+  docker -right-> boxuat :runs
+  docker -down-> boxother :runs
+  optaccdev ...> dockaccdev :creates
+  optacc ...> dockacc :creates
+'webProxy -down-> webServers
+'webProxy <..> webProxyFailOver
+'webServers -down-> drupalServers
+'drupalServers -down-> dbServers
+
+
+@enduml

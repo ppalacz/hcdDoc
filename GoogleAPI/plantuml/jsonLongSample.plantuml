@@ -1,0 +1,1407 @@
+@startjson
+{
+    "normalizedInput": {
+        "line1": "64 Dean Road",
+        "city": "Sacramento",
+        "state": "CA",
+        "zip": "95815"
+    },
+    "kind": "civicinfo#representativeInfoResponse",
+    "divisions": {
+        "ocd-division/country:us/state:ca/sldu:6": {
+            "name": "California State Senate district 6",
+            "officeIndices": [
+                12
+            ]
+        },
+        "ocd-division/country:us/state:ca/place:sacramento": {
+            "name": "Sacramento city",
+            "officeIndices": [
+                19
+            ]
+        },
+        "ocd-division/country:us": {
+            "name": "United States",
+            "officeIndices": [
+                0,
+                1
+            ]
+        },
+        "ocd-division/country:us/state:ca/cd:6": {
+            "name": "California's 6th congressional district",
+            "officeIndices": [
+                3
+            ]
+        },
+        "ocd-division/country:us/state:ca/county:sacramento": {
+            "name": "Sacramento County",
+            "officeIndices": [
+                15,
+                16,
+                17
+            ]
+        },
+        "ocd-division/country:us/state:ca/county:sacramento/school_district:twin_rivers_unified": {
+            "name": "twin rivers unified"
+        },
+        "ocd-division/country:us/state:ca/sldl:7": {
+            "name": "California Assembly district 7",
+            "officeIndices": [
+                13
+            ]
+        },
+        "ocd-division/country:us/state:ca/county:sacramento/council_district:1": {
+            "name": "Sacramento County CA Board of Supervisors District 1",
+            "officeIndices": [
+                18
+            ]
+        },
+        "ocd-division/country:us/state:ca": {
+            "name": "California",
+            "officeIndices": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                14
+            ]
+        }
+    },
+    "offices": [
+        {
+            "name": "President of the United States",
+            "divisionId": "ocd-division/country:us",
+            "levels": [
+                "country"
+            ],
+            "roles": [
+                "headOfGovernment",
+                "headOfState"
+            ],
+            "officialIndices": [
+                0
+            ]
+        },
+        {
+            "name": "Vice President of the United States",
+            "divisionId": "ocd-division/country:us",
+            "levels": [
+                "country"
+            ],
+            "roles": [
+                "deputyHeadOfGovernment"
+            ],
+            "officialIndices": [
+                1
+            ]
+        },
+        {
+            "name": "U.S. Senator",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "country"
+            ],
+            "roles": [
+                "legislatorUpperBody"
+            ],
+            "officialIndices": [
+                2,
+                3
+            ]
+        },
+        {
+            "name": "U.S. Representative",
+            "divisionId": "ocd-division/country:us/state:ca/cd:6",
+            "levels": [
+                "country"
+            ],
+            "roles": [
+                "legislatorLowerBody"
+            ],
+            "officialIndices": [
+                4
+            ]
+        },
+        {
+            "name": "Governor of California",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "headOfGovernment"
+            ],
+            "officialIndices": [
+                5
+            ]
+        },
+        {
+            "name": "Lieutenant Governor of California",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "deputyHeadOfGovernment"
+            ],
+            "officialIndices": [
+                6
+            ]
+        },
+        {
+            "name": "CA Attorney General",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "governmentOfficer"
+            ],
+            "officialIndices": [
+                7
+            ]
+        },
+        {
+            "name": "CA State Superintendent of Public Instruction",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "governmentOfficer"
+            ],
+            "officialIndices": [
+                8
+            ]
+        },
+        {
+            "name": "CA State Controller",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "governmentOfficer"
+            ],
+            "officialIndices": [
+                9
+            ]
+        },
+        {
+            "name": "CA Secretary of State",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "governmentOfficer"
+            ],
+            "officialIndices": [
+                10
+            ]
+        },
+        {
+            "name": "CA Insurance Commissioner",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "governmentOfficer"
+            ],
+            "officialIndices": [
+                11
+            ]
+        },
+        {
+            "name": "CA State Treasurer",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "governmentOfficer"
+            ],
+            "officialIndices": [
+                12
+            ]
+        },
+        {
+            "name": "CA State Senator",
+            "divisionId": "ocd-division/country:us/state:ca/sldu:6",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "legislatorUpperBody"
+            ],
+            "officialIndices": [
+                13
+            ]
+        },
+        {
+            "name": "CA State Assembly Member",
+            "divisionId": "ocd-division/country:us/state:ca/sldl:7",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "legislatorLowerBody"
+            ],
+            "officialIndices": [
+                14
+            ]
+        },
+        {
+            "name": "CA Supreme Court Justice",
+            "divisionId": "ocd-division/country:us/state:ca",
+            "levels": [
+                "administrativeArea1"
+            ],
+            "roles": [
+                "judge"
+            ],
+            "officialIndices": [
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21
+            ]
+        },
+        {
+            "name": "Sacramento County Assessor",
+            "divisionId": "ocd-division/country:us/state:ca/county:sacramento",
+            "levels": [
+                "administrativeArea2"
+            ],
+            "roles": [
+                "governmentOfficer"
+            ],
+            "officialIndices": [
+                22
+            ]
+        },
+        {
+            "name": "Sacramento County Sheriff",
+            "divisionId": "ocd-division/country:us/state:ca/county:sacramento",
+            "levels": [
+                "administrativeArea2"
+            ],
+            "roles": [
+                "governmentOfficer"
+            ],
+            "officialIndices": [
+                23
+            ]
+        },
+        {
+            "name": "Sacramento County District Attorney",
+            "divisionId": "ocd-division/country:us/state:ca/county:sacramento",
+            "levels": [
+                "administrativeArea2"
+            ],
+            "roles": [
+                "governmentOfficer"
+            ],
+            "officialIndices": [
+                24
+            ]
+        },
+        {
+            "name": "Sacramento County Supervisor",
+            "divisionId": "ocd-division/country:us/state:ca/county:sacramento/council_district:1",
+            "levels": [
+                "administrativeArea2"
+            ],
+            "roles": [
+                "legislatorLowerBody"
+            ],
+            "officialIndices": [
+                25
+            ]
+        },
+        {
+            "name": "Mayor of Sacramento",
+            "divisionId": "ocd-division/country:us/state:ca/place:sacramento",
+            "levels": [
+                "locality"
+            ],
+            "roles": [
+                "headOfGovernment"
+            ],
+            "officialIndices": [
+                26
+            ]
+        }
+    ],
+    "officials": [
+        {
+            "name": "Joseph R. Biden",
+            "address": [
+                {
+                    "line1": "1600 Pennsylvania Avenue Northwest",
+                    "city": "Washington",
+                    "state": "DC",
+                    "zip": "20500"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(202) 456-1111"
+            ],
+            "urls": [
+                "https://www.whitehouse.gov/",
+                "https://en.wikipedia.org/wiki/Joe_Biden"
+            ],
+            "channels": [
+                {
+                    "type": "Twitter",
+                    "id": "potus"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "The White House 1600 Pennsylvania Avenue NW Washington, DC 20500",
+                    "featureId": {
+                        "cellId": "9923602325795527449",
+                        "fprint": "11513381022022344111"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 126.14545494347092,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Kamala D. Harris",
+            "address": [
+                {
+                    "line1": "1600 Pennsylvania Avenue Northwest",
+                    "city": "Washington",
+                    "state": "DC",
+                    "zip": "20500"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(202) 456-1111"
+            ],
+            "urls": [
+                "https://www.whitehouse.gov/",
+                "https://en.wikipedia.org/wiki/Kamala_Harris"
+            ],
+            "channels": [
+                {
+                    "type": "Twitter",
+                    "id": "VP"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "The White House 1600 Pennsylvania Avenue NW Washington, DC 20500",
+                    "featureId": {
+                        "cellId": "9923602325795527449",
+                        "fprint": "11513381022022344111"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 126.14545494347092,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Alex Padilla",
+            "address": [
+                {
+                    "line1": "03 Russell Senate Office Building",
+                    "city": "Washington",
+                    "state": "DC",
+                    "zip": "20510"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(202) 224-3553"
+            ],
+            "urls": [
+                "https://www.padilla.senate.gov/",
+                "https://en.wikipedia.org/wiki/Alex_Padilla"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "SenAlexPadilla"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "SenAlexPadilla"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "B03 Russell Senate Office Building, Washington DC 20510",
+                    "featureId": {
+                        "cellId": "9923602661160726555",
+                        "fprint": "13491012159388313795"
+                    },
+                    "featureType": "typePostalCode",
+                    "positionPrecisionMeters": 500,
+                    "addressUnderstood": false
+                }
+            ]
+        },
+        {
+            "name": "Dianne Feinstein",
+            "address": [
+                {
+                    "line1": "331 Hart Senate Office Building",
+                    "city": "Washington",
+                    "state": "DC",
+                    "zip": "20510"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(202) 224-3841"
+            ],
+            "urls": [
+                "https://www.feinstein.senate.gov/",
+                "https://en.wikipedia.org/wiki/Dianne_Feinstein"
+            ],
+            "photoUrl": "http://bioguide.congress.gov/bioguide/photo/F/F000062.jpg",
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "SenatorFeinstein"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "SenFeinstein"
+                },
+                {
+                    "type": "YouTube",
+                    "id": "SenatorFeinstein"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "331 Hart Senate Office Building, Washington DC 20510",
+                    "featureId": {
+                        "cellId": "9923602661160726555",
+                        "fprint": "13491012159388313795"
+                    },
+                    "featureType": "typePostalCode",
+                    "positionPrecisionMeters": 500,
+                    "addressUnderstood": false
+                }
+            ]
+        },
+        {
+            "name": "Doris O. Matsui",
+            "address": [
+                {
+                    "line1": "2311 Rayburn House Office Building",
+                    "city": "Washington",
+                    "state": "DC",
+                    "zip": "20515"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(202) 225-7163"
+            ],
+            "urls": [
+                "https://matsui.house.gov/",
+                "https://en.wikipedia.org/wiki/Doris_Matsui"
+            ],
+            "photoUrl": "http://bioguide.congress.gov/bioguide/photo/M/M001163.jpg",
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "doris.matsui"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "dorismatsui"
+                },
+                {
+                    "type": "YouTube",
+                    "id": "UCsdnavaoSwz0Rpe8r7-wDpg"
+                },
+                {
+                    "type": "YouTube",
+                    "id": "RepDorisMatsui"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "2311 Rayburn House Office Building, Washington, DC 20515-0506",
+                    "featureId": {
+                        "cellId": "9923602095821286967",
+                        "fprint": "9836788952556073396"
+                    },
+                    "featureType": "typePostalCode",
+                    "positionPrecisionMeters": 740.4265007010167,
+                    "addressUnderstood": false
+                }
+            ]
+        },
+        {
+            "name": "Gavin Newsom",
+            "address": [
+                {
+                    "line1": "1303 10th Street",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(916) 445-2841"
+            ],
+            "urls": [
+                "https://www.gov.ca.gov/",
+                "https://en.wikipedia.org/wiki/Gavin_Newsom"
+            ],
+            "photoUrl": "http://www.ltg.ca.gov/images/newsimages/i2.png",
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "CAgovernor"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "CAgovernor"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "1303 10th St, Ste 1173, Sacramento, CA 95814",
+                    "featureId": {
+                        "cellId": "9266949154757434615",
+                        "fprint": "17811214760365590282"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 0,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Eleni Kounalakis",
+            "address": [
+                {
+                    "line1": "1315 10th Street",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(916) 445-8994"
+            ],
+            "urls": [
+                "https://ltg.ca.gov/",
+                "https://en.wikipedia.org/wiki/Eleni_Kounalakis"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "EleniKounalakis"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "CALtGovernor"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "1315 10th St, Ste 1114, Sacramento, CA 95814",
+                    "featureId": {
+                        "cellId": "9266949154735537833",
+                        "fprint": "17344767023888572701"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 91.42265888467414,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Rob Bonta",
+            "party": "Democratic Party",
+            "phones": [
+                "(916) 445-9555"
+            ],
+            "urls": [
+                "https://oag.ca.gov/",
+                "https://en.wikipedia.org/wiki/Rob_Bonta"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "AGRobBonta"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "AGRobBonta"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "P.O. Box 944255, Sacramento, CA 94244-2550",
+                    "featureId": {
+                        "cellId": "9266948801867675921",
+                        "fprint": "14801131327086198369"
+                    },
+                    "featureType": "typePostalCode",
+                    "positionPrecisionMeters": 500,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Tony Thurmond",
+            "address": [
+                {
+                    "line1": "1430 N Street",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(916) 319-0800"
+            ],
+            "urls": [
+                "https://www.cde.ca.gov/eo/",
+                "https://en.wikipedia.org/wiki/Tony_Thurmond"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "CAEducation"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "CADeptEd"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "1430 N Street, Ste 5602, Sacramento, CA 95814-5901",
+                    "featureId": {
+                        "cellId": "9266948813406608691",
+                        "fprint": "10769833723739259495"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 113.24918188894912,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Betty T. Yee",
+            "address": [
+                {
+                    "line1": "300 Capitol Mall",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(916) 445-2636"
+            ],
+            "urls": [
+                "https://sco.ca.gov/",
+                "https://en.wikipedia.org/wiki/Betty_Yee"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "CAController"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "CAController"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "300 Capitol Mall, Ste 1850, Sacramento, CA 95814",
+                    "featureId": {
+                        "cellId": "9266949197757890529",
+                        "fprint": "5017532639389171273"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 0,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Shirley N. Weber",
+            "address": [
+                {
+                    "line1": "1500 11th Street",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(916) 653-6814"
+            ],
+            "urls": [
+                "https://www.sos.ca.gov/",
+                "https://en.wikipedia.org/wiki/Shirley_Weber"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "CaliforniaSOS"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "CASOSvote"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "1500 11th Street, Sacramento, CA 95814",
+                    "featureId": {
+                        "cellId": "9266949145380069407",
+                        "fprint": "11463953384913367243"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 0,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Ricardo Lara",
+            "address": [
+                {
+                    "line1": "300 Capitol Mall",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(800) 927-4357"
+            ],
+            "urls": [
+                "http://www.insurance.ca.gov/",
+                "https://en.wikipedia.org/wiki/Ricardo_Lara"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "ICRicardoLara"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "ICRicardoLara"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "300 Capitol Mall, 17th Fl, Sacramento, CA 95814",
+                    "featureId": {
+                        "cellId": "9266949197759664161",
+                        "fprint": "9888834772671592690"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 0,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Fiona Ma",
+            "address": [
+                {
+                    "line1": "915 Capitol Mall",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(916) 653-2995"
+            ],
+            "urls": [
+                "https://www.treasurer.ca.gov/",
+                "https://en.wikipedia.org/wiki/Fiona_Ma"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "CaliforniaSTO"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "CalTreasurer"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "915 Capitol Mall, Ste 110, Sacramento, CA 95814",
+                    "featureId": {
+                        "cellId": "9266949157719524595",
+                        "fprint": "15013210811374405417"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 66.19771822495257,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Richard Pan",
+            "address": [
+                {
+                    "line1": "State Capitol",
+                    "line2": "1315",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(916) 651-4006"
+            ],
+            "urls": [
+                "https://sd06.senate.ca.gov/",
+                "https://en.wikipedia.org/wiki/Richard_Pan"
+            ],
+            "photoUrl": "http://senate.ca.gov/sites/senate.ca.gov/files/senator_photos/pan-richard.jpg",
+            "emails": [
+                "senator.pan@sen.ca.gov"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "SenRichardPan"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "DrPanMD"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "State Capitol, 1315 10th St, Room 5114, Sacramento, CA 95814-4900",
+                    "featureId": {
+                        "cellId": "9266949154735537833",
+                        "fprint": "13533308175894677936"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 91.42265888467414,
+                    "addressUnderstood": false
+                }
+            ]
+        },
+        {
+            "name": "Kevin McCarty",
+            "address": [
+                {
+                    "line1": "California State Capitol",
+                    "line2": "P.O. Box 942849",
+                    "line3": "Room 2136",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "94249-0007"
+                },
+                {
+                    "line1": "915 L Street",
+                    "line2": "Suite 110",
+                    "line3": "",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Democratic Party",
+            "phones": [
+                "(916) 319-2007"
+            ],
+            "urls": [
+                "https://a07.asmdc.org/",
+                "https://en.wikipedia.org/wiki/Kevin_McCarty"
+            ],
+            "photoUrl": "http://assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD07_McCarty_Portrait150_20141201.jpg",
+            "emails": [
+                "assemblymember.mccarty@assembly.ca.gov"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "AsmKevinMcCarty"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "AsmKevinMcCarty"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "PO Box 942849, Sacramento, CA 94249-0007",
+                    "featureId": {
+                        "cellId": "9266948801867675921",
+                        "fprint": "5372369880761232069"
+                    },
+                    "featureType": "typePostalCode",
+                    "positionPrecisionMeters": 500,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Carol A. Corrigan",
+            "address": [
+                {
+                    "line1": "350 McAllister Street",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "zip": "94102"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(415) 865-7000"
+            ],
+            "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Carol_Corrigan"
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "350 McAllister St, San Francisco, CA 94102",
+                    "featureId": {
+                        "cellId": "9260949608265024395",
+                        "fprint": "9794070958172229409"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 74.06556585440683,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Goodwin H. Liu",
+            "address": [
+                {
+                    "line1": "350 McAllister Street",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "zip": "94102"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(415) 865-7000"
+            ],
+            "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Goodwin_Liu"
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "350 McAllister St, San Francisco, CA 94102",
+                    "featureId": {
+                        "cellId": "9260949608265024395",
+                        "fprint": "9794070958172229409"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 74.06556585440683,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Joshua P. Groban",
+            "address": [
+                {
+                    "line1": "350 McAllister Street",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "zip": "94102"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(415) 865-7000"
+            ],
+            "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Joshua_Groban"
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "350 McAllister St, San Francisco, CA 94102",
+                    "featureId": {
+                        "cellId": "9260949608265024395",
+                        "fprint": "9794070958172229409"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 74.06556585440683,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Leondra R. Kruger",
+            "address": [
+                {
+                    "line1": "350 McAllister Street",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "zip": "94102"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(415) 865-7000"
+            ],
+            "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Leondra_Kruger"
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "350 McAllister St, San Francisco, CA 94102",
+                    "featureId": {
+                        "cellId": "9260949608265024395",
+                        "fprint": "9794070958172229409"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 74.06556585440683,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Martin J. Jenkins",
+            "address": [
+                {
+                    "line1": "350 McAllister Street",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "zip": "94102"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(415) 865-7000"
+            ],
+            "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Martin_Jenkins"
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "350 McAllister St, San Francisco, CA 94102",
+                    "featureId": {
+                        "cellId": "9260949608265024395",
+                        "fprint": "9794070958172229409"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 74.06556585440683,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Tani G. Cantil-Sakauye",
+            "address": [
+                {
+                    "line1": "350 McAllister Street",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "zip": "94102"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(415) 865-7000"
+            ],
+            "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm",
+                "https://en.wikipedia.org/wiki/Tani_Cantil-Sakauye"
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "350 McAllister St, San Francisco, CA 94102",
+                    "featureId": {
+                        "cellId": "9260949608265024395",
+                        "fprint": "9794070958172229409"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 74.06556585440683,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "VACANT",
+            "address": [
+                {
+                    "line1": "350 McAllister Street",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "zip": "94102"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(415) 865-7000"
+            ],
+            "urls": [
+                "https://www.courts.ca.gov/supremecourt.htm"
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "350 McAllister St, San Francisco, CA 94102",
+                    "featureId": {
+                        "cellId": "9260949608265024395",
+                        "fprint": "9794070958172229409"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 74.06556585440683,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Christina Wynn",
+            "address": [
+                {
+                    "line1": "3636 American River Drive",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95864"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(916) 875-0700"
+            ],
+            "urls": [
+                "https://assessor.saccounty.net/Pages/default.aspx"
+            ],
+            "emails": [
+                "assessor@saccounty.net"
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "3636 American River Drive, Suite 200, Sacramento, CA 95864",
+                    "featureId": {
+                        "cellId": "9266960057170374175",
+                        "fprint": "14265764214653393569"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 0,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Scott Jones",
+            "address": [
+                {
+                    "line1": "4500 Orange Grove Avenue",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95841"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(916) 874-7146"
+            ],
+            "urls": [
+                "https://www.sacsheriff.com/",
+                "https://en.wikipedia.org/wiki/Scott_Jones_%28sheriff%29"
+            ],
+            "emails": [
+                "sheriff@sacsheriff.com"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "SacSheriff"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "sacsheriff"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "4500 Orange Grove Avenue, Sacramento, CA 95841",
+                    "featureId": {
+                        "cellId": "9266958001411400977",
+                        "fprint": "14241316471618302863"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 65.66222583037036,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Anne Marie Schubert",
+            "address": [
+                {
+                    "line1": "901 G Street",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(916) 874-6218"
+            ],
+            "urls": [
+                "https://www.sacda.org/"
+            ],
+            "emails": [
+                "daoffice@sacda.org"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "SacCountyDA"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "SacCountyDA"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "901 G Street, Sacramento, CA 95814",
+                    "featureId": {
+                        "cellId": "9266949164813200229",
+                        "fprint": "8154341300037593360"
+                    },
+                    "featureType": "typeGeocodedAddress",
+                    "positionPrecisionMeters": 0,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Phil Serna",
+            "address": [
+                {
+                    "line1": "700 H Street",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(916) 874-5411"
+            ],
+            "urls": [
+                "https://bos.saccounty.net/Pages/default.aspx"
+            ],
+            "emails": [
+                "supervisorserna@saccounty.net"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "SupPhilSerna"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "700 H Street, Suite 2450, Sacramento, CA 95814",
+                    "featureId": {
+                        "cellId": "9266949167700674517",
+                        "fprint": "12132626051398816292"
+                    },
+                    "featureType": "typeCompoundSection",
+                    "positionPrecisionMeters": 0,
+                    "addressUnderstood": true
+                }
+            ]
+        },
+        {
+            "name": "Darrell Steinberg",
+            "address": [
+                {
+                    "line1": "915 I Street",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "zip": "95814"
+                }
+            ],
+            "party": "Nonpartisan",
+            "phones": [
+                "(916) 808-5300"
+            ],
+            "urls": [
+                "https://www.cityofsacramento.org/Mayor-Council/Districts/Mayor",
+                "https://en.wikipedia.org/wiki/Darrell_Steinberg"
+            ],
+            "photoUrl": "http://www.cityofsacramento.org/-/media/Corporate/Images/Districts/Mayor/MayorDarrellSteinberg.jpg?h=292&w=300&la=en",
+            "emails": [
+                "MayorSteinberg@cityofsacramento.org"
+            ],
+            "channels": [
+                {
+                    "type": "Facebook",
+                    "id": "Steinberg.Darrell"
+                },
+                {
+                    "type": "Twitter",
+                    "id": "Mayor_Steinberg"
+                },
+                {
+                    "type": "YouTube",
+                    "id": "UCzt6pdk8Nz65bBvsNws6aMw"
+                }
+            ],
+            "geocodingSummaries": [
+                {
+                    "queryString": "915 I Street, Sacramento, CA 95814",
+                    "featureId": {
+                        "cellId": "9266949163103022897",
+                        "fprint": "3365933726285404465"
+                    },
+                    "featureType": "typeCompoundBuilding",
+                    "positionPrecisionMeters": 75.75575286215265,
+                    "addressUnderstood": true
+                }
+            ]
+        }
+    ]
+}
+
+
+@endjson

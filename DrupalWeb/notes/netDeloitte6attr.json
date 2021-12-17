@@ -1,0 +1,19 @@
+'[
+'  {
+'    "Names": "mysql-hcdwebsite",
+'    "Image": "mysql/mysql-server",
+'    "Ports": "33060-33061/tcp, 165.235.4.124:6306->3306/tcp",
+'    "Mounts": "/hcdwebsite/my…,/hcdwebsite/my…,/hcdwebsite/my…",
+'    "Networks": "hcdwebsite-network",
+'    "Command": "\"/entrypoint.sh mysq…\""
+'  }
+' 
+'  {
+'    "Names": "mysql-hcddeloitte",
+'    "Image": "mysql/mysql-server",
+'    "Ports": "33060-33061/tcp, 165.235.4.56:7306->3306/tcp",
+'    "Mounts": "/hcddeloitte/m…,/hcddeloitte/m…,/hcddeloitte/m…",
+'    "Networks": "hcddeloitte-network",
+'    "Command": "\"/entrypoint.sh mysq…\""
+'  }
+']

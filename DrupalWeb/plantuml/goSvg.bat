@@ -1,0 +1,1 @@
+java -jar ..\..\bin\puml.jar -tsvg %1

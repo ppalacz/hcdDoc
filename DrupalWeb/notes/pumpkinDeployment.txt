@@ -1,0 +1,47 @@
+/opt/accelerator/apache/startApache.sh
+docker run -dt --restart unless-stopped
+-p 10.1.37.28:443:443 -p 10.1.37.28:80:80 \
+--name acceleratorapache \
+accelerator/drupal:09142021
+/opt/homekey/apache/startApache.sh
+docker run -dt --restart unless-stopped
+-p 165.235.4.59:443:443 -p 165.235.4.59:80:80 \
+--name homekeyapache \
+--hostname homekeydfa.hcd.ca.gov \
+homekeydfa/drupal:09222021
+/opt/nofa/apache/startApache.sh
+docker run --network nofadfa -dt --restart unless-stopped
+-p 165.235.4.61:443:443 -p 165.235.4.61:80:80 --ip 10.250.7.11 \
+--name nofaapache \
+--hostname nofadfa.hcd.ca.gov \
+nofa/apache:10012021
+/opt/nofa/apacheFedora/startApache.sh
+docker run --network nofadfa -dt --restart unless-stopped
+-p 165.235.4.61:443:443 -p 165.235.4.61:80:80 --ip 10.250.7.11 \
+--name nofaapache \
+--hostname nofadfa.hcd.ca.gov \
+fedora/apache:11042021
+#nofa/apache:10012021
+/opt/w3dev/apache/startApache.sh
+docker run -dt --restart unless-stopped
+-p 165.235.4.58:443:443 -p 165.235.4.58:80:80 \
+--name w3devapache \
+--hostname w3devdfa.hcd.ca.gov \
+w3dev/drupal:09222021
+/opt/acceleratordev/apache/startApache.sh
+docker run -dt --restart unless-stopped
+-p 165.235.4.56:443:443 -p 165.235.4.56:80:80 \
+--name acceleratordevapache \
+--hostname acceleratordev.hcd.ca.gov \
+acceleratordev/drupal:09222021
+/opt/homekeydev/apache/startApache.sh
+docker run -dt --restart unless-stopped
+-p 165.235.4.50:443:443 -p 165.235.4.50:80:80 \
+--name homekeydevapache \
+--hostname homekeydev.hcd.ca.gov \
+homekeydev/drupal:09222021
+/opt/w3uat/apache/startApache.sh
+docker run -dt --restart unless-stopped
+-p 165.235.4.30:443:443 -p 165.235.4.30:80:80 \
+--name w3uatapache \
+
