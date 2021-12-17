@@ -1,0 +1,264 @@
+= Install For the DEV Server
+
+== Identification
+
+----
+cat /etc/*release
+->
+Oracle Linux Server release 8.5
+NAME="Oracle Linux Server"
+VERSION="8.5"
+ID="ol"
+ID_LIKE="fedora"
+VARIANT="Server"
+VARIANT_ID="server"
+VERSION_ID="8.5"
+PLATFORM_ID="platform:el8"
+PRETTY_NAME="Oracle Linux Server 8.5"
+----
+
+
+== Additional Repos
+
+yum -y install epel-release
+
+----
+-> No match for argument: epel-release
+Error: Unable to find a match: epel-release
+----
+
+https://www.tecmint.com/yum-thirdparty-repositories-for-centos-rhel/
+
+
+
+== DEV tools group
+
+----
+sudo yum group install "Development Tools"
+----
+
+Outcome:
+
+----
+Installed:
+  annobin-9.72-1.el8_5.2.x86_64                                                       asciidoc-8.6.10-0.5.20180627gitf7c2274.el8.noarch
+  autoconf-2.69-29.el8.noarch                                                         automake-1.16.1-7.el8.noarch
+  bison-3.0.4-10.el8.x86_64                                                           boost-filesystem-1.66.0-10.el8.x86_64
+  boost-timer-1.66.0-10.el8.x86_64                                                    byacc-1.9.20170709-4.el8.x86_64
+  copy-jdk-configs-4.0-2.el8.noarch                                                   cpp-8.5.0-4.0.1.el8_5.x86_64
+  ctags-5.8-22.el8.x86_64                                                             diffstat-1.61-7.el8.x86_64
+  docbook-dtds-1.0-69.el8.noarch                                                      docbook-style-xsl-1.79.2-9.el8.noarch
+  dwz-0.12-10.el8.x86_64                                                              dyninst-11.0.0-3.el8.x86_64
+  efi-srpm-macros-3-3.0.1.el8.noarch                                                  elfutils-0.185-1.el8.x86_64
+  elfutils-devel-0.185-1.el8.x86_64                                                   elfutils-libelf-devel-0.185-1.el8.x86_64
+  flex-2.6.1-9.el8.x86_64                                                             gc-7.6.4-3.el8.x86_64
+  gcc-8.5.0-4.0.1.el8_5.x86_64                                                        gcc-c++-8.5.0-4.0.1.el8_5.x86_64
+  gdb-8.2-16.0.4.el8.x86_64                                                           gdb-headless-8.2-16.0.4.el8.x86_64
+  gettext-common-devel-0.19.8.1-17.el8.noarch                                         gettext-devel-0.19.8.1-17.el8.x86_64
+  ghc-srpm-macros-1.4.2-7.el8.noarch                                                  git-2.27.0-1.el8.x86_64
+  git-core-2.27.0-1.el8.x86_64                                                        git-core-doc-2.27.0-1.el8.noarch
+  glibc-devel-2.28-164.0.1.el8.x86_64                                                 go-srpm-macros-2-17.el8.noarch
+  graphviz-2.40.1-43.el8.x86_64                                                       guile-5:2.0.14-7.0.1.el8.x86_64
+  intltool-0.51.0-11.el8.noarch                                                       isl-0.16.1-6.el8.x86_64
+  java-1.8.0-openjdk-headless-1:1.8.0.312.b07-2.el8_5.x86_64                          javapackages-filesystem-5.3.0-1.module+el8+5136+7ff78f74.noarch
+  jna-4.5.1-5.el8.x86_64                                                              libXaw-1.0.13-10.el8.x86_64
+  libatomic_ops-7.6.2-3.el8.x86_64                                                    libbabeltrace-1.5.4-3.el8.x86_64
+  libipt-1.6.1-8.el8.x86_64                                                           libstdc++-devel-8.5.0-4.0.1.el8_5.x86_64
+  libtool-2.4.6-25.el8.x86_64                                                         libxcrypt-devel-4.1.1-6.el8.x86_64
+  libzstd-devel-1.4.4-1.0.1.el8.x86_64                                                lksctp-tools-1.0.18-3.el8.x86_64
+  ltrace-0.7.91-28.el8.x86_64                                                         m4-1.4.18-7.el8.x86_64
+  make-1:4.2.1-10.el8.x86_64                                                          nss-tools-3.67.0-7.el8_5.x86_64
+  ocaml-srpm-macros-5-4.el8.noarch                                                    openblas-srpm-macros-2-2.el8.noarch
+  patch-2.7.6-11.el8.x86_64                                                           patchutils-0.3.4-10.el8.x86_64
+  perl-Compress-Raw-Bzip2-2.081-1.el8.x86_64                                          perl-Compress-Raw-Zlib-2.081-1.el8.x86_64
+  perl-Data-Dump-1.23-7.module+el8.3.0+7692+542c56f9.noarch                           perl-Digest-HMAC-1.03-17.module+el8.3.0+7692+542c56f9.noarch
+  perl-Digest-SHA-1:6.02-1.el8.x86_64                                                 perl-Encode-Locale-1.05-10.module+el8.3.0+7692+542c56f9.noarch
+  perl-Error-1:0.17025-2.el8.noarch                                                   perl-Fedora-VSP-0.001-9.el8.noarch
+  perl-File-Listing-6.04-17.module+el8.3.0+7692+542c56f9.noarch                       perl-Git-2.27.0-1.el8.noarch
+  perl-HTML-Parser-3.72-15.module+el8.3.0+7692+542c56f9.x86_64                        perl-HTML-Tagset-3.20-34.module+el8.3.0+7692+542c56f9.noarch
+  perl-HTTP-Cookies-6.04-2.module+el8.3.0+7692+542c56f9.noarch                        perl-HTTP-Date-6.02-19.module+el8.3.0+7692+542c56f9.noarch
+  perl-HTTP-Message-6.18-1.module+el8.3.0+7692+542c56f9.noarch                        perl-HTTP-Negotiate-6.01-19.module+el8.3.0+7692+542c56f9.noarch
+  perl-IO-Compress-2.081-1.el8.noarch                                                 perl-IO-HTML-1.001-11.module+el8.3.0+7692+542c56f9.noarch
+  perl-LWP-MediaTypes-6.02-15.module+el8.3.0+7692+542c56f9.noarch                     perl-NTLM-1.09-17.module+el8.3.0+7692+542c56f9.noarch
+  perl-Net-HTTP-6.17-2.module+el8.3.0+7692+542c56f9.noarch                            perl-Sys-Syslog-0.35-397.el8.x86_64
+  perl-TermReadKey-2.37-7.el8.x86_64                                                  perl-Thread-Queue-3.13-1.el8.noarch
+  perl-TimeDate-1:2.30-15.module+el8.3.0+7692+542c56f9.noarch                         perl-Try-Tiny-0.30-7.module+el8.3.0+7692+542c56f9.noarch
+  perl-WWW-RobotRules-6.02-18.module+el8.3.0+7692+542c56f9.noarch                     perl-XML-Parser-2.44-11.0.1.el8.x86_64
+  perl-generators-1.10-9.el8.noarch                                                   perl-libwww-perl-6.34-1.module+el8.3.0+7692+542c56f9.noarch
+  perl-srpm-macros-1-25.el8.noarch                                                    pesign-0.112-25.0.2.el8.x86_64
+  python-rpm-macros-3-41.el8.noarch                                                   python-srpm-macros-3-41.el8.noarch
+  python3-rpm-macros-3-41.el8.noarch                                                  qt5-srpm-macros-5.15.2-1.el8.noarch
+  redhat-rpm-config-125-1.0.1.el8.noarch                                              rpm-build-4.14.3-19.el8.x86_64
+  rpm-sign-4.14.3-19.el8.x86_64                                                       rust-srpm-macros-5-2.el8.noarch
+  sgml-common-0.6.3-50.el8.noarch                                                     source-highlight-3.1.8-17.el8.x86_64
+  systemtap-4.5-3.0.1.el8.x86_64                                                      systemtap-client-4.5-3.0.1.el8.x86_64
+  systemtap-devel-4.5-3.0.1.el8.x86_64                                                systemtap-runtime-4.5-3.0.1.el8.x86_64
+  tbb-2018.2-9.el8.x86_64                                                             tzdata-java-2021e-1.el8.noarch
+  valgrind-1:3.17.0-5.el8.x86_64                                                      valgrind-devel-1:3.17.0-5.el8.x86_64
+  xorg-x11-fonts-ISO8859-1-100dpi-7.5-19.el8.noarch                                   xz-devel-5.2.4-3.el8.x86_64
+  zlib-devel-1.2.11-17.el8.x86_64                                                     zstd-1.4.4-1.0.1.el8.x86_64
+----
+
+== Shell ==
+
+----
+sudo yum install git zsh
+-> Installed:
+  zsh-5.5.1-6.el8_1.2.x86_64
+----
+
+----
+ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to raw.githubusercontent.com:443
+----
+
+== Java/JDK
+
+----
+sudo yum install java-headless
+
+----
+
+----
+
+sudo yum install java-1.8.0-openjdk-devel
+-> Installed:
+  java-1.8.0-openjdk-1:1.8.0.312.b07-2.el8_5.x86_64            
+  java-1.8.0-openjdk-devel-1:1.8.0.312.b07-2.el8_5.x86_64            
+  ttmkfdir-3.0.9-54.el8.x86_64
+  xorg-x11-fonts-Type1-7.5-19.el8.noarch
+----
+
+== Apache httpd
+
+----
+sudo dnf install httpd
+
+->Last metadata expiration check: 1:27:03 ago on Thu 16 Dec 2021 05:42:37 PM EST.
+Package httpd-2.4.37-43.0.1.module+el8.5.0+20426+404a9eb9.x86_64 is already installed.
+----
+
+----
+sudo firewall-cmd --permanent --add-service=https
+->success
+----
+
+----
+sudo firewall-cmd --reload
+-> success
+----
+
+----
+sudo systemctl start httpd
+sudo systemctl status httpd
+->httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+  Drop-In: /usr/lib/systemd/system/httpd.service.d
+           └─php-fpm.conf
+   Active: active (running) since Thu 2021-12-16 19:11:15 EST; 7s ago
+     Docs: man:httpd.service(8)
+ Main PID: 132873 (httpd)
+   Status: "Started, listening on: port 80"
+    Tasks: 213 (limit: 97508)
+   Memory: 37.2M
+   CGroup: /system.slice/httpd.service
+           ├─132873 /usr/sbin/httpd -DFOREGROUND
+           ├─132880 /usr/sbin/httpd -DFOREGROUND
+           ├─132881 /usr/sbin/httpd -DFOREGROUND
+           ├─132882 /usr/sbin/httpd -DFOREGROUND
+           └─132883 /usr/sbin/httpd -DFOREGROUND
+
+----
+
+* Test
+
+----
+http://lnx-dev-doc-01/
+
+-> Apache 2 Test Page
+powered by the Apache httpd server
+----
+
+== JBoss/WildFly
+
+Source: https://linuxize.com/post/how-to-install-wildfly-on-centos-7/
+
+=== Group/User Config
+
+----
+
+sudo groupadd -r wildfly
+sudo useradd -r -g wildfly -d /opt/wildfly -s /sbin/nologin wildfly
+----
+
+* Download 
+
+----
+wget https://github.com/wildfly/wildfly/releases/download/25.0.1.Final/wildfly-25.0.1.Final.tar.gz
+
+----
+
+== MySQL server
+
+----
+sudo yum install mysql-server
+
+-> Installed:
+  mecab-0.996-1.module+el8.0.0+5253+1dce7bb2.9.x86_64                                 mysql-8.0.26-1.module+el8.4.0+20311+30d12931.x86_64
+  mysql-common-8.0.26-1.module+el8.4.0+20311+30d12931.x86_64                          mysql-errmsg-8.0.26-1.module+el8.4.0+20311+30d12931.x86_64
+  mysql-server-8.0.26-1.module+el8.4.0+20311+30d12931.x86_64                          protobuf-lite-3.5.0-13.el8.x86_64
+
+----
+
+
+== PHP
+
+* PHP Module
+
+----
+sudo yum module install php:7.2
+
+-> Installed:
+  httpd-filesystem-2.4.37-43.0.1.module+el8.5.0+20426+404a9eb9.noarch                 nginx-filesystem-1:1.14.1-9.0.1.module+el8.0.0+5347+9282027e.noarch
+  php-cli-7.2.24-1.module+el8.2.0+5510+6771133c.x86_64                                php-common-7.2.24-1.module+el8.2.0+5510+6771133c.x86_64
+  php-fpm-7.2.24-1.module+el8.2.0+5510+6771133c.x86_64                                php-json-7.2.24-1.module+el8.2.0+5510+6771133c.x86_64
+  php-mbstring-7.2.24-1.module+el8.2.0+5510+6771133c.x86_64                           php-xml-7.2.24-1.module+el8.2.0+5510+6771133c.x86_64
+
+----
+
+* PHP Extensions
+
+----
+sudo yum -y install php php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json
+
+----
+
+== Various
+
+=== Utilities
+----
+sudo yum install vim mc lftp
+-> Installed:
+  lftp-4.8.4-2.el8.x86_64                                                            mc-1:4.8.19-9.el8.x86_64
+----
+
+
+
+
+=== MySql Server Management
+
+=== rust
+
+* Compiler
+
+----
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+----
+
+* Cargos
+
+----
+cargo install amp bat bingrep broot cargo-update ddh du-dust dutree eureka exa ff-find ffsend fselect gitui jql mrh nomino nu rim ripgrep runiq sd tally tree-rs viu xcompress xsv ytop
+
+----

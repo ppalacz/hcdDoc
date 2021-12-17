@@ -66,12 +66,9 @@ WARNING: Given the type of information provided, it is _not_ a public document, 
  
 === Main Sections
 
-<<<<<<< HEAD
-=======
 
 . The section <<DEV and TEST for Web>> describes how DEV and TEST environments for Web-related applications are organized at HCD.
 
->>>>>>> e9de0e605f809baf68cb239832660f0809b95e47
  
  
 
