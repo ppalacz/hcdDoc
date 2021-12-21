@@ -184,3 +184,13 @@ sudo vim /opt/wildfly/modules/system/layers/base/com/mysql/main/module.xml
         </dependencies>
 </module>
 
+MySqlHPD datasource def
+
+            <datasource jndi-name="java:/MySqlHPD" pool-name="MySqlHPD">
+                    <connection-url>jdbc:mysql://10.1.37.61:3306/hpd</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>pugnacious</user-name>
+                        <password>edvert12031965</password>
+                    </security>
+                </datasource>
