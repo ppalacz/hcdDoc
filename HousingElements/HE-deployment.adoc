@@ -1,0 +1,137 @@
+
+= Housing Elements Deployment Notes
+
+
+== Data Source Config
+
+jta-data-source is "java:/MySqlHPD"
+----
+cat hpdwar/WEB-INF/classes/META-INF/persistence.xml
+
+-> 
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="my_persistence_unit" transaction-type="JTA">
+    <jta-data-source>java:/MySqlHPD</jta-data-source>
+    <class>hcd.ca.gov.hpd.Requester</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+  </persistence-unit>
+</persistence>
+----
+
+cat /opt/housingelements-new/wildfly/standalone.xml
+
+----
+...
+
+            <datasource jndi-name="java:/MySqlHPD" pool-name="MySqlHPD">
+                    <connection-url>jdbc:mysql://10.1.37.61:3306/hpd</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>pugnacious</user-name>
+                        <password>edvert12031965</password>
+                    </security>
+                </datasource>
+
+                <drivers>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="mysql" module="com.mysql"/>
+                </drivers>
+            </datasources>
+...
+----
+
+/var/lib/docker/overlay2/bcf50cdf0e6dfaa28342ab14aff66d8af1bbc130f9c19c21630e22f692671901/diff/opt/jboss/wildfly/standalone/configuration/standalone.xml
+
+
+----
+
+   <datasource jndi-name="java:/MySqlHPD" pool-name="MySqlHPD">
+                    <connection-url>jdbc:mysql://10.1.37.61:3306/hpd?useSSL=true</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>pugnacious</user-name>
+                        <password>edvert12031965</password>
+                    </security>
+                </datasource>
+
+
+----
+
+Other datasource defs on kiwano:
+
+* ExampleDS
+
+----
+
+ <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true" statistics-enabled="${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}">
+                    <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
+                    <driver>h2</driver>
+                    <security>
+                        <user-name>sa</user-name>
+                        <password>sa</password>
+                    </security>
+            </datasource>
+
+----
+
+* APR
+
+----
+               <datasource jndi-name="java:/MySqlAPR" pool-name="MySqlAPR">
+                    <connection-url>jdbc:mysql://10.1.37.61:3306/apr?useSSL=true</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>pugnacious</user-name>
+                        <password>edvert12031965</password>
+                    </security>
+            </datasource>
+----             
+
+* h2
+----
+                <drivers>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="mysql" module="com.mysql"/>
+                </drivers>
+----
+    
+
+http://165.235.52.43:8080/
+
+
+MySqlHPD
+
+165.235.52.43. Your username/password is: ppalacz/DiscoLights77!
+
+Database name = ExternalWebTest
+
+
+----
+
+mysqladmin -u ppalacz -p version
+Enter password:
+mysqladmin  Ver 8.0.26 for Linux on x86_64 (Source distribution)
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Server version          8.0.26
+Protocol version        10
+Connection              Localhost via UNIX socket
+UNIX socket             /var/lib/mysql/mysql.sock
+Uptime:                 2 min 46 sec
+
+Threads: 1  Questions: 3  Slow queries: 0  Opens: 103  Flush tables: 3  Open tables: 24  Queries per second avg: 0.018
+
+----
+
+
+http://localhost/phpmyadmin/

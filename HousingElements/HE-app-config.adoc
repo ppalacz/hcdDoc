@@ -1,0 +1,116 @@
+= Housing Elements App Configuration
+
+
+== Prerequisites
+
+Installation and configuration of the components below is discussed in other documents:
+
+* JDK installed (1.8+)
+* MySql installed
+* WildFly/JBoss installed
+ 
+
+Note that the components above may have prerequisites of their own.
+
+== WildFly Configuration for Housing Elements
+
+=== Installing and Configuring JDBC Driver
+
+Source: https://medium.com/@hasnat.saeed/install-and-configure-mysql-jdbc-driver-on-jboss-wildfly-e751a3be60d3
+
+==== Set Up MySQL JDBC Driver as a WildFly Module 
+
+* Download the distribution
+
+wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.17.tar.gz
+
+
+* Extract mysql-connector-java-8.0.17.jar from the distribution
+
+----
+tar xvfz mysql-connector-java-8.0.17.tar.gz
+----
+
+* Create target directory
+Assumes /opt/wildfly is the installation directory for WildFly (symlink is OK)
+
+----
+sudo mkdir -p /opt/wildfly/modules/system/layers/base/com/mysql/main
+----
+
+* Copy .jar to the target directory
+
+----
+ sudo cp -v ./mysql-connector-java-8.0.17.jar /opt/wildfly/modules/system/layers/base/com/mysql/main
+
+-rw-r--r--. 1 root root 2.3M Dec 20 12:35 mysql-connector-java-8.0.17.jar
+
+----
+
+* Create Module Definition
+
+----
+<module xmlns="urn:jboss:module:1.5" name="com.mysql">
+        <resources>
+                <resource-root path="mysql-connector-java-8.0.17.jar" />
+        </resources>
+        <dependencies>
+                <module name="javax.api"/>
+                <module name="javax.transaction.api"/>
+        </dependencies>
+</module>
+----
+
+* Adjust ownership
+
+----
+
+sudo chown -R wildfly:wildfly /opt/wildfly/modules/system/layers/base/com
+/mysql
+
+ls -lh /opt/wildfly/modules/system/layers/base/com/mysql
+-> drwxr-xr-x. 2 wildfly wildfly 63 Dec 20 12:47 main
+
+----
+
+* Restart WildFly
+
+----
+/opt/wildfly/bin  sudo ./jboss-cli.sh
+
+[disconnected /] connect
+[standalone@localhost:9990 /] shutdown --restart=true
+[standalone@localhost:9990 /]
+
+----
+
+* Validate WildFly state
+
+----
+ /opt/wildfly/bin  sudo ./jboss-cli.sh -c
+[standalone@localhost:9990 /] :read-attribute(name=server-state)
+{
+    "outcome" => "success",
+    "result" => "running"
+}
+----
+
+
+==== Add JDBC Driver 
+
+In Admin Console:
+
+----
+http://localhost:9990/console/index.html#configuration;path=configuration~subsystems!css~datasources!data-source-driver~jdbc-drivers
+----
+
+
+Enter:
+----
+Driver Name: 'mysql'
+Driver Module Name: 'com.mysql'
+Module Slot: <empty>
+Driver Class Name:'com.mysql.cj.jdbc.Driver'
+Driver Datasource Class Name: <empty>
+Driver XA Datasource Class: 'com.mysql.cj.jdbc.MysqlXADataSource'
+----
