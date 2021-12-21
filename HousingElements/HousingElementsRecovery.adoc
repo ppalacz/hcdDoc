@@ -216,7 +216,7 @@ Same for sudo vim /opt/tomcat/webapps/host-manager/META-INF/context.xml
 === Prerequisites
  
 Access to the binary package of MySql requires an account for Oracle TechNet.
-This is free.
+The account is free.
 
 === Binary Package
 
@@ -359,7 +359,7 @@ Success.
 All done!
 ----
 
-=== Testing Installation
+=== Testing Installation - Locally
 
 ----
 mysqladmin -u root -p version
@@ -381,6 +381,7 @@ Threads: 2  Questions: 12  Slow queries: 0  Opens: 132  Flush tables: 3  Open ta
 ----
 
 ----
+
 mysql -u root -p
 Enter password:
 -> Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -405,9 +406,25 @@ mysql> show databases;
 | sys                |
 +--------------------+
 4 rows in set (0.01 sec)
+
 ----
 
-==  MyPhpAdmin Installation
+
+=== Testing Installation - Remotely
+
+* Check if the port 3306 is open in the firewall
+
+----
+sudo firewall-cmd --list-all | grep ports:
+-> ports: 161/udp 161/tcp 162/udp 162/tcp 10000/tcp 3389/tcp 8080/tcp 9990/tcp
+----
+
+* Add the port if needed
+
+sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+
+
+== MyPhpAdmin Installation
 
 === Prerequisites
 
