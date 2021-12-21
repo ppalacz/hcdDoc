@@ -1,0 +1,181 @@
+= Deploy Failure for HPD .war
+
+----
+14:15:31,006 INFO  [org.jboss.as.repository] (External Management Request Threads -- 1) WFLYDR0001: Content adde                            d at location /opt/wildfly/standalone/data/content/ae/ff4ff781970e22c830ca0bf04fcf4ce824a9fc/content
+14:15:31,018 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "HPDDownload-1.2.war" (runtime-name: "HPDDownl                            oad-1.2.war")
+14:15:35,536 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0059: Class Path entry jaxb-api.jar in /content/HPDDownload-1.2.war/WEB-INF                            /lib/jaxb-impl-2.2.3-1.jar  does not point to a valid jar for a Class-Path reference.
+14:15:35,537 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0059: Class Path entry activation.jar in /content/HPDDownload-1.2.war/WEB-I                            NF/lib/jaxb-impl-2.2.3-1.jar  does not point to a valid jar for a Class-Path reference.
+14:15:35,537 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0059: Class Path entry jsr173_1.0_api.jar in /content/HPDDownload-1.2.war/W                            EB-INF/lib/jaxb-impl-2.2.3-1.jar  does not point to a valid jar for a Class-Path reference.
+14:15:35,537 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0059: Class Path entry jaxb1-impl.jar in /content/HPDDownload-1.2.war/WEB-I                            NF/lib/jaxb-impl-2.2.3-1.jar  does not point to a valid jar for a Class-Path reference.
+14:15:35,870 INFO  [org.jboss.as.jpa] (MSC service thread 1-3) WFLYJPA0002: Read persistence.xml for my_persistence_unit
+14:15:36,039 INFO  [org.jipijapa] (MSC service thread 1-1) JIPIORMV53020253: Second level cache enabled for HPDDownload-1.2.war#my_persistence_unit
+14:15:36,160 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 15) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'HPDDownload-1.2.war#my_p                            ersistence_unit'
+14:15:36,187 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment HPDDownload-1.2.war
+14:15:36,243 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 15) HHH000204: Processing PersistenceUnitInfo [
+        name: my_persistence_unit
+        ...]
+14:15:36,411 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-3) HV000001: Hibernate Validator 7.0.1.Final
+14:15:36,422 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 15) HHH000412: Hibernate Core {5.3.24.Final}
+14:15:36,424 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 15) HHH000206: hibernate.properties not found
+14:15:36,627 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'HousingElementsFacade' in deploym                            ent unit 'deployment "HPDDownload-1.2.war"' are as follows:
+
+        java:global/HPDDownload-1.2/HousingElementsFacade!hcd.ca.gov.hpd.HousingElementsFacade
+        java:app/HPDDownload-1.2/HousingElementsFacade!hcd.ca.gov.hpd.HousingElementsFacade
+        java:module/HousingElementsFacade!hcd.ca.gov.hpd.HousingElementsFacade
+        java:global/HPDDownload-1.2/HousingElementsFacade
+        java:app/HPDDownload-1.2/HousingElementsFacade
+        java:module/HousingElementsFacade
+
+14:15:36,628 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'RequesterFacade' in deployment un                            it 'deployment "HPDDownload-1.2.war"' are as follows:
+
+        java:global/HPDDownload-1.2/RequesterFacade!hcd.ca.gov.hpd.RequesterFacade
+        java:app/HPDDownload-1.2/RequesterFacade!hcd.ca.gov.hpd.RequesterFacade
+        java:module/RequesterFacade!hcd.ca.gov.hpd.RequesterFacade
+        java:global/HPDDownload-1.2/RequesterFacade
+        java:app/HPDDownload-1.2/RequesterFacade
+        java:module/RequesterFacade
+
+14:15:36,855 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 15) HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+14:15:36,932 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-3) No shutdown hook registered: Please call close() manually on application s                            hutdown.
+14:15:36,934 INFO  [org.wildfly.microprofile.opentracing.smallrye] (MSC service thread 1-3) WFLYTRAC0001: Tracer initialized: JaegerTracer(version=Java-1.6.0,                             serviceName=HPDDownload-1.2.war, reporter=RemoteReporter(sender=org.wildfly.extension.microprofile.opentracing.spi.sender.WildFlySender@50b32557, closeEnqueueT                            imeout=1000), sampler=ConstSampler(decision=true, tags={sampler.type=const, sampler.param=true}), tags={hostname=piotr.hcd.ca.gov, jaeger.version=Java-1.6.0, i                            p=165.235.52.43}, zipkinSharedRpcSpan=false, expandExceptionLogs=false, useTraceId128Bit=false)
+14:15:37,126 INFO  [org.jipijapa] (MSC service thread 1-1) JIPIORMV53020253: Second level cache enabled for HPDDownload-1.2.war#my_persistence_unit
+14:15:37,409 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-1) WFLYRS0018: Explicit usage of Jackson annotation in a Jakarta RESTful Web Services deployment;                             the system will disable Jakarta JSON Binding processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false'                             to restore Jakarta JSON Binding.
+14:15:37,416 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Drive                            r (version 5.1)
+14:15:37,440 INFO  [org.jboss.weld.Version] (MSC service thread 1-1) WELD-000900: 4.0.2 (Final)
+14:15:37,498 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = HPDDownload-1.2.war_                            com.mysql.jdbc.Driver_5_1
+14:15:37,655 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 15) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'HPDDownload-1.2.war#my_p                            ersistence_unit'
+14:15:37,767 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 15) IJ000604: Throwable while attempting to get a                             new connection: null: jakarta.resource.ResourceException: IJ031084: Unable to create connection
+        at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:364)
+        at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.getLocalManagedConnection(LocalManagedConnectionFactory.java:371)
+        at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createManagedConnection(LocalManagedConnectionFactory.java:287)
+        at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreConcurrentLinkedDequeManagedConnectionPool.createConnectionEventListener(SemaphoreConcurrentL                            inkedDequeManagedConnectionPool.java:1328)
+        at org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreConcurrentLinkedDequeManagedConnectionPool.getConnection(SemaphoreConcurrentLinkedDequeManage                            dConnectionPool.java:505)
+        at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getSimpleConnection(AbstractPool.java:640)
+        at org.jboss.jca.core.connectionmanager.pool.AbstractPool.getConnection(AbstractPool.java:605)
+        at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.getManagedConnection(AbstractConnectionManager.java:624)
+        at org.jboss.jca.core.connectionmanager.tx.TxConnectionManagerImpl.getManagedConnection(TxConnectionManagerImpl.java:440)
+        at org.jboss.jca.core.connectionmanager.AbstractConnectionManager.allocateConnection(AbstractConnectionManager.java:789)
+        at org.jboss.jca.adapters.jdbc.WrapperDataSource.getConnection(WrapperDataSource.java:151)
+        at org.jboss.as.connector.subsystems.datasources.WildFlyDataSource.getConnection(WildFlyDataSource.java:64)
+        at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.jav                            a:180)
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+        at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:94)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+        at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+        at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:179)
+        at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:119)
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1215)
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1246)
+        at org.jboss.as.jpa.hibernate5.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+        at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:171)
+        at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:129)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:664)
+        at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:214)
+        at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+        at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+        at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+        at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+        at java.lang.Thread.run(Thread.java:748)
+        at org.jboss.threads.JBossThread.run(JBossThread.java:513)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+        at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:447)
+        at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+        at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+        at org.jboss.jca.adapters.jdbc.local.LocalManagedConnectionFactory.createLocalManagedConnection(LocalManagedConnectionFactory.java:335)
+        ... 39 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+        at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+        at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+        at com.mysql.cj.NativeSession.connect(NativeSession.java:150)
+        at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:947)
+        at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:817)
+        ... 43 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+        at java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.net.Socket.connect(Socket.java:607)
+        at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
+        at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+        ... 46 more
+
+14:15:37,769 WARN  [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator] (ServerService Thread Pool -- 15) HHH000342: Could not obtain connection t                            o query metadata : jakarta.resource.ResourceException: IJ000453: Unable to get managed connection for java:/MySqlHPD
+14:15:37,772 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool -- 15) MSC000001: Failed to start service jboss.persistenceunit."HPDDownload-1.2.war                            #my_persistence_unit": org.jboss.msc.service.StartException in service jboss.persistenceunit."HPDDownload-1.2.war#my_persistence_unit": org.hibernate.service.s                            pi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+        at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:199)
+        at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:129)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:664)
+        at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:214)
+        at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+        at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+        at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+        at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+        at java.lang.Thread.run(Thread.java:748)
+        at org.jboss.threads.JBossThread.run(JBossThread.java:513)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+        at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+        at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:179)
+        at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:119)
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1215)
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1246)
+        at org.jboss.as.jpa.hibernate5.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+        at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:171)
+        ... 10 more
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+        at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
+        at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+        at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:94)
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+        ... 22 more
+
+14:15:37,778 ERROR [org.jboss.as.controller.management-operation] (External Management Request Threads -- 1) WFLYCTL0013: Operation ("add") failed - address: (                            [("deployment" => "HPDDownload-1.2.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.persistenceunit.\"HPDDownload-1.2.war#my_persisten                            ce_unit\"" => "org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+    Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+    Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set"}}
+14:15:37,779 ERROR [org.jboss.as.controller.management-operation] (External Management Request Threads -- 1) WFLYCTL0013: Operation ("add") failed - address: (                            [("deployment" => "HPDDownload-1.2.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.persistenceunit.\"HPDDownload-1.2.war#my_persisten                            ce_unit\"" => "org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+    Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+    Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set"}}
+14:15:37,779 ERROR [org.jboss.as.server] (External Management Request Threads -- 1) WFLYSRV0021: Deploy of deployment "HPDDownload-1.2.war" was rolled back wit                            h the following failure message:
+{"WFLYCTL0080: Failed services" => {"jboss.persistenceunit.\"HPDDownload-1.2.war#my_persistence_unit\"" => "org.hibernate.service.spi.ServiceException: Unable                             to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+    Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+    Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set"}}
+14:15:37,784 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = HPDDownload-1.2.war_                            com.mysql.jdbc.Driver_5_1
+14:15:37,806 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 15) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'HPDDownload-1.2.war#my_p                            ersistence_unit'
+14:15:37,849 INFO  [org.infinispan.manager.DefaultCacheManager] (ServerService Thread Pool -- 15) Stopping cache manager null on null
+14:15:37,890 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment HPDDownload-1.2.war (runtime-name: HPDDownload-1.2                            .war) in 109ms
+ ⚙ ppalacz@hcd.ca.gov@piotr  ~/HousingElems  14:26:13,811 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 80) WFLYDR0009: Content /opt/wildfly/standalone/data/content/ae/ff4ff781970e22c830ca0bf04fcf4ce824a9fc is obsolete and will be removed
+14:26:13,820 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 80) WFLYDR0002: Content removed from location /opt/wildfly/standalone/data/content/ae/ff4ff781970e22c830ca0bf04fcf4ce824a9fc/content
+"org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+
+----

@@ -114,3 +114,30 @@ Driver Class Name:'com.mysql.cj.jdbc.Driver'
 Driver Datasource Class Name: <empty>
 Driver XA Datasource Class: 'com.mysql.cj.jdbc.MysqlXADataSource'
 ----
+
+
+== WildFly Deployment 
+
+sudo  /opt/wildfly/bin/standalone.sh &
+
+----
+sudo  /opt/wildfly/bin/standalone.sh &
+[1] 121971
+ ⚙ ppalacz@hcd.ca.gov@piotr  ~/HousingElems  =========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/wildfly
+
+  JAVA: java
+
+  JAVA_OPTS:  -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true
+
+....
+14:11:15,788 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = mysql
+...
+14:11:18,627 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+14:11:18,628 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+----
+
+

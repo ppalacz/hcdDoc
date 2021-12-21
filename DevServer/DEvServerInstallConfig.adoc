@@ -375,6 +375,31 @@ pass: S5b
 
 === Testing
 
+==== CLI Start
+
+----
+sudo  /opt/wildfly/bin/standalone.sh
+->
+=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/wildfly
+
+  JAVA: java
+
+  JAVA_OPTS:  -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true
+
+=========================================================================
+
+...
+
+12:03:31,870 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+12:03:31,870 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+----
+
+==== Web Browser
+
 http://165.235.52.43:8080/
 
 In the web browser:

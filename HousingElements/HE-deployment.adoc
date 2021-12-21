@@ -101,6 +101,10 @@ Other datasource defs on kiwano:
                 </drivers>
 ----
     
+----
+    12:08:26,335 INFO  [org.jboss.as.connector.subsystems.datasources] (External Management Request Threads -- 1) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.cj.jdbc.Driver (version 8.0)
+    12:08:26,340 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = mysql
+----
 
 http://165.235.52.43:8080/
 
@@ -135,3 +139,48 @@ Threads: 1  Questions: 3  Slow queries: 0  Opens: 103  Flush tables: 3  Open tab
 
 
 http://localhost/phpmyadmin/
+
+
+ <datasource jndi-name="java:/MySqlHPD" pool-name="MySqlHPD">
+    <connection-url>jdbc:mysql://10.1.37.61:3306/hpd</connection-url>
+        <driver>mysql</driver>
+        <security>
+            <user-name>pugnacious</user-name>
+            <password>edvert12031965</password>
+    </security>
+</datasource>
+
+    <driver name="mysql" module="com.mysql"/>
+ </drivers>
+
+
+ <!--
+                <datasource jndi-name="java:/MySqlDS" pool-name="MySqlDS">
+                    <connection-url>jdbc:mysql://localhost:3306/mysqldb</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>ppalacz</user-name>
+                        <password>DiscoLights77!</password>
+                    </security>
+                    <validation>
+                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker"/>
+                        <validate-on-match>true</validate-on-match>
+                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter"/>
+                    </validation>
+                </datasource>
+                -->
+
+sudo vim /opt/wildfly/modules/system/layers/base/com/mysql/main/module.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- pxp 211220 -->
+<module xmlns="urn:jboss:module:1.5" name="com.mysql">
+        <resources>
+                <resource-root path="mysql-connector-java-8.0.17.jar" />
+        </resources>
+        <dependencies>
+                <module name="javax.api"/>
+                <module name="javax.transaction.api"/>
+        </dependencies>
+</module>
+
