@@ -1,0 +1,16 @@
+
+== Using jboss-cli
+
+With bash attached to the running container:
+
+/opt/jboss/wildfly/bin/jboss-cli.sh
+
+----
+bash-4.2# ./jboss-cli.sh
+You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
+[disconnected /] connect
+Unable to negotiate SSL connection with controller at localhost:9993
+
+[disconnected /]
+----
+
