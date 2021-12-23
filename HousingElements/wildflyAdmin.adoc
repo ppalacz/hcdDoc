@@ -14,3 +14,19 @@ Unable to negotiate SSL connection with controller at localhost:9993
 [disconnected /]
 ----
 
+Successful connect:
+
+----
+
+[standalone@localhost:9990 /] deployment info
+NAME            RUNTIME-NAME    PERSISTENT ENABLED STATUS
+NofaApp-1.1.war NofaApp-1.1.war false      true    OK
+
+
+----
+
+sudo docker exec -it  299fa2915573 bash
+
+/opt/jboss/wildfly/bin/jboss-cli.sh -c command=":read-resource(include-runtime=true, recursive=true, recursive-depth=10)" > configCli.txt
+
+sudo docker cp 299fa2915573:/opt/jboss/configCli.txt  ./pumpkinSampleCliConfig.json

@@ -1,0 +1,115 @@
+= WAR HCD Patching for Tomcat
+
+
+
+== Lib Jars
+
+Under ..\WEB-INF\lib
+
+----
+javax.annotation-api-1.3.2.jar
+javax.faces-2.2.10.jar
+javax.servlet-api-3.1.0.jar
+jstl-1.1.2.jar
+mysql-connector-java-5.1.39.jar
+primefaces-6.0.jar
+----
+
+== Modify Data Source  Settings
+
+=== Add context.xml for Tomcat
+
+----
+<Context>
+    <Resource name="jdbc/[YourDatabaseName]"
+        auth="Container"
+        type="javax.sql.DataSource"
+        username="[DatabaseUsername]"
+        password="[DatabasePassword]"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql:/[yourserver]:3306/[yourapplication]"
+        maxActive="15"
+        maxIdle="3"/>
+</Context>
+----
+
+context.xml required under META-INF for the following:
+
+* ip: 165.235.52.43:3306
+* MySqlHPD
+* username/password is: ppalacz/DiscoLights77!
+* Database name = ExternalWebTest
+
+----
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+    <Resource name="jdbc/MySqlHPD"
+        auth="Container"
+        type="javax.sql.DataSource"
+        username="ppalacz"
+        password="DiscoLights77!"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql:/165.235.52.43:3306/ExternalWebTest"
+        maxActive="15"
+        maxIdle="3"/>
+</Context>
+----
+
+----
+<?xml version='1.0' encoding='utf-8'?>
+
+<Context>
+    <Resource name="jdbc/MySqlHPD"
+              auth="Container"
+              description="MySqlHPD DB Connection"
+              username="ppalacz"
+              password="DiscoLights77!"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://165.235.52.43:3306/ExternalWebTest"
+              maxActive="10"
+              maxIdle="3"
+              maxWait="100"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              type="javax.sql.DataSource">
+              </Resource>
+</Context>
+
+----
+
+
+=== Rename files
+
+* jboss-web.xml
+
+Change the name of the file to make it ineffective (e.g. to jboss-web-orig.xml )
+
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web version="8.0" xmlns="http://www.jboss.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee http://www.jboss.org/schema/jbossas/jboss-web_8_0.xsd">
+  <context-root>/HousingElements</context-root>
+  <!--
+  <security-domain>httpLdapSD</security-domain>
+  -->
+</jboss-web>
+
+----
+
+
+* persistence.xml
+
+..\WEB-INF\classes\META-INF\persistence.xml
+
+Change the name of the file to make it ineffective (e.g. to persistence-orig.xml )
+
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="my_persistence_unit" transaction-type="JTA">
+    <jta-data-source>java:/MySqlHPD</jta-data-source>
+    <class>hcd.ca.gov.hpd.Requester</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+  </persistence-unit>
+</persistence>
+
+----
