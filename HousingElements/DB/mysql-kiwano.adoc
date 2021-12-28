@@ -1,0 +1,60 @@
+
+
+ <datasource jndi-name="java:/MySqlAPR" pool-name="MySqlAPR">
+                    <connection-url>jdbc:mysql://10.1.37.61:3306/apr</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>pugnacious</user-name>
+                        <password>edvert12031965</password>
+                    </security>
+</datasource>
+
+	    docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
+
+
+----
+sudo docker exec -it 7ea2440d70f3 /bin/bash
+----
+
+----
+bash-4.2# printenv
+HOSTNAME=7ea2440d70f3
+TERM=xterm
+PATH=/usr/java/jdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PWD=/
+JAVA_HOME=/usr/java/jdk-8
+LANG=en_US.UTF-8
+JAVA_VERSION=1.8.0_261
+TZ=America/Los_Angeles
+SHLVL=1
+HOME=/root
+_=/usr/bin/printenv
+----
+
+----
+sudo docker exec -it 7ea2440d70f3 /usr/bin/mysql -u pugnacious --password edvert12031965
+OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "/usr/bin/mysql": stat /usr/bin/mysql: no such file or directory: unknown
+----
+
+
+----
+sudo docker container top 7ea2440d70f3
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                437416              437391              0                   Dec23               pts/0               00:00:00            /bin/sh /opt/jboss/wildfly/bin/standalone.sh
+root                437515              437416              0                   Dec23               pts/0               00:09:29            /usr/java/jdk-8/bin/java -D[Standalone] -server -Xms1536m -Xmx3072m -XX:MetaspaceSize=256M -XX:MaxMetaspaceSize=512m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/opt/jboss/wildfly/standalone/log/server.log -Dlogging.configuration=file:/opt/jboss/wildfly/standalone/configuration/logging.properties -jar /opt/jboss/wildfly/jboss-modules.jar -mp /opt/jboss/wildfly/modules org.jboss.as.standalone -Djboss.home.dir=/opt/jboss/wildfly -Djboss.server.base.dir=/opt/jboss/wildfly/standalone
+----
+
+----
+sudo mysql --host 10.1.37.61 --user=pugnacious --password=edvert12031965
+-> ERROR 3159 (HY000): Connections using insecure transport are prohibited while --require_secure_transport=ON.
+----
+
+
+== Pumpkin
+
+@pumpkin  ~  sudo docker exec -it 4919bcaac7d8 /bin/bash
+
+----
+sudo docker inspect --format='{{.}}' 4919bcaac7d8
+{0xc0000ec9a0 [{bind  /hcdwebsite/mysql/log /var/log   true rprivate} {bind  /hcdwebsite/mysql/conf.d /etc/mysql/conf.d   true rprivate} {bind  /hcdwebsite/mysql/mysql-data /var/lib/mysql   true rprivate}] 0xc000140640 0xc000544100}
+----
