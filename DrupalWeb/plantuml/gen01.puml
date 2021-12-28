@@ -1,0 +1,26 @@
+@startuml "Generated"
+'on: 2021-12-27T22:53:22.895-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+|<back:Yellow><b>File System Folder </b></back>|
+endlegend
+
+	component "\nabc" as x314602240 #LightGreen {
+	    'artifact "x314602240"
+
+		node "\n/housingelements" as x216975557 #LightGreen {
+	        'artifact "x216975557"
+	        folder "/opt/housingelements/wildfly/logs" as x24435535 #Yellow {
+	            'artifact "x24435535"
+
+	        }
+
+        }
+    }
+	 
+
+ 
+@enduml

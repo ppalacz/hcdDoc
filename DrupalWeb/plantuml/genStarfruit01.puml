@@ -1,0 +1,86 @@
+@startuml "Generated"
+'on: 2021-12-28T13:41:26.664-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+|<back:Yellow><b>File System Folder </b></back>|
+endlegend
+
+	component "\nstarfruit" as x142224448 #AliceBlue {
+	
+
+		node "\n/w3prodapache" as x75531560 #LightGreen {
+	
+
+			cloud "Ports" as ports26 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval25
+}
+
+			frame "Bindings"  as bind793 #Yellow {
+			card "/opt/w3prod/drupalfiles/:/var/www/drupalfiles/\n/opt/w3prod/webroot/:/var/www/html/\n" as cval493
+			}
+
+	}
+
+		node "\n/homekeyapache" as x111235695 #LightGreen {
+	
+
+			cloud "Ports" as ports294 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval756
+}
+
+			frame "Bindings"  as bind835 #Yellow {
+			card "/opt/homekey/drupalfiles:/var/www/drupalfiles\n/opt/homekey/sync:/var/www/content/sync/\n/opt/homekey/webroot/:/var/www/html/\n" as cval403
+			}
+
+	}
+
+		node "\n/nofaapache" as x51798953 #LightGreen {
+	
+
+			cloud "Ports" as ports862 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval926
+}
+
+			frame "Bindings"  as bind394 #Yellow {
+			card "/opt/nofa/drupalfiles:/var/www/drupalfiles\n/opt/nofa/sync:/var/www/content/sync/\n/opt/nofa/webroot/:/var/www/html/\n" as cval249
+			}
+
+	}
+
+		node "\n/acceleratorapache" as x3913926 #LightGreen {
+	
+
+			cloud "Ports" as ports117 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval146
+}
+
+			frame "Bindings"  as bind241 #Yellow {
+			card "/opt/accelerator/drupalfiles:/var/www/drupalfiles\n/opt/accelerator/sync:/var/www/content/sync/\n/opt/accelerator/webroot/:/var/www/html/\n" as cval73
+			}
+
+	}
+
+	 
+
+		node "\n/orion-orionaggregator" as x185970893 #LightGreen {
+	
+
+			cloud "Ports" as ports697 #SeaShell {
+			card "4043/tcp\n" as pval572
+}
+
+			frame "Bindings"  as bind35 #Yellow {
+			card "orion_cman-volume:/swdata:rw\n" as cval99
+			}
+
+	}
+x75531560 -[hidden]- x111235695
+x111235695 -[hidden]- x51798953
+x51798953 -[hidden]- x3913926
+x3913926 -[hidden]-   x185970893
+
+}
+@enduml

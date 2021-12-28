@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2892px" preserveAspectRatio="none" style="width:1201px;height:2892px;background:#FFFFFF;" version="1.1" viewBox="0 0 1201 2892" width="1201px" zoomAndPan="magnify"><defs><filter height="300%" id="f25hnljmu3h6h" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter><filter height="1" id="b25hnljmu3h6h0" width="1" x="0" y="0"><feFlood flood-color="#F0F8FF" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b25hnljmu3h6h1" width="1" x="0" y="0"><feFlood flood-color="#90EE90" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b25hnljmu3h6h2" width="1" x="0" y="0"><feFlood flood-color="#FFF5EE" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b25hnljmu3h6h3" width="1" x="0" y="0"><feFlood flood-color="#FFFF00" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter></defs><g><!--MD5=[e597a83667fbe67d7a6d151619553dc1]
+cluster x174654613--><rect fill="#F0F8FF" filter="url(#f25hnljmu3h6h)" height="2764" style="stroke:#000000;stroke-width:1.5;" width="1180" x="7" y="7"/><rect fill="#F0F8FF" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="1167" y="12"/><rect fill="#F0F8FF" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="1165" y="14"/><rect fill="#F0F8FF" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="1165" y="18"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="599" y="34.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="49" x="572.5" y="52.1426">kiwano</text><!--MD5=[68ae99e3dbe525667b110cec363b839f]
+cluster x216975557--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,87,49,77,839,77,839,267,829,277,39,277,39,87" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="829" x2="839" y1="87" y2="77"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="829" y1="87" y2="87"/><line style="stroke:#000000;stroke-width:1.5;" x1="829" x2="829" y1="87" y2="277"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="437" y="104.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="126" x="372" y="122.1426">/housingelements</text><!--MD5=[ec0c763604a5ab341f1280f82d6db6d2]
+cluster ports25--><path d="M708.2387,160.1145 C711.3839,155.621 716.3961,156.4815 718.7103,161.0724 C722.0292,153.3913 726.7666,154.2282 731.889,159.1928 C734.8899,154.2082 739.6721,154.332 742.2367,159.6318 C746.1898,154.057 750.7368,154.3363 754.407,159.9398 C757.2511,154.5585 762.1609,154.6559 765.2949,159.6351 C768.7521,153.8076 774.1725,153.0718 777.7014,159.5628 C781.4764,153.7607 785.7734,153.7456 789.0562,160.0254 C792.6194,155.4453 797.0042,156.3521 799.6373,161.0825 C805.7422,162.8261 807.829,168.2505 803.1003,173.1127 C811.2188,175.6823 812.4005,180.5274 806.1069,186.3663 C811.8443,189.0469 813.6555,194.2377 807.9267,198.621 C814.2759,203.8478 813.8896,210.2951 805.6702,213.2792 C811.1385,218.5921 810.686,222.4689 803.6014,225.6892 C807.6567,231.4485 806.6949,237.3161 799.0571,239.1187 C796.5844,245.5831 790.8516,245.2531 787.5713,239.9039 C785.7345,245.2342 780.1601,246.9135 776.1578,242.4198 C773.1402,248.2208 769.8996,248.6857 765.7638,243.4754 C762.5092,249.2503 758.772,250.7487 753.5756,245.6524 C749.9365,250.8625 744.5449,249.4135 742.1407,244.2865 C736.9276,249.0933 732.9367,247.5894 730.9914,241.0698 C726.1659,247.1259 721.9717,245.6476 718.8069,239.4222 C714.8968,244.2319 710.7846,244.6112 707.9283,238.3835 C700.6978,235.2783 700.266,230.2155 705.9714,225.1914 C700.142,221.4102 698.4015,217.6386 704.3933,212.399 C697.5063,209.7936 697.7602,203.7667 702.7088,199.6031 C697.4548,194.1286 697.2384,188.4475 705.6448,185.8998 C700.8735,181.4366 701.3093,177.7677 707.0903,174.6617 C701.3038,169.8292 700.4852,163.8781 708.2387,160.1145 " fill="#FFF5EE" filter="url(#f25hnljmu3h6h)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="734.5" y="179.5332">Ports</text><!--MD5=[feec10469e385f81548932da80c461a3]
+cluster bind871--><rect fill="#FFFF00" filter="url(#f25hnljmu3h6h)" height="93" style="stroke:#000000;stroke-width:1.5;" width="596" x="79" y="152"/><path d="M151,152 L151,162.6094 L141,172.6094 L79,172.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="62" x="82" y="167.5332">Bindings</text><!--MD5=[f66c2fdbf86869123b686606bfdbc49b]
+cluster x174926803--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,327,49,317,1053,317,1053,578,1043,588,39,588,39,327" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1043" x2="1053" y1="327" y2="317"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="1043" y1="327" y2="327"/><line style="stroke:#000000;stroke-width:1.5;" x1="1043" x2="1043" y1="327" y2="588"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="544" y="344.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="60" x="512" y="362.1426">/aprprod</text><!--MD5=[ad4311347d846002f1f4887f3e845c39]
+cluster ports470--><path d="M929.1322,400.6638 C932.5346,394.1602 936.9161,393.7836 941.5172,399.4434 C944.6415,393.3739 951.0338,392.7237 955.428,397.8682 C958.9149,392.8926 963.8762,391.9834 967.0558,398.1878 C971.522,390.6617 976.6663,392.4903 981.0699,398.2539 C986.0906,391.3004 991.3898,392.2081 994.927,399.679 C1003.3541,392.9517 1011.1704,397.4402 1013,407 C1014.3355,406.763 1015.3214,407.4564 1014.8797,408.9407 C1020.0777,411.0247 1020.5126,415.0087 1016.1096,418.3479 C1021.8977,421.2051 1022.251,425.2473 1017.7413,429.5981 C1023.4726,432.024 1023.4791,437.4932 1019.1581,441.1518 C1025.7825,444.1961 1025.3502,449.2406 1020.5374,453.5567 C1025.1019,455.9978 1026.6369,459.3655 1022.2092,463.3427 C1028.5554,467.0532 1029.5874,471.6779 1022.8812,476.0772 C1027.0618,479.7733 1026.5832,484.1427 1020.8725,485.7942 C1026.8611,489.6048 1026.7952,494.8086 1020.1923,497.9124 C1025.1044,502.2795 1025.2191,506.0528 1018.7357,508.9107 C1022.8685,513.0184 1022.4129,516.1955 1017.2902,518.9737 C1022.1104,523.6187 1021.5597,528.2535 1015.4532,531.2655 C1019.7542,540.6488 1017.4205,547.4976 1006,548 C1006.4316,547.3922 1007.0037,547.4005 1007.3492,548.0895 C1004.8203,554.684 1001.0104,557.4341 994.7597,551.9777 C992.0587,559.846 986.0161,559.8658 980.8597,554.5704 C978.793,561.4507 972.994,562.4667 968.2706,557.3608 C962.4479,563.3463 957.4387,562.3745 954.7158,554.3597 C949.8295,560.1665 945.436,558.7671 942.3412,552.5205 C930.48,560.2592 921.9659,553.4444 921,541 C922.1656,540.302 922.7998,540.8565 922.9197,542.0572 C917.8167,539.6959 917.1005,534.58 921.8164,531.2191 C915.9186,528.6008 915.2941,524.0226 920.8469,520.3801 C915.1352,516.9344 915.0227,512.4911 920.8204,509.0187 C914.0466,505.7854 914.6429,500.2039 920.2389,496.4006 C915.5849,493.0053 915.4374,488.7865 920.306,485.4496 C914.9668,483.0939 914.7206,478.4207 918.8512,474.7746 C913.9763,470.8208 915.4374,465.3498 920.9681,463.319 C915.8889,460.4244 915.917,457.4392 919.8704,453.5316 C913.3129,449.5895 915.1225,444.0618 920.5192,440.7253 C914.6398,437.0195 916.6595,431.8875 921.7334,429.3511 C917.4084,426.4567 917.0852,423.1494 921.0473,419.6678 C914.7276,411.2251 916.2051,402.0391 928,400 C928.69,399.6772 929.0668,399.9212 929.1322,400.6638 " fill="#FFF5EE" filter="url(#f25hnljmu3h6h)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="948.5" y="419.5332">Ports</text><!--MD5=[40714b193655841be371a47d71a8012d]
+cluster bind894--><rect fill="#FFFF00" filter="url(#f25hnljmu3h6h)" height="146" style="stroke:#000000;stroke-width:1.5;" width="810" x="79" y="401"/><path d="M151,401 L151,411.6094 L141,421.6094 L79,421.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="62" x="82" y="416.5332">Bindings</text><!--MD5=[950b1d387339af9915ebb2303040234a]
+cluster x31121023--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,638,49,628,591,628,591,836,581,846,39,846,39,638" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="581" x2="591" y1="638" y2="628"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="581" y1="638" y2="638"/><line style="stroke:#000000;stroke-width:1.5;" x1="581" x2="581" y1="638" y2="846"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="313" y="655.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="177" x="222.5" y="673.1426">/housingelementsapache</text><!--MD5=[cc6710a976b77815aef19dfe99f51757]
+cluster ports794--><path d="M467.5901,711.5972 C472.1262,703.48 477.9166,703.9063 482.6381,711.4187 C487.0491,705.8996 491.6258,704.854 495.7237,711.7488 C499.2351,703.8595 504.1591,704.0539 509.8524,709.4239 C514.8125,701.3309 520.4994,701.808 525.0048,709.8509 C529.7652,704.1009 533.742,704.1994 537.3794,710.9615 C541.8986,705.9246 548.3255,706.6422 551.2187,712.9458 C557.1419,715.5707 556.2597,719.0484 552.5695,722.969 C558.7883,726.3384 559.6484,732.0828 552.8037,735.6926 C558.882,739.1152 561.2954,743.2412 554.9768,748.7301 C559.4833,751.9764 560.5596,756.6981 554.7327,759.7147 C559.9935,763.5337 560.291,768.1785 554.0458,771.3162 C559.0811,775.4795 559.8571,779.2518 553.6678,783.0536 C558.9258,786.6874 558.0526,792.1012 552.3423,794.4604 C558.2187,797.3945 558.5501,803.4899 552.8292,806.8787 C549.7531,814.9464 542.124,814.2512 537.7779,808.2361 C534.6177,815.0853 528.7864,816.0248 524.1448,809.7784 C521.2349,817.138 514.1203,818.0413 509.31,811.8605 C504.3022,817.8076 499.6527,818.2034 495.9479,810.5777 C489.0513,817.4387 484.8492,815.4386 481.3546,807.2736 C477.903,813.7653 471.8316,812.7658 468.9393,806.7198 C462.961,804.3482 462.8528,799.9347 466.8709,795.6886 C461.4726,793.4234 459.9206,788.0795 464.9207,784.0691 C459.0219,780.6536 457.7464,775.0847 463.6302,770.5448 C457.5784,768.7559 457.6156,764.9536 460.7892,760.544 C456.0838,755.3927 456.0455,751.3216 462.8833,748.1153 C457.7972,743.7719 459.3582,737.8999 465.1185,735.4743 C459.454,731.7439 460.783,725.7843 466.1145,722.9267 C461.3809,719.1222 462.136,714.0747 467.5901,711.5972 " fill="#FFF5EE" filter="url(#f25hnljmu3h6h)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="490.5" y="730.5332">Ports</text><!--MD5=[a9cc467e9a6b5e239bb4694146e456b7]
+cluster bind120--><rect fill="#FFFF00" filter="url(#f25hnljmu3h6h)" height="93" style="stroke:#000000;stroke-width:1.5;" width="356" x="79" y="712"/><path d="M151,712 L151,722.6094 L141,732.6094 L79,732.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="62" x="82" y="727.5332">Bindings</text><!--MD5=[d92a9502a012fc479ab8a74b9f5fd870]
+cluster x27926429--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,896,49,886,226,886,226,1094,216,1104,39,1104,39,896" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="216" x2="226" y1="896" y2="886"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="216" y1="896" y2="896"/><line style="stroke:#000000;stroke-width:1.5;" x1="216" x2="216" y1="896" y2="1104"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="130.5" y="913.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="111" x="73" y="931.1426">/aprprodapache</text><!--MD5=[38820f5f1637091b490bb08779f5e09c]
+cluster ports591--><path d="M94.5901,969.5972 C99.1262,961.48 104.9166,961.9063 109.6381,969.4187 C114.0491,963.8996 118.6258,962.854 122.7237,969.7488 C126.2351,961.8595 131.1591,962.0539 136.8524,967.4239 C141.8125,959.3309 147.4994,959.808 152.0048,967.8509 C156.7652,962.1009 160.742,962.1994 164.3794,968.9615 C168.8986,963.9246 175.3255,964.6422 178.2187,970.9458 C184.1419,973.5707 183.2597,977.0484 179.5695,980.969 C185.7883,984.3384 186.6484,990.0828 179.8037,993.6926 C185.882,997.1152 188.2954,1001.2412 181.9768,1006.7301 C186.4833,1009.9764 187.5596,1014.6981 181.7327,1017.7147 C186.9935,1021.5337 187.291,1026.1785 181.0458,1029.3162 C186.0811,1033.4795 186.8571,1037.2518 180.6678,1041.0536 C185.9258,1044.6874 185.0526,1050.1012 179.3423,1052.4604 C185.2187,1055.3945 185.5501,1061.4899 179.8292,1064.8787 C176.7531,1072.9464 169.124,1072.2512 164.7779,1066.2361 C161.6177,1073.0853 155.7864,1074.0248 151.1448,1067.7784 C148.2349,1075.138 141.1203,1076.0413 136.31,1069.8605 C131.3022,1075.8076 126.6527,1076.2034 122.9479,1068.5777 C116.0513,1075.4387 111.8492,1073.4386 108.3546,1065.2736 C104.903,1071.7653 98.8316,1070.7658 95.9393,1064.7198 C89.961,1062.3482 89.8528,1057.9347 93.8709,1053.6886 C88.4726,1051.4234 86.9206,1046.0795 91.9207,1042.0691 C86.0219,1038.6536 84.7464,1033.0847 90.6302,1028.5448 C84.5784,1026.7559 84.6156,1022.9536 87.7892,1018.544 C83.0838,1013.3927 83.0455,1009.3216 89.8833,1006.1153 C84.7972,1001.7719 86.3582,995.8999 92.1185,993.4743 C86.454,989.7439 87.783,983.7843 93.1145,980.9267 C88.3809,977.1222 89.136,972.0747 94.5901,969.5972 " fill="#FFF5EE" filter="url(#f25hnljmu3h6h)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="117.5" y="988.5332">Ports</text><!--MD5=[552a4c859631bd594bf1eb8e8a220e1d]
+cluster x201186995--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,1154,49,1144,1133,1144,1133,1422,1123,1432,39,1432,39,1154" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1123" x2="1133" y1="1154" y2="1144"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="1123" y1="1154" y2="1154"/><line style="stroke:#000000;stroke-width:1.5;" x1="1123" x2="1123" y1="1154" y2="1432"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="584" y="1171.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="77" x="543.5" y="1189.1426">/casasprod</text><!--MD5=[671ef7601b821ab9057be10e6ff6c42c]
+cluster ports232--><path d="M95.1322,1236.1638 C98.5346,1229.6602 102.9161,1229.2836 107.5172,1234.9434 C110.6415,1228.8739 117.0338,1228.2237 121.428,1233.3682 C124.9149,1228.3926 129.8762,1227.4834 133.0558,1233.6878 C137.522,1226.1617 142.6663,1227.9903 147.0699,1233.7539 C152.0906,1226.8004 157.3898,1227.7081 160.927,1235.179 C169.3541,1228.4517 177.1704,1232.9402 179,1242.5 C180.3355,1242.263 181.3214,1242.9564 180.8797,1244.4407 C186.0777,1246.5247 186.5126,1250.5087 182.1096,1253.8479 C187.8977,1256.7051 188.251,1260.7473 183.7413,1265.0981 C189.4726,1267.524 189.4791,1272.9932 185.1581,1276.6518 C191.7825,1279.6961 191.3502,1284.7406 186.5374,1289.0567 C191.1019,1291.4978 192.6369,1294.8655 188.2092,1298.8427 C194.5554,1302.5532 195.5874,1307.1779 188.8812,1311.5772 C193.0618,1315.2733 192.5832,1319.6427 186.8725,1321.2942 C192.8611,1325.1048 192.7952,1330.3086 186.1923,1333.4124 C191.1044,1337.7795 191.2191,1341.5528 184.7357,1344.4107 C188.8685,1348.5184 188.4129,1351.6955 183.2902,1354.4737 C188.1104,1359.1187 187.5597,1363.7535 181.4532,1366.7655 C185.7542,1376.1488 183.4205,1382.9976 172,1383.5 C172.4316,1382.8922 173.0037,1382.9005 173.3492,1383.5895 C170.8203,1390.184 167.0104,1392.9341 160.7597,1387.4777 C158.0587,1395.346 152.0161,1395.3658 146.8597,1390.0704 C144.793,1396.9507 138.994,1397.9667 134.2706,1392.8608 C128.4479,1398.8463 123.4387,1397.8745 120.7158,1389.8597 C115.8295,1395.6665 111.436,1394.2671 108.3412,1388.0205 C96.48,1395.7592 87.9659,1388.9444 87,1376.5 C88.1656,1375.802 88.7998,1376.3565 88.9197,1377.5572 C83.8167,1375.1959 83.1005,1370.08 87.8164,1366.7191 C81.9186,1364.1008 81.2941,1359.5226 86.8469,1355.8801 C81.1352,1352.4344 81.0227,1347.9911 86.8204,1344.5187 C80.0466,1341.2854 80.6429,1335.7039 86.2389,1331.9006 C81.5849,1328.5053 81.4374,1324.2865 86.306,1320.9496 C80.9668,1318.5939 80.7206,1313.9207 84.8512,1310.2746 C79.9763,1306.3208 81.4374,1300.8498 86.9681,1298.819 C81.8889,1295.9244 81.917,1292.9392 85.8704,1289.0316 C79.3129,1285.0895 81.1225,1279.5618 86.5192,1276.2253 C80.6398,1272.5195 82.6595,1267.3875 87.7334,1264.8511 C83.4084,1261.9567 83.0852,1258.6494 87.0473,1255.1678 C80.7276,1246.7251 82.2051,1237.5391 94,1235.5 C94.69,1235.1772 95.0668,1235.4212 95.1322,1236.1638 " fill="#FFF5EE" filter="url(#f25hnljmu3h6h)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="114.5" y="1255.0332">Ports</text><!--MD5=[5d33ea7a988188d14674f22c850f1aec]
+cluster bind887--><rect fill="#FFFF00" filter="url(#f25hnljmu3h6h)" height="181" style="stroke:#000000;stroke-width:1.5;" width="890" x="211" y="1219"/><path d="M283,1219 L283,1229.6094 L273,1239.6094 L211,1239.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="62" x="214" y="1234.5332">Bindings</text><!--MD5=[91d3dc01c35e15f52666609741acb5e3]
+cluster x26784587--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,1482,49,1472,242,1472,242,1680,232,1690,39,1690,39,1482" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="232" x2="242" y1="1482" y2="1472"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="232" y1="1482" y2="1482"/><line style="stroke:#000000;stroke-width:1.5;" x1="232" x2="232" y1="1482" y2="1690"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="138.5" y="1499.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="127" x="73" y="1517.1426">/recovercaapache</text><!--MD5=[f94c41513338e89c2559a7869da9872d]
+cluster ports788--><path d="M102.5901,1555.5972 C107.1262,1547.48 112.9166,1547.9063 117.6381,1555.4187 C122.0491,1549.8996 126.6258,1548.854 130.7237,1555.7488 C134.2351,1547.8595 139.1591,1548.0539 144.8524,1553.4239 C149.8125,1545.3309 155.4994,1545.808 160.0048,1553.8509 C164.7652,1548.1009 168.742,1548.1994 172.3794,1554.9615 C176.8986,1549.9246 183.3255,1550.6422 186.2187,1556.9458 C192.1419,1559.5707 191.2597,1563.0484 187.5695,1566.969 C193.7883,1570.3384 194.6484,1576.0828 187.8037,1579.6926 C193.882,1583.1152 196.2954,1587.2412 189.9768,1592.7301 C194.4833,1595.9764 195.5596,1600.6981 189.7327,1603.7147 C194.9935,1607.5337 195.291,1612.1785 189.0458,1615.3162 C194.0811,1619.4795 194.8571,1623.2518 188.6678,1627.0536 C193.9258,1630.6874 193.0526,1636.1012 187.3423,1638.4604 C193.2187,1641.3945 193.5501,1647.4899 187.8292,1650.8787 C184.7531,1658.9464 177.124,1658.2512 172.7779,1652.2361 C169.6177,1659.0853 163.7864,1660.0248 159.1448,1653.7784 C156.2349,1661.138 149.1203,1662.0413 144.31,1655.8605 C139.3022,1661.8076 134.6527,1662.2034 130.9479,1654.5777 C124.0513,1661.4387 119.8492,1659.4386 116.3546,1651.2736 C112.903,1657.7653 106.8316,1656.7658 103.9393,1650.7198 C97.961,1648.3482 97.8528,1643.9347 101.8709,1639.6886 C96.4726,1637.4234 94.9206,1632.0795 99.9207,1628.0691 C94.0219,1624.6536 92.7464,1619.0847 98.6302,1614.5448 C92.5784,1612.7559 92.6156,1608.9536 95.7892,1604.544 C91.0838,1599.3927 91.0455,1595.3216 97.8833,1592.1153 C92.7972,1587.7719 94.3582,1581.8999 100.1185,1579.4743 C94.454,1575.7439 95.783,1569.7843 101.1145,1566.9267 C96.3809,1563.1222 97.136,1558.0747 102.5901,1555.5972 " fill="#FFF5EE" filter="url(#f25hnljmu3h6h)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="125.5" y="1574.5332">Ports</text><!--MD5=[929509bc49a5ec320de6309586549e53]
+cluster x264905597--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,1740,49,1730,243,1730,243,1938,233,1948,39,1948,39,1740" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="233" x2="243" y1="1740" y2="1730"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="233" y1="1740" y2="1740"/><line style="stroke:#000000;stroke-width:1.5;" x1="233" x2="233" y1="1740" y2="1948"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="139" y="1757.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="128" x="73" y="1775.1426">/casasprodapache</text><!--MD5=[466d0f8fca13c0b7059098a9cca55d30]
+cluster ports398--><path d="M103.5901,1813.5972 C108.1262,1805.48 113.9166,1805.9063 118.6381,1813.4187 C123.0491,1807.8996 127.6258,1806.854 131.7237,1813.7488 C135.2351,1805.8595 140.1591,1806.0539 145.8524,1811.4239 C150.8125,1803.3309 156.4994,1803.808 161.0048,1811.8509 C165.7652,1806.1009 169.742,1806.1994 173.3794,1812.9615 C177.8986,1807.9246 184.3255,1808.6422 187.2187,1814.9458 C193.1419,1817.5707 192.2597,1821.0484 188.5695,1824.969 C194.7883,1828.3384 195.6484,1834.0828 188.8037,1837.6926 C194.882,1841.1152 197.2954,1845.2412 190.9768,1850.7301 C195.4833,1853.9764 196.5596,1858.6981 190.7327,1861.7147 C195.9935,1865.5337 196.291,1870.1785 190.0458,1873.3162 C195.0811,1877.4795 195.8571,1881.2518 189.6678,1885.0536 C194.9258,1888.6874 194.0526,1894.1012 188.3423,1896.4604 C194.2187,1899.3945 194.5501,1905.4899 188.8292,1908.8787 C185.7531,1916.9464 178.124,1916.2512 173.7779,1910.2361 C170.6177,1917.0853 164.7864,1918.0248 160.1448,1911.7784 C157.2349,1919.138 150.1203,1920.0413 145.31,1913.8605 C140.3022,1919.8076 135.6527,1920.2034 131.9479,1912.5777 C125.0513,1919.4387 120.8492,1917.4386 117.3546,1909.2736 C113.903,1915.7653 107.8316,1914.7658 104.9393,1908.7198 C98.961,1906.3482 98.8528,1901.9347 102.8709,1897.6886 C97.4726,1895.4234 95.9206,1890.0795 100.9207,1886.0691 C95.0219,1882.6536 93.7464,1877.0847 99.6302,1872.5448 C93.5784,1870.7559 93.6156,1866.9536 96.7892,1862.544 C92.0838,1857.3927 92.0455,1853.3216 98.8833,1850.1153 C93.7972,1845.7719 95.3582,1839.8999 101.1185,1837.4743 C95.454,1833.7439 96.783,1827.7843 102.1145,1824.9267 C97.3809,1821.1222 98.136,1816.0747 103.5901,1813.5972 " fill="#FFF5EE" filter="url(#f25hnljmu3h6h)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="126.5" y="1832.5332">Ports</text><!--MD5=[258edf0d90a0ff278cfc974022f26b8c]
+cluster x120489002--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,1998,49,1988,443,1988,443,2178,433,2188,39,2188,39,1998" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="433" x2="443" y1="1998" y2="1988"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="433" y1="1998" y2="1998"/><line style="stroke:#000000;stroke-width:1.5;" x1="433" x2="433" y1="1998" y2="2188"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="239" y="2015.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="143" x="165.5" y="2033.1426">/weaveworks_scope</text><!--MD5=[5d87037c4e8a2c5eeceb144ae83ba3f2]
+cluster bind69--><rect fill="#FFFF00" filter="url(#f25hnljmu3h6h)" height="93" style="stroke:#000000;stroke-width:1.5;" width="332" x="79" y="2063"/><path d="M151,2063 L151,2073.6094 L141,2083.6094 L79,2083.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="62" x="82" y="2078.5332">Bindings</text><!--MD5=[a0829a318bdece677a5719b8e513d31f]
+cluster x185970893--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,2238,49,2228,523,2228,523,2418,513,2428,39,2428,39,2238" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="513" x2="523" y1="2238" y2="2228"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="513" y1="2238" y2="2238"/><line style="stroke:#000000;stroke-width:1.5;" x1="513" x2="513" y1="2238" y2="2428"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="279" y="2255.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="161" x="196.5" y="2273.1426">/orion-orionaggregator</text><!--MD5=[7de60097cc5b757e8b5d5f6cceefb866]
+cluster ports921--><path d="M88.2387,2311.1145 C91.3839,2306.621 96.3961,2307.4815 98.7103,2312.0724 C102.0292,2304.3913 106.7666,2305.2282 111.889,2310.1928 C114.8899,2305.2082 119.6721,2305.332 122.2367,2310.6318 C126.1898,2305.057 130.7368,2305.3363 134.407,2310.9398 C137.2511,2305.5585 142.1609,2305.6559 145.2949,2310.6351 C148.7521,2304.8076 154.1725,2304.0718 157.7014,2310.5628 C161.4764,2304.7607 165.7734,2304.7456 169.0562,2311.0254 C172.6194,2306.4453 177.0042,2307.3521 179.6373,2312.0825 C185.7422,2313.8261 187.829,2319.2505 183.1003,2324.1127 C191.2188,2326.6823 192.4005,2331.5274 186.1069,2337.3663 C191.8443,2340.0469 193.6555,2345.2377 187.9267,2349.621 C194.2759,2354.8478 193.8896,2361.2951 185.6702,2364.2792 C191.1385,2369.5921 190.686,2373.4689 183.6014,2376.6892 C187.6567,2382.4485 186.6949,2388.3161 179.0571,2390.1187 C176.5844,2396.5831 170.8516,2396.2531 167.5713,2390.9039 C165.7345,2396.2342 160.1601,2397.9135 156.1578,2393.4198 C153.1402,2399.2208 149.8996,2399.6857 145.7638,2394.4754 C142.5092,2400.2503 138.772,2401.7487 133.5756,2396.6524 C129.9365,2401.8625 124.5449,2400.4135 122.1407,2395.2865 C116.9276,2400.0933 112.9367,2398.5894 110.9914,2392.0698 C106.1659,2398.1259 101.9717,2396.6476 98.8069,2390.4222 C94.8968,2395.2319 90.7846,2395.6112 87.9283,2389.3835 C80.6978,2386.2783 80.266,2381.2155 85.9714,2376.1914 C80.142,2372.4102 78.4015,2368.6386 84.3933,2363.399 C77.5063,2360.7936 77.7602,2354.7667 82.7088,2350.6031 C77.4548,2345.1286 77.2384,2339.4475 85.6448,2336.8998 C80.8735,2332.4366 81.3093,2328.7677 87.0903,2325.6617 C81.3038,2320.8292 80.4852,2314.8781 88.2387,2311.1145 " fill="#FFF5EE" filter="url(#f25hnljmu3h6h)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="114.5" y="2330.5332">Ports</text><!--MD5=[4634b8ab06b555fc0bcf3ea582f8ccfd]
+cluster bind476--><rect fill="#FFFF00" filter="url(#f25hnljmu3h6h)" height="93" style="stroke:#000000;stroke-width:1.5;" width="280" x="211" y="2303"/><path d="M283,2303 L283,2313.6094 L273,2323.6094 L211,2323.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="62" x="214" y="2318.5332">Bindings</text><!--MD5=[d2a11dfd2ffbb730408898e45f00a7ba]
+cluster x20523776--><polygon fill="#90EE90" filter="url(#f25hnljmu3h6h)" points="39,2478,49,2468,1155,2468,1155,2729,1145,2739,39,2739,39,2478" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1145" x2="1155" y1="2478" y2="2468"/><line style="stroke:#000000;stroke-width:1.5;" x1="39" x2="1145" y1="2478" y2="2478"/><line style="stroke:#000000;stroke-width:1.5;" x1="1145" x2="1145" y1="2478" y2="2739"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="595" y="2495.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="65" x="560.5" y="2513.1426">/casasapi</text><!--MD5=[bfe38200250bcc29412a9db30c900a86]
+cluster ports666--><path d="M1031.1322,2551.6638 C1034.5346,2545.1602 1038.9161,2544.7836 1043.5172,2550.4434 C1046.6415,2544.3739 1053.0338,2543.7237 1057.428,2548.8682 C1060.9149,2543.8926 1065.8762,2542.9834 1069.0558,2549.1878 C1073.522,2541.6617 1078.6663,2543.4903 1083.0699,2549.2539 C1088.0906,2542.3004 1093.3898,2543.2081 1096.927,2550.679 C1105.3541,2543.9517 1113.1704,2548.4402 1115,2558 C1116.3355,2557.763 1117.3214,2558.4564 1116.8797,2559.9407 C1122.0777,2562.0247 1122.5126,2566.0087 1118.1096,2569.3479 C1123.8977,2572.2051 1124.251,2576.2473 1119.7413,2580.5981 C1125.4726,2583.024 1125.4791,2588.4932 1121.1581,2592.1518 C1127.7825,2595.1961 1127.3502,2600.2406 1122.5374,2604.5567 C1127.1019,2606.9978 1128.6369,2610.3655 1124.2092,2614.3427 C1130.5554,2618.0532 1131.5874,2622.6779 1124.8812,2627.0772 C1129.0618,2630.7733 1128.5832,2635.1427 1122.8725,2636.7942 C1128.8611,2640.6048 1128.7952,2645.8086 1122.1923,2648.9124 C1127.1044,2653.2795 1127.2191,2657.0528 1120.7357,2659.9107 C1124.8685,2664.0184 1124.4129,2667.1955 1119.2902,2669.9737 C1124.1104,2674.6187 1123.5597,2679.2535 1117.4532,2682.2655 C1121.7542,2691.6488 1119.4205,2698.4976 1108,2699 C1108.4316,2698.3922 1109.0037,2698.4005 1109.3492,2699.0895 C1106.8203,2705.684 1103.0104,2708.4341 1096.7597,2702.9777 C1094.0587,2710.846 1088.0161,2710.8658 1082.8597,2705.5704 C1080.793,2712.4507 1074.994,2713.4667 1070.2706,2708.3608 C1064.4479,2714.3463 1059.4387,2713.3745 1056.7158,2705.3597 C1051.8295,2711.1665 1047.436,2709.7671 1044.3412,2703.5205 C1032.48,2711.2592 1023.9659,2704.4444 1023,2692 C1024.1656,2691.302 1024.7998,2691.8565 1024.9197,2693.0572 C1019.8167,2690.6959 1019.1005,2685.58 1023.8164,2682.2191 C1017.9186,2679.6008 1017.2941,2675.0226 1022.8469,2671.3801 C1017.1352,2667.9344 1017.0227,2663.4911 1022.8204,2660.0187 C1016.0466,2656.7854 1016.6429,2651.2039 1022.2389,2647.4006 C1017.5849,2644.0053 1017.4374,2639.7865 1022.306,2636.4496 C1016.9668,2634.0939 1016.7206,2629.4207 1020.8512,2625.7746 C1015.9763,2621.8208 1017.4374,2616.3498 1022.9681,2614.319 C1017.8889,2611.4244 1017.917,2608.4392 1021.8704,2604.5316 C1015.3129,2600.5895 1017.1225,2595.0618 1022.5192,2591.7253 C1016.6398,2588.0195 1018.6595,2582.8875 1023.7334,2580.3511 C1019.4084,2577.4567 1019.0852,2574.1494 1023.0473,2570.6678 C1016.7276,2562.2251 1018.2051,2553.0391 1030,2551 C1030.69,2550.6772 1031.0668,2550.9212 1031.1322,2551.6638 " fill="#FFF5EE" filter="url(#f25hnljmu3h6h)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="1050.5" y="2570.5332">Ports</text><!--MD5=[20d49587ddb20e268e635410a2203b23]
+cluster bind540--><rect fill="#FFFF00" filter="url(#f25hnljmu3h6h)" height="128" style="stroke:#000000;stroke-width:1.5;" width="912" x="79" y="2561"/><path d="M151,2561 L151,2571.6094 L141,2581.6094 L79,2581.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="62" x="82" y="2576.5332">Bindings</text><!--MD5=[67ffb0e722e201933b7016175bc68c7e]
+entity pval353--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="75" x="715.5" y="188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="725.5" y="205.5332">8080/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="729.5" y="223.1426"/><!--MD5=[06cca824e2c2e9ce5fdecdea2223ff7c]
+entity cval396--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="563" x="95.5" y="188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="543" x="105.5" y="205.5332">/opt/housingelements/wildfly/logs/server.log:/opt/jboss/wildfly/standalone/log/server.log</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="109.5" y="223.1426"/><!--MD5=[9628712bf2a56352a2c05b2024f70dbc]
+entity pval589--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="111.6563" style="stroke:#000000;stroke-width:1.5;" width="75" x="929.5" y="428"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="939.5" y="445.5332">7001/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="939.5" y="463.1426">7002/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="939.5" y="480.752">8001/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="939.5" y="498.3613">8002/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="939.5" y="515.9707">8453/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="943.5" y="533.5801"/><!--MD5=[70e82b340b05eb2caf1db262fce55259]
+entity cval3--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="94.0469" style="stroke:#000000;stroke-width:1.5;" width="778" x="95" y="437"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="662" x="105" y="454.5332">/opt/aprprod/weblogic/apr_uploaded_files:/u01/oracle/user_projects/domains/aprprod/apr_uploaded_files</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="758" x="105" y="472.1426">/opt/aprprod/weblogic/logs/apradmin.log:/u01/oracle/user_projects/domains/aprprod/servers/apradmin/logs/apradmin.log</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="710" x="105" y="489.752">/opt/aprprod/weblogic/logs/aprprod.log:/u01/oracle/user_projects/domains/aprprod/servers/apradmin/aprprod.log</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="420" x="105" y="507.3613">/opt/aprprod/weblogic/properties/docker-run:/u01/oracle/properties</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="109" y="524.9707"/><!--MD5=[46c33d9006817ad4cbb842637bdc4726]
+entity pval475--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="58.8281" style="stroke:#000000;stroke-width:1.5;" width="67" x="475.5" y="739"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="485.5" y="756.5332">443/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="485.5" y="774.1426">80/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="489.5" y="791.752"/><!--MD5=[d473b39c26948fa3ee61ea8897ea51c1]
+entity cval550--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="323" x="95.5" y="748"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="303" x="105.5" y="765.5332">/opt/housingelements/apache/logs:/var/log/httpd</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="109.5" y="783.1426"/><!--MD5=[6d069335107d63eeff5dc7d1c9f80e88]
+entity pval963--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="58.8281" style="stroke:#000000;stroke-width:1.5;" width="67" x="102.5" y="997"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="112.5" y="1014.5332">443/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="112.5" y="1032.1426">80/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="116.5" y="1049.752"/><!--MD5=[7ecbb54b646407cee5e94b2abccf64eb]
+entity pval421--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="111.6563" style="stroke:#000000;stroke-width:1.5;" width="75" x="95.5" y="1263.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="105.5" y="1281.0332">7001/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="105.5" y="1298.6426">7002/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="105.5" y="1316.252">8001/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="105.5" y="1333.8613">8002/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="105.5" y="1351.4707">8453/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="109.5" y="1369.0801"/><!--MD5=[6c252941795386fdaa05c66fd9311651]
+entity cval741--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="129.2656" style="stroke:#000000;stroke-width:1.5;" width="858" x="227" y="1255"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="565" x="237" y="1272.5332">/opt/casasprod/weblogic/UPLOADS/CASAS_FILES/:/u01/oracle/UPLOADS/CASAS_FILES/</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="443" x="237" y="1290.1426">/opt/casasprod/weblogic/blobs/hcdletters/:/u01/oracle/blobs/hcdletters/</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="461" x="237" y="1307.752">/opt/casasprod/weblogic/blobs/repreceipts/:/u01/oracle/blobs/repreceipts/</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="776" x="237" y="1325.3613">/opt/casasprod/weblogic/logs/access.log:/u01/oracle/user_projects/domains/casasprod/servers/casasadmin/logs/access.log</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="838" x="237" y="1342.9707">/opt/casasprod/weblogic/logs/casasadmin.log:/u01/oracle/user_projects/domains/casasprod/servers/casasadmin/logs/casasadmin.log</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="436" x="237" y="1360.5801">/opt/casasprod/weblogic/properties/docker-run:/u01/oracle/properties</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="241" y="1378.1895"/><!--MD5=[1d6787668de3c82604aabc48a0d1b8ea]
+entity pval195--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="58.8281" style="stroke:#000000;stroke-width:1.5;" width="67" x="110.5" y="1583"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="120.5" y="1600.5332">443/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="120.5" y="1618.1426">80/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="124.5" y="1635.752"/><!--MD5=[8182cd5744aa7a0a33035e7bc8eab7de]
+entity pval202--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="58.8281" style="stroke:#000000;stroke-width:1.5;" width="67" x="111.5" y="1841"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="121.5" y="1858.5332">443/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="121.5" y="1876.1426">80/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="125.5" y="1893.752"/><!--MD5=[ccb6792ae0f17f6c4cf7a3684f7f69e3]
+entity cval733--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="300" x="95" y="2099"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="280" x="105" y="2116.5332">/var/run/docker.sock:/var/run/docker.sock:rw</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="109" y="2134.1426"/><!--MD5=[d02933c4e4f9642d59b4c1a03a3bdd88]
+entity pval891--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="75" x="95.5" y="2339"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="105.5" y="2356.5332">4043/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="109.5" y="2374.1426"/><!--MD5=[ae8735ebf49e8b1d5942136f9b259a6d]
+entity cval265--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="248" x="227" y="2339"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="228" x="237" y="2356.5332">solarwinds_cman-volume:/swdata:rw</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="241" y="2374.1426"/><!--MD5=[74f182a4a9e5c0399f4ea91d6d16b9e7]
+entity pval672--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="111.6563" style="stroke:#000000;stroke-width:1.5;" width="75" x="1031.5" y="2579"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1041.5" y="2596.5332">7001/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1041.5" y="2614.1426">7002/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1041.5" y="2631.752">8001/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1041.5" y="2649.3613">8002/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1041.5" y="2666.9707">8453/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1045.5" y="2684.5801"/><!--MD5=[8db54aa0d3930f84f83e3c6d28ccf0eb]
+entity cval450--><rect fill="#FEFECE" filter="url(#f25hnljmu3h6h)" height="76.4375" style="stroke:#000000;stroke-width:1.5;" width="879" x="95.5" y="2597"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="544" x="105.5" y="2614.5332">/opt/casasprod/weblogicAPI/CASAS_FILES_PROD/:/u01/oracle/CASAS_FILES_PROD/</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="859" x="105.5" y="2632.1426">/opt/casasprod/weblogicAPI/logs/casasadmin.log:/u01/oracle/user_projects/domains/casasprod/servers/casasadmin/logs/casasadmin.log</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="457" x="105.5" y="2649.752">/opt/casasprod/weblogicAPI/properties/docker-run:/u01/oracle/properties</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="109.5" y="2667.3613"/><!--MD5=[855144969ffe4172ed715dfb592c4b81]
+link x216975557 to x174926803--><!--MD5=[d3406e8dd8d054f6ebc353cdd93b7fdd]
+link x174926803 to x31121023--><!--MD5=[e2cdd335e934c7873bc8542faae9a623]
+link x31121023 to x27926429--><!--MD5=[c9a59b339b106a8e29e298e0f81c8473]
+link x27926429 to x201186995--><!--MD5=[b38fdad08fdf42aedaf491d984e56be0]
+link x201186995 to x26784587--><!--MD5=[3469a96dd7bbe3d6b85db6dd393bc29c]
+link x26784587 to x264905597--><!--MD5=[d093580b7ca50e7a1c22ecbd4edb361b]
+link x264905597 to x120489002--><!--MD5=[b28f9807824e2bd2018c0508f9da1b95]
+link x120489002 to x185970893--><!--MD5=[a3540e3750d130ccdd6b2d18114bce42]
+link x185970893 to x20523776--><rect fill="#DDDDDD" height="84.4375" rx="5" ry="5" style="stroke:#000000;stroke-width:1.0;" width="146" x="520.5" y="2792"/><text fill="#000000" filter="url(#b25hnljmu3h6h0)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="90" x="526.5" y="2813.5332">Linux Server</text><text fill="#000000" filter="url(#b25hnljmu3h6h1)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="123" x="526.5" y="2831.1426">Docker Container</text><text fill="#000000" filter="url(#b25hnljmu3h6h2)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="112" x="526.5" y="2848.752">Docker Network</text><text fill="#000000" filter="url(#b25hnljmu3h6h3)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="130" x="526.5" y="2866.3613">File System Folder</text><line style="stroke:#000000;stroke-width:1.0;" x1="526.5" x2="660.5" y1="2799" y2="2799"/><line style="stroke:#000000;stroke-width:1.0;" x1="526.5" x2="660.5" y1="2816.6094" y2="2816.6094"/><line style="stroke:#000000;stroke-width:1.0;" x1="526.5" x2="660.5" y1="2834.2188" y2="2834.2188"/><line style="stroke:#000000;stroke-width:1.0;" x1="526.5" x2="660.5" y1="2851.8281" y2="2851.8281"/><line style="stroke:#000000;stroke-width:1.0;" x1="526.5" x2="660.5" y1="2869.4375" y2="2869.4375"/><line style="stroke:#000000;stroke-width:1.0;" x1="526.5" x2="526.5" y1="2799" y2="2869.4375"/><line style="stroke:#000000;stroke-width:1.0;" x1="660.5" x2="660.5" y1="2799" y2="2869.4375"/><!--MD5=[afcfa76d92ae1091a86333a89468273e]
+@startuml "Generated"
+'on: 2021-12-28T13:44:24.553-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+|<back:Yellow><b>File System Folder </b></back>|
+endlegend
+
+	component "\nkiwano" as x174654613 #AliceBlue {
+	
+
+		node "\n/housingelements" as x216975557 #LightGreen {
+	
+
+			cloud "Ports" as ports25 #SeaShell {
+			card "8080/tcp\n" as pval353
+}
+
+			frame "Bindings"  as bind871 #Yellow {
+			card "/opt/housingelements/wildfly/logs/server.log:/opt/jboss/wildfly/standalone/log/server.log\n" as cval396
+			}
+
+	}
+
+		node "\n/aprprod" as x174926803 #LightGreen {
+	
+
+			cloud "Ports" as ports470 #SeaShell {
+			card "7001/tcp\n7002/tcp\n8001/tcp\n8002/tcp\n8453/tcp\n" as pval589
+}
+
+			frame "Bindings"  as bind894 #Yellow {
+			card "/opt/aprprod/weblogic/apr_uploaded_files:/u01/oracle/user_projects/domains/aprprod/apr_uploaded_files\n/opt/aprprod/weblogic/logs/apradmin.log:/u01/oracle/user_projects/domains/aprprod/servers/apradmin/logs/apradmin.log\n/opt/aprprod/weblogic/logs/aprprod.log:/u01/oracle/user_projects/domains/aprprod/servers/apradmin/aprprod.log\n/opt/aprprod/weblogic/properties/docker-run:/u01/oracle/properties\n" as cval3
+			}
+
+	}
+
+		node "\n/housingelementsapache" as x31121023 #LightGreen {
+	
+
+			cloud "Ports" as ports794 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval475
+}
+
+			frame "Bindings"  as bind120 #Yellow {
+			card "/opt/housingelements/apache/logs:/var/log/httpd\n" as cval550
+			}
+
+	}
+
+		node "\n/aprprodapache" as x27926429 #LightGreen {
+	
+
+			cloud "Ports" as ports591 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval963
+}
+
+	}
+
+		node "\n/casasprod" as x201186995 #LightGreen {
+	
+
+			cloud "Ports" as ports232 #SeaShell {
+			card "7001/tcp\n7002/tcp\n8001/tcp\n8002/tcp\n8453/tcp\n" as pval421
+}
+
+			frame "Bindings"  as bind887 #Yellow {
+			card "/opt/casasprod/weblogic/UPLOADS/CASAS_FILES/:/u01/oracle/UPLOADS/CASAS_FILES/\n/opt/casasprod/weblogic/blobs/hcdletters/:/u01/oracle/blobs/hcdletters/\n/opt/casasprod/weblogic/blobs/repreceipts/:/u01/oracle/blobs/repreceipts/\n/opt/casasprod/weblogic/logs/access.log:/u01/oracle/user_projects/domains/casasprod/servers/casasadmin/logs/access.log\n/opt/casasprod/weblogic/logs/casasadmin.log:/u01/oracle/user_projects/domains/casasprod/servers/casasadmin/logs/casasadmin.log\n/opt/casasprod/weblogic/properties/docker-run:/u01/oracle/properties\n" as cval741
+			}
+
+	}
+
+		node "\n/recovercaapache" as x26784587 #LightGreen {
+	
+
+			cloud "Ports" as ports788 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval195
+}
+
+	}
+
+		node "\n/casasprodapache" as x264905597 #LightGreen {
+	
+
+			cloud "Ports" as ports398 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval202
+}
+
+	}
+
+		node "\n/weaveworks_scope" as x120489002 #LightGreen {
+	
+
+			frame "Bindings"  as bind69 #Yellow {
+			card "/var/run/docker.sock:/var/run/docker.sock:rw\n" as cval733
+			}
+
+	}
+
+		node "\n/orion-orionaggregator" as x185970893 #LightGreen {
+	
+
+			cloud "Ports" as ports921 #SeaShell {
+			card "4043/tcp\n" as pval891
+}
+
+			frame "Bindings"  as bind476 #Yellow {
+			card "solarwinds_cman-volume:/swdata:rw\n" as cval265
+			}
+
+	}
+
+		node "\n/casasapi" as x20523776 #LightGreen {
+	
+
+			cloud "Ports" as ports666 #SeaShell {
+			card "7001/tcp\n7002/tcp\n8001/tcp\n8002/tcp\n8453/tcp\n" as pval672
+}
+
+			frame "Bindings"  as bind540 #Yellow {
+			card "/opt/casasprod/weblogicAPI/CASAS_FILES_PROD/:/u01/oracle/CASAS_FILES_PROD/\n/opt/casasprod/weblogicAPI/logs/casasadmin.log:/u01/oracle/user_projects/domains/casasprod/servers/casasadmin/logs/casasadmin.log\n/opt/casasprod/weblogicAPI/properties/docker-run:/u01/oracle/properties\n" as cval450
+			}
+
+	}
+x216975557 -[hidden]- x174926803
+x174926803 -[hidden]- x31121023
+x31121023 -[hidden]- x27926429
+x27926429 -[hidden]- x201186995
+x201186995 -[hidden]- x26784587
+x26784587 -[hidden]- x264905597
+x264905597 -[hidden]- x120489002
+x120489002 -[hidden]- x185970893
+x185970893 -[hidden]- x20523776
+
+}
+@enduml
+
+@startuml "Generated"
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+|<back:Yellow><b>File System Folder </b></back>|
+endlegend
+
+	component "\nkiwano" as x174654613 #AliceBlue {
+	
+
+		node "\n/housingelements" as x216975557 #LightGreen {
+	
+
+			cloud "Ports" as ports25 #SeaShell {
+			card "8080/tcp\n" as pval353
+}
+
+			frame "Bindings"  as bind871 #Yellow {
+			card "/opt/housingelements/wildfly/logs/server.log:/opt/jboss/wildfly/standalone/log/server.log\n" as cval396
+			}
+
+	}
+
+		node "\n/aprprod" as x174926803 #LightGreen {
+	
+
+			cloud "Ports" as ports470 #SeaShell {
+			card "7001/tcp\n7002/tcp\n8001/tcp\n8002/tcp\n8453/tcp\n" as pval589
+}
+
+			frame "Bindings"  as bind894 #Yellow {
+			card "/opt/aprprod/weblogic/apr_uploaded_files:/u01/oracle/user_projects/domains/aprprod/apr_uploaded_files\n/opt/aprprod/weblogic/logs/apradmin.log:/u01/oracle/user_projects/domains/aprprod/servers/apradmin/logs/apradmin.log\n/opt/aprprod/weblogic/logs/aprprod.log:/u01/oracle/user_projects/domains/aprprod/servers/apradmin/aprprod.log\n/opt/aprprod/weblogic/properties/docker-run:/u01/oracle/properties\n" as cval3
+			}
+
+	}
+
+		node "\n/housingelementsapache" as x31121023 #LightGreen {
+	
+
+			cloud "Ports" as ports794 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval475
+}
+
+			frame "Bindings"  as bind120 #Yellow {
+			card "/opt/housingelements/apache/logs:/var/log/httpd\n" as cval550
+			}
+
+	}
+
+		node "\n/aprprodapache" as x27926429 #LightGreen {
+	
+
+			cloud "Ports" as ports591 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval963
+}
+
+	}
+
+		node "\n/casasprod" as x201186995 #LightGreen {
+	
+
+			cloud "Ports" as ports232 #SeaShell {
+			card "7001/tcp\n7002/tcp\n8001/tcp\n8002/tcp\n8453/tcp\n" as pval421
+}
+
+			frame "Bindings"  as bind887 #Yellow {
+			card "/opt/casasprod/weblogic/UPLOADS/CASAS_FILES/:/u01/oracle/UPLOADS/CASAS_FILES/\n/opt/casasprod/weblogic/blobs/hcdletters/:/u01/oracle/blobs/hcdletters/\n/opt/casasprod/weblogic/blobs/repreceipts/:/u01/oracle/blobs/repreceipts/\n/opt/casasprod/weblogic/logs/access.log:/u01/oracle/user_projects/domains/casasprod/servers/casasadmin/logs/access.log\n/opt/casasprod/weblogic/logs/casasadmin.log:/u01/oracle/user_projects/domains/casasprod/servers/casasadmin/logs/casasadmin.log\n/opt/casasprod/weblogic/properties/docker-run:/u01/oracle/properties\n" as cval741
+			}
+
+	}
+
+		node "\n/recovercaapache" as x26784587 #LightGreen {
+	
+
+			cloud "Ports" as ports788 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval195
+}
+
+	}
+
+		node "\n/casasprodapache" as x264905597 #LightGreen {
+	
+
+			cloud "Ports" as ports398 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval202
+}
+
+	}
+
+		node "\n/weaveworks_scope" as x120489002 #LightGreen {
+	
+
+			frame "Bindings"  as bind69 #Yellow {
+			card "/var/run/docker.sock:/var/run/docker.sock:rw\n" as cval733
+			}
+
+	}
+
+		node "\n/orion-orionaggregator" as x185970893 #LightGreen {
+	
+
+			cloud "Ports" as ports921 #SeaShell {
+			card "4043/tcp\n" as pval891
+}
+
+			frame "Bindings"  as bind476 #Yellow {
+			card "solarwinds_cman-volume:/swdata:rw\n" as cval265
+			}
+
+	}
+
+		node "\n/casasapi" as x20523776 #LightGreen {
+	
+
+			cloud "Ports" as ports666 #SeaShell {
+			card "7001/tcp\n7002/tcp\n8001/tcp\n8002/tcp\n8453/tcp\n" as pval672
+}
+
+			frame "Bindings"  as bind540 #Yellow {
+			card "/opt/casasprod/weblogicAPI/CASAS_FILES_PROD/:/u01/oracle/CASAS_FILES_PROD/\n/opt/casasprod/weblogicAPI/logs/casasadmin.log:/u01/oracle/user_projects/domains/casasprod/servers/casasadmin/logs/casasadmin.log\n/opt/casasprod/weblogicAPI/properties/docker-run:/u01/oracle/properties\n" as cval450
+			}
+
+	}
+x216975557 -[hidden]- x174926803
+x174926803 -[hidden]- x31121023
+x31121023 -[hidden]- x27926429
+x27926429 -[hidden]- x201186995
+x201186995 -[hidden]- x26784587
+x26784587 -[hidden]- x264905597
+x264905597 -[hidden]- x120489002
+x120489002 -[hidden]- x185970893
+x185970893 -[hidden]- x20523776
+
+}
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 09:25:22 PST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

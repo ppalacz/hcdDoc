@@ -1,0 +1,198 @@
+@startuml "Generated"
+'on: 2021-12-27T23:59:05.732-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+|<back:Yellow><b>File System Folder </b></back>|
+endlegend
+
+	component "\nnil" as x314602240 #LightGreen {
+	
+
+		node "\n/housingelements" as x216975557 #LightGreen {
+	
+	folder "/opt/housingelements/wildfly/logs" as x24435535 #Yellow {
+	
+
+	}
+
+	}
+
+		node "\n/aprprod" as x174926803 #LightGreen {
+	
+	folder "/opt/aprprod/weblogic/properties" as x54566453 #Yellow {
+	
+
+	}
+	folder "/opt/aprprod/weblogic/logs" as x119806867 #Yellow {
+	
+
+	}
+	folder "/opt/aprprod/weblogic" as x218224257 #Yellow {
+	
+
+	}
+	folder "/opt/aprprod/weblogic/logs" as x227922487 #Yellow {
+	
+
+	}
+		x54566453 -[hidden]- x119806867
+		x218224257 -[hidden]- x227922487
+
+	}
+
+		node "\n/housingelementsapache" as x31121023 #LightGreen {
+	
+	folder "/opt/housingelements/apache" as x214166764 #Yellow {
+	
+
+	}
+
+	}
+
+		node "\n/aprprodapache" as x27926429 #LightGreen {
+	
+	folder "/opt/aprprod/apache/logs" as x109915288 #Yellow {
+	
+
+	}
+	folder "/opt/aprprod/apache/logs" as x44921036 #Yellow {
+	
+
+	}
+	folder "/opt/aprprod/apache/logs" as x36585569 #Yellow {
+	
+
+	}
+	folder "/opt/aprprod/apache/logs" as x38716025 #Yellow {
+	
+
+	}
+		x109915288 -[hidden]- x44921036
+		x36585569 -[hidden]- x38716025
+
+	}
+
+		node "\n/casasprod" as x201186995 #LightGreen {
+	
+	folder "/opt/casasprod/weblogic/logs" as x195197699 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/weblogic/UPLOADS" as x148800023 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/weblogic/blobs" as x130795326 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/weblogic/blobs" as x23810186 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/weblogic/properties" as x172586117 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/weblogic/logs" as x198615277 #Yellow {
+	
+
+	}
+		x195197699 -[hidden]- x148800023
+		x130795326 -[hidden]- x23810186
+		x172586117 -[hidden]- x198615277
+
+	}
+
+		node "\n/recovercaapache" as x26784587 #LightGreen {
+	
+	folder "/opt/recoverca/apache/logs" as x99487710 #Yellow {
+	
+
+	}
+	folder "/opt/recoverca/apache/logs" as x127690154 #Yellow {
+	
+
+	}
+	folder "/opt/recoverca/apache/logs" as x121185543 #Yellow {
+	
+
+	}
+	folder "/opt/recoverca/apache/logs" as x126469687 #Yellow {
+	
+
+	}
+		x99487710 -[hidden]- x127690154
+		x121185543 -[hidden]- x126469687
+
+	}
+
+		node "\n/casasprodapache" as x264905597 #LightGreen {
+	
+	folder "/opt/casasprod/apache/logs" as x215775464 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/apache/logs" as x99527260 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/apache/logs" as x79997361 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/apache/logs" as x172051721 #Yellow {
+	
+
+	}
+		x215775464 -[hidden]- x99527260
+		x79997361 -[hidden]- x172051721
+
+	}
+
+		node "\n/weaveworks_scope" as x120489002 #LightGreen {
+	
+	folder "/var/run" as x106769585 #Yellow {
+	
+
+	}
+
+	}
+
+		node "\n/orion-orionaggregator" as x185970893 #LightGreen {
+	
+	folder "/var/lib/docker/volumes/solarwinds_cman-volume" as x46078711 #Yellow {
+	
+
+	}
+
+	}
+
+		node "\n/casasapi" as x20523776 #LightGreen {
+	
+	folder "/opt/casasprod/weblogicAPI" as x225693662 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/weblogicAPI/properties" as x90785967 #Yellow {
+	
+
+	}
+	folder "/opt/casasprod/weblogicAPI/logs" as x80047645 #Yellow {
+	
+
+	}
+		x225693662 -[hidden]- x90785967
+
+	}
+		x216975557 -[hidden]- x174926803
+		x31121023 -[hidden]- x27926429
+		x201186995 -[hidden]- x26784587
+		x264905597 -[hidden]- x120489002
+		x185970893 -[hidden]- x20523776
+
+}
+@enduml
