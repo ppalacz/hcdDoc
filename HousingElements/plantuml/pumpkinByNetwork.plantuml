@@ -1,0 +1,56 @@
+@startuml "Overview: pumpkin and docker networks"
+
+'!theme sketchy-outline
+hide stereotype
+
+'skinparam linetype ortho
+ 
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+endlegend
+
+'title "HCD DEV/TEST Web/Drupal Deployment" 
+   
+node "pumpkin\nOracle Linux 8.5" <<i>> as pumpkin8 #AliceBlue {
+
+component "Docker" as docker  
+
+folder "pumkin filesystem" as fpumpkin
+
+cloud "bridge\nDocker Network" as netb #SeaShell {
+    component "UAT\nw3uatapache\nApache" #LightGreen
+    component "DEV\nacceleratordevapache\nApache" #LightGreen
+    component "DEV\nw3devapache\nApache" #LightGreen
+    component "homekeyapache\nApache" #LightGreen
+    database "nofaappdb\nMySql Server" #LightGreen
+}
+
+cloud "nofadfa\nDocker Network"   as netf #SeaShell {
+    component "nofaapache\nApache" #LightGreen
+    component "nofadfa\nJBoss WildFly" #LightGreen
+    component "keycloakd\nJBoss WildFly" #LightGreen
+
+}
+  
+cloud "hcddeloitte-network\nDocker Network"  as netd #SeaShell {
+    database "mysql-hcdwebsite\nMySql Server" as dbdel #LightGreen
+    database "mysql-hcddeloitte\nMySql Server" #LightGreen
+}
+
+cloud "hcdwebsite-network\nDocker Network"  as neth #SeaShell {
+    component "mysql-hcdwebsite\nMySql Server" as dbhcd #LightGreen
+}
+
+docker .down.> netb :creates
+docker ..> netd :creates
+docker .up.> netf :creates
+docker ..> neth :creates
+
+netb --> fpumpkin :mounts
+netd --> fpumpkin :mounts
+netf --> fpumpkin :mounts
+neth --> fpumpkin :mounts
+
+@enduml

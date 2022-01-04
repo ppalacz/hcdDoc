@@ -1,0 +1,253 @@
+@startuml "Overview: HCD Web/App Deployment"
+
+'!theme sketchy-outline
+'hide stereotype
+
+'skinparam linetype ortho
+ 
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+endlegend
+
+node "grapes" as grapes {
+            database "NOFA My SQL" as dbgrapesnofa 
+             database "Main Site My SQL" as dbmainsite
+}
+
+
+package "Main Site" as main {
+    package "Prod" as prodmain {
+        node "webproxy01\nApache" as webproxy01 
+        node "starfruit\nDrupal" as starfruit
+         
+    }
+
+    webproxy01 --> starfruit
+    starfruit --> dbmainsite
+  
+}
+
+package "Asset App" as asset {
+    package "Prod" as prodasset {
+        node purplegrapes {
+            component "Apache" as apasset
+            component  "Wildfly" as wfasset
+            component  "MySQL" as dbasset
+        }
+    }
+}
+
+package "NOFA" as nofa {
+    package "Prod"   {
+        node "webproxy01\nApache" as proxynofa {
+          component "Apache" as prodnfapache 
+        }
+        node "blackberry" as drupalnofa {
+          component "Drupal" as proddrupalnofa 
+        }
+       
+    }
+    proxynofa --> drupalnofa
+    drupalnofa --> dbnofa
+
+    package "Dev"   {
+        node "harness2\nApache" as h2nofa { 
+            component "harness2\nApache" as h2apache 
+            component "Drupal"  as h2drupal
+            database "harness2\nMy SQL"  as h2db
+       }
+
+       h2apache --> h2drupal
+       h2drupal --> h2db
+    }
+  
+}
+
+package "HomeKey" as hk {
+    package "Prod"   {
+
+    }
+    package "Dev"   {
+
+    }
+}
+
+package "Accelerator" as acc {
+    package "Prod"   {
+
+    }
+    package "Dev"   {
+
+    }
+}
+
+package "CAPES" as capes {
+    package "Prod"   {
+
+    }
+    
+}
+
+package "CAPES\nExternal" as capesext {
+    package "Prod"   {
+
+    }
+   
+}
+
+package "HETS" as hets {
+    package "Prod"   {
+
+    }
+  
+}
+
+package "APR" as apr {
+    package "Prod"  {
+
+    }
+  
+}
+
+package "RecoverCA" as rec {
+    package "Prod"  {
+
+    }
+  
+}
+
+'node "banana\nDev, UAT, Test for CASAS" as banana	#AliceBlue  { 
+'	component oracle19cUATMain #LightGreen  
+'	component orionaggregator #LightGreen  
+'	component weaveworks #LightGreen  
+'}
+'
+'node "tangerine\nCAPES DB Prod" as tangerine 	#AliceBlue { 
+'	component capesprod #LightGreen
+'	component weaveworks_scope #LightGreen
+'	component orionaggregator #LightGreen
+'	 
+'}
+'  
+'node "cherry\nCAPES WebLogic " as cherry #AliceBlue 	{  
+'	  component "capesprod\nweblogic" as capesprod #LightGreen
+'	   component	"Orion\nSolarwinds" as orionaggregator #LightGreen
+'	   component	 weaveworks #LightGreen
+'	 	component  capesprodapache #LightGreen
+'	  component	 coresprodapache #LightGreen
+'}
+'  
+'node "coconuts\nDocker repository" as coconuts	 #AliceBlue  {  
+'	component weaveworks_scope #LightGreen
+'	component orionaggregator #LightGreen
+'	component registry #LightGreen
+'}
+'node "durian\nCASAS Internal Production" as durian #AliceBlue 	{  
+'	component casasintprod #LightGreen
+'	component casasapi #LightGreen
+'	component weaveworks_scope #LightGreen
+'	component orionaggregator #LightGreen
+'	component casasapiapache #LightGreen
+'}
+'node "guava\nCASAS Prod" as guava	#AliceBlue {  
+'	database  oracle   #LightGreen
+'	component  solarwinds    #LightGreen
+'	component weaveworks    #LightGreen
+'}
+'node "kiwano\nWebLogic and Wildfly in DMZ" as kiwano	#AliceBlue {  
+'	component casasprod #LightGreen
+'	component casasprodapache #LightGreen
+'	component aprprod #LightGreen
+'	component housingelements #LightGreen
+'	component aprprodapache #LightGreen
+'	component weaveworks_scope #LightGreen
+'	component orionaggregator #LightGreen
+'	component housingelementsapache #LightGreen
+'	component  casasapi #LightGreen
+'}
+'node "peach\nCASAS Dev, Test" as peach	#AliceBlue {  
+'	component casasintuat #LightGreen
+'	component casasintpure #LightGreen
+'	component  casasextuat #LightGreen
+'	component casasexttest #LightGreen
+'	component casasextuatapache #LightGreen
+'	component orionaggregator #LightGreen
+'	component weaveworks_scope #LightGreen
+'	component apachehousingelements #LightGreen
+'	component "casasextpure\nApache" as  casasextpure #LightGreen
+'}
+'node "squash\nGeneral testing" as squash	#AliceBlue {  
+'	component weaveworks_scope #LightGreen
+'	component orionaggregator #LightGreen
+'	component portainer_edge_agent #LightGreen
+'	component portainer #LightGreen
+'}
+'node "sun\nCAPES HETS APR Dev, Test" as sun	#AliceBlue { 
+'	component apruat #LightGreen
+'	component hetsuat #LightGreen
+'	component aprtest #LightGreen
+'	component hetstest #LightGreen
+'	component capesdev #LightGreen
+'	component capestest #LightGreen
+'	component aprdev #LightGreen
+'	component hetsdev #LightGreen
+'	component capesuat #LightGreen
+'	component tangouat #LightGreen
+'	component tangodev #LightGreen
+'	component "tangouat\nApache" as tangouat #LightGreen
+'	component tangouatapache #LightGreen
+'	component hetstestapache #LightGreen
+'	component tangodevapache #LightGreen
+'	component orionaggregator #LightGreen
+'	component weaveworks_scope #LightGreen
+'	component capesuatapache #LightGreen
+'	component capestestapache #LightGreen
+'	component capesdevapache #LightGreen
+'	component hetsuatapache #LightGreen
+'	component assetdevapache #LightGreen
+'	component capestestmanaged #LightGreen
+'	component wildflyassetdev #LightGreen
+'	component capesdevmanaged #LightGreen
+'}
+'node "tamarind\n'HETS Oracle Prod" as tamarind	#AliceBlue { 
+'	component hetsprod19c #LightGreen
+'	component  weaveworks_scope #LightGreen
+'	component orionaggregator #LightGreen
+'}
+'node "WebProxy01\nProxy for HCD website" as webproxy01	#AliceBlue { 
+'	component acceleratorproxyapache #LightGreen
+'	component homekeyproxyapache #LightGreen
+'	component elementsproxyapache #LightGreen
+'	component aprproxyapache #LightGreen
+'	component casasproxyapache #LightGreen
+'	component mainproxyapache #LightGreen
+'	component internalproxyapache #LightGreen
+'}
+'
+'node "WebProxy02\nFailover for HCD website" as webproxy02 #AliceBlue  {  
+'}
+'
+'node "starfruit\nHomekey and Accelerator" as starfruit	#AliceBlue { 	
+'	component homekeyapache #LightGreen
+'	component acceleratorapache #LightGreen
+'	component w3prodapache #LightGreen
+'}
+'
+'node "orange\n" as orange	#AliceBlue { 
+'  database "MySQL Prod databases" as dborange  #LightGreen
+'}
+'
+'node "pumpkin\nDev, Test for Homekey, Accelerator..." as pumpkin	#AliceBlue {  
+'	component homekeyapache	 #LightGreen
+'	component homekeydevapache #LightGreen
+'	component acceleratordevapache #LightGreen
+'	component w3devapache #LightGreen
+'	database "hcdwebsite\nMySql Server" as hcdwebsite #LightGreen
+'	database "hcddeloitte\nMySql Server" as hcddeloitte #LightGreen
+'}
+
+
+@enduml
+
