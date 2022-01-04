@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="EASE-CI-site">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TalesOfCI/EASE/EASE-CI-site.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
