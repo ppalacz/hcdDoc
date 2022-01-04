@@ -1,3 +1,21 @@
+== Docker container Build
+Sync 220104 sync 220104-1213== Docker container Build
+
+----
+[...@coconuts hcdwildfly]$ cat Dockerfile
+#FROM oracle/serverjrenoncapes:8 as builder
+FROM oracle/jre:8u261 as builder
+RUN mkdir -p /opt/jboss/ && \
+    chmod a+xr /opt && \
+    useradd -b /opt -d /opt/jboss/ -m -s /bin/bash wildfly && \
+    usermod -u 1020 wildfly && \
+    groupmod -g 1020 wildfly && \
+    chown wildfly:wildfly /opt && yum -y install telnet
+ADD wildfly-22.0.0.Final.tar.gz /opt/jboss/
+RUN mv /opt/jboss/wildfly-22.0.0.Final /opt/jboss/wildfly
+RUN chown -R wildfly:wildfly /opt/
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
+----
 
 == Using jboss-cli
 
@@ -26,7 +44,10 @@ NofaApp-1.1.war NofaApp-1.1.war false      true    OK
 ----
 
 sudo docker exec -it  299fa2915573 bash
+sudo docker exec -it  7ea2440d70f3 bash
+
 
 /opt/jboss/wildfly/bin/jboss-cli.sh -c command=":read-resource(include-runtime=true, recursive=true, recursive-depth=10)" > configCli.txt
 
 sudo docker cp 299fa2915573:/opt/jboss/configCli.txt  ./pumpkinSampleCliConfig.json
+sudo docker cp 7ea2440d70f3:/opt/jboss/configCli.txt  ./kiwanoHousingWildFlyCliConfig.json
