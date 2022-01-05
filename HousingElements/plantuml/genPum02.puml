@@ -1,0 +1,168 @@
+@startuml "Generated"
+'on: 2021-12-28T13:29:34.942-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+|<back:Yellow><b>File System Folder </b></back>|
+endlegend
+
+	component "\npumpkin" as x136404212 #AliceBlue {
+	
+
+		node "\n/nofaapache" as x51798953 #LightGreen {
+	
+
+			cloud "Ports" as ports158 #SeaShell {
+			card "3000/tcp\n443/tcp\n80/tcp\n" as pval850
+}
+
+			frame "Bindings"  as bind754 {
+			card "/opt/accelerator/drupalfiles/webform/mdap/:/var/www/html/acceleratorfiles\n/opt/homekey/drupalfiles/webform/homekey_application:/var/www/html/homekeyfiles\n/opt/nofa/apache/logs:/var/log/httpd\n/opt/nofa/drupalfiles/webform/nova_form:/var/www/html/nofafiles\n/opt/nofa/webroot:/var/www/html\n" as cval876 #Yellow
+			}
+
+	}
+
+		node "\n/acceleratordevapache" as x81443005 #LightGreen {
+	
+
+			cloud "Ports" as ports881 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval649
+}
+
+			frame "Bindings"  as bind29 {
+			card "/opt/acceleratordev/drupalfiles:/var/www/drupalfiles\n/opt/acceleratordev/sync:/var/www/content/sync/\n/opt/acceleratordev/webroot/:/var/www/html/\n" as cval45 #Yellow
+			}
+
+	}
+
+		node "\n/homekeydevapache" as x237945370 #LightGreen {
+	
+
+			cloud "Ports" as ports372 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval923
+}
+
+			frame "Bindings"  as bind318 {
+			card "/opt/homekeydev/content:/var/www/content/\n/opt/homekeydev/drupalfiles:/var/www/drupalfiles\n/opt/homekeydev/webroot/:/var/www/html/\n" as cval975 #Yellow
+			}
+
+	}
+
+		node "\n/w3uatapache" as x212689061 #LightGreen {
+	
+
+			cloud "Ports" as ports93 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval513
+}
+
+			frame "Bindings"  as bind956 {
+			card "/opt/w3uat/drupalfiles:/var/www/drupalfiles\n/opt/w3uat/sync:/var/www/content/sync/\n/opt/w3uat/webroot/:/var/www/html/\n" as cval317 #Yellow
+			}
+
+	}
+
+		node "\n/w3devapache" as x227844470 #LightGreen {
+	
+
+			cloud "Ports" as ports553 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval206
+}
+
+			frame "Bindings"  as bind590 {
+			card "/opt/w3dev/drupalfiles:/var/www/drupalfiles\n/opt/w3dev/sync:/var/www/content/sync/\n/opt/w3dev/webroot/:/var/www/html/\n" as cval65 #Yellow
+			}
+
+	}
+
+		node "\n/nofadfa" as x11793698 #LightGreen {
+	
+
+			cloud "Ports" as ports266 #SeaShell {
+			card "8080/tcp\n9990/tcp\n" as pval322
+}
+
+			frame "Bindings"  as bind52 {
+			card "/opt/accelerator/drupalfiles/webform/mdap/:/opt/jboss/wildfly/welcome-content/accelerator\n/opt/homekey/drupalfiles/webform/homekey_application:/opt/jboss/wildfly/welcome-content/homekey\n/opt/nofa/drupalfiles/webform/nova_form:/opt/jboss/wildfly/welcome-content/calhomeDisaster\n/opt/nofa/wildfly/logs/:/opt/jboss/wildfly/standalone/log/\n" as cval411 #Yellow
+			}
+
+	}
+
+		node "\n/keycloakd" as x140374474 #LightGreen {
+	
+
+			cloud "Ports" as ports684 #SeaShell {
+			card "8080/tcp\n8443/tcp\n" as pval810
+}
+
+			frame "Bindings"  as bind484 {
+			card "/opt/nofa/keycloak/data:/opt/jboss/keycloak/standalone/data/\n" as cval399 #Yellow
+			}
+
+	}
+
+		node "\n/nofaappdb" as x4480958 #LightGreen {
+	
+
+			cloud "Ports" as ports514 #SeaShell {
+			card "3306/tcp\n33060/tcp\n33061/tcp\n" as pval233
+}
+
+			frame "Bindings"  as bind485 {
+			card "/nofaapp/mysql/conf.d:/etc/mysql/conf.d\n/nofaapp/mysql/log:/var/log\n/nofaapp/mysql/mysql-data:/var/lib/mysql\n" as cval946 #Yellow
+			}
+
+	}
+
+		node "\n/homekeyapache" as x111235695 #LightGreen {
+	
+
+			cloud "Ports" as ports658 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval145
+}
+
+			frame "Bindings"  as bind308 {
+			card "/opt/homekey/apache/logs:/etc/httpd/logs\n/opt/homekey/content:/var/www/content/\n/opt/homekey/drupalfiles:/var/www/drupalfiles\n/opt/homekey/webroot/:/var/www/html/\n" as cval363 #Yellow
+			}
+
+	}
+
+		node "\n/mysql-hcdwebsite" as x242279748 #LightGreen {
+	
+
+			cloud "Ports" as ports286 #SeaShell {
+			card "3306/tcp\n33060/tcp\n33061/tcp\n" as pval961
+}
+
+			frame "Bindings"  as bind220 {
+			card "/hcdwebsite/mysql/conf.d:/etc/mysql/conf.d\n/hcdwebsite/mysql/log:/var/log\n/hcdwebsite/mysql/mysql-data:/var/lib/mysql\n" as cval234 #Yellow
+			}
+
+	}
+
+		node "\n/mysql-hcddeloitte" as x143529167 #LightGreen {
+	
+
+			cloud "Ports" as ports583 #SeaShell {
+			card "3306/tcp\n33060/tcp\n33061/tcp\n" as pval697
+}
+
+			frame "Bindings"  as bind676 {
+			card "/hcddeloitte/mysql/conf.d/my.cnf:/etc/my.cnf\n/hcddeloitte/mysql/log:/var/log\n/hcddeloitte/mysql/mysql-data:/var/lib/mysql\n" as cval58 #Yellow
+			}
+
+	}
+x51798953 -[hidden]- x81443005
+x81443005 -[hidden]- x237945370
+x237945370 -[hidden]- x212689061
+x212689061 -[hidden]- x227844470
+x227844470 -[hidden]- x11793698
+x11793698 -[hidden]- x140374474
+x140374474 -[hidden]- x4480958
+x4480958 -[hidden]- x111235695
+x111235695 -[hidden]- x242279748
+x242279748 -[hidden]- x143529167
+
+}
+@enduml

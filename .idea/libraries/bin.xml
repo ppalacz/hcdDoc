@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="bin">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/bin/plantuml-1.2021.16.jar!/" />
       <root url="jar://$PROJECT_DIR$/bin/puml.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/plantuml-1.2021.16.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

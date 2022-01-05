@@ -1,0 +1,17 @@
+@startuml HCD Drupal Context
+
+actor User
+'[Web Browser] as component 
+User .right.> [Web Browser]
+
+
+package HCD {
+    '[Web Server] as component  
+    '[Drupal CMS] as component 
+    '[Drupal DB] as database 
+    [Web Browser] <.right.> [Web Server] 
+    [Web Server] <.right.> [Drupal CMS]
+    [Drupal CMS] <.down.> [Drupal DB] as database
+}
+
+@enduml

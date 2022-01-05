@@ -1,0 +1,45 @@
+@startuml "Generated"
+'on: 2021-12-28T13:44:24.553-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+|<back:Yellow><b>File System Folder </b></back>|
+endlegend
+
+	component "\nkiwano" as x174654613 #AliceBlue {
+	
+
+		node "\n/housingelements" as x216975557 #LightGreen {
+	
+
+			cloud "Ports" as ports25 #SeaShell {
+			card "8080/tcp\n" as pval353
+}
+
+			frame "Bindings"  as bind871 #Yellow {
+			card "/opt/housingelements/wildfly/logs/server.log:/opt/jboss/wildfly/standalone/log/server.log\n" as cval396
+			}
+
+	}
+
+	 
+
+		node "\n/housingelementsapache" as x31121023 #LightGreen {
+	
+
+			cloud "Ports" as ports794 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval475
+}
+
+			frame "Bindings"  as bind120 #Yellow {
+			card "/opt/housingelements/apache/logs:/var/log/httpd\n" as cval550
+			}
+
+	}
+
+		 
+
+}
+@enduml
