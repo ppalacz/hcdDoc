@@ -1,0 +1,82 @@
+@startuml "Housing Elements PROD Deployment"
+'on: 2022-01-04
+ 
+legend
+|<back:AliceBlue><b>Linux Server      </b></back>|
+|<back:LightGreen><b>Docker Container </b></back>|
+'|<back:SeaShell><b>Docker Network     </b></back>|
+|<back:Yellow><b>File System Folder   </b></back>|
+|<back:Orange><b>Process/Service</b></back>|
+|<back:Ivory><b>Application</b></back>|
+ 
+
+endlegend
+
+node	 "\nkiwano" as xkiwano #AliceBlue {
+
+component "\nDocker" as xdocker #Orange {
+
+}
+    component "\nWeb/HTTP Container\n\n(housingelementsapache)" as xapachecontainer #LightGreen {
+	
+     component "\nApache Server" as xapache #Orange {
+		cloud "Ports" as ports794 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval475
+        }
+
+		
+
+     }
+     'frame "Bindings"  as bind120 #Yellow {
+	'	card "/opt/housingelements/apache/logs" as cval550
+	'	}
+
+       ' xapache ..> cval550 : writes
+	}
+	
+	component	 "\nJ2EE Server Container\n\n(housingelements)" as xjbosscontainer #LightGreen {
+
+        component "\nWildFly Server" as xjboss #Orange {
+
+        component "\nHPD App\n(.war file)" as xwar #Ivory {
+        }
+
+        frame "Datasource"  as xdatasrc #Yellow {
+			card "\nname: java:/MySqlHPD" as xdatasrccval01
+			}    
+			cloud "Ports" as xwarports #SeaShell {
+			card "8080/tcp\n" as pval353
+            }
+        }
+			
+
+    xdocker .left.> xapachecontainer : manages
+    xdocker .right.> xjbosscontainer : manages
+
+    xapache --> xjboss
+    xwar ..> xdatasrccval01 :uses
+    'xwar ..> xdatasrc :uses
+   
+    'frame "Bindings"  as xwarbind #Yellow {
+	'		card "/opt/housingelements/wildfly/logs/server.log" as cval396
+	'		}
+ 
+    ' xjboss ..> cval396 : writes
+
+	}
+}
+
+node "\norion" as xorion #AliceBlue {
+     database "MySQL" as xmysql #Orange {
+         card "database: htd\nport:3603/tcp\nsize:~50GB" as xdb
+     }
+ }
+
+xjboss -> xmysql : uses   
+xdatasrccval01  ..> xdb :maps to
+    
+'xapachecontainer -[hidden]- xjbosscontainer
+'xjbosscontainer -[hidden]- xorion
+'xkiwano -right- xorion
+ 
+@enduml
