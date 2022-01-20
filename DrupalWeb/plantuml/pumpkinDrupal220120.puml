@@ -1,0 +1,119 @@
+@startuml "Generated"
+'on: 2022-01-20T13:58:52.811-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+|<back:Yellow><b>File System Folder </b></back>|
+endlegend
+
+	component "\npumpkin" as x136404212 #AliceBlue {
+	
+
+		node "\n/w3uatapache" as x212689061 #LightGreen {
+	
+
+			cloud "Ports" as ports958 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval135
+}
+
+			frame "Bindings"  as bind770 #Yellow {
+			card "/opt/w3uat/drupalfiles:/var/www/drupalfiles\n/opt/w3uat/sync:/var/www/content/sync/\n/opt/w3uat/webroot/:/var/www/html/\n" as cval968
+			}
+
+	}
+
+		node "\n/nofaapache" as x51798953 #LightGreen {
+	
+
+			cloud "Ports" as ports597 #SeaShell {
+			card "3000/tcp\n443/tcp\n80/tcp\n" as pval173
+}
+
+			frame "Bindings"  as bind555 #Yellow {
+			card "/opt/accelerator/drupalfiles/webform/mdap/:/var/www/html/acceleratorfiles\n/opt/homekey/drupalfiles/webform/homekey_application:/var/www/html/homekeyfiles\n/opt/nofa/apache/logs:/var/log/httpd\n/opt/nofa/drupalfiles/webform/nova_form:/var/www/html/nofafiles\n/opt/nofa/webroot:/var/www/html\n" as cval721
+			}
+
+	}
+
+		node "\n/w3devapache" as x227844470 #LightGreen {
+	
+
+			cloud "Ports" as ports808 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval895
+}
+
+			frame "Bindings"  as bind407 #Yellow {
+			card "/opt/w3dev/drupalfiles:/var/www/drupalfiles\n/opt/w3dev/sync:/var/www/content/sync/\n/opt/w3dev/webroot/:/var/www/html/\n" as cval304
+			}
+
+	}
+
+		node "\n/homekeydevapache" as x237945370 #LightGreen {
+	
+
+			cloud "Ports" as ports892 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval745
+}
+
+			frame "Bindings"  as bind260 #Yellow {
+			card "/opt/homekeydev/apache/logs:/var/log/httpd\n/opt/homekeydev/content:/var/www/content/\n/opt/homekeydev/drupalfiles:/var/www/drupalfiles\n/opt/homekeydev/webroot/:/var/www/html/\n" as cval71
+			}
+
+	}
+
+	 
+
+		node "\n/acceleratordevapache" as x81443005 #LightGreen {
+	
+
+			cloud "Ports" as ports979 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval622
+}
+
+			frame "Bindings"  as bind343 #Yellow {
+			card "/opt/acceleratordev/drupalfiles:/var/www/drupalfiles\n/opt/acceleratordev/sync:/var/www/content/sync/\n/opt/acceleratordev/webroot/:/var/www/html/\n" as cval535
+			}
+
+	}
+
+		node "\n/nofaappdb" as x4480958 #LightGreen {
+	
+
+			cloud "Ports" as ports860 #SeaShell {
+			card "3306/tcp\n33060/tcp\n33061/tcp\n" as pval994
+}
+
+			frame "Bindings"  as bind752 #Yellow {
+			card "/nofaapp/mysql/conf.d:/etc/mysql/conf.d\n/nofaapp/mysql/log:/var/log\n/nofaapp/mysql/mysql-data:/var/lib/mysql\n" as cval315
+			}
+
+	}
+
+		node "\n/homekeyapache" as x111235695 #LightGreen {
+	
+
+			cloud "Ports" as ports939 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval644
+}
+
+			frame "Bindings"  as bind864 #Yellow {
+			card "/opt/homekey/apache/logs:/etc/httpd/logs\n/opt/homekey/content:/var/www/content/\n/opt/homekey/drupalfiles:/var/www/drupalfiles\n/opt/homekey/webroot/:/var/www/html/\n" as cval116
+			}
+
+	}
+
+	 
+
+	 
+x212689061 -[hidden]- x51798953
+x51798953 -[hidden]- x227844470
+x227844470 -[hidden]-  x237945370
+x237945370 -[hidden]- x81443005
+x81443005 -[hidden]- x4480958
+x4480958 -[hidden]- x111235695
+ 
+
+}
+@enduml

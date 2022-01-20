@@ -1,0 +1,78 @@
+@startuml "Generated"
+'on: 2022-01-20T13:34:15.546-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server   </b></back>|
+|<back:LightGreen><b>Docker Container</b></back>|
+|<back:SeaShell><b>Docker Network    </b></back>|
+|<back:Yellow><b>File System Folder </b></back>|
+endlegend
+
+	component "\nstarfruit" as x142224448 #AliceBlue {
+	
+
+		node "\n/w3prodapache" as x75531560 #LightGreen {
+	
+
+			cloud "Ports" as ports91 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval849
+}
+
+			frame "Bindings"  as bind711 #Yellow {
+			card "/opt/w3prod/drupalfiles/<-/var/www/drupalfiles/\n/opt/w3prod/webroot/<-/var/www/html/\n" as cval902
+			}
+
+	}
+
+		 
+
+		node "\n/homekeyapache" as x111235695 #LightGreen {
+	
+
+			cloud "Ports" as ports632 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval395
+}
+
+			frame "Bindings"  as bind602 #Yellow {
+			card "/opt/homekey/drupalfiles<-var/www/drupalfiles\n/opt/homekey/sync<-var/www/content/sync/\n/opt/homekey/webroot/<-var/www/html/\n" as cval977
+			}
+
+	}
+
+		node "\n/nofaapache" as x51798953 #LightGreen {
+	
+
+			cloud "Ports" as ports365 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval330
+}
+
+			frame "Bindings"  as bind732 #Yellow {
+			card "/opt/nofa/drupalfiles<-/var/www/drupalfiles\n/opt/nofa/sync<-/var/www/content/sync/\n/opt/nofa/webroot/<-/var/www/html/\n" as cval588
+			}
+
+	}
+
+		node "\n/acceleratorapache" as x3913926 #LightGreen {
+	
+
+			cloud "Ports" as ports603 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval897
+}
+
+			frame "Bindings"  as bind386 #Yellow {
+			card "/opt/accelerator/drupalfiles<-var/www/drupalfiles\n/opt/accelerator/sync<-var/www/content/sync/\n/opt/accelerator/webroot/<-var/www/html/\n" as cval996
+			}
+
+	}
+
+	
+
+	
+x75531560 -[hidden]- x111235695
+x111235695 -[hidden]- x51798953
+x51798953 -[hidden]- x3913926
+'x3913926 -[hidden]- x120489002
+'x120489002 -[hidden]- x185970893
+
+}
+@enduml
