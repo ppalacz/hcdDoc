@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1521px" preserveAspectRatio="none" style="width:508px;height:1521px;background:#FFFFFF;" version="1.1" viewBox="0 0 508 1521" width="508px" zoomAndPan="magnify"><defs><filter height="300%" id="f4xd5lv8e4qo5" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter><filter height="1" id="b4xd5lv8e4qo50" width="1" x="0" y="0"><feFlood flood-color="#F0F8FF" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b4xd5lv8e4qo51" width="1" x="0" y="0"><feFlood flood-color="#90EE90" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b4xd5lv8e4qo52" width="1" x="0" y="0"><feFlood flood-color="#FFFF00" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b4xd5lv8e4qo53" width="1" x="0" y="0"><feFlood flood-color="#FFA500" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b4xd5lv8e4qo54" width="1" x="0" y="0"><feFlood flood-color="#FFFFF0" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter></defs><g><!--MD5=[ad47473d43e55a566e2415a994d18cbd]
+cluster xkiwano--><polygon fill="#F0F8FF" filter="url(#f4xd5lv8e4qo5)" points="16,16,26,6,491,6,491,1045,481,1055,16,1055,16,16" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="481" x2="491" y1="16" y2="6"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="481" y1="16" y2="16"/><line style="stroke:#000000;stroke-width:1.5;" x1="481" x2="481" y1="16" y2="1055"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="251.5" y="33.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="49" x="225" y="51.1426">kiwano</text><!--MD5=[aac3ce34a854678acff27468c8984d35]
+cluster xapachecontainer--><rect fill="#90EE90" filter="url(#f4xd5lv8e4qo5)" height="366" style="stroke:#000000;stroke-width:1.5;" width="260" x="199" y="81"/><rect fill="#90EE90" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="439" y="86"/><rect fill="#90EE90" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="437" y="88"/><rect fill="#90EE90" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="437" y="92"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="331" y="108.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="143" x="257.5" y="126.1426">Web/HTTP Container</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="331" y="143.752"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="183" x="237.5" y="161.3613">(housingelementsapache)</text><!--MD5=[c320242a2b55707e34735e5f7770f79d]
+cluster xapache--><rect fill="#FFA500" filter="url(#f4xd5lv8e4qo5)" height="213" style="stroke:#000000;stroke-width:1.5;" width="172" x="247" y="194"/><rect fill="#FFA500" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="399" y="199"/><rect fill="#FFA500" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="397" y="201"/><rect fill="#FFA500" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="397" y="205"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="335" y="221.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="104" x="281" y="239.1426">Apache Server</text><!--MD5=[cc6710a976b77815aef19dfe99f51757]
+cluster ports794--><path d="M295.5901,272.5972 C300.1262,264.48 305.9166,264.9063 310.6381,272.4187 C315.0491,266.8996 319.6258,265.854 323.7237,272.7488 C327.2351,264.8595 332.1591,265.0539 337.8524,270.4239 C342.8125,262.3309 348.4994,262.808 353.0048,270.8509 C357.7652,265.1009 361.742,265.1994 365.3794,271.9615 C369.8986,266.9246 376.3255,267.6422 379.2187,273.9458 C385.1419,276.5707 384.2597,280.0484 380.5695,283.969 C386.7883,287.3384 387.6484,293.0828 380.8037,296.6926 C386.882,300.1152 389.2954,304.2412 382.9768,309.7301 C387.4833,312.9764 388.5596,317.6981 382.7327,320.7147 C387.9935,324.5337 388.291,329.1785 382.0458,332.3162 C387.0811,336.4795 387.8571,340.2518 381.6678,344.0536 C386.9258,347.6874 386.0526,353.1012 380.3423,355.4604 C386.2187,358.3945 386.5501,364.4899 380.8292,367.8787 C377.7531,375.9464 370.124,375.2512 365.7779,369.2361 C362.6177,376.0853 356.7864,377.0248 352.1448,370.7784 C349.2349,378.138 342.1203,379.0413 337.31,372.8605 C332.3022,378.8076 327.6527,379.2034 323.9479,371.5777 C317.0513,378.4387 312.8492,376.4386 309.3546,368.2736 C305.903,374.7653 299.8316,373.7658 296.9393,367.7198 C290.961,365.3482 290.8528,360.9347 294.8709,356.6886 C289.4726,354.4234 287.9206,349.0795 292.9207,345.0691 C287.0219,341.6536 285.7464,336.0847 291.6302,331.5448 C285.5784,329.7559 285.6156,325.9536 288.7892,321.544 C284.0838,316.3927 284.0455,312.3216 290.8833,309.1153 C285.7972,304.7719 287.3582,298.8999 293.1185,296.4743 C287.454,292.7439 288.783,286.7843 294.1145,283.9267 C289.3809,280.1222 290.136,275.0747 295.5901,272.5972 " fill="#FFF5EE" filter="url(#f4xd5lv8e4qo5)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="318.5" y="291.5332">Ports</text><!--MD5=[ceb4af8f4e34ea29c9db7946dfa358d2]
+cluster xjbosscontainer--><rect fill="#90EE90" filter="url(#f4xd5lv8e4qo5)" height="510" style="stroke:#000000;stroke-width:1.5;" width="377" x="55" y="513"/><rect fill="#90EE90" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="412" y="518"/><rect fill="#90EE90" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="410" y="520"/><rect fill="#90EE90" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="410" y="524"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="245.5" y="540.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="159" x="164" y="558.1426">J2EE Server Container</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="245.5" y="575.752"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="132" x="177.5" y="593.3613">(housingelements)</text><!--MD5=[16f0b9e42741fd8738aa5d0590ede4da]
+cluster xjboss--><rect fill="#FFA500" filter="url(#f4xd5lv8e4qo5)" height="357" style="stroke:#000000;stroke-width:1.5;" width="289" x="103" y="626"/><rect fill="#FFA500" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="372" y="631"/><rect fill="#FFA500" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="370" y="633"/><rect fill="#FFA500" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="370" y="637"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="249.5" y="653.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="102" x="196.5" y="671.1426">WildFly Server</text><!--MD5=[1065d39ab48e127eacc17f071ebb2ca1]
+cluster xdatasrc--><rect fill="#FFFF00" filter="url(#f4xd5lv8e4qo5)" height="93" style="stroke:#000000;stroke-width:1.5;" width="196" x="146" y="858"/><path d="M236,858 L236,868.6094 L226,878.6094 L146,878.6094 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="80" x="149" y="873.5332">Datasource</text><!--MD5=[02e21582d961eb19e336e45a4bf4f051]
+cluster xwarports--><path d="M253.2387,704.1145 C256.3839,699.621 261.3961,700.4815 263.7103,705.0724 C267.0292,697.3913 271.7666,698.2282 276.889,703.1928 C279.8899,698.2082 284.6721,698.332 287.2367,703.6318 C291.1898,698.057 295.7368,698.3363 299.407,703.9398 C302.2511,698.5585 307.1609,698.6559 310.2949,703.6351 C313.7521,697.8076 319.1725,697.0718 322.7014,703.5628 C326.4764,697.7607 330.7734,697.7456 334.0562,704.0254 C337.6194,699.4453 342.0042,700.3521 344.6373,705.0825 C350.7422,706.8261 352.829,712.2505 348.1003,717.1127 C356.2188,719.6823 357.4005,724.5274 351.1069,730.3663 C356.8443,733.0469 358.6555,738.2377 352.9267,742.621 C359.2759,747.8478 358.8896,754.2951 350.6702,757.2792 C356.1385,762.5921 355.686,766.4689 348.6014,769.6892 C352.6567,775.4485 351.6949,781.3161 344.0571,783.1187 C341.5844,789.5831 335.8516,789.2531 332.5713,783.9039 C330.7345,789.2342 325.1601,790.9135 321.1578,786.4198 C318.1402,792.2208 314.8996,792.6857 310.7638,787.4754 C307.5092,793.2503 303.772,794.7487 298.5756,789.6524 C294.9365,794.8625 289.5449,793.4135 287.1407,788.2865 C281.9276,793.0933 277.9367,791.5894 275.9914,785.0698 C271.1659,791.1259 266.9717,789.6476 263.8069,783.4222 C259.8968,788.2319 255.7846,788.6112 252.9283,782.3835 C245.6978,779.2783 245.266,774.2155 250.9714,769.1914 C245.142,765.4102 243.4015,761.6386 249.3933,756.399 C242.5063,753.7936 242.7602,747.7667 247.7088,743.6031 C242.4548,738.1286 242.2384,732.4475 250.6448,729.8998 C245.8735,725.4366 246.3093,721.7677 252.0903,718.6617 C246.3038,713.8292 245.4852,707.8781 253.2387,704.1145 " fill="#FFF5EE" filter="url(#f4xd5lv8e4qo5)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="279.5" y="723.5332">Ports</text><!--MD5=[b72664e149a55bb27eb33dcd761a6c81]
+cluster xorion--><polygon fill="#F0F8FF" filter="url(#f4xd5lv8e4qo5)" points="195,1115,205,1105,438,1105,438,1344,428,1354,195,1354,195,1115" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="428" x2="438" y1="1115" y2="1105"/><line style="stroke:#000000;stroke-width:1.5;" x1="195" x2="428" y1="1115" y2="1115"/><line style="stroke:#000000;stroke-width:1.5;" x1="428" x2="428" y1="1115" y2="1354"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="314.5" y="1132.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="294" y="1150.1426">orion</text><!--MD5=[64a7b039aabcb90e33042b63b80cc07c]
+cluster xmysql--><path d="M227,1190 C227,1180 316.5,1180 316.5,1180 C316.5,1180 406,1180 406,1190 L406,1312 C406,1322 316.5,1322 316.5,1322 C316.5,1322 227,1322 227,1312 L227,1190 " fill="#FFA500" filter="url(#f4xd5lv8e4qo5)" style="stroke:#000000;stroke-width:1.5;"/><path d="M227,1190 C227,1200 316.5,1200 316.5,1200 C316.5,1200 406,1200 406,1190 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="48" x="292.5" y="1216.5332">MySQL</text><!--MD5=[7cc8f537dd8e5234cd37f8838f88f917]
+entity xdocker--><rect fill="#FFA500" filter="url(#f4xd5lv8e4qo5)" height="65.2188" style="stroke:#A80036;stroke-width:1.5;" width="85" x="32.5" y="297"/><rect fill="#FFA500" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="97.5" y="302"/><rect fill="#FFA500" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="95.5" y="304"/><rect fill="#FFA500" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="95.5" y="308"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="51.5" y="331.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="47.5" y="349.1426">Docker</text><!--MD5=[46c33d9006817ad4cbb842637bdc4726]
+entity pval475--><rect fill="#FEFECE" filter="url(#f4xd5lv8e4qo5)" height="58.8281" style="stroke:#000000;stroke-width:1.5;" width="67" x="303.5" y="300"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="313.5" y="317.5332">443/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="313.5" y="335.1426">80/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="317.5" y="352.752"/><!--MD5=[821db440beeb0452d01831e91e32af50]
+entity xwar--><rect fill="#FFFFF0" filter="url(#f4xd5lv8e4qo5)" height="82.8281" style="stroke:#A80036;stroke-width:1.5;" width="98" x="127" y="711"/><rect fill="#FFFFF0" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="205" y="716"/><rect fill="#FFFFF0" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="203" y="718"/><rect fill="#FFFFF0" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="203" y="722"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="146" y="745.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="142" y="763.1426">HPD App</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="142" y="780.752">(.war file)</text><!--MD5=[a3cafbd6208373c9b3c344dee2afb925]
+entity xdatasrccval01--><rect fill="#FEFECE" filter="url(#f4xd5lv8e4qo5)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="163" x="162.5" y="894"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="176.5" y="911.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="172.5" y="929.1426">name: java:/MySqlHPD</text><!--MD5=[67ffb0e722e201933b7016175bc68c7e]
+entity pval353--><rect fill="#FEFECE" filter="url(#f4xd5lv8e4qo5)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="75" x="260.5" y="732"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="270.5" y="749.5332">8080/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="274.5" y="767.1426"/><!--MD5=[f07934929e16a56f267683d68ad8e2e3]
+entity xdb--><rect fill="#FEFECE" filter="url(#f4xd5lv8e4qo5)" height="58.8281" style="stroke:#000000;stroke-width:1.5;" width="111" x="251.5" y="1239"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="261.5" y="1256.5332">database: hpd</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="261.5" y="1274.1426">port:3603/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="261.5" y="1291.752">size:+50GB</text><!--MD5=[e78bc86fc67da18a7c8491f19d1b54bc]
+reverse link xapachecontainer to xdocker--><path d="M198.9994,329.5 C198.9232,329.5 198.8465,329.5 198.7693,329.5 C198.615,329.5 198.4587,329.5 198.3006,329.5 C197.9844,329.5 197.6607,329.5 197.3298,329.5 C196.6679,329.5 195.977,329.5 195.2586,329.5 C189.5116,329.5 182.0069,329.5 173.5513,329.5 C156.64,329.5 135.925,329.5 117.86,329.5 " fill="none" id="xapachecontainer-backto-xdocker" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="198.9994,329.5,189.9994,325.5,193.9994,329.5,189.9994,333.5,198.9994,329.5" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="135.57" y="322.9951">manages</text><!--MD5=[319b464b93825dec73c0fb0ca3a92195]
+link xdocker to xjbosscontainer--><path d="M74.1,362.14 C73.4075,386.4275 72.3756,422.6225 71.2153,463.3234 C70.9252,473.4987 70.6271,483.9555 70.3243,494.5784 C70.1729,499.8898 70.0203,505.2427 69.8669,510.6226 C69.8477,511.2951 69.8285,511.968 69.8094,512.6413 " fill="none" id="xdocker-to-xjbosscontainer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="69.8094,512.6413,74.0642,503.759,69.9518,507.6434,66.0674,503.531,69.8094,512.6413" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="72" y="485.4951">manages</text><!--MD5=[574e3d9942b458aef16c291eafb8d1a5]
+link xapache to xjboss--><path d="M259.7843,407.5596 C259.8369,407.786 259.89,408.0125 259.9434,408.2389 C260.3713,410.0504 260.8283,411.8623 261.3162,413.6707 C262.292,417.2875 263.3913,420.8904 264.6284,424.4483 C269.5769,438.68 276.73,452.1925 287,463 C295.62,472.07 302.7,465.62 314,471 C332.48,479.79 341.34,479.53 352,497 C366.615,520.9475 375.9744,548.5213 381.7798,576.4862 C384.6826,590.4688 386.6968,604.5491 388.0353,618.3228 C388.2026,620.0445 388.3594,621.7615 388.506,623.4728 C388.5427,623.9006 388.5787,624.3281 388.6141,624.7553 " fill="none" id="xapache-to-xjboss" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="388.6141,624.7553,391.8572,615.4557,388.2012,619.7723,383.8846,616.1163,388.6141,624.7553" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a08bf34eb14b7e9c5cefcfa73e578f02]
+link xwar to xdatasrccval01--><path d="M193.34,794.29 C206.03,824.15 222.83,863.69 233.53,888.87 " fill="none" id="xwar-to-xdatasrccval01" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="235.59,893.71,235.7472,883.8624,233.6325,889.1091,228.3858,886.9944,235.59,893.71" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="214" y="838.4951">uses</text><!--MD5=[5ec64505a1d0fdfc4d263afdd2ed69e7]
+link xjboss to xmysql--><path d="M390.2779,983.8814 C390.3047,984.865 390.3316,985.849 390.3584,986.8336 C390.573,994.71 390.7884,1002.6163 391.0037,1010.5225 C391.8653,1042.1475 392.7268,1073.772 393.536,1103.4806 C393.9407,1118.3349 394.3322,1132.7102 394.7042,1146.3671 C394.8902,1153.1956 395.0713,1159.8444 395.2466,1166.2837 C395.3343,1169.5034 395.4206,1172.6707 395.5053,1175.7818 C395.5265,1176.5596 395.5476,1177.3339 395.5686,1178.1046 C395.5791,1178.4899 395.5896,1178.8744 395.6,1179.258 " fill="none" id="xjboss-to-xmysql" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="395.6,1179.258,399.3535,1170.1524,395.4639,1174.2598,391.3565,1170.3702,395.6,1179.258" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="394" y="919.9951">uses</text><!--MD5=[47c46bd8f327b4dfa7a36b45e1591658]
+link xdatasrccval01 to xdb--><path d="M247.52,935.18 C257.83,992.8 288.05,1161.61 301,1233.95 " fill="none" id="xdatasrccval01-to-xdb" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="301.9,1238.99,304.245,1229.4244,301.0156,1234.0688,296.3712,1230.8394,301.9,1238.99" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="275" y="1085.4951">maps to</text><rect fill="#DDDDDD" height="137.2656" rx="5" ry="5" style="stroke:#000000;stroke-width:1.0;" width="154" x="170" y="1368"/><text fill="#000000" filter="url(#b4xd5lv8e4qo50)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="90" x="176" y="1389.5332">Linux Server</text><text fill="#000000" filter="url(#b4xd5lv8e4qo51)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="123" x="176" y="1407.1426">Docker Container</text><text fill="#000000" filter="url(#b4xd5lv8e4qo52)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="130" x="176" y="1424.752">File System Folder</text><text fill="#000000" filter="url(#b4xd5lv8e4qo53)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="115" x="176" y="1442.3613">Process/Service</text><text fill="#000000" filter="url(#b4xd5lv8e4qo54)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="78" x="176" y="1459.9707">Application</text><line style="stroke:#000000;stroke-width:1.0;" x1="176" x2="318" y1="1375" y2="1375"/><line style="stroke:#000000;stroke-width:1.0;" x1="176" x2="318" y1="1392.6094" y2="1392.6094"/><line style="stroke:#000000;stroke-width:1.0;" x1="176" x2="318" y1="1410.2188" y2="1410.2188"/><line style="stroke:#000000;stroke-width:1.0;" x1="176" x2="318" y1="1427.8281" y2="1427.8281"/><line style="stroke:#000000;stroke-width:1.0;" x1="176" x2="318" y1="1445.4375" y2="1445.4375"/><line style="stroke:#000000;stroke-width:1.0;" x1="176" x2="318" y1="1463.0469" y2="1463.0469"/><line style="stroke:#000000;stroke-width:1.0;" x1="176" x2="176" y1="1375" y2="1463.0469"/><line style="stroke:#000000;stroke-width:1.0;" x1="318" x2="318" y1="1375" y2="1463.0469"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="180" y="1479.5801"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="180" y="1497.1895"/><!--MD5=[61c8adb30b4e17a81539e69176b90201]
+@startuml "Housing Elements PROD Deployment"
+'on: 2022-01-04
+ 
+legend
+|<back:AliceBlue><b>Linux Server      </b></back>|
+|<back:LightGreen><b>Docker Container </b></back>|
+'|<back:SeaShell><b>Docker Network     </b></back>|
+|<back:Yellow><b>File System Folder   </b></back>|
+|<back:Orange><b>Process/Service</b></back>|
+|<back:Ivory><b>Application</b></back>|
+ 
+
+endlegend
+
+node	 "\nkiwano" as xkiwano #AliceBlue {
+
+component "\nDocker" as xdocker #Orange {
+
+}
+    component "\nWeb/HTTP Container\n\n(housingelementsapache)" as xapachecontainer #LightGreen {
+	
+     component "\nApache Server" as xapache #Orange {
+		cloud "Ports" as ports794 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval475
+        }
+
+		
+
+     }
+     'frame "Bindings"  as bind120 #Yellow {
+	'	card "/opt/housingelements/apache/logs" as cval550
+	'	}
+
+       ' xapache ..> cval550 : writes
+	}
+	
+	component	 "\nJ2EE Server Container\n\n(housingelements)" as xjbosscontainer #LightGreen {
+
+        component "\nWildFly Server" as xjboss #Orange {
+
+        component "\nHPD App\n(.war file)" as xwar #Ivory {
+        }
+
+        frame "Datasource"  as xdatasrc #Yellow {
+			card "\nname: java:/MySqlHPD" as xdatasrccval01
+			}    
+			cloud "Ports" as xwarports #SeaShell {
+			card "8080/tcp\n" as pval353
+            }
+        }
+			
+
+    xdocker .left.> xapachecontainer : manages
+    xdocker .right.> xjbosscontainer : manages
+
+    xapache - -> xjboss
+    xwar ..> xdatasrccval01 :uses
+    'xwar ..> xdatasrc :uses
+   
+    'frame "Bindings"  as xwarbind #Yellow {
+	'		card "/opt/housingelements/wildfly/logs/server.log" as cval396
+	'		}
+ 
+    ' xjboss ..> cval396 : writes
+
+	}
+}
+
+node "\norion" as xorion #AliceBlue {
+     database "MySQL" as xmysql #Orange {
+         card "database: hpd\nport:3603/tcp\nsize:+50GB" as xdb
+     }
+ }
+
+xjboss -> xmysql : uses   
+xdatasrccval01  ..> xdb :maps to
+    
+'xapachecontainer -[hidden]- xjbosscontainer
+'xjbosscontainer -[hidden]- xorion
+'xkiwano -right- xorion
+ 
+@enduml
+
+@startuml "Housing Elements PROD Deployment"
+ 
+legend
+|<back:AliceBlue><b>Linux Server      </b></back>|
+|<back:LightGreen><b>Docker Container </b></back>|
+|<back:Yellow><b>File System Folder   </b></back>|
+|<back:Orange><b>Process/Service</b></back>|
+|<back:Ivory><b>Application</b></back>|
+ 
+
+endlegend
+
+node	 "\nkiwano" as xkiwano #AliceBlue {
+
+component "\nDocker" as xdocker #Orange {
+
+}
+    component "\nWeb/HTTP Container\n\n(housingelementsapache)" as xapachecontainer #LightGreen {
+	
+     component "\nApache Server" as xapache #Orange {
+		cloud "Ports" as ports794 #SeaShell {
+			card "443/tcp\n80/tcp\n" as pval475
+        }
+
+		
+
+     }
+
+	}
+	
+	component	 "\nJ2EE Server Container\n\n(housingelements)" as xjbosscontainer #LightGreen {
+
+        component "\nWildFly Server" as xjboss #Orange {
+
+        component "\nHPD App\n(.war file)" as xwar #Ivory {
+        }
+
+        frame "Datasource"  as xdatasrc #Yellow {
+			card "\nname: java:/MySqlHPD" as xdatasrccval01
+			}    
+			cloud "Ports" as xwarports #SeaShell {
+			card "8080/tcp\n" as pval353
+            }
+        }
+			
+
+    xdocker .left.> xapachecontainer : manages
+    xdocker .right.> xjbosscontainer : manages
+
+    xapache - -> xjboss
+    xwar ..> xdatasrccval01 :uses
+   
+ 
+
+	}
+}
+
+node "\norion" as xorion #AliceBlue {
+     database "MySQL" as xmysql #Orange {
+         card "database: hpd\nport:3603/tcp\nsize:+50GB" as xdb
+     }
+ }
+
+xjboss -> xmysql : uses   
+xdatasrccval01  ..> xdb :maps to
+    
+ 
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 09:25:22 PST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

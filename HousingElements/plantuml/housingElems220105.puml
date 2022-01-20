@@ -68,7 +68,7 @@ component "\nDocker" as xdocker #Orange {
 
 node "\norion" as xorion #AliceBlue {
      database "MySQL" as xmysql #Orange {
-         card "database: htd\nport:3603/tcp\nsize:~50GB" as xdb
+         card "database: hpd\nport:3603/tcp\nsize:+50GB" as xdb
      }
  }
 
