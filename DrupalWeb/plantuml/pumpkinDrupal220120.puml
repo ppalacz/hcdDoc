@@ -6,6 +6,8 @@ legend
 |<back:LightGreen><b>Docker Container</b></back>|
 |<back:SeaShell><b>Docker Network    </b></back>|
 |<back:Yellow><b>File System Folder </b></back>|
+|<back:Khaki><b>Non-Dockerized</b></back>|
+ 
 endlegend
 
 	component "\npumpkin" as x136404212 #AliceBlue {
@@ -24,18 +26,7 @@ endlegend
 
 	}
 
-		node "\n/nofaapache" as x51798953 #LightGreen {
-	
-
-			cloud "Ports" as ports597 #SeaShell {
-			card "3000/tcp\n443/tcp\n80/tcp\n" as pval173
-}
-
-			frame "Bindings"  as bind555 #Yellow {
-			card "/opt/accelerator/drupalfiles/webform/mdap/:/var/www/html/acceleratorfiles\n/opt/homekey/drupalfiles/webform/homekey_application:/var/www/html/homekeyfiles\n/opt/nofa/apache/logs:/var/log/httpd\n/opt/nofa/drupalfiles/webform/nova_form:/var/www/html/nofafiles\n/opt/nofa/webroot:/var/www/html\n" as cval721
-			}
-
-	}
+	 
 
 		node "\n/w3devapache" as x227844470 #LightGreen {
 	
@@ -78,18 +69,6 @@ endlegend
 
 	}
 
-		node "\n/nofaappdb" as x4480958 #LightGreen {
-	
-
-			cloud "Ports" as ports860 #SeaShell {
-			card "3306/tcp\n33060/tcp\n33061/tcp\n" as pval994
-}
-
-			frame "Bindings"  as bind752 #Yellow {
-			card "/nofaapp/mysql/conf.d:/etc/mysql/conf.d\n/nofaapp/mysql/log:/var/log\n/nofaapp/mysql/mysql-data:/var/lib/mysql\n" as cval315
-			}
-
-	}
 
 		node "\n/homekeyapache" as x111235695 #LightGreen {
 	
@@ -107,13 +86,60 @@ endlegend
 	 
 
 	 
-x212689061 -[hidden]- x51798953
-x51798953 -[hidden]- x227844470
+x212689061 -[hidden]- x227844470
 x227844470 -[hidden]-  x237945370
 x237945370 -[hidden]- x81443005
-x81443005 -[hidden]- x4480958
-x4480958 -[hidden]- x111235695
+x81443005 -[hidden]- x111235695
  
 
 }
+
+ component "\ngrapes" as xgrapes #AliceBlue {
+
+     component "MySQL Server\n" as xgrsql #Khaki {
+
+          database "\naccelerator" as xaccb #Gold {
+            card "user 'plato1'" as cval111 #Yellow
+         }
+
+
+ 
+         database "\ndrupal9" as xd9b #Gold {
+            card "user 'rahim'" as cval112 #Yellow
+         }
+
+        xaccb -[hidden]- xd9b
+
+         database "\nhomekey10" as xhk10b #Gold {
+
+                 card "user 'plato2'" as cval113 #Yellow        
+         }
+
+         xd9b -[hidden]- xhk10b
+
+         database "\nhomekey20" as xhk20b #Gold {
+
+                 card "user 'plato3'" as cval114 #Yellow             
+         
+         }
+        
+        xhk10b -[hidden]- xhk20b
+
+         database "\nw3prod" as xw3prodb  #Gold {
+
+                 card "user 'plato4'" as cval115 #Yellow             
+         }
+        xhk20b -[hidden]- xw3prodb
+        
+        database "\nw3prod10" as xw3prod10b #Gold {
+
+                 card "user 'plato5'" as cval1236 #Yellow            
+         }
+
+        xw3prodb -[hidden]- xw3prod10b
+     }
+
+ }
+
+
 @enduml
