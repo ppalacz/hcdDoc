@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1195px" preserveAspectRatio="none" style="width:1061px;height:1195px;background:#FFFFFF;" version="1.1" viewBox="0 0 1061 1195" width="1061px" zoomAndPan="magnify"><defs><filter height="300%" id="f1iuucsx2l9r6y" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter><filter height="1" id="b1iuucsx2l9r6y0" width="1" x="0" y="0"><feFlood flood-color="#F0F8FF" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b1iuucsx2l9r6y1" width="1" x="0" y="0"><feFlood flood-color="#ADFF2F" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b1iuucsx2l9r6y2" width="1" x="0" y="0"><feFlood flood-color="#F0E68C" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b1iuucsx2l9r6y3" width="1" x="0" y="0"><feFlood flood-color="#FFD700" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter><filter height="1" id="b1iuucsx2l9r6y4" width="1" x="0" y="0"><feFlood flood-color="#90EE90" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter></defs><g><!--MD5=[5633704be56313a5ee86b54120e8d11d]
+cluster cpumpkin--><rect fill="#F0F8FF" filter="url(#f1iuucsx2l9r6y)" height="1014" style="stroke:#000000;stroke-width:1.5;" width="1040" x="7" y="7"/><rect fill="#F0F8FF" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="1027" y="12"/><rect fill="#F0F8FF" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="1025" y="14"/><rect fill="#F0F8FF" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="1025" y="18"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="529" y="34.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="60" x="497" y="52.1426">pumpkin</text><!--MD5=[94f5ef43114738074ac043aaeffb48bc]
+cluster ftomcat--><polygon fill="#ADFF2F" filter="url(#f1iuucsx2l9r6y)" points="445,780.5,529,780.5,536,804.1094,1015,804.1094,1015,972.5,445,972.5,445,780.5" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="445" x2="536" y1="804.1094" y2="804.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="78" x="449" y="797.0332">/opt/tomcat</text><!--MD5=[303b1762865b19ad293585204b2f5519]
+cluster fab--><polygon fill="#ADFF2F" filter="url(#f1iuucsx2l9r6y)" points="666,840.5,757,840.5,764,864.1094,967,864.1094,967,932.5,666,932.5,666,840.5" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="666" x2="764" y1="864.1094" y2="864.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="85" x="670" y="857.0332">temp/ab-434</text><!--MD5=[0388bbb8e40a6a56f1b4bd0e6249874a]
+cluster cpm2--><rect fill="#F0E68C" filter="url(#f1iuucsx2l9r6y)" height="177" style="stroke:#000000;stroke-width:1.5;" width="391" x="561" y="77"/><rect fill="#F0E68C" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="932" y="82"/><rect fill="#F0E68C" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="930" y="84"/><rect fill="#F0E68C" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="930" y="88"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="138" x="687.5" y="104.5332">pm2/node-js Server</text><!--MD5=[7bb8088e1863792cac2f270a3008ac4a]
+cluster xportcpm2--><path d="M813.2387,137.1145 C816.3839,132.621 821.3961,133.4815 823.7103,138.0724 C827.0292,130.3913 831.7666,131.2282 836.889,136.1928 C839.8899,131.2082 844.6721,131.332 847.2367,136.6318 C851.1898,131.057 855.7368,131.3363 859.407,136.9398 C862.2511,131.5585 867.1609,131.6559 870.2949,136.6351 C873.7521,130.8076 879.1725,130.0718 882.7014,136.5628 C886.4764,130.7607 890.7734,130.7456 894.0562,137.0254 C897.6194,132.4453 902.0042,133.3521 904.6373,138.0825 C910.7422,139.8261 912.829,145.2505 908.1003,150.1127 C916.2188,152.6823 917.4005,157.5274 911.1069,163.3663 C916.8443,166.0469 918.6555,171.2377 912.9267,175.621 C919.2759,180.8478 918.8896,187.2951 910.6702,190.2792 C916.1385,195.5921 915.686,199.4689 908.6014,202.6892 C912.6567,208.4485 911.6949,214.3161 904.0571,216.1187 C901.5844,222.5831 895.8516,222.2531 892.5713,216.9039 C890.7345,222.2342 885.1601,223.9135 881.1578,219.4198 C878.1402,225.2208 874.8996,225.6857 870.7638,220.4754 C867.5092,226.2503 863.772,227.7487 858.5756,222.6524 C854.9365,227.8625 849.5449,226.4135 847.1407,221.2865 C841.9276,226.0933 837.9367,224.5894 835.9914,218.0698 C831.1659,224.1259 826.9717,222.6476 823.8069,216.4222 C819.8968,221.2319 815.7846,221.6112 812.9283,215.3835 C805.6978,212.2783 805.266,207.2155 810.9714,202.1914 C805.142,198.4102 803.4015,194.6386 809.3933,189.399 C802.5063,186.7936 802.7602,180.7667 807.7088,176.6031 C802.4548,171.1286 802.2384,165.4475 810.6448,162.8998 C805.8735,158.4366 806.3093,154.7677 812.0903,151.6617 C806.3038,146.8292 805.4852,140.8781 813.2387,137.1145 " fill="#FFF5EE" filter="url(#f1iuucsx2l9r6y)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="839.5" y="156.5332">Ports</text><!--MD5=[15186218f842247daa90d3870f31c543]
+cluster ntomcat--><polygon fill="#F0E68C" filter="url(#f1iuucsx2l9r6y)" points="547,437,557,427,955,427,955,617,945,627,547,627,547,437" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="945" x2="955" y1="437" y2="427"/><line style="stroke:#000000;stroke-width:1.5;" x1="547" x2="945" y1="437" y2="437"/><line style="stroke:#000000;stroke-width:1.5;" x1="945" x2="945" y1="437" y2="627"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="749" y="454.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="102" x="696" y="472.1426">Tomcat Server</text><!--MD5=[b1c26894faaee7d4fcec14a4a0dce05a]
+cluster xporsttomcat--><path d="M816.2387,510.1145 C819.3839,505.621 824.3961,506.4815 826.7103,511.0724 C830.0292,503.3913 834.7666,504.2282 839.889,509.1928 C842.8899,504.2082 847.6721,504.332 850.2367,509.6318 C854.1898,504.057 858.7368,504.3363 862.407,509.9398 C865.2511,504.5585 870.1609,504.6559 873.2949,509.6351 C876.7521,503.8076 882.1725,503.0718 885.7014,509.5628 C889.4764,503.7607 893.7734,503.7456 897.0562,510.0254 C900.6194,505.4453 905.0042,506.3521 907.6373,511.0825 C913.7422,512.8261 915.829,518.2505 911.1003,523.1127 C919.2188,525.6823 920.4005,530.5274 914.1069,536.3663 C919.8443,539.0469 921.6555,544.2377 915.9267,548.621 C922.2759,553.8478 921.8896,560.2951 913.6702,563.2792 C919.1385,568.5921 918.686,572.4689 911.6014,575.6892 C915.6567,581.4485 914.6949,587.3161 907.0571,589.1187 C904.5844,595.5831 898.8516,595.2531 895.5713,589.9039 C893.7345,595.2342 888.1601,596.9135 884.1578,592.4198 C881.1402,598.2208 877.8996,598.6857 873.7638,593.4754 C870.5092,599.2503 866.772,600.7487 861.5756,595.6524 C857.9365,600.8625 852.5449,599.4135 850.1407,594.2865 C844.9276,599.0933 840.9367,597.5894 838.9914,591.0698 C834.1659,597.1259 829.9717,595.6476 826.8069,589.4222 C822.8968,594.2319 818.7846,594.6112 815.9283,588.3835 C808.6978,585.2783 808.266,580.2155 813.9714,575.1914 C808.142,571.4102 806.4015,567.6386 812.3933,562.399 C805.5063,559.7936 805.7602,553.7667 810.7088,549.6031 C805.4548,544.1286 805.2384,538.4475 813.6448,535.8998 C808.8735,531.4366 809.3093,527.7677 815.0903,524.6617 C809.3038,519.8292 808.4852,513.8781 816.2387,510.1145 " fill="#FFF5EE" filter="url(#f1iuucsx2l9r6y)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="842.5" y="529.5332">Ports</text><!--MD5=[15a76a25ad405d5968267492f3498d0d]
+cluster cdb--><rect fill="#F0E68C" filter="url(#f1iuucsx2l9r6y)" height="312" style="stroke:#000000;stroke-width:1.5;" width="382" x="31" y="685"/><rect fill="#F0E68C" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="393" y="690"/><rect fill="#F0E68C" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="391" y="692"/><rect fill="#F0E68C" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="391" y="696"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="100" x="172" y="712.5332">MySQL Server</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="224" y="730.1426"/><!--MD5=[f1cc399ab4da28fae7ed6aefff9cf5c4]
+cluster ddb--><path d="M63,765 C63,755 222,755 222,755 C222,755 381,755 381,765 L381,955 C381,965 222,965 222,965 C222,965 63,965 63,955 L63,765 " fill="#FFD700" filter="url(#f1iuucsx2l9r6y)" style="stroke:#000000;stroke-width:1.5;"/><path d="M63,765 C63,775 222,775 222,775 C222,775 381,775 381,765 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="224" y="791.5332"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="72" x="186" y="809.1426">supernofa</text><!--MD5=[bdd07382e7189506c45877df6a6e7e55]
+cluster dbport--><path d="M250.2387,848.1145 C253.3839,843.621 258.3961,844.4815 260.7103,849.0724 C264.0292,841.3913 268.7666,842.2282 273.889,847.1928 C276.8899,842.2082 281.6721,842.332 284.2367,847.6318 C288.1898,842.057 292.7368,842.3363 296.407,847.9398 C299.2511,842.5585 304.1609,842.6559 307.2949,847.6351 C310.7521,841.8076 316.1725,841.0718 319.7014,847.5628 C323.4764,841.7607 327.7734,841.7456 331.0562,848.0254 C334.6194,843.4453 339.0042,844.3521 341.6373,849.0825 C347.7422,850.8261 349.829,856.2505 345.1003,861.1127 C353.2188,863.6823 354.4005,868.5274 348.1069,874.3663 C353.8443,877.0469 355.6555,882.2377 349.9267,886.621 C356.2759,891.8478 355.8896,898.2951 347.6702,901.2792 C353.1385,906.5921 352.686,910.4689 345.6014,913.6892 C349.6567,919.4485 348.6949,925.3161 341.0571,927.1187 C338.5844,933.5831 332.8516,933.2531 329.5713,927.9039 C327.7345,933.2342 322.1601,934.9135 318.1578,930.4198 C315.1402,936.2208 311.8996,936.6857 307.7638,931.4754 C304.5092,937.2503 300.772,938.7487 295.5756,933.6524 C291.9365,938.8625 286.5449,937.4135 284.1407,932.2865 C278.9276,937.0933 274.9367,935.5894 272.9914,929.0698 C268.1659,935.1259 263.9717,933.6476 260.8069,927.4222 C256.8968,932.2319 252.7846,932.6112 249.9283,926.3835 C242.6978,923.2783 242.266,918.2155 247.9714,913.1914 C242.142,909.4102 240.4015,905.6386 246.3933,900.399 C239.5063,897.7936 239.7602,891.7667 244.7088,887.6031 C239.4548,882.1286 239.2384,876.4475 247.6448,873.8998 C242.8735,869.4366 243.3093,865.7677 249.0903,862.6617 C243.3038,857.8292 242.4852,851.8781 250.2387,848.1145 " fill="#FFF5EE" filter="url(#f1iuucsx2l9r6y)" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="37" x="276.5" y="867.5332">Ports</text><path d="M74.5,164 L74.5,206.7031 L243.5,206.7031 L243.5,174 L233.5,164 L74.5,164 " fill="#FBFB77" filter="url(#f1iuucsx2l9r6y)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M233.5,164 L233.5,174 L243.5,174 L233.5,164 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="80.5" y="182.4951">Last Modification: 220126</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="134" x="80.5" y="198.8467">Added pm2 component</text><!--MD5=[d96cc8a17b13186cae4eb1d2292bac73]
+entity url--><rect fill="#FEFECE" filter="url(#f1iuucsx2l9r6y)" height="23.6094" style="stroke:#000000;stroke-width:1.5;" width="219" x="317.5" y="173.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="327.5" y="191.0332">https://nofadfa.hcd.ca.gov/snap</text><!--MD5=[bdc7b23803b58f4f184815870934c049]
+entity tomcat config, logs, etc.--><rect fill="#FEFECE" filter="url(#f1iuucsx2l9r6y)" height="23.6094" style="stroke:#000000;stroke-width:1.5;" width="169" x="469.5" y="884.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="479.5" y="902.0332">tomcat config, logs, etc.</text><!--MD5=[40ce6a8037fb54d2092f2a529c247143]
+entity Location of uploaded attachments--><rect fill="#FEFECE" filter="url(#f1iuucsx2l9r6y)" height="23.6094" style="stroke:#000000;stroke-width:1.5;" width="234" x="709" y="884.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="719" y="902.0332">Location of uploaded attachments</text><!--MD5=[5e88cdd298a589df5300e9f6a79d0f6c]
+entity pvalcpm2--><rect fill="#FEFECE" filter="url(#f1iuucsx2l9r6y)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="75" x="820.5" y="165"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="830.5" y="182.5332">7000/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="834.5" y="200.1426"/><!--MD5=[91ec41faab7d1a320db7cc5c959fa432]
+entity cabr--><rect fill="#90EE90" filter="url(#f1iuucsx2l9r6y)" height="65.2188" style="stroke:#A80036;stroke-width:1.5;" width="200" x="585" y="153"/><rect fill="#90EE90" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="765" y="158"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="763" y="160"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="763" y="164"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="600" y="187.5332">ab434</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="600" y="205.1426">React Web UI (javascript)</text><!--MD5=[4a1a57701b88f76feb7b1382e230c4a0]
+entity pval745--><rect fill="#FEFECE" filter="url(#f1iuucsx2l9r6y)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="75" x="823.5" y="538"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="833.5" y="555.5332">8080/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="837.5" y="573.1426"/><!--MD5=[e2678937d193566c65d306502ea1c09c]
+entity cwar--><rect fill="#90EE90" filter="url(#f1iuucsx2l9r6y)" height="65.2188" style="stroke:#A80036;stroke-width:1.5;" width="217" x="571.5" y="526"/><rect fill="#90EE90" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="768.5" y="531"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="766.5" y="533"/><rect fill="#90EE90" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="766.5" y="537"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="586.5" y="560.5332">superNofaApi.war</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="586.5" y="578.1426">Spring Boot (java) back-end</text><!--MD5=[e129c2c61c8a2873349676b6a2d4657a]
+entity dbuser--><rect fill="#FEFECE" filter="url(#f1iuucsx2l9r6y)" height="23.6094" style="stroke:#000000;stroke-width:1.5;" width="116" x="106" y="884.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="116" y="902.0332">user 'humanyu'</text><!--MD5=[1f0f534dd9fd55da419478764e1c1ec3]
+entity 8306/tcp\n--><rect fill="#FEFECE" filter="url(#f1iuucsx2l9r6y)" height="41.2188" style="stroke:#000000;stroke-width:1.5;" width="75" x="257.5" y="876"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="267.5" y="893.5332">8306/tcp</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="271.5" y="911.1426"/><!--MD5=[43324bf9e1572a7f795d970534858571]
+link url to cabr--><path d="M536.6,185.5 C550.88,185.5 565.17,185.5 579.45,185.5 " fill="none" id="url-to-cabr" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="584.71,185.5,575.71,181.5,579.71,185.5,575.71,189.5,584.71,185.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f4a5c02fdab65324d6e6454a3703a1b2]
+link cabr to cwar--><path d="M684.51,223.22 C683.55,294.18 681.46,449.43 680.5,520.56 " fill="none" id="cabr-cwar" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="680.43,525.95,684.5326,516.9963,680.4871,520.9503,676.5331,516.9049,680.43,525.95" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="684.57,218.13,680.4674,227.0837,684.5129,223.1297,688.4669,227.1751,684.57,218.13" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1373c0d3b0d535e4da8ccc468bcf8db3]
+link cpm2 to ntomcat--><!--MD5=[7d0ddc1361fe051a47bd9dae6a4dc195]
+link ftomcat to ntomcat--><!--MD5=[dddb0954ee3bf4a15fa7a5bfa9317c34]
+link ntomcat to ftomcat--><path d="M955.117,604.95 C955.2809,605.8677 955.4467,606.7961 955.6143,607.7348 C955.9496,609.6124 956.2923,611.5315 956.642,613.4897 C962.2372,644.8213 969.6206,686.1688 977.0038,727.515 C978.8495,737.8516 980.6953,748.188 982.5131,758.3679 C983.422,763.4579 984.3239,768.5087 985.2153,773.5008 C985.4382,774.7488 985.6604,775.9931 985.8819,777.2335 C985.9926,777.8537 986.1032,778.4729 986.2136,779.091 C986.2687,779.4001 986.3239,779.7089 986.379,780.0175 " fill="none" id="ntomcat-to-ftomcat" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="986.379,780.0175,988.7346,770.4545,985.5001,775.0954,980.8592,771.8608,986.379,780.0175" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="967" y="665.4951">uses</text><!--MD5=[321ede71c83c03314279cc12e53cfa8b]
+link cwar to fab--><path d="M679.44,591.11 C678.705,632.28 677.375,706.6625 676.2138,771.59 C675.9234,787.8219 675.6437,803.4628 675.3864,817.8461 C675.2577,825.0378 675.1347,831.915 675.0188,838.3946 C675.0116,838.7995 675.0043,839.203 674.9972,839.6048 " fill="none" id="cwar-to-fab" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="674.9972,839.6048,679.1575,830.6778,675.0866,834.6056,671.1588,830.5347,674.9972,839.6048" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="125" x="679" y="665.4951">writes attachments to</text><!--MD5=[350b7c4363b710a7365239b52a3c291c]
+link cwar to ddb--><path d="M571.46,565.91 C418.93,577.34 152.72,606.99 90,677 C57.99,712.735 52.8875,766.225 55.96,811.335 C56.7281,822.6125 58.0072,833.3662 59.5045,843.1879 C60.2531,848.0987 61.0564,852.7765 61.8775,857.1702 C62.0828,858.2687 62.2893,859.3493 62.4962,860.4115 C62.5997,860.9425 62.7033,861.4689 62.807,861.9906 C62.8589,862.2515 62.9107,862.5111 62.9626,862.7696 " fill="none" id="cwar-to-ddb" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="62.9626,862.7696,65.1136,853.1585,61.9788,857.8673,57.2699,854.7326,62.9626,862.7696" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="79" x="119" y="665.4951">stores data in</text><rect fill="#DDDDDD" height="137.2656" rx="5" ry="5" style="stroke:#000000;stroke-width:1.0;" width="200" x="423.5" y="1042"/><text fill="#000000" filter="url(#b1iuucsx2l9r6y0)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="90" x="429.5" y="1063.5332">Linux Server</text><text fill="#000000" filter="url(#b1iuucsx2l9r6y1)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="130" x="429.5" y="1081.1426">File System Folder</text><text fill="#000000" filter="url(#b1iuucsx2l9r6y2)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="168" x="429.5" y="1098.752">Non-Docker Component</text><text fill="#000000" filter="url(#b1iuucsx2l9r6y3)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="65" x="429.5" y="1116.3613">Database</text><text fill="#000000" filter="url(#b1iuucsx2l9r6y4)" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="97" x="429.5" y="1133.9707">Deployed App</text><line style="stroke:#000000;stroke-width:1.0;" x1="429.5" x2="617.5" y1="1049" y2="1049"/><line style="stroke:#000000;stroke-width:1.0;" x1="429.5" x2="617.5" y1="1066.6094" y2="1066.6094"/><line style="stroke:#000000;stroke-width:1.0;" x1="429.5" x2="617.5" y1="1084.2188" y2="1084.2188"/><line style="stroke:#000000;stroke-width:1.0;" x1="429.5" x2="617.5" y1="1101.8281" y2="1101.8281"/><line style="stroke:#000000;stroke-width:1.0;" x1="429.5" x2="617.5" y1="1119.4375" y2="1119.4375"/><line style="stroke:#000000;stroke-width:1.0;" x1="429.5" x2="617.5" y1="1137.0469" y2="1137.0469"/><line style="stroke:#000000;stroke-width:1.0;" x1="429.5" x2="429.5" y1="1049" y2="1137.0469"/><line style="stroke:#000000;stroke-width:1.0;" x1="617.5" x2="617.5" y1="1049" y2="1137.0469"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="433.5" y="1153.5801"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="433.5" y="1171.1895"/><!--MD5=[55558c94342b3bb358ad737243bad12b]
+@startuml "SuperNOFA on Pumpkin"
+'on: 2022-01-20T13:58:52.811-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server         </b></back>|
+'|<back:LightGreen><b>Docker Container   </b></back>|
+'|<back:SeaShell><b>Docker Network       </b></back>|
+|<back:GreenYellow><b>File System Folder </b></back>|
+|<back:Khaki><b>Non-Docker Component     </b></back>|
+|<back:Gold><b>Database                  </b></back>|
+|<back:LightGreen><b>Deployed App        </b></back>|
+
+ 
+endlegend
+
+ 
+
+	component "\npumpkin" as cpumpkin #AliceBlue {
+
+      note "Last Modification: 220126\nAdded pm2 component" as datenote  
+
+       card "https://nofadfa.hcd.ca.gov/snap" as url 
+
+        folder   "/opt/tomcat" as ftomcat #GreenYellow {
+             card "tomcat config, logs, etc."
+	        folder   "temp/ab-434" as fab #GreenYellow {
+                card "Location of uploaded attachments"
+            }
+        }
+
+    component "pm2/node-js Server" as cpm2  #Khaki {
+        cloud "Ports" as xportcpm2 #SeaShell {
+			card "7000/tcp\n" as pvalcpm2
+        }
+        component "ab434\nReact Web UI (javascript)"  as cabr #LightGreen {
+           
+        }
+    }
+
+	node "\nTomcat Server" as ntomcat #Khaki {
+
+		cloud "Ports" as xporsttomcat #SeaShell {
+		card "8080/tcp\n" as pval745
+        }
+
+          
+        url -> cabr
+
+		component "superNofaApi.war\nSpring Boot (java) back-end"  as cwar #LightGreen {			
+		}
+
+            cabr <-> cwar
+	}
+
+    cpm2 - -[hidden]- -ntomcat
+    ftomcat  - -[hidden]- - ntomcat
+	 ' ntomcat  - -[hidden]- - ftomcat
+    
+    cwar ..> fab :writes attachments to
+    ntomcat ..> ftomcat :uses
+
+	
+    component "MySQL Server\n" as cdb #Khaki {
+
+          database "\nsupernofa" as ddb #Gold {
+            card "user 'humanyu'" as dbuser 
+            cloud "Ports" as dbport #SeaShell {
+			card "8306/tcp\n" 
+            }
+         }
+    }
+
+    cwar ..> ddb :stores data in
+
+
+
+
+}
+
+' datenote - -[hidden]- - cpumpkin
+'cpumpkin - -[hidden]- - datenote
+@enduml
+
+@startuml "SuperNOFA on Pumpkin"
+legend
+|<back:AliceBlue><b>Linux Server         </b></back>|
+|<back:GreenYellow><b>File System Folder </b></back>|
+|<back:Khaki><b>Non-Docker Component     </b></back>|
+|<back:Gold><b>Database                  </b></back>|
+|<back:LightGreen><b>Deployed App        </b></back>|
+
+ 
+endlegend
+
+ 
+
+	component "\npumpkin" as cpumpkin #AliceBlue {
+
+      note "Last Modification: 220126\nAdded pm2 component" as datenote  
+
+       card "https://nofadfa.hcd.ca.gov/snap" as url 
+
+        folder   "/opt/tomcat" as ftomcat #GreenYellow {
+             card "tomcat config, logs, etc."
+	        folder   "temp/ab-434" as fab #GreenYellow {
+                card "Location of uploaded attachments"
+            }
+        }
+
+    component "pm2/node-js Server" as cpm2  #Khaki {
+        cloud "Ports" as xportcpm2 #SeaShell {
+			card "7000/tcp\n" as pvalcpm2
+        }
+        component "ab434\nReact Web UI (javascript)"  as cabr #LightGreen {
+           
+        }
+    }
+
+	node "\nTomcat Server" as ntomcat #Khaki {
+
+		cloud "Ports" as xporsttomcat #SeaShell {
+		card "8080/tcp\n" as pval745
+        }
+
+          
+        url -> cabr
+
+		component "superNofaApi.war\nSpring Boot (java) back-end"  as cwar #LightGreen {			
+		}
+
+            cabr <-> cwar
+	}
+
+    cpm2 - -[hidden]- -ntomcat
+    ftomcat  - -[hidden]- - ntomcat
+    
+    cwar ..> fab :writes attachments to
+    ntomcat ..> ftomcat :uses
+
+	
+    component "MySQL Server\n" as cdb #Khaki {
+
+          database "\nsupernofa" as ddb #Gold {
+            card "user 'humanyu'" as dbuser 
+            cloud "Ports" as dbport #SeaShell {
+			card "8306/tcp\n" 
+            }
+         }
+    }
+
+    cwar ..> ddb :stores data in
+
+
+
+
+}
+
+@enduml
+
+PlantUML version 1.2021.16(Wed Dec 08 09:25:22 PST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

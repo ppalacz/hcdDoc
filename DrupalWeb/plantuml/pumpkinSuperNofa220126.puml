@@ -1,0 +1,82 @@
+@startuml "SuperNOFA on Pumpkin"
+'on: 2022-01-20T13:58:52.811-08:00
+' hide stereotype
+legend
+|<back:AliceBlue><b>Linux Server         </b></back>|
+'|<back:LightGreen><b>Docker Container   </b></back>|
+'|<back:SeaShell><b>Docker Network       </b></back>|
+|<back:GreenYellow><b>File System Folder </b></back>|
+|<back:Khaki><b>Non-Docker Component     </b></back>|
+|<back:Gold><b>Database                  </b></back>|
+|<back:LightGreen><b>Deployed App        </b></back>|
+
+ 
+endlegend
+
+ 
+
+	component "\npumpkin" as cpumpkin #AliceBlue {
+
+      note "Last Modification: 220126\nAdded pm2 component" as datenote  
+
+       card "https://nofadfa.hcd.ca.gov/snap" as url 
+
+        folder   "/opt/tomcat" as ftomcat #GreenYellow {
+             card "tomcat config, logs, etc."
+	        folder   "temp/ab-434" as fab #GreenYellow {
+                card "Location of uploaded attachments"
+            }
+        }
+
+    component "pm2/node-js Server" as cpm2  #Khaki {
+        cloud "Ports" as xportcpm2 #SeaShell {
+			card "7000/tcp\n" as pvalcpm2
+        }
+        component "ab434\nReact Web UI (javascript)"  as cabr #LightGreen {
+           
+        }
+    }
+
+	node "\nTomcat Server" as ntomcat #Khaki {
+
+		cloud "Ports" as xporsttomcat #SeaShell {
+		card "8080/tcp\n" as pval745
+        }
+
+          
+        url -> cabr
+
+		component "superNofaApi.war\nSpring Boot (java) back-end"  as cwar #LightGreen {			
+		}
+
+            cabr <-> cwar
+	}
+
+    cpm2 --[hidden]--ntomcat
+    ftomcat  --[hidden]-- ntomcat
+	 ' ntomcat  --[hidden]-- ftomcat
+    
+    cwar ..> fab :writes attachments to
+    ntomcat ..> ftomcat :uses
+
+	
+    component "MySQL Server\n" as cdb #Khaki {
+
+          database "\nsupernofa" as ddb #Gold {
+            card "user 'humanyu'" as dbuser 
+            cloud "Ports" as dbport #SeaShell {
+			card "8306/tcp\n" 
+            }
+         }
+    }
+
+    cwar ..> ddb :stores data in
+
+
+
+
+}
+
+' datenote --[hidden]-- cpumpkin
+'cpumpkin --[hidden]-- datenote
+@enduml
