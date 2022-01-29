@@ -10,23 +10,20 @@ legend
 |<back:Gold><b>Database                  </b></back>|
 |<back:LightGreen><b>Deployed App        </b></back>|
 
- 
 endlegend
 
- 
+	component "\npumpkin\nRHEL 8 Linux Server" as cpumpkin #AliceBlue {
 
-	component "\npumpkin" as cpumpkin #AliceBlue {
-
-      note "Last Modification: 220126\nAdded pm2 component" as datenote  
+      note "Changes: \n220128: Added REST interface\n220127: Corrected DB user name, location\n220126: Added pm2 component" as datenote  
 
        card "https://nofadfa.hcd.ca.gov/snap" as url 
 
         folder   "/opt/tomcat" as ftomcat #GreenYellow {
-            card "tomcat config, logs, etc."
+            'card "tomcat config, logs, etc."
 	        folder   "temp/ab-434" as fab #GreenYellow {
                 card "Location of uploaded attachments"
             }
-            folder   "webapp" as fab #GreenYellow {
+            folder   "webapp" as fwebapp #GreenYellow {
                 card "App .war location"
             }
         }
@@ -35,8 +32,8 @@ endlegend
         cloud "Ports" as xportcpm2 #SeaShell {
 			card "7000/tcp\n" as pvalcpm2
         }
-        component "ab434\nReact Web UI (javascript)"  as cabr #LightGreen {
-           
+
+        component "ab434\nReact Web UI (javascript)"  as cabr #LightGreen {   
         }
     }
 
@@ -51,7 +48,11 @@ endlegend
 		component "superNofaApi.war\nSpring Boot (java) back-end"  as cwar #LightGreen {			
 		}
 
-        cabr <-> cwar
+        interface "REST" as ivar 
+
+        cwar - ivar
+
+        cabr -> ivar
 	}
 
     cpm2 --[hidden]--ntomcat
@@ -61,23 +62,23 @@ endlegend
     cwar ..> fab :writes attachments to
     ntomcat ..> ftomcat :uses
 
-	component "\nnofaappdb\MySql Server" as cnofadb #LightGreen {
+	component "\nnofaappdb\nDockerized MySql Server" as cnofadb #LightGreen {
 
-              database "\nsupernofa_v2" as ddb #Gold {
+        database "\nsupernofa_v2" as ddb #Gold {
                 card "user 'nicolekidman'" as dbuser 
                 cloud "Ports" as dbport #SeaShell {
 			    card "8306/tcp\n" 
-                }
-            }   
+            }
+        }   
     }
 
-    folder   "/nofaapp/mysql" as fmysql #GreenYellow {
+    folder "/nofaapp/mysql" as fmysql #GreenYellow {
             card "MySql Data, Config"      
         }
 
-    cwar ..> ddb :stores data in
+    cwar --> ddb :stores data in
 
-    ddb ..> fmysql :uses
+    ddb --> fmysql :uses
 
 }
 
